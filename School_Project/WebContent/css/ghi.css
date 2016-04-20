@@ -1,0 +1,112 @@
+/* loginSelect */
+#mainHeader {
+	background-color : white;
+	height : 80px;
+}
+
+#mainHeader a {
+	margin : 20px 0 0 20px;
+	font-size : 20px;
+}
+
+#mainPictureDiv a {
+	text-align : center;
+}
+
+.mainPicture img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loginSelectDiv {
+	text-align : center;
+}
+
+.loginSelectDiv li {
+	margin-top : 10px;
+	margin-right : 10px;
+}
+
+#liStudent {
+	background-color : #43a4d8;
+}
+#liTeacher {
+	background-color: #eb7a38;
+}
+#liParent {
+	background-color: #ffbc47;
+}
+#liManager {
+	background-color: #1dafa2;
+}
+
+.loginSelectA {
+	display : block;
+	height : 225px;
+	width : 245px;
+	text-align : center;
+}
+
+.loginSelectDiv img {
+	margin-top : 40px;
+	border : 0 none;
+}
+
+#sysLoginA {
+	margin-right : 50px;
+}
+
+
+/* studentTotalExamSimulation */
+#hopeUniversityTable {
+	background-color : white;
+}
+
+
+#recommendContainer {
+	margin : 0px 10px;
+	text-align : center;
+	background-color : white;
+	border-radius : 10px;
+}
+
+#recommendContainer li {
+	margin : 10px 20px;
+	background-color : white;
+	padding : 5px;
+}
+
+.recommendDiv {
+	display : inline;
+	margin : 0px 20px;
+}
+
+
+#searchUniversity {
+	margin-bottom : 10px;
+}
+
+#searchUniversityForm input {
+	margin-left : 15px;
+	margin-right : 5px;
+}
+
+#searchUniversityForm #searchKey {
+	margin-left : 5px;
+}
+#searchUniversityForm #submitButton {
+	margin-left : 0px;
+}
+
+
+#searchUniversity {
+	text-align : right;
+}
+
+
+
+
+
+
+
