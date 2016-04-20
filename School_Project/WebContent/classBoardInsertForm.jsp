@@ -111,7 +111,6 @@
 										<ul class="nav navbar-nav">
 											<li><a href="#">학교등록</a></li>
 											<li><a href="#">학교목록</a></li>
-
 										</ul>
 									</div>
 								</div></li>
@@ -183,7 +182,7 @@
                     </div>
                     </div>
 		</div>
-		<!--         컨텐츠 끝 -->
+		<!--컨텐츠 끝 -->
 		<footer class="app-footer">
 			<div class="wrapper">
 				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽

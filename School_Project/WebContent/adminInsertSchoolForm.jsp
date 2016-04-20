@@ -40,6 +40,7 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
+						<li><a href="schoolAdminMain.jsp">학교관리</a></li>
 							<li class="active">학교등록</li>
 						</ol>
 						<button type="button"
@@ -109,8 +110,8 @@
 								<div id="dropdown-element" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="#">학교등록</a></li>
-											<li><a href="#">학교목록</a></li>
+											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
+											<li><a href="schoolList.jsp">학교목록</a></li>
 
 										</ul>
 									</div>
@@ -122,8 +123,8 @@
 								<div id="dropdown-table" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="#">교사등록</a></li>
-											<li><a href="#">교사목록</a></li>
+											<li><a href="adminInsertTeacherForm.jsp">교사등록</a></li>
+											<li><a href="teacherList.jsp">교사목록</a></li>
 										</ul>
 									</div>
 								</div></li>
@@ -134,8 +135,9 @@
 								<div id="dropdown-form" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="#">공지사항</a></li>
-											<li><a href="#">학사일정</a></li>
+											<li><a href="noticeBoardList.jsp">공지사항</a></li>
+											<li><a href="scheduleList.jsp">학사일정</a></li>
+											<li><a href="classBoardList.jsp">학급게시판</a></li>
 										</ul>
 									</div>
 								</div></li>
@@ -190,7 +192,7 @@
 				</div>
 			</div>
 		</div>
-		<!--         컨텐츠 끝 -->
+		<!--컨텐츠 끝 -->
 		<footer class="app-footer">
 			<div class="wrapper">
 				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
