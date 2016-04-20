@@ -174,16 +174,83 @@
                 </nav>
             </div>
             <!-- 메인 컨텐츠 -->
-            <div class="container-fluid">
-                <div class="side-body padding-top">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                           <p>학생 정보 열람 페이지</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+           <div class="container-fluid">
+				<div class="side-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+										<div class="title">학교 목록</div>
+									</div>
+								</div>
+								<div class="card-body table-responsive">
+									<!-- Table -->
+									<table class="table table-striped">
+										<thead>
+											<tr class="headings">
+												<th>학년</th>
+												<th>교과</th>
+												<th>과목</th>
+												<th>1학기</th>
+												<th>2학기</th>
+												<th>비고</th>
+												<th>비고</th>
+												<th>비고</th>
+												<th>비고</th>
+												<th>비고</th>
+												<th>비고</th>
+												<th>비고</th>
+												<th>비고</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>												
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+											
+										</tbody> 
+									</table>
+									<!--페이지 -->
+									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
+ 									<br><br>
+									<!-- 검색 -->
+									<form action="" method="post" class="pull-right">
+										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
+										<label> 제목</label>
+										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
+										<label> 작성자</label>
+										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
+										<input type="hidden" name="temp" value="temp" >
+										<input class="btn btn-default" type="submit" value="검색">
+								</form><br><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- 컨텐츠 끝 -->
         <footer class="app-footer">
             <div class="wrapper">

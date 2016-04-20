@@ -177,8 +177,107 @@
             <div class="container-fluid">
                 <div class="side-body padding-top">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                           <p>학생 정보 입력 페이지</p>
+                        <div class="col-xs-12">
+                           <div class="card-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">사용자ID</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputEmail3" placeholder="UserID" value="##">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">생년월일</label>
+                                            <div class="col-sm-5">
+                                                <input type="date" class="form-control" id="inputPassword3" placeholder="YYYY-MM-dd">
+                                            </div>
+                                        </div>
+                                          <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3" placeholder="Tel">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">이메일</label>
+                                            <div class="col-sm-5">
+                                                <input type="email" class="form-control" id="inputPassword3" placeholder="aaa@bbb.com">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">학교ID</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">학번</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">학년</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">반</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">출석번호</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">성별</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">학과</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">사진</label>
+                                            <div class="col-sm-5">
+                                               <input type="file" id="exampleInputFile">
+                                            <p class="help-block">jpg 형식의 파일만 지원합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">비고</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">등록</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>
