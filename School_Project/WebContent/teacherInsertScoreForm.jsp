@@ -175,107 +175,355 @@
             </div>
             <!-- 메인 컨텐츠 -->
             <div class="container-fluid">
-                <div class="side-body padding-top">
-                    <div class="row">
-                        <div class="ol-xs-12">
-                           <div class="card-body">
-                                    <form class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">사용자ID</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="UserID" value="##">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">생년월일</label>
-                                            <div class="col-sm-5">
-                                                <input type="date" class="form-control" id="inputPassword3" placeholder="YYYY-MM-dd">
-                                            </div>
-                                        </div>
-                                          <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="Tel">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">이메일</label>
-                                            <div class="col-sm-5">
-                                                <input type="email" class="form-control" id="inputPassword3" placeholder="aaa@bbb.com">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학교ID</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학번</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학년</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">반</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">출석번호</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">성별</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학과</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">비고</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">등록</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="side-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+										<div class="title">내신성적 입력</div>
+									</div>
+								</div>
+								<div class="card-body table-responsive">
+									<!-- Table -->
+									<table class="table table-striped">
+										<thead>
+											<tr class="headings">
+												<th rowspan="2">학년</th>
+												<th rowspan="2">교과</th>
+												<th rowspan="2">과목</th>
+												<th colspan="4">1학기</th>
+												<th colspan="4">2학기</th>
+												<th rowspan="2">비고</th>
+											</tr>
+											<tr>
+												<td>단위수</td>
+												<td>중간고사</td>
+												<td>기말고사</td>
+												<td>수행평가</td>
+												<td>단위수</td>
+												<td>중간고사</td>
+												<td>기말고사</td>
+												<td>수행평가</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											<!-- 1학년시작 -->
+												<td rowspan="8">1학년</td>
+												<td>국어</td>
+												<td>국어</td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>도덕</td>
+												<td>도덕</td>
+												<td>1</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>1</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>사회</td>
+												<td>국사</td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>사회</td>
+												<td>사회</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>과학</td>
+												<td>과학</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>수학</td>
+												<td>수학</td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>기술가정</td>
+												<td>기술가정</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>외국어</td>
+												<td>영어</td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<!-- 2학년 시작 -->
+											<tr>
+												<td rowspan="10">2학년</td>
+												<td>국어</td>
+												<td>문학</td>
+												<td>5</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>5</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>외국어</td>
+												<td>일본어 1</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>한문</td>
+												<td>한문</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>수학</td>
+												<td>수학 1</td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>4</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>외국어</td>
+												<td>영어 1</td>
+												<td>6</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											
+											<tr>
+												<td>외국어</td>
+												<td>영어독해와 작문</td>
+												<td></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>6</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>도덕</td>
+												<td>윤리와 사상</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>기술가정</td>
+												<td>정보사회와 컴퓨터</td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>사회</td>
+												<td>한국근현대사</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>과학</td>
+												<td>화학</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<!-- 3학년 시작 -->
+											<tr>
+												<td rowspan="6">3학년</td>
+												<td>국어</td>
+												<td>독서</td>
+												<td>5</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>5</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>국어</td>
+												<td>문법</td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>외국어</td>
+												<td>영어 2</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>수학</td>
+												<td>미적분과 통계 기본</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>외국어</td>
+												<td>심화영어독해와 작문</td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>3</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+											<tr>
+												<td>도덕</td>
+												<td>전통윤리</td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td>2</td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+											</tr>
+										</tbody> 
+									</table>
+									<!--페이지 -->
+									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
+ 									<br><br>
+									<!-- 검색 -->
+									<form action="" method="post" class="pull-right">
+										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
+										<label> 제목</label>
+										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
+										<label> 작성자</label>
+										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
+										<input type="hidden" name="temp" value="temp" >
+										<input class="btn btn-default" type="submit" value="검색">
+								</form><br><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- 컨텐츠 끝 -->
         <footer class="app-footer">
             <div class="wrapper">

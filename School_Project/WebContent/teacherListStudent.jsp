@@ -181,55 +181,64 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">
-										<div class="title">학교 목록</div>
+										<div class="title">학생 목록</div>
 									</div>
 								</div>
-								<div class="card-body table-responsive">
+								<div class="col-lg-1"></div>
+								<div class="card-body table-responsive col-lg-10">
 									<!-- Table -->
 									<table class="table table-striped">
 										<thead>
 											<tr class="headings">
+												<th>사용자ID</th>
+												<th>이름</th>
+												<th>생년월일</th>
+												<th>학교ID</th>
+												<th>학번</th>
 												<th>학년</th>
-												<th>교과</th>
-												<th>과목</th>
-												<th>1학기</th>
-												<th>2학기</th>
-												<th>비고</th>
-												<th>비고</th>
-												<th>비고</th>
-												<th>비고</th>
-												<th>비고</th>
-												<th>비고</th>
-												<th>비고</th>
-												<th>비고</th>
+												<th>반</th>
+												<th>출석번호</th>
+												<th>성별</th>
+												<th>학과</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>												
+												<td>ST_01</td>
+												<td>김상완</td>
+												<td>1991-12-14</td>
+												<td>KOSTA_HIGH_01</td>
+												<td>10101</td>
+												<td>1</td>												
+												<td>1</td>												
+												<td>1</td>												
+												<td>남자</td>												
+												<td>이과</td>											
 											</tr>
 											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
+												<td>ST_02</td>
+												<td>최지웅</td>
+												<td>1990-06-03</td>
+												<td>KOSTA_HIGH_01</td>
+												<td>10102</td>
+												<td>1</td>												
+												<td>1</td>												
+												<td>2</td>												
+												<td>여자</td>												
+												<td>이과</td>
 											</tr>
 											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
+												<td>ST_03</td>
+												<td>이재승</td>
+												<td>1993-05-08</td>
+												<td>KOSTA_HIGH_01</td>
+												<td>10103</td>
+												<td>1</td>												
+												<td>1</td>												
+												<td>3</td>												
+												<td>남자</td>												
+												<td>이과</td>	
 											</tr>
-											
 										</tbody> 
 									</table>
 									<!--페이지 -->
