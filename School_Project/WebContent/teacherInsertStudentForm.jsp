@@ -203,7 +203,6 @@
             <script type="text/javascript" src="lib/js/ace/ace.js"></script>
             <script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
             <script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
-            <!-- Javascript -->
             <script type="text/javascript" src="js/app.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
 </body>
