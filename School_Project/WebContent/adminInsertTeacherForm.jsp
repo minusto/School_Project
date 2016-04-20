@@ -7,23 +7,16 @@
 <title>빈칸</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Fonts -->
-<link
-	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'
-	rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'
-	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'rel='stylesheet' type='text/css'>
 <!-- CSS Libs -->
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
 <!-- CSS App -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -52,9 +45,8 @@
 							class="navbar-right-expand-toggle pull-right visible-xs">
 							<i class="fa fa-times icon"></i>
 						</button>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false"><i
-								class="fa fa-comments-o"></i></a>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"data-toggle="dropdown" role="button" aria-expanded="false">
+						<i class="fa fa-comments-o"></i></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="title">Notification <span
 									class="badge pull-right">0</span>
@@ -146,6 +138,11 @@
 				</nav>
 			</div>
 
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body padding-top" id="content">
@@ -174,8 +171,13 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">생년월일</label>
                                             <div class="col-sm-5">
-                                                <input type="password" class="form-control" id="inputPassword3" placeholder="YYYY-MM-dd">
-                                            </div>
+													<div class='input-group date' id='datetimepicker1'>
+														<input type='text' class="form-control" /> <span
+															class="input-group-addon"> <span
+															class="glyphicon glyphicon-calendar"></span>
+														</span>
+													</div>
+											</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
@@ -204,8 +206,13 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">담당과목</label>
                                             <div class="col-sm-5">
-                                                <input type="password" class="form-control" id="inputPassword3" placeholder="TeacherSubject">
-                                            </div>
+												<select id="kkkk" class="col-md-12 form-control">
+													<option>수학
+													<option>영어
+													<option>언어
+													<option>탐구
+												</select>
+											</div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">사진</label>
@@ -220,14 +227,11 @@
                                                 <input type="password" class="form-control" id="inputPassword3" placeholder="Tel">
                                             </div>
                                         </div>
-                                        
-                                        
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <button type="submit" class="btn btn-default">등록</button>
                                             </div>
                                         </div>
-                                        
                                     </form>
                                 </div>
                             </div>
@@ -236,7 +240,7 @@
 				</div>
 			</div>
 		</div>
-		<!--         컨텐츠 끝 -->
+		<!--컨텐츠 끝 -->
 		<footer class="app-footer">
 			<div class="wrapper">
 				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
