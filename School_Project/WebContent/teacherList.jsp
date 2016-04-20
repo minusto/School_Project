@@ -159,36 +159,60 @@
 										<div class="title">교사 목록</div>
 									</div>
 								</div>
-
-								<div class="card-body table-responsive">
+									<div class="col-lg-1"></div>
+								<div class="card-body table-responsive col-lg-10">
 									<!-- Table -->
 									<table class="table table-striped">
 										<thead>
 											<tr class="headings">
-												<th>교사ID</th>
 												<th>이름</th>
 												<th>생년월일</th>
-												<th>주소</th>
 												<th>전화번호</th>
 												<th>이메일</th>
-												<th>비고</th>
 												<th>담당학급</th>
 												<th>담당과목</th>
-												<th>직책</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td>AA001</td>
 												<td><a href="#">유지훈</a></td>
 												<td>1991-11-12</td>
-												<td>2016-05-15</td>
-												<td>0</td>
-												<td>0</td>
-												<td>0</td>
-												<td>0</td>
-												<td>0</td>
-												<td>0</td>
+												<td>063-111-1111</td>
+												<td>zmzl@kosta.com</td>
+												<td>3학년2반</td>
+												<td>윤리</td>
+											</tr>
+											<tr>
+												<td><a href="#">유지훈</a></td>
+												<td>1991-11-12</td>
+												<td>063-111-1111</td>
+												<td>zmzl@kosta.com</td>
+												<td>3학년2반</td>
+												<td>윤리</td>
+											</tr>
+											<tr>
+												<td><a href="#">유지훈</a></td>
+												<td>1991-11-12</td>
+												<td>063-111-1111</td>
+												<td>zmzl@kosta.com</td>
+												<td>3학년2반</td>
+												<td>윤리</td>
+											</tr>
+											<tr>
+												<td><a href="#">유지훈</a></td>
+												<td>1991-11-12</td>
+												<td>063-111-1111</td>
+												<td>zmzl@kosta.com</td>
+												<td>3학년2반</td>
+												<td>윤리</td>
+											</tr>
+											<tr>
+												<td><a href="#">유지훈</a></td>
+												<td>1991-11-12</td>
+												<td>063-111-1111</td>
+												<td>zmzl@kosta.com</td>
+												<td>3학년2반</td>
+												<td>윤리</td>
 											</tr>
 											
 										</tbody> 

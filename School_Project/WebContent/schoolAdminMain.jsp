@@ -155,9 +155,10 @@
     						<span class="title">관리자 메뉴</span>
     					</div>
     					<div class="row">
-    						<div class="col-sm-12">
+    						<div >
     							<div class="card">
-                                <div class="card-body">
+    							<div class="col-lg-2"></div>
+                                <div class="card-body col-lg-10">
                                     <div class="row no-margin no-gap">
                                         <div class="col-sm-3">
                                             <div class="pricing-table green">
