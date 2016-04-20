@@ -85,7 +85,7 @@
 	<!-- 학생 로그인 Modal -->
 	<div class="modal fade modal-success" id="modalSuccess" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="margin-top: 120px;">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #43a4d8">
 					<button type="button" class="close" data-dismiss="modal"
@@ -121,7 +121,7 @@
 	<!--교사 로그인 Modal -->
 	<div class="modal fade modal-info" id="modalInfo" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="margin-top: 120px;">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #eb7a38">
 					<button type="button" class="close" data-dismiss="modal"
@@ -157,7 +157,7 @@
 	<!-- 학부모 로그인 Modal -->
 	<div class="modal fade modal-warning" id="modalWarning" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="margin-top: 120px;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
@@ -193,7 +193,7 @@
 	<!-- 관리자 로그인 Modal -->
 	<div class="modal fade modal-danger" id="modalDanger" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="margin-top: 120px;">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #1dafa2">
 					<button type="button" class="close" data-dismiss="modal"
@@ -231,7 +231,7 @@
 	<!-- 시스템관리자 로그인 Modal -->
 	<div class="modal fade modal-primary" id="modalPrimary" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="margin-top: 120px;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
