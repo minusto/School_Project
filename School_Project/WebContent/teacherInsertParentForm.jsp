@@ -173,12 +173,97 @@
                     <!-- /.navbar-collapse -->
                 </nav>
             </div>
-            <!-- 메인 컨텐츠 -->
+             <!-- 메인 컨텐츠 -->
             <div class="container-fluid">
                 <div class="side-body padding-top">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                           <p>학부모 정보 입력 페이지</p>
+                        <div class="col-xs-12">
+                           <div class="card-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">학부모ID</label>
+                                            <div class="col-sm-5">
+                                            	<input type="text" class="form-control" id="inputPassword3" placeholder="parentID">
+                                                <!-- Button trigger modal -->
+                                        		<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary" >
+                                            		학부모ID 찾기
+                                      			</button>
+                                      			<!-- Modal -->
+                                      			<div class="modal fade modal-primary" id="modalPrimary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            		<div class="modal-dialog">
+                                               			<div class="modal-content">
+                                                    		<div class="modal-header">
+                                                        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        		<h4 class="modal-title" id="myModalLabel">학부모ID 리스트</h4>
+                                                    		</div>
+                                                    		<div class="modal-body">
+                                                               	<div class="row" style="width:100%; height:200px; overflow:auto">
+																<!-- Table -->
+																<div class="col-md-2"></div>
+																<div class="col-md-8">
+																<table class="table table-striped">
+																	<thead>
+																		<tr class="headings">
+																			<th>번호</th>
+																			<th>학부모ID</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																	</tbody>
+																</table>
+																</div>
+																</div>
+                                                    		</div>
+                                                 		</div>
+                                             		</div>
+                                         		</div>
+                                             </div>
+                                         </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">가족관계</label>
+                                            <div class="col-sm-5">
+                                                <input type="date" class="form-control" id="inputPassword3" placeholder="ex)'부' 혹은 '모'">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">학생ID</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputPassword3" placeholder="StudentID">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">등록</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>

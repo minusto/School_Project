@@ -181,9 +181,62 @@
                            <div class="card-body">
                                     <form class="form-horizontal">
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">사용자ID</label>
+                                            <label for="inputEmail3" class="col-sm-2 control-label">학생ID</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="UserID" value="##">
+                                                <input type="text" class="form-control" id="inputPassword3" placeholder="parentID">
+                                                <!-- Button trigger modal -->
+                                        		<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary" >
+                                            		학생ID 찾기
+                                      			</button>
+                                      			<!-- Modal -->
+                                      			<div class="modal fade modal-primary" id="modalPrimary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            		<div class="modal-dialog">
+                                               			<div class="modal-content">
+                                                    		<div class="modal-header">
+                                                        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        		<h4 class="modal-title" id="myModalLabel">학생ID 리스트</h4>
+                                                    		</div>
+                                                    		<div class="modal-body">
+                                                               	<div class="row" style="width:100%; height:200px; overflow:auto">
+																<!-- Table -->
+																<div class="col-md-2"></div>
+																<div class="col-md-8">
+																<table class="table table-striped">
+																	<thead>
+																		<tr class="headings">
+																			<th>번호</th>
+																			<th>학생ID</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																		<tr>
+																			<td>1</td>
+																			<th>p1</th>
+																		</tr>
+																	</tbody>
+																</table>
+																</div>
+																</div>
+                                                    		</div>
+                                                 		</div>
+                                             		</div>
+                                         		</div>
                                             </div>
                                         </div>
                                         <div class="form-group">
