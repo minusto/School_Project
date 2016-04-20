@@ -321,7 +321,6 @@
 	                    				</table>
 	                    			</div>
                     			</div>
-                    			<p>dd</p>
 	                    			<!-- <div class="col-md-2 col-md-offset-6">
 		                    			<select name="searchSelectLocationOrMajor" id="searchSelectLocationOrMajor" class="form-control">
 		                    				<option>지역</option>
