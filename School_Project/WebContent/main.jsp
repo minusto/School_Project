@@ -69,14 +69,28 @@
 				</li>
 			</ul>
 		</div>
-
-		<footer class="app-footer">
-			<div class="wrapper">
-				<span class="pull-right"><a id="sysLoginA"
-					data-toggle="modal" data-target="#modalPrimary">시스템 로그인</a></span>
+		<div id="mainFooter" class="row">
+			<div class="footerImg col-md-3">
+				<div id="footerImg">
+					<img alt="" src="img/study.png">
+					<img alt="" src="img/keris.png" id="keris">
+				</div>
 			</div>
-		</footer>
-
+			<div class="footerNav col-md-5 col-xs-8" >
+				<ul style="padding:  0px">
+					<li><a href="#">시스템소개</a></li>
+					<li><a href="#">저작권</a></li>
+					<li><a href="#">교육청</a></li>
+					<li><a href="#">시·도교육청 상담센터 안내</a></li>
+					<li>일평균방문자수 : 416,794명</li>
+				</ul>
+				<address>Copyright (c) 우리꺼얌. All Rights Reserved</address>
+			</div>
+			<div class="wrapper" id="syslogin">
+				<span class="pull-right"><a id="sysLoginA"
+					data-toggle="modal" data-target="#modalPrimary" style="color: #e5e5e9">시스템 로그인</a></span>
+			</div>
+		</div>
 	</div>
 
 

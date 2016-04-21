@@ -106,7 +106,44 @@
 
 
 
+.footerNav{
+	padding: 0px;
+	float: none;
+	margin-left: 18%;
+	width: 60%;
+}
+.footerNav li{
+	display: inline;
+	padding: 0px 8px 0px 0px;
+}
 
+.footerImg{
+	padding: 0px;
+	width: 250px;
+	margin-left: 10%;
+}
 
+.footerImg img{
+	padding-left: 15px;
+}
 
+#mainFooter{
+	padding-top:20px;
+	border-top: 1px solid #e5e5e5;
+}
 
+#syslogin{
+	float: right;
+}
+
+.app-container{
+	padding: 0px;
+}
+
+.footerNav ul{
+	list-style: outside none none;
+}
+
+.footerNav li{
+	list-style-type: none;
+}
