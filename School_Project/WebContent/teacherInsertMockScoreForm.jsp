@@ -403,8 +403,13 @@
 											</tr>
 											
 											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 												<td>제2외국어</td>
 												<td><select>
+													<option>미응시</option>
 													<option>독일어</option>
 													<option>프랑스어</option>
 													<option>스페인어</option>
@@ -419,20 +424,7 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td>제2외국어</td>
 												<td><select>
-													<option>독일어</option>
-													<option>프랑스어</option>
-													<option>스페인어</option>
-													<option>중국어</option>
-													<option>일본어</option>
-													<option>러시아어</option>
-													<option>아랍어</option>
-													<option>베트남어</option>
-													<option>한문</option>
-												</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>제2외국어</td>
-												<td><select>
+													<option>미응시</option>
 													<option>독일어</option>
 													<option>프랑스어</option>
 													<option>스페인어</option>
