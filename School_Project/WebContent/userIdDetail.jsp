@@ -18,7 +18,7 @@
 	href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
 <link rel="stylesheet" type="text/css"
-	href="lib/css/bootstrap-switch.min.css">
+	href="lib/css/bootstrap-switch.min.css"> 
 <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
 <link rel="stylesheet" type="text/css"
 	href="lib/css/jquery.dataTables.min.css">

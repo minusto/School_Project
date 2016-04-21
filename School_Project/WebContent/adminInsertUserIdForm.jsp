@@ -30,7 +30,7 @@
 <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
 </head>
 
-<body class="flat-blue">
+<body class="flat-blue"> 
 	<div class="app-container">
 		<div class="row content-container">
 			<nav class="navbar navbar-default navbar-fixed-top navbar-top">
