@@ -32,7 +32,7 @@
 </head>
 
 <body class="flat-blue">
-					<div class="row">
+			<div class="row">
                         <div class="col-xs-12">
                             <div class="card">
                                 <div class="card-header">
