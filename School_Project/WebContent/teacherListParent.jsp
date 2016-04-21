@@ -20,6 +20,13 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+    <style type="text/css">
+   	 tbody tr:hover td {
+		background: rgba(38, 185, 154, 0.07);
+		border-top: 1px solid rgba(38, 185, 154, 0.11);
+		border-bottom: 1px solid rgba(38, 185, 154, 0.11);
+		}
+    </style>
 </head>
 
 <body class="flat-blue">
@@ -175,15 +182,71 @@
             </div>
             <!-- 메인 컨텐츠 -->
             <div class="container-fluid">
-                <div class="side-body padding-top">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                           <p>학부모 정보 열람 페이지</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="side-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+										<div class="title">학부모 목록</div>
+									</div>
+								</div>
+								<div class="col-lg-1"></div>
+								<div class="card-body table-responsive col-lg-10">
+									<!-- Table -->
+									<table class="table table-striped">
+										<thead>
+											<tr class="headings">
+												<th>학부모ID</th>
+												<th>이름</th>
+												<th>가족관계</th>
+												<th>학생ID</th>
+												<th>학생이름</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Parent_01</td>
+												<td>홍길동1세</td>
+												<td>부</td>
+												<td>Student_01</td>
+												<td>홍길동2세</td>
+											</tr>
+											<tr>
+												<td>Parent_02</td>
+												<td>홍길똥1세</td>
+												<td>부</td>
+												<td>Student_02</td>
+												<td>홍길똥2세</td>
+											</tr>
+											<tr>
+												<td>Parent_03</td>
+												<td>홍길뜡1세</td>
+												<td>부</td>
+												<td>Student_03</td>
+												<td>홍길뜡2세</td>
+											</tr>
+										</tbody> 
+									</table>
+									<!--페이지 -->
+									<a href="teacherInsertParentForm.jsp" class="pull-right" ><button class="btn btn-default">학부모 등록</button></a><br><br>
+ 									<br><br>
+									<!-- 검색 -->
+									<form action="" method="post" class="pull-right">
+										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
+										<label> 학부모 이름</label>
+										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
+										<label> 학생 이름</label>
+										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
+										<input type="hidden" name="temp" value="temp" >
+										<input class="btn btn-default" type="submit" value="검색">
+								</form><br><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- 컨텐츠 끝 -->
         <footer class="app-footer">
             <div class="wrapper">
