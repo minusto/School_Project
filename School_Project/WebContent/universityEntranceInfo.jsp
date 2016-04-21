@@ -105,9 +105,9 @@
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">내신성적조회</a>
+                                            <li><a href="studentListScore.jsp">내신성적조회</a>
                                             </li>
-                                            <li><a href="#">모의고사성적조회</a>
+                                            <li><a href="studentListMockTestScore.jsp">모의고사성적조회</a>
                                             </li>
                                       
                                         </ul>
@@ -123,9 +123,9 @@
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">수시 시뮬레이션</a>
+                                            <li><a href="studentTotalExamSimulation.jsp">수시 시뮬레이션</a>
                                             </li>
-                                            <li><a href="#">정시 시뮬레이션</a>
+                                            <li><a href="studentMockTestSimulation.jsp">정시 시뮬레이션</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -159,13 +159,13 @@
                                 <div id="component-example" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">교내 공지사항</a>
+                                            <li><a href="noticeBoardList.jsp">교내 공지사항</a>
                                             </li>
-                                            <li><a href="#">가정 통신문 조회</a>
+                                            <li><a href="parentNoticeBoardList.jsp">가정 통신문 조회</a>
                                             </li>
-                                            <li><a href="#">학급 게시판</a>
+                                            <li><a href="classBoardList.jsp">학급 게시판</a>
                                             </li>
-                                            <li><a href="#">일정</a>
+                                            <li><a href="scheduleList.jsp">일정</a>
                                             </li>
                                         </ul>
                                     </div>

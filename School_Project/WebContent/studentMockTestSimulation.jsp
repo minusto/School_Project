@@ -105,9 +105,9 @@
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">내신성적조회</a>
+                                            <li><a href="studentListScore.jsp">내신성적조회</a>
                                             </li>
-                                            <li><a href="#">모의고사성적조회</a>
+                                            <li><a href="studentListMockTestScore.jsp">모의고사성적조회</a>
                                             </li>
                                       
                                         </ul>
@@ -123,9 +123,9 @@
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">수시 시뮬레이션</a>
+                                            <li><a href="studentTotalExamSimulation.jsp">수시 시뮬레이션</a>
                                             </li>
-                                            <li><a href="#">정시 시뮬레이션</a>
+                                            <li><a href="studentMockTestSimulation.jsp">정시 시뮬레이션</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -159,13 +159,13 @@
                                 <div id="component-example" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">교내 공지사항</a>
+                                            <li><a href="noticeBoardList.jsp">교내 공지사항</a>
                                             </li>
-                                            <li><a href="#">가정 통신문 조회</a>
+                                            <li><a href="parentNoticeBoardList.jsp">가정 통신문 조회</a>
                                             </li>
-                                            <li><a href="#">학급 게시판</a>
+                                            <li><a href="classBoardList.jsp">학급 게시판</a>
                                             </li>
-                                            <li><a href="#">일정</a>
+                                            <li><a href="scheduleList.jsp">일정</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -196,8 +196,8 @@
 	                    		</tr>
 	                    		<tr>
 	                    			<td>2.4</td>
-	                    			<td><a id="hopeUniversityName" href="#">서울대학교</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
-	                    			<td><a id="hopeUniversityMajor" href="#">국어국문학과</a></td>
+	                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
+	                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
 	                    			<td>1.6</td>
 	                    			<td>0.8</td>
 	                    		</tr>
@@ -210,7 +210,7 @@
                     		<h3>추천 대학</h3>
                     		<div id="recommendUniversityDiv">
                     			<ul class="list-unstyled list-inline">
-                    				<li id="firstRecommend"><a href="#">
+                    				<li id="firstRecommend"><a href="universityEntranceInfo.jsp">
                     					<img id="SeoulUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
                     					<span id="firstRecommendUniversityName" class="recommendUniversityName">서울대학교</span>
                     					<span id="firstRecommendMajorName" class="recommendMajorName">국어국문학과</span>
@@ -257,18 +257,18 @@
 	                    					<tr>
 	                    						<td>
 	                    							<img class="tableUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-	                    							<a id="hopeUniversityName" href="#">서울대학교</a>
+	                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a>
 	                    						</td>
-	                    						<td><a id="hopeUniversityMajor" href="#">국어국문학과</a></td>
+	                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
 	                    						<td>1.6</td>
 	                    						<td>15</td>
 	                    					</tr>
 	                    					<tr>
 	                    						<td>
 	                    							<img class="tableUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-	                    							<a id="hopeUniversityName" href="#">서울대학교</a>
+	                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a>
 	                    						</td>
-	                    						<td><a id="hopeUniversityMajor" href="#">국어국문학과</a></td>
+	                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
 	                    						<td>1.6</td>
 	                    						<td>15</td>
 	                    					</tr>
