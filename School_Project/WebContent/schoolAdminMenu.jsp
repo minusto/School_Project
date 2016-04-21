@@ -77,9 +77,9 @@
 								<div id="dropdown-element" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
+											<li><a href="schoolAdminInsertSchoolForm.jsp">학교등록</a></li>
 											<li><a href="schoolDetail.jsp">학교 정보 조회</a></li>
-											<li><a href="adminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
+											<li><a href="schoolAdminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
 											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>
 										</ul>
 									</div>
