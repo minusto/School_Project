@@ -20,65 +20,21 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+    <link rel="stylesheet" type="text/css" href="css/sangWan.css">
 </head>
 
 <body class="flat-blue">
     <div class="app-container">
         <div class="row content-container">
             <jsp:include page="teacherMenu.jsp"/>
-            <!-- 메인 컨텐츠 -->
-            <div class="container-fluid">
-				<div class="side-body">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">
-										<div class="title">가정통신문 발송</div>
-									</div>
-								</div>
-								<div class="col-lg-1"></div>
-								<div class="card-body table-responsive col-lg-10">
-									<!-- Table -->
-									<table class="table table-striped">
-										<thead>
-											<tr class="headings">
-												<th></th>
-												<th style="text-align: center">가정통신문</th>
-												<th></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-											 <td colspan="3" align="center"><textarea cols="150"  rows="25" placeholder="가정통신문 내용" ></textarea></td>
-											</tr>
-											
-											<tr>
-												<td></td>
-												<td>교사 서명</td>
-												<td >학부모 서명</td>
-											</tr>
-											
-											<tr>
-												<td></td>
-												<td><input type="text" placeholder="교사서명"></td>
-												<td><input type="text"  placeholder="학부모서명"></td>
-											</tr>
-											<tr>
-												<td align="center"><a href="teacherMain.jsp" ><button class="btn btn-default">메인으로</button></a></td>
-												<td align="center"><a href="#" ><button class="btn btn-default">가정통신문 발송</button></a></td>
-												<td align="center"><a href="teacherListNoticeParent.jsp" ><button class="btn btn-default">목록보기</button></a></td>												
-											</tr>
-										</tbody> 
-									</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </div>
-</div>
+            <!-- 메인 컨텐츠  -->
+    		<div class = "container-fluid">
+    			<div class = "side-body">
+    				<jsp:include page="noticeBoardList.jsp"/>
+    			</div>
+    		</div>
+      	</div>       
+	</div>
             <!-- Javascript Libs -->
             <script type="text/javascript" src="lib/js/jquery.min.js"></script>
             <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
