@@ -7,8 +7,7 @@
                             <i class="fa fa-bars icon"></i>
                         </button>
                         <ol class="breadcrumb navbar-breadcrumb">
-                            <li class="active">진학시뮬레이션</li>
-                            <li class="active">수시 시뮬레이션</li>
+                            <li class="active">${path }</li>
                         </ol>
                         <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
                             <i class="fa fa-th icon"></i>

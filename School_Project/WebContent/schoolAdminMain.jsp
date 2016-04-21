@@ -106,7 +106,7 @@
                                           	  	</div>
                                         	</div>
 										</div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3">   
                                             <div class="pricing-table blue">
                                                 <div class="pt-header">
                                                     <div class="plan-pricing">
@@ -135,7 +135,7 @@
 																<div class="modal-body"> 
 																	<div class="row">
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="adminInsertTeacherForm.jsp">
+																			<a href="schoolAdminInsertTeacherForm.jsp">
 																			<h3>교사 등록</h3>
 																			</a>
 																		</div>
