@@ -54,8 +54,9 @@
 							class="navbar-right-expand-toggle pull-right visible-xs">
 							<i class="fa fa-times icon"></i>
 						</button>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"data-toggle="dropdown" role="button" aria-expanded="false">
-						<i class="fa fa-comments-o"></i></a>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false"> <i
+								class="fa fa-comments-o"></i></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="title">Notification <span
 									class="badge pull-right">0</span>
@@ -139,62 +140,71 @@
 										</ul>
 									</div>
 								</div></li>
-
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
 				</nav>
 			</div>
-
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body padding-top" id="content">
 					<div class="row">
-                        <div class="col-xs-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <div class="title">학급게시판 상세보기</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <a href="#" class="btn btn-sq-xs btn-primary">
-              									<i class="fa fa-user fa-1x"></i><br/></a>&nbsp;&nbsp;&nbsp; 작성자ID
-              								             									
-           							<div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">제목</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                            <div>
-                                            <a href="download.jsp?filename=${board.b_fname}">파일 다운로드 링크.jpeg</a>
-                                             </div><br><br>
-                                                		내용
-                                            </div>
-                                                                                  
-                                        </div>
-                                         <strong>조회수 :</strong><br><br><br><br>
-                                         <div class="sub-title">댓글리스트</div>
-                                         <div class="panel-title">
-                                                		댓글내용
-                                            </div><br><br><br><br>
-                                         
-                                         
-                                          
-											<div class="sub-title">댓글다는공간</div>
-                                    <div>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div><button type="button" class="btn btn-green">댓글쓰기</button></div><br><br><br>
-                                        <div>
-                                        <button type="button" class="btn btn-primary">목록돌아가기</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-primary">수정하기</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-primary">글삭제하기</button>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+						<div class="col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+										<div class="title">학급게시판 상세보기</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<a href="#" class="btn btn-sq-xs btn-primary"> <i
+										class="fa fa-user fa-1x"></i><br /></a>&nbsp;&nbsp;&nbsp; 작성자ID
+
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">제목</h3>
+										</div>
+										<div class="panel-body">
+											<div>
+												<a href="download.jsp?filename=${board.b_fname}">파일 다운로드
+													링크.jpeg</a>
+											</div>
+											<br>
+											<br>
+											<div>내용1</div>
+										</div>
+									</div>
+									<strong>조회수 :</strong><br>
+									<br>
+									<br>
+									<br>
+									<div class="sub-title">댓글리스트</div>
+									<div class="panel-title">댓글내용</div>
+									<br>
+									<br>
+									<br>
+									<br>
+									<div class="sub-title">댓글다는공간</div>
+									<div>
+										<textarea class="form-control" rows="3"></textarea>
+									</div>
+									<div>
+										<button type="button" class="btn btn-green">댓글쓰기</button>
+									</div>
+									<br>
+									<br>
+									<br>
+									<div>
+										<button type="button" class="btn btn-primary">목록돌아가기</button>
+										&nbsp;&nbsp;
+										<button type="button" class="btn btn-primary">수정하기</button>
+										&nbsp;&nbsp;
+										<button type="button" class="btn btn-primary">글삭제하기</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

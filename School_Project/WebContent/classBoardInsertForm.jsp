@@ -171,9 +171,9 @@
                                         <textarea class="form-control" rows="12" cols="170" ></textarea>
                                     </div>
                                     <br><br>
-                                    <input type="submit" value="등록">
+                                    <button type="button" class="btn btn-primary">등록</button>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            		<input type="reset" value="취소">
+                            		<button type="button" class="btn btn-primary">취소 </button>
                                     </form>
                                 </div>
                             </div>
