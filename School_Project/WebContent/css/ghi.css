@@ -59,27 +59,29 @@
 
 
 /* studentTotalExamSimulation */
+/* studentMockTestSimulation */
 #hopeUniversityTable {
 	background-color : white;
 }
 
 
-#recommendContainer {
+#recommendUniversityDiv {
 	margin : 0px 10px;
 	text-align : center;
 	background-color : white;
 	border-radius : 10px;
 }
 
-#recommendContainer li {
-	margin : 10px 20px;
+#recommendUniversityDiv li {
+	margin : 10px 10px;
 	background-color : white;
 	padding : 5px;
 }
 
-.recommendDiv {
-	display : inline;
-	margin : 0px 20px;
+.recommendUniversityName {
+	font-size : 15px;
+	font-weight : bold;
+	margin-left : 5px;
 }
 
 
@@ -92,6 +94,9 @@
 	margin-right : 5px;
 }
 
+#searchUniversityForm #la{
+	font-weight : normal;
+}
 #searchUniversityForm #searchKey {
 	margin-left : 5px;
 }
@@ -103,6 +108,92 @@
 #searchUniversity {
 	text-align : right;
 }
+
+.tableUniversityMark {
+	width : 20px;
+	height : 20px;
+	margin-right : 10px;
+}
+
+
+/* UniversityEntranceInfo */
+#entranceUniversityDiv p {
+	display : inline;
+}
+
+#universityMark {
+	float:left;
+	border : 2px solid darkgray;
+}
+
+#entranceUniversityInfo {
+	padding-top : 10px;
+	line-height : 60px;
+}
+
+#entranceUniversityInfo ul {
+	margin-bottom : 50px;
+}
+
+.entranceInfoUniversityName {
+	margin-left : 10px;
+	font-size : 50px;
+	font-weight : bold;
+}
+.entranceInfoUniversityMajor {
+	margin-left : 10px;
+	font-size : 28px;
+}
+#entrancInfoDetail {
+	float : right;
+}
+
+#entranceInfoDiv2 {
+	margin-top : 40px;
+}
+
+.entranceInfo {
+	/* border : 2px solid darkgray;
+	padding : 10px 20px; */
+}
+
+.entranceInfoPanelHead h3{
+	text-align : center;
+}
+
+.entranceInfo ul {
+	margin-bottom : 20px;
+	line-height : 40px;
+	font-size : 20px;
+}
+
+.entranceInfo span {
+	margin-left : 10px;
+	margin-right : 20px;
+}
+
+#entranceInfoBlank {
+	height : 300px;
+	border-right : 2px dotted darkgray;
+}
+
+
+#entranceInfoChangeDiv {
+	margin-top : 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
