@@ -40,8 +40,8 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
-						<li>학교 관리</li>
-							<li class="active">학교목록</li>
+							<li><a href="schoolAdminMain.jsp">학교 관리</a></li>
+							<li class="active">학교 정보 조회</li>
 						</ol>
 						<button type="button"
 							class="navbar-right-expand-toggle pull-right visible-xs">
@@ -110,11 +110,13 @@
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
 											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
-											<li><a href="schoolList.jsp">학교목록</a></li>
+											<li><a href="schoolDetail.jsp">학교 정보 조회</a></li>
+											<li><a href="adminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
+											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>										
 										</ul>
 									</div>
 								</div></li>
-								
+
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-table"> <span
 									class="icon fa fa-table"></span><span class="title">교사관리</span>
@@ -127,7 +129,7 @@
 										</ul>
 									</div>
 								</div></li>
-								
+
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-form"> <span
 									class="icon fa fa-file-text-o"></span><span class="title">게시판관리</span>
@@ -138,7 +140,7 @@
 											<li><a href="noticeBoardList.jsp">공지사항</a></li>
 											<li><a href="scheduleList.jsp">학사일정</a></li>
 											<li><a href="classBoardList.jsp">학급 게시판</a></li>
-											
+
 										</ul>
 									</div>
 								</div></li>
@@ -160,85 +162,58 @@
 										<div class="title">학교 목록</div>
 									</div>
 								</div>
-								<div class="card-body table-responsive">
+								<div class="col-sm-2"></div>
+								<div class="card-body table-responsive col-sm-8">
 									<!-- Table -->
 									<table class="table table-striped">
-										<thead>
-											<tr class="headings">
-												<th>학교ID</th>
-												<th>학교명</th>
-												<th>주소</th>
-												<th>전화번호</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>GD001</td>
-												<td><a href="#">광동고등학교</a></td>
-												<td>광주 광역시 신길동 123-123</td>
-												<td>444-4444</td>
-											</tr>
-											<tr>
-												<td>YG001</td>
-												<td><a href="#">왕왕고등학교</a></td>
-												<td>함경북도 평양시  123-123</td>
-												<td>444-4444</td>
-											</tr>
-											<tr>
-												<td>YSD001</td>
-												<td><a href="#">입생고등학교</a></td>
-												<td>미국 미국 123-123</td>
-												<td>444-4444</td>
-											</tr>
+										<tr height="30">
+											<th width="150">학교아이디</th>
+											<td width="150">123123</td>
+										</tr>
 										
-
-										</tbody> 
+										<tr height="30">
+											<th width="150">학교이름</th>
+											<td width="150">11</td>
+										</tr>
+										<tr height="30">
+											<th width="150">주소</th>
+											<td width="150">서울시 가산</td>
+										</tr>
+										<tr height="30">
+											<th width="150">작성일</th>
+											<td width="150"> 02-444-4444</td>
+										</tr>
 									</table>
- 									
-									<!--페이지 -->
-									
-									
- 									
- 									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
- 									<br><br>
-									<!-- 검색 -->
-									<form action="" method="post" class="pull-right">
-										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
-										<label> 제목</label>
-										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
-										<label> 작성자</label>
-										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
-										<input type="hidden" name="temp" value="temp" >
-										<input class="btn btn-default" type="submit" value="검색">
-								</form><br><br>
+									<a href="#" class="pull-right" ><button type="button" class="btn btn-primary">정보수정</button></a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!--         컨텐츠 끝 -->
+			<footer class="app-footer">
+				<div class="wrapper">
+					<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
+				</div>
+			</footer>
 		</div>
-		<!--         컨텐츠 끝 -->
-		<footer class="app-footer">
-			<div class="wrapper">
-				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-			</div>
-		</footer>
-	</div>
-	<!-- Javascript Libs -->
-	<script type="text/javascript" src="lib/js/jquery.min.js"></script>
-	<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib/js/Chart.min.js"></script>
-	<script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
-	<script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
-	<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib/js/select2.full.min.js"></script>
-	<script type="text/javascript" src="lib/js/ace/ace.js"></script>
-	<script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
-	<script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
-	<!-- Javascript -->
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+		<!-- Javascript Libs -->
+		<script type="text/javascript" src="lib/js/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/js/Chart.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript"
+			src="lib/js/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/js/select2.full.min.js"></script>
+		<script type="text/javascript" src="lib/js/ace/ace.js"></script>
+		<script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
+		<script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>

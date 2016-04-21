@@ -110,7 +110,9 @@
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
 											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
-											<li><a href="schoolList.jsp">학교목록</a></li>
+											<li><a href="schoolDetail.jsp">학교 정보 조회</a></li>
+											<li><a href="adminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
+											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>
 										</ul>
 									</div>
 								</div></li>
@@ -171,9 +173,9 @@
                                                 <div class="pt-body">
                                                     <ul class="plan-detail">
                                                         <li>학교등록</li>
-                                                        <li>학교목록</li>
-                                                        <li>&nbsp;</li>
-                                                        <li>&nbsp;</li>
+                                                        <li>학교 정보 조회</li>
+                                                        <li>사용자ID 등록</li>
+                                                        <li>사용자ID 목록</li>
                                                     </ul>
                                                 </div>
                                                 <div class="pt-footer">
@@ -195,9 +197,19 @@
 																			</a>
 																		</div>
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="schoolList.jsp">
-																			<h3>학교 목록</h3>
+																			<a href="schoolDetail.jsp">
+																			<h3>학교 정보조회</h3>
 																			</a>
+																		</div>
+																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																			<a href="adminInsertUserIdForm.jsp">
+																			<h3>사용자 ID 등록</h3>
+																				</a>
+																		</div>
+																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																			<a href="userIdList.jsp">
+																			<h3>사용자 ID 목록</h3>
+																				</a>
 																		</div>
 																	</div>
 																</div>

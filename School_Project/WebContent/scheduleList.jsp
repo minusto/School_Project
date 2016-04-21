@@ -40,7 +40,7 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
-						<li>게시판 관리</li>
+						<li><a href="schoolAdminMain.jsp">게시판 관리</a></li>
 							<li class="active">학사일정</li>
 						</ol>
 						<button type="button"
@@ -109,8 +109,10 @@
 								<div id="dropdown-element" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="#">학교등록</a></li>
-											<li><a href="#">학교목록</a></li>
+											<li><a href="schoolAdminMain.jsp">학교등록</a></li>
+											<li><a href="schoolDetail.jsp">학교 정보 조회</a></li>
+											<li><a href="adminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
+											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>
 										</ul>
 									</div>
 								</div></li>
