@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+	request.setAttribute("path", "학생 관리 > 모의고사 성적 입력");
+%>
 <html>
-
 <head>
     <title>빈칸</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
