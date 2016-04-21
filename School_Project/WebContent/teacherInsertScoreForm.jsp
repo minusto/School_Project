@@ -463,7 +463,8 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td>3</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												<td><inp   
+												ut type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>

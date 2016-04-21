@@ -20,6 +20,13 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+    <style type="text/css">
+   	 tbody tr:hover td {
+		background: rgba(38, 185, 154, 0.07);
+		border-top: 1px solid rgba(38, 185, 154, 0.11);
+		border-bottom: 1px solid rgba(38, 185, 154, 0.11);
+		}
+    </style>
 </head>
 
 <body class="flat-blue">
