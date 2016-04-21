@@ -167,8 +167,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 		내용
-                                            </div>
-                                               
+                                            </div>  
                                         </div>
                                          <strong>조회수 :</strong><br><br><br><br>
                                          <div>
