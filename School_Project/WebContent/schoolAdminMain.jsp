@@ -17,7 +17,7 @@
 	rel='stylesheet' type='text/css'>
 <!-- CSS Libs -->
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
+<link rel="stylesheet" type="text/css" 
 	href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
 <link rel="stylesheet" type="text/css"
