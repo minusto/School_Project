@@ -166,7 +166,10 @@
                                                 <h3 class="panel-title">제목</h3>
                                             </div>
                                             <div class="panel-body">
-                                                		내용
+                                            <div>
+                                            <a href="download.jsp?filename=${board.b_fname}">파일 다운로드 링크.jpeg</a>
+                                             </div><br><br>
+                                             		내용   		
                                             </div>  
                                         </div>
                                          <strong>조회수 :</strong><br><br><br><br>
