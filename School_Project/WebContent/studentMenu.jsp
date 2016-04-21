@@ -1,30 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>학생 메인페이지</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-    <!-- CSS Libs -->
-    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
-    <!-- CSS App -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
-</head>
-
-<body class="flat-blue">
-    <div class="app-container">
-        <div class="row content-container">
             <nav class="navbar navbar-default navbar-fixed-top navbar-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -32,7 +7,8 @@
                             <i class="fa fa-bars icon"></i>
                         </button>
                         <ol class="breadcrumb navbar-breadcrumb">
-                            <li class="active">ㄴㄴ</li>
+                            <li class="active">진학시뮬레이션</li>
+                            <li class="active">수시 시뮬레이션</li>
                         </ol>
                         <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
                             <i class="fa fa-th icon"></i>
@@ -103,9 +79,9 @@
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">내신성적조회</a>
+                                            <li><a href="studentListScore.jsp">내신성적조회</a>
                                             </li>
-                                            <li><a href="#">모의고사성적조회</a>
+                                            <li><a href="studentListMockTestScore.jsp">모의고사성적조회</a>
                                             </li>
                                       
                                         </ul>
@@ -121,9 +97,9 @@
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">수시 시뮬레이션</a>
+                                            <li><a href="studentTotalExamSimulation.jsp">수시 시뮬레이션</a>
                                             </li>
-                                            <li><a href="#">정시 시뮬레이션</a>
+                                            <li><a href="studentMockTestSimulation.jsp">정시 시뮬레이션</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -157,13 +133,13 @@
                                 <div id="component-example" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">교내 공지사항</a>
+                                            <li><a href="studentNoticeBoardList.jsp">교내 공지사항</a>
                                             </li>
-                                            <li><a href="#">가정 통신문 조회</a>
+                                            <li><a href="parentNoticeBoardList.jsp">가정 통신문 조회</a>
                                             </li>
-                                            <li><a href="#">학급 게시판</a>
+                                            <li><a href="studentClassBoardList.jsp">학급 게시판</a>
                                             </li>
-                                            <li><a href="#">일정</a>
+                                            <li><a href="scheduleList.jsp">일정</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -174,41 +150,5 @@
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
-            </div>
-            <!-- 메인 컨텐츠 -->
-            <div class="container-fluid">
-                <div class="side-body padding-top">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                           <p>sssssssssssssssssssssssssssssss</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<!-- 컨텐츠 끝 -->
-        <footer class="app-footer">
-            <div class="wrapper">
-                <span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-            </div>
-        </footer>
-        </div>
-            <!-- Javascript Libs -->
-            <script type="text/javascript" src="lib/js/jquery.min.js"></script>
-            <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="lib/js/Chart.min.js"></script>
-            <script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
-            <script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
-            <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
-            <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
-            <script type="text/javascript" src="lib/js/select2.full.min.js"></script>
-            <script type="text/javascript" src="lib/js/ace/ace.js"></script>
-            <script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
-            <script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
-            <!-- Javascript -->
-            <script type="text/javascript" src="js/app.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-</body>
-
-</html>
+            </div> 
 ​

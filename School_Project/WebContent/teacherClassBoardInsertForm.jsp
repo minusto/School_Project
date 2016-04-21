@@ -24,23 +24,17 @@
 </head>
 
 <body class="flat-blue">
-	<div class="app-container">
-		<div class="row content-container">
-			<jsp:include page="schoolAdminMenu.jsp"/>
+    <div class="app-container">
+        <div class="row content-container">
+            <jsp:include page="teacherMenu.jsp"/>
             <!-- 메인 컨텐츠  -->
     		<div class = "container-fluid">
     			<div class = "side-body">
-    				<jsp:include page="classBoardList.jsp"/>
+    				<jsp:include page="classBoardInsertForm.jsp"/>	
     			</div>
-    		</div>
-      </div>       
-<!--         컨텐츠 끝 -->
-        <footer class="app-footer">
-            <div class="wrapper">
-                <span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-            </div>
-        </footer>
+      		</div>       
         </div>
+    </div>
             <!-- Javascript Libs -->
             <script type="text/javascript" src="lib/js/jquery.min.js"></script>
             <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>

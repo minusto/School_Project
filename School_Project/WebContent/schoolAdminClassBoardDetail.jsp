@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
+ 
 <head>
 <title>빈칸</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,47 +30,16 @@
 <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
 </head>
 
-<body class="flat-blue"> 
+<body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
-			<jsp:include page="schoolAdminMenu.jsp"/>
-			<!-- 메인 컨텐츠 -->
-			<div class="container-fluid">
-				<div class="side-body padding-top" id="content">
-					<div class="row">
-                        <div class="col-xs-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <div class="title">사용자 ID 등록</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <form class="form-horizontal">
-                                        <div class="form-group">
-                                            <label  class="col-sm-2 control-label">사용자 ID</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control"  placeholder="schoolName">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">등급</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" placeholder="schoolAddress">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <input type="submit" class="btn btn-default" value="등록">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</div>
-			</div>
+		<jsp:include page="schoolAdminMenu.jsp"/>
+		<!-- 메인 컨텐츠 -->
+			<div class = "container-fluid">
+    			<div class = "side-body">
+    				<jsp:include page="classBoardDetail.jsp"/>
+    			</div>
+      		</div>     
 		</div>
 	</div>
 	<!-- Javascript Libs -->
