@@ -239,7 +239,7 @@
 			               							<th>작년</th>
 			               							<th>현재</th>
 			               						</tr>
-			               						<!--  -->
+			               						<!-- 데이터 들어갈 곳 -->
 			               						<tr>
 			               							<td id="entranceChangeName">모집인원</td>
 			               							<td>13</td>
