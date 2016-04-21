@@ -54,16 +54,16 @@
 					</a>
 				</li>
 				<li id="liManager">
-					<a href="#" class="loginSelectA">
+					<a class="loginSelectA">
 						<img id="loginSelectManager" alt="관리자로그인" src="img/LoginSelectManager.png">
 					</a>
-				</li>				
+				</li>	
 			</ul>
 		</div>
 		
 		<footer class="app-footer">
             <div class="wrapper">
-                <span class="pull-right"><a id="sysLoginA">시스템 로그인</a></span>
+                <span class="pull-right"><a href="#" id="sysLoginA">시스템 로그인</a></span>
             </div>
         </footer>
 	
