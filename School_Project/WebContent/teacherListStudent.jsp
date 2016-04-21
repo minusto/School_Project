@@ -28,7 +28,11 @@
 		}
     </style>
 </head>
-
+<script type="text/javascript">
+	function fn_detail(){
+	location.href="teacherListStudentDetail.jsp";
+	}
+</script>
 <body class="flat-blue">
     <div class="app-container">
         <div class="row content-container">
@@ -210,8 +214,8 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>ST_01</td>
+											<tr onclick="fn_detail()">
+												<td >ST_01</td>
 												<td>김상완</td>
 												<td>1991-12-14</td>
 												<td>KOSTA_HIGH_01</td>
@@ -222,7 +226,7 @@
 												<td>남자</td>												
 												<td>이과</td>											
 											</tr>
-											<tr>
+											<tr onclick="fn_detail()">
 												<td>ST_02</td>
 												<td>최지웅</td>
 												<td>1990-06-03</td>
@@ -234,7 +238,7 @@
 												<td>여자</td>												
 												<td>이과</td>
 											</tr>
-											<tr>
+											<tr onclick="fn_detail()">
 												<td>ST_03</td>
 												<td>이재승</td>
 												<td>1993-05-08</td>

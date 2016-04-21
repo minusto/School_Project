@@ -79,7 +79,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="side-menu-container">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="teacherMain.jsp">
+                            <a class="navbar-brand" href="studentMain.jsp">
                                 <div class="icon fa fa-book"></div>
                                 <div class="title">학사관리</div>
                             </a>
@@ -208,26 +208,16 @@
 																	</button>
 																	<h4 id="myModalLabel" class="modal-title">성적 조회</h4>
 																</div>
-																<div class="modal-body"> 
+																<div class="modal-body">
 																	<div class="row">
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
 																			<a href="studentListScore.jsp">
 																			<h3>내신 성적 조회</h3>
 																			</a>
 																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
 																			<a href="studentMockTestListScore.jsp">
 																			<h3>모의고사 성적 조회</h3>
-																			</a>
-																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="#">
-																			<h3>&nbsp;</h3>
-																			</a>
-																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="#">
-																			<h3>&nbsp;</h3>
 																			</a>
 																		</div>
 																	</div>
@@ -268,24 +258,14 @@
 																</div>
 																<div class="modal-body"> 
 																	<div class="row">
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
 																			<a href="studentTotalExamSimulation.jsp">
 																			<h3>수시 시뮬레이션</h3>
 																			</a>
 																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
 																			<a href="studentMockTestSimulation.jsp">
 																			<h3>정시 시뮬레이션</h3>
-																			</a>
-																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="#">
-																			<h3>&nbsp;</h3>
-																			</a>
-																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="#">
-																			<h3>&nbsp;</h3>
 																			</a>
 																		</div>
 																	</div>
@@ -324,26 +304,16 @@
 																	</button>
 																	<h4 id="myModalLabel" class="modal-title">학교생활</h4>
 																</div>
-																<div class="modal-body"> 
+																<div class="modal-body">
 																	<div class="row">
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
 																			<a href="studentListTimetable.jsp">
 																			<h3>시간표 조회</h3>
 																			</a>
 																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
 																			<a href="foodMenuList.jsp">
 																			<h3>식단표 조회</h3>
-																			</a>
-																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="#">
-																			<h3>&nbsp;</h3>
-																			</a>
-																		</div>
-																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="#">
-																			<h3>&nbsp;</h3>
 																			</a>
 																		</div>
 																	</div>
