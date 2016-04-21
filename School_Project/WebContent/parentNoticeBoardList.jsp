@@ -1,26 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>빈칸</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-    <!-- CSS Libs -->
-    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
-    <!-- CSS App -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
-	<link rel="stylesheet" type="text/css" href="css/ghi.css">
+<title>빈칸</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Fonts -->
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'
+	rel='stylesheet' type='text/css'>
+<!-- CSS Libs -->
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
+<!-- CSS App -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+<style type="text/css">
+.headings {
+	background: rgba(52, 73, 94, 0.94);
+	color: white;
+}
+
+tbody tr:hover td {
+	background: rgba(38, 185, 154, 0.07);
+	border-top: 1px solid rgba(38, 185, 154, 0.11);
+	border-bottom: 1px solid rgba(38, 185, 154, 0.11);
+}
+
+tbody tr.selected {
+	background: rgba(38, 185, 154, 0.16);
+}
+
+tbody tr.selected td {
+	border-top: 1px solid rgba(38, 185, 154, 0.40);
+	border-bottom: 1px solid rgba(38, 185, 154, 0.40);
+}
+</style>
 </head>
 
 <body class="flat-blue">
@@ -176,134 +204,107 @@
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
-            </div>           
-            
-            
-<!--			메인 컨텐츠 -->
-            <div class="container-fluid">
-                <div class="side-body padding-top">
-					<div id="compareToHopUniversityTotalExam" class="row">
-	                    <div class="table-responsive col-md-8 col-md-offset-2">
-                    	<h3>목표대학과의 비교</h3>
-	                    	<table id="hopeUniversityTable" class="table table-bordered">
-	                    		<tr>
-	                    			<th>현재 모의고사 평균</th>
-	                    			<th>목표대학</th>
-	                    			<th>목표학과</th>
-	                    			<th>정시 커트라인</th>
-	                    			<th>점수 차이</th>
-	                    		</tr>
-	                    		<tr>
-	                    			<td>2.4</td>
-	                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
-	                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-	                    			<td>1.6</td>
-	                    			<td>0.8</td>
-	                    		</tr>
-	                    	</table>
-	                    </div>
-                    </div>
-                    
-                    <div id="recommendContainer" class="row">
-                    	<div class="col-md-8 col-md-offset-2">
-                    		<h3>추천 대학</h3>
-                    		<div id="recommendUniversityDiv">
-                    			<ul class="list-unstyled list-inline">
-                    				<li id="firstRecommend"><a href="universityEntranceInfo.jsp">
-                    					<img id="SeoulUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-                    					<span id="firstRecommendUniversityName" class="recommendUniversityName">서울대학교</span>
-                    					<span id="firstRecommendMajorName" class="recommendMajorName">국어국문학과</span>
-                    				</a></li>
-                    				<li id="secondRecommend"><a href="#">
-                    					<img id="YonseiUniversityMark" alt="연세대학교마크" src="img/YonseiUniversityMark.jpg">
-                    					<span id="secondRecommendUniversityName" class="recommendUniversityName">연세대학교</span>
-                    					<span id="secondRecommendMajorName" class="recommendMajorName">국어국문학과</span>
-                    				</a></li>
-                    				<li id="thirdRecommend"><a href="#">
-                    					<img id="KoreaUniversityMark" alt="고려대학교마크" src="img/KoreaUniversityMark.jpg">
-                    					<span id="thirdRecommendUniversityName" class="recommendUniversityName">고려대학교</span>
-                    					<span id="thirdRecommendMajorName" class="recommendMajorName">국어국문학과</span>
-                    				</a></li>
-                    			</ul>
-                    		</div>
-                    	</div>
-                    </div>
-                    
+            </div>
+
+
+			<!-- 메인 컨텐츠 -->
+			<div class="container-fluid">
+				<div class="side-body">
 					<div class="row">
-                    	<div class="col-md-8 col-md-offset-2">
-                    		<h3>대학 검색</h3>
-                    		<div>
-                    			<div id="searchUniversity" class="checkbox-round">
-                    				<form id="searchUniversityForm" action="studentTotalExamSimulation.jsp" method="post">
-                    					<input type="checkbox" id="selectUniversityName" name="area">
-                    						<label id="la" for="selectUniversityName">학교이름</label>
-                    					<input type="checkbox" id="selectUniversityMajor" name="area">
-                    						<label id="la" for="selectUniversityMajor">학과이름</label>
-                    					<input type="text" name="searchKey" id="searchKey" size="20"/>
-                    					<input type="submit" value="검색" id="submitButton"/>
-                    				</form>	
-                    			</div>
-                    			<div id="searchUniversityResult" class="row">
-	                    			<div class="table-responsive col-md-12">
-	                    				<table id="searchResultTable" class="table table-bordered table-striped">
-	                    					<tr>
-	                    						<th>학교 이름</th>
-	                    						<th>학과 이름</th>
-	                    						<th>정시 커트라인</th>
-	                    						<th>모집인원</th>
-	                    					</tr>
-	                    					<!-- 검색된리스트가 들어갈 부분 -->
-	                    					<tr>
-	                    						<td>
-	                    							<img class="tableUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-	                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a>
-	                    						</td>
-	                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-	                    						<td>1.6</td>
-	                    						<td>15</td>
-	                    					</tr>
-	                    					<tr>
-	                    						<td>
-	                    							<img class="tableUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-	                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a>
-	                    						</td>
-	                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-	                    						<td>1.6</td>
-	                    						<td>15</td>
-	                    					</tr>
-	                    					<!-- 여기까지 -->
-	                    				</table>
-	                    			</div>
-                    			</div>	
-	                    	</div>
-                    	</div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-<!--         컨텐츠 끝 -->
-        <footer class="app-footer">
-            <div class="wrapper">
-                <span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-            </div>
-        </footer>
-        </div>
-            <!-- Javascript Libs -->
-            <script type="text/javascript" src="lib/js/jquery.min.js"></script>
-            <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="lib/js/Chart.min.js"></script>
-            <script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
-            <script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
-            <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
-            <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
-            <script type="text/javascript" src="lib/js/select2.full.min.js"></script>
-            <script type="text/javascript" src="lib/js/ace/ace.js"></script>
-            <script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
-            <script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
-            <!-- Javascript -->
-            <script type="text/javascript" src="js/app.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
+						<div class="col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+										<div class="title">가정통신문</div>
+									</div>
+								</div>
+
+								<div class="card-body table-responsive">
+									<!-- Table -->
+									<table class="table table-striped">
+										<thead>
+											<tr class="headings">
+												<th>번호</th>
+												<th>제목</th>
+												<th>글쓴이</th>
+												<th>날짜</th>
+												<th>회신여부</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>4</td>
+												<td><a href="parentNoticeDetail.jsp">가정통신문4</a></td>
+												<td>교사</td>
+												<td>2016-05-15</td>
+												<td>N</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td><a href="parentNoticeDetail.jsp">가정통신문3</a></td>
+												<td>교사</td>
+												<td>2016-05-14</td>
+												<td>Y</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td><a href="parentNoticeDetail.jsp">가정통신문2</a></td>
+												<td>교사</td>
+												<td>2016-05-10</td>
+												<td>Y</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td><a href="parentNoticeDetail.jsp">가정통신문1</a></td>
+												<td>교사</td>
+												<td>2016-05-05</td>
+												<td>Y</td>
+											</tr>
+
+										</tbody> 
+									</table>
+									<!--페이지 -->
+ 
+									<!-- 검색 -->
+									<form action="" method="post" class="pull-right">
+										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
+										<label> 제목</label>
+										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
+										<label> 작성자</label>
+										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
+										<input type="hidden" name="temp" value="temp" >
+										<input class="btn btn-default" type="submit" value="검색">
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--         컨텐츠 끝 -->
+		<footer class="app-footer">
+			<div class="wrapper">
+				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
+			</div>
+		</footer>
+	</div>
+	<!-- Javascript Libs -->
+	<script type="text/javascript" src="lib/js/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/js/Chart.min.js"></script>
+	<script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
+	<script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
+	<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/js/select2.full.min.js"></script>
+	<script type="text/javascript" src="lib/js/ace/ace.js"></script>
+	<script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
+	<script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@
 </head>
 
 <body class="flat-blue">
-    <div class="app-container">
+   <div class="app-container">
         <div class="row content-container">
             <nav class="navbar navbar-default navbar-fixed-top navbar-top">
                 <div class="container-fluid">
@@ -32,7 +32,8 @@
                             <i class="fa fa-bars icon"></i>
                         </button>
                         <ol class="breadcrumb navbar-breadcrumb">
-                            <li class="active">Dashboard</li>
+                            <li class="active">진학시뮬레이션</li>
+                            <li class="active">수시 시뮬레이션</li>
                         </ol>
                         <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
                             <i class="fa fa-th icon"></i>
@@ -62,8 +63,8 @@
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">이용갑</h4>
-                                        <p>이용갑@이용갑.com</p>
+                                        <h4 class="username">학생</h4>
+                                        <p>학생@.com</p>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
                                             <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button>
@@ -79,7 +80,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="side-menu-container">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="studentMain.jsp">
+                            <a class="navbar-brand" href="teacherMain.jsp">
                                 <div class="icon fa fa-book"></div>
                                 <div class="title">학사관리</div>
                             </a>
@@ -97,25 +98,27 @@
                             -->
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-element">
-                                    <span class="icon fa fa-desktop"></span><span class="title">성적 조회</span>
+                                    <span class="icon fa fa-desktop"></span><span class="title">성적조회</span>
                                 </a>
                                 <!-- Dropdown level 1 -->
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="studentListScore.jsp">내신 성적 조회</a>
+                                            <li><a href="studentListScore.jsp">내신성적조회</a>
                                             </li>
-                                            <li><a href="studentMockTestListScore.jsp">모의고사 성적 조회</a>
+                                            <li><a href="studentListMockTestScore.jsp">모의고사성적조회</a>
                                             </li>
+                                      
                                         </ul>
                                     </div>
                                 </div>
                             </li>
+                       
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-table">
-                                    <span class="icon fa fa-table"></span><span class="title">진학 시뮬레이션</span>
+                                    <span class="icon fa fa-table"></span><span class="title">진학시뮬레이션</span>
                                 </a>
-                                <!-- Dropdown level 1 -->
+                                
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -126,7 +129,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </li>
+                            </li>    
+                          
+                            
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-form">
                                     <span class="icon fa fa-file-text-o"></span><span class="title">학교생활</span>
@@ -135,10 +140,11 @@
                                 <div id="dropdown-form" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-											<li><a href="studentListTimetable.jsp">시간표 조회</a>
+											<li><a href="#">시간표 조회</a>
 											</li>
-											<li><a href="foodMenuList.jsp">식단표 조회</a>
+											<li><a href="#">식단표 조회</a>
 											</li>
+											
 										</ul>
                                     </div>
                                 </div>
@@ -154,11 +160,11 @@
                                         <ul class="nav navbar-nav">
                                             <li><a href="noticeBoardList.jsp">교내 공지사항</a>
                                             </li>
-                                            <li><a href="studentListNotice.jsp">가정 통신문 조회</a>
+                                            <li><a href="parentNoticeBoardList.jsp">가정 통신문 조회</a>
                                             </li>
                                             <li><a href="classBoardList.jsp">학급 게시판</a>
                                             </li>
-                                            <li><a href="scheduleList.jsp">일 정</a>
+                                            <li><a href="scheduleList.jsp">일정</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -169,7 +175,10 @@
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
-            </div>
+            </div>            
+            
+            
+            
             <!-- 메인 컨텐츠  -->
     		<div class = "container-fluid">
     			<div class = "side-body">
