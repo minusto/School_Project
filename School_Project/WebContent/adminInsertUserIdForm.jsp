@@ -7,31 +7,30 @@
 <title>빈칸</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Fonts -->
-
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'rel='stylesheet' type='text/css'>
-<!-- CSS Libs -->
-
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'
 	rel='stylesheet' type='text/css'>
-<!-- CSS Libs -->   
+<!-- CSS Libs -->
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/bootstrap-switch.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
 <!-- CSS App -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
 </head>
 
-<body class="flat-blue">
+<body class="flat-blue"> 
 	<div class="app-container">
 		<div class="row content-container">
 			<nav class="navbar navbar-default navbar-fixed-top navbar-top">
@@ -41,8 +40,8 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
-							<li><a href="schoolAdminMain.jsp">학급게시판</a></li>
-							<li class="active">학급게시판 상세보기</li>
+						<li><a href="schoolAdminMain.jsp">학교관리</a></li>
+							<li class="active">사용자 ID 등록</li>
 						</ol>
 						<button type="button"
 							class="navbar-right-expand-toggle pull-right visible-xs">
@@ -54,8 +53,9 @@
 							class="navbar-right-expand-toggle pull-right visible-xs">
 							<i class="fa fa-times icon"></i>
 						</button>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"data-toggle="dropdown" role="button" aria-expanded="false">
-						<i class="fa fa-comments-o"></i></a>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false"><i
+								class="fa fa-comments-o"></i></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="title">Notification <span
 									class="badge pull-right">0</span>
@@ -112,6 +112,9 @@
 										<ul class="nav navbar-nav">
 											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
 											<li><a href="schoolList.jsp">학교목록</a></li>
+											<li><a href="adminInsertUserIdForm.jsp">사용자ID 등록</a></li>
+											<li><a href="userIdList.jsp">사용자ID 목록</a></li>
+
 										</ul>
 									</div>
 								</div></li>
@@ -134,8 +137,9 @@
 								<div id="dropdown-form" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="noticeBoard.jsp">공지사항</a></li>
+											<li><a href="noticeBoardList.jsp">공지사항</a></li>
 											<li><a href="scheduleList.jsp">학사일정</a></li>
+											<li><a href="classBoardList.jsp">학급게시판</a></li>
 										</ul>
 									</div>
 								</div></li>
@@ -154,40 +158,29 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <div class="title">학급게시판 상세보기</div>
+                                        <div class="title">사용자 ID 등록</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <a href="#" class="btn btn-sq-xs btn-primary">
-              									<i class="fa fa-user fa-1x"></i><br/></a>&nbsp;&nbsp;&nbsp; 작성자ID
-              								             									
-           							<div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">제목</h3>
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label  class="col-sm-2 control-label">사용자 ID</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control"  placeholder="schoolName">
                                             </div>
-                                            <div class="panel-body">
-                                                		내용
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">등급</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" placeholder="schoolAddress">
                                             </div>
-                                                                                  
                                         </div>
-                                         <strong>조회수 :</strong><br><br><br><br>
-                                         <div class="sub-title">댓글리스트</div>
-                                         <div class="panel-title">
-                                                		댓글내용
-                                            </div><br><br><br><br>
-                                         
-                                         
-                                          
-											<div class="sub-title">댓글다는공간</div>
-                                    <div>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                    <div><button type="button" class="btn btn-green">댓글쓰기</button></div><br><br><br>
-                                        <div>
-                                        <button type="button" class="btn btn-primary">목록돌아가기</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-primary">수정하기</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-primary">글삭제하기</button>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <input type="submit" class="btn btn-default" value="등록">
+                                            </div>
                                         </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -7,12 +7,17 @@
 <title>빈칸</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Fonts -->
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'rel='stylesheet' type='text/css'>
+<!-- CSS Libs -->
+
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'
 	rel='stylesheet' type='text/css'>
-<!-- CSS Libs -->
+<!-- CSS Libs -->   
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
@@ -36,8 +41,8 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
-						<li><a href="schoolAdminMain.jsp">학교관리</a></li>
-							<li class="active">학교등록</li>
+							<li><a href="schoolAdminMain.jsp">공지사항</a></li>
+							<li class="active">공지사항 상세보기</li>
 						</ol>
 						<button type="button"
 							class="navbar-right-expand-toggle pull-right visible-xs">
@@ -49,9 +54,8 @@
 							class="navbar-right-expand-toggle pull-right visible-xs">
 							<i class="fa fa-times icon"></i>
 						</button>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false"><i
-								class="fa fa-comments-o"></i></a>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"data-toggle="dropdown" role="button" aria-expanded="false">
+						<i class="fa fa-comments-o"></i></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="title">Notification <span
 									class="badge pull-right">0</span>
@@ -108,7 +112,6 @@
 										<ul class="nav navbar-nav">
 											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
 											<li><a href="schoolList.jsp">학교목록</a></li>
-
 										</ul>
 									</div>
 								</div></li>
@@ -131,9 +134,8 @@
 								<div id="dropdown-form" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="noticeBoardList.jsp">공지사항</a></li>
+											<li><a href="noticeBoard.jsp">공지사항</a></li>
 											<li><a href="scheduleList.jsp">학사일정</a></li>
-											<li><a href="classBoardList.jsp">학급게시판</a></li>
 										</ul>
 									</div>
 								</div></li>
@@ -152,35 +154,30 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <div class="title">학교등록</div>
+                                        <div class="title">공지사항 상세보기</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학교명</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolName">
+                                    <a href="#" class="btn btn-sq-xs btn-primary">
+              									<i class="fa fa-user fa-1x"></i><br/></a>&nbsp;&nbsp;&nbsp; 작성자ID
+              								             									
+           							<div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">제목</h3>
                                             </div>
+                                            <div class="panel-body">
+                                            <div>
+                                            <a href="download.jsp?filename=${board.b_fname}">파일 다운로드 링크.jpeg</a>
+                                             </div><br><br>
+                                             		내용   		
+                                            </div>  
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolAddress">
-                                            </div>
+                                         <strong>조회수 :</strong><br><br><br><br>
+                                         <div>
+                                        <button type="button" class="btn btn-primary">목록돌아가기</button>&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-primary">수정하기</button>&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-primary">글삭제하기</button>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolTel">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">등록</button>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>

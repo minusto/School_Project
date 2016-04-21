@@ -14,12 +14,16 @@
 	rel='stylesheet' type='text/css'>
 <!-- CSS Libs -->
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/bootstrap-switch.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css"
+	href="lib/css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
 <!-- CSS App -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -37,7 +41,7 @@
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
 						<li><a href="schoolAdminMain.jsp">학교관리</a></li>
-							<li class="active">학교등록</li>
+							<li class="active">상세페이지</li>
 						</ol>
 						<button type="button"
 							class="navbar-right-expand-toggle pull-right visible-xs">
@@ -145,6 +149,7 @@
 			</div>
 
 			<!-- 메인 컨텐츠 -->
+			
 			<div class="container-fluid">
 				<div class="side-body padding-top" id="content">
 					<div class="row">
@@ -152,39 +157,62 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <div class="title">학교등록</div>
+                                        <div class="title">교내관리자상세페이지</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학교명</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolName">
+                                    <div class="row">
+										<div class="col-sm-1">
+											<a class="thumbnail fancybox" rel="ligthbox"
+												href="http://placehold.it/300x320.png"> <img
+												class="img-responsive" alt=""
+												src="http://placehold.it/320x320" />
+												<div class='text-right'>
+													<small class='text-muted'>Image Title</small>
+												</div> <!-- text-right / end -->
+											</a>
+										</div>									
+										<div class="col-sm-5">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<span class="text-muted">OO고등학교</span>
+												</div>
+												<div class="panel-body">이름</div>
+												<div class="panel-body">전화번호</div>
+												<div class="panel-body">비밀번호</div>
+											
+												<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDefault">
+                                            		수정하기
+                                        		</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modalDefault" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">홍 길 동</h4>
+                                                    </div>
+                                                    <div class="modal-body col-md-8">
+                                                        	<div>이름 <input type="text" class="form-control" id="inputPassword3" placeholder="Name"> </div>
+                                                        	<div>전화번호 <input type="text" class="form-control" id="inputPassword3" placeholder="Tel"> </div>
+                                                        	<div>비밀번호 <input type="text" class="form-control" id="inputPassword3" placeholder="Password"> </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    	
+                                                    	<img class="img-responsive" alt=""src="http://placehold.it/160x160" />
+												<div class='text-right'>
+													<small class='text-muted'>Image Title</small>
+												</div> <!-- text-right / end -->
+											
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                                                        <button type="button" class="btn btn-primary">저장하기</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolAddress">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolTel">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">등록</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+											</div>
+										</div>
+									</div>
 				</div>
 			</div>
 		</div>

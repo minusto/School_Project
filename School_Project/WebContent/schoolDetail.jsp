@@ -40,8 +40,8 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
-						<li><a href="schoolAdminMain.jsp">학교관리</a></li>
-							<li class="active">학교등록</li>
+							<li><a href="schoolAdminMain.jsp">학교 관리</a></li>
+							<li class="active">학교 정보 조회</li>
 						</ol>
 						<button type="button"
 							class="navbar-right-expand-toggle pull-right visible-xs">
@@ -102,8 +102,7 @@
 							</button>
 						</div>
 						<ul class="nav navbar-nav">
-
-							<li class="panel panel-default dropdown"><a
+							<li class="active panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-element"> <span
 									class="icon fa fa-university"></span><span class="title">학교관리</span>
 							</a> <!-- Dropdown level 1 -->
@@ -111,14 +110,16 @@
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
 											<li><a href="adminInsertSchoolForm.jsp">학교등록</a></li>
-											<li><a href="schoolList.jsp">학교목록</a></li>
-
+											<li><a href="schoolDetail.jsp">학교 정보 조회</a></li>
+											<li><a href="adminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
+											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>										
 										</ul>
 									</div>
 								</div></li>
+
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-table"> <span
-									class="icon fa fa-user"></span><span class="title">교사관리</span>
+									class="icon fa fa-table"></span><span class="title">교사관리</span>
 							</a> <!-- Dropdown level 1 -->
 								<div id="dropdown-table" class="panel-collapse collapse">
 									<div class="panel-body">
@@ -128,85 +129,91 @@
 										</ul>
 									</div>
 								</div></li>
+
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-form"> <span
 									class="icon fa fa-file-text-o"></span><span class="title">게시판관리</span>
-							</a>
+							</a> <!-- Dropdown level 1 -->
 								<div id="dropdown-form" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
 											<li><a href="noticeBoardList.jsp">공지사항</a></li>
 											<li><a href="scheduleList.jsp">학사일정</a></li>
-											<li><a href="classBoardList.jsp">학급게시판</a></li>
+											<li><a href="classBoardList.jsp">학급 게시판</a></li>
+
 										</ul>
 									</div>
 								</div></li>
-
 						</ul>
 					</div>
-					<!-- /.navbar-collapse -->
 				</nav>
 			</div>
 
+
+
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
-				<div class="side-body padding-top" id="content">
+				<div class="side-body">
 					<div class="row">
-                        <div class="col-xs-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <div class="title">교내관리자상세페이지</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-										<div class="col-sm-1">
-											<div class="thumbnail">
-												<img class="img-responsive user-photo"
-													src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-											</div>											
-										</div>									
-										<div class="col-sm-5">
-											<div class="panel panel-default">
-												<div class="panel-heading">
-													<span class="text-muted">OO고등학교</span>
-												</div>
-												<div class="panel-body">이름</div>
-												<div class="panel-body">전화번호</div>
-												<div class="panel-body">비밀번호</div>
-												<div class="panel-body">삭제신청여부?(Y/N)</div>
-												<div class="panel-body">
-													<button type="submit" class="btn btn-default">수정하기</button>
-												</div>
-											</div>
-										</div>
+						<div class="col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+										<div class="title">학교 목록</div>
 									</div>
+								</div>
+								<div class="col-sm-2"></div>
+								<div class="card-body table-responsive col-sm-8">
+									<!-- Table -->
+									<table class="table table-striped">
+										<tr height="30">
+											<th width="150">학교아이디</th>
+											<td width="150">123123</td>
+										</tr>
+										
+										<tr height="30">
+											<th width="150">학교이름</th>
+											<td width="150">11</td>
+										</tr>
+										<tr height="30">
+											<th width="150">주소</th>
+											<td width="150">서울시 가산</td>
+										</tr>
+										<tr height="30">
+											<th width="150">작성일</th>
+											<td width="150"> 02-444-4444</td>
+										</tr>
+									</table>
+									<a href="#" class="pull-right" ><button type="button" class="btn btn-primary">정보수정</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<!--         컨텐츠 끝 -->
+			<footer class="app-footer">
+				<div class="wrapper">
+					<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
+				</div>
+			</footer>
 		</div>
-		<!--컨텐츠 끝 -->
-		<footer class="app-footer">
-			<div class="wrapper">
-				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-			</div>
-		</footer>
-	</div>
-	<!-- Javascript Libs -->
-	<script type="text/javascript" src="lib/js/jquery.min.js"></script>
-	<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib/js/Chart.min.js"></script>
-	<script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
-	<script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
-	<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib/js/select2.full.min.js"></script>
-	<script type="text/javascript" src="lib/js/ace/ace.js"></script>
-	<script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
-	<script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
-	<!-- Javascript -->
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+		<!-- Javascript Libs -->
+		<script type="text/javascript" src="lib/js/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/js/Chart.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript"
+			src="lib/js/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/js/select2.full.min.js"></script>
+		<script type="text/javascript" src="lib/js/ace/ace.js"></script>
+		<script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
+		<script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>

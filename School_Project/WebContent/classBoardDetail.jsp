@@ -7,23 +7,24 @@
 <title>빈칸</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Fonts -->
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'rel='stylesheet' type='text/css'>
+<!-- CSS Libs -->
+
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400'
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'
 	rel='stylesheet' type='text/css'>
-<!-- CSS Libs -->
+<!-- CSS Libs -->   
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css"
-	href="lib/css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
 <!-- CSS App -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -40,8 +41,8 @@
 							<i class="fa fa-bars icon"></i>
 						</button>
 						<ol class="breadcrumb navbar-breadcrumb">
-						<li>학교 관리</li>
-							<li class="active">학교목록</li>
+							<li><a href="schoolAdminMain.jsp">학급게시판</a></li>
+							<li class="active">학급게시판 상세보기</li>
 						</ol>
 						<button type="button"
 							class="navbar-right-expand-toggle pull-right visible-xs">
@@ -53,9 +54,8 @@
 							class="navbar-right-expand-toggle pull-right visible-xs">
 							<i class="fa fa-times icon"></i>
 						</button>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false"><i
-								class="fa fa-comments-o"></i></a>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"data-toggle="dropdown" role="button" aria-expanded="false">
+						<i class="fa fa-comments-o"></i></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="title">Notification <span
 									class="badge pull-right">0</span>
@@ -102,7 +102,8 @@
 							</button>
 						</div>
 						<ul class="nav navbar-nav">
-							<li class="active panel panel-default dropdown"><a
+
+							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-element"> <span
 									class="icon fa fa-university"></span><span class="title">학교관리</span>
 							</a> <!-- Dropdown level 1 -->
@@ -114,10 +115,9 @@
 										</ul>
 									</div>
 								</div></li>
-								
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-table"> <span
-									class="icon fa fa-table"></span><span class="title">교사관리</span>
+									class="icon fa fa-user"></span><span class="title">교사관리</span>
 							</a> <!-- Dropdown level 1 -->
 								<div id="dropdown-table" class="panel-collapse collapse">
 									<div class="panel-body">
@@ -127,97 +127,78 @@
 										</ul>
 									</div>
 								</div></li>
-								
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-form"> <span
 									class="icon fa fa-file-text-o"></span><span class="title">게시판관리</span>
-							</a> <!-- Dropdown level 1 -->
+							</a>
 								<div id="dropdown-form" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="noticeBoardList.jsp">공지사항</a></li>
+											<li><a href="noticeBoard.jsp">공지사항</a></li>
 											<li><a href="scheduleList.jsp">학사일정</a></li>
-											<li><a href="classBoardList.jsp">학급 게시판</a></li>
-											
 										</ul>
 									</div>
 								</div></li>
+
 						</ul>
 					</div>
+					<!-- /.navbar-collapse -->
 				</nav>
 			</div>
 
-
-
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
-				<div class="side-body">
+				<div class="side-body padding-top" id="content">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">
-										<div class="title">학교 목록</div>
-									</div>
-								</div>
-								<div class="card-body table-responsive">
-									<!-- Table -->
-									<table class="table table-striped">
-										<thead>
-											<tr class="headings">
-												<th>학교ID</th>
-												<th>학교명</th>
-												<th>주소</th>
-												<th>전화번호</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>GD001</td>
-												<td><a href="#">광동고등학교</a></td>
-												<td>광주 광역시 신길동 123-123</td>
-												<td>444-4444</td>
-											</tr>
-											<tr>
-												<td>YG001</td>
-												<td><a href="#">왕왕고등학교</a></td>
-												<td>함경북도 평양시  123-123</td>
-												<td>444-4444</td>
-											</tr>
-											<tr>
-												<td>YSD001</td>
-												<td><a href="#">입생고등학교</a></td>
-												<td>미국 미국 123-123</td>
-												<td>444-4444</td>
-											</tr>
-										
-
-										</tbody> 
-									</table>
- 									
-									<!--페이지 -->
-									
-									
- 									
- 									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
- 									<br><br>
-									<!-- 검색 -->
-									<form action="" method="post" class="pull-right">
-										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
-										<label> 제목</label>
-										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
-										<label> 작성자</label>
-										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
-										<input type="hidden" name="temp" value="temp" >
-										<input class="btn btn-default" type="submit" value="검색">
-								</form><br><br>
-							</div>
-						</div>
-					</div>
+                        <div class="col-xs-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="title">학급게시판 상세보기</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-sq-xs btn-primary">
+              									<i class="fa fa-user fa-1x"></i><br/></a>&nbsp;&nbsp;&nbsp; 작성자ID
+              								             									
+           							<div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">제목</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                            <div>
+                                            <a href="download.jsp?filename=${board.b_fname}">파일 다운로드 링크.jpeg</a>
+                                             </div><br><br>
+                                                		내용
+                                            </div>
+                                                                                  
+                                        </div>
+                                         <strong>조회수 :</strong><br><br><br><br>
+                                         <div class="sub-title">댓글리스트</div>
+                                         <div class="panel-title">
+                                                		댓글내용
+                                            </div><br><br><br><br>
+                                         
+                                         
+                                          
+											<div class="sub-title">댓글다는공간</div>
+                                    <div>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div><button type="button" class="btn btn-green">댓글쓰기</button></div><br><br><br>
+                                        <div>
+                                        <button type="button" class="btn btn-primary">목록돌아가기</button>&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-primary">수정하기</button>&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-primary">글삭제하기</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
-		<!--         컨텐츠 끝 -->
+		<!--컨텐츠 끝 -->
 		<footer class="app-footer">
 			<div class="wrapper">
 				<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
