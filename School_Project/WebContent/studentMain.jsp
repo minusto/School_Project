@@ -163,12 +163,12 @@
 																<div class="modal-body">
 																	<div class="row">
 																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
-																			<a href="studentListTimetable.jsp">
+																			<a href="studentTimetable.jsp">
 																			<h3>시간표 조회</h3>
 																			</a>
 																		</div>
 																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
-																			<a href="foodMenuList.jsp">
+																			<a href="#">
 																			<h3>식단표 조회</h3>
 																			</a>
 																		</div>
@@ -216,7 +216,7 @@
 																			</a>
 																		</div>
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="studentListNotice.jsp">
+																			<a href="parentNoticeBoardList.jsp">
 																			<h3>가정 통신문 조회</h3>
 																			</a>
 																		</div>
