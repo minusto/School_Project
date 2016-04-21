@@ -109,7 +109,7 @@
                                           	  	</div>
                                         	</div>
 										</div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3">   
                                             <div class="pricing-table blue">
                                                 <div class="pt-header">
                                                     <div class="plan-pricing">
