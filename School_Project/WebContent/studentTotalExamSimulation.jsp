@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>빈칸</title>
+    <title>수시 시뮬레이션</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>

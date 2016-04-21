@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>빈칸</title>
+    <title>대학 세부</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
