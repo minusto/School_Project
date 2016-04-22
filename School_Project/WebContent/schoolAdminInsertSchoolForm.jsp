@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
-	request.setAttribute("path", "학교관리> 학교 등록");
-%>
 <!DOCTYPE html>
 <html>
 
@@ -45,23 +42,29 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" action="insertOk.jsp">
+                                    <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">학교ID</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" name="schoolId" placeholder="schoolId">
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학교명</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolName">
+                                                <input type="text" class="form-control" name="schoolName" placeholder="schoolName">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolAddress">
+                                                <input type="text" class="form-control" name="schoolAddress" placeholder="schoolAddress">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="schoolTel">
+                                                <input type="text" class="form-control" name="schoolTel" placeholder="schoolTel">
                                             </div>
                                         </div>
                                         <div class="form-group">

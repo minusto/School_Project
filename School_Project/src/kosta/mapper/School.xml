@@ -50,6 +50,14 @@
 		WHERE p.memberId = st.memberId
 			AND st.memberId = m.memberId
 	</select>
+	<!-- 액터 : 교내관리자 => 학교등록  -->
+	<insert id="insertSchool" parameterType="school">
+		INSERT INTO school(
+		schoolId , schoolName , schoolAddress , schoolTel
+		)VALUES(
+		#{schoolId}, #{schoolName} , #{schoolAddress} , #{schoolTel}
+		)
+	</insert>
 	
 	
 	

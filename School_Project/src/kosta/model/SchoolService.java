@@ -2,6 +2,8 @@ package kosta.model;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class SchoolService {
 	public static SchoolDao dao;
 	public static SchoolService service=new SchoolService();
@@ -32,6 +34,18 @@ public class SchoolService {
 	}
 	public List<ParentList> parentListService(){
 		return dao.parentList();
+	}
+	
+	
+	//액터 : 교내관리자 ==> 학교등록
+	public int insertSchool(HttpServletRequest request){
+		School school = new School();
+		school.setSchoolId(request.getParameter("schoolId"));
+		school.setSchoolName(request.getParameter("schoolName"));
+		school.setSchoolAddress(request.getParameter("schoolAddress"));
+		school.setSchoolTel(request.getParameter("schoolTel"));
+		
+		return dao.insertSchool(school);
 	}
 	
 }

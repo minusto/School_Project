@@ -125,5 +125,24 @@ public class SchoolDao {
 		}
 		return list;
 	}
+	//액터 : 교내관리자 => 학교등록
+	public int insertSchool(School school){
+		int re = -1;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(Mapper.class).insertSchool(school);
+			if(re > 0){
+				sqlSession.commit();
+			}else{
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return re;
+	}
 
 }
