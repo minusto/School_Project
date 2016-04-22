@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-	request.setAttribute("path", "관리자");
-%>
 <html>
  
 <head>
@@ -17,7 +14,7 @@
 	rel='stylesheet' type='text/css'>
 <!-- CSS Libs -->
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 	href="lib/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
 <link rel="stylesheet" type="text/css"

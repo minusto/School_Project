@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+	request.setAttribute("path", "학생 관리 > 내신 성적 입력");
+%>
 <html>
 
 <head>
@@ -34,7 +37,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">
-										<div class="title">내신성적 입력</div>
+										<div class="title">내신 성적 입력</div>
 									</div>
 								</div>
 								<div class="card-body table-responsive">
