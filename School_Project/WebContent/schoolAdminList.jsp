@@ -1,7 +1,15 @@
+<%@page import="kosta.model.AdminList"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
-	request.setAttribute("path", "시스템> 학교관리자 목록");
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	SchoolService service=SchoolService.getInstance();
+	List<AdminList> list=service.adminListService();
+	request.setAttribute("list", list);
 %>
 <!DOCTYPE html>
 <html>
@@ -36,7 +44,7 @@
 <body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
-			<jsp:include page="systemAdminMenu.jsp"/>
+			<jsp:include page="schoolAdminMenu.jsp"/>
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body">
@@ -60,30 +68,23 @@
 												<th>만료일</th>
 											</tr>
 										</thead>
+										<c:forEach var="list" items="${list }">
+											
 										<tbody>
 											<tr>
-												<td><a href="#">YGAD001</a></td>
-												<td>01000000000</td>
-												<td>no</td>
-												<td>2016-04-06</td>
-												<td>2036-04-06</td>
+												<td>${list.schoolAdminId }</td>
+												<td>${list.schoolAdminTel }</td>
+												<td>${list.deleteRequest }</td>
+												<td>
+												
+												<fmt:formatDate value="${list.schoolRegistDate }" pattern="yyyy-MM-dd"/>
+												</td>
+												<td>
+												<fmt:formatDate value="${list.schoolEndDate }" pattern="yyyy-MM-dd"/>
+												</td>
 											</tr>
-											<tr>
-												<td><a href="#">YGAD001</a></td>
-												<td>01000000000</td>
-												<td>no</td>
-												<td>2016-04-06</td>
-												<td>2036-04-06</td>
-											</tr>
-											<tr>
-												<td><a href="#">YGAD001</a></td>
-												<td>01000000000</td>
-												<td>no</td>
-												<td>2016-04-06</td>
-												<td>2036-04-06</td>
-											</tr>
-											
 										</tbody> 
+										</c:forEach>
 									</table>
  									
 									<!--페이지 -->

@@ -10,6 +10,8 @@ public class SchoolService {
 		dao=SchoolDao.getInstance();
 		return service;
 	}
+	
+	//액터 : 시스템관리자 ==> 학교관리자 등록
 	public int insertSchoolAdminService(SchoolAdmin schoolAdmin){
 		return dao.insertSchoolAdmin(schoolAdmin);
 	}
@@ -19,6 +21,11 @@ public class SchoolService {
 	
 	public List<StudentList> studentListService(){
 		return dao.studentList();
+	}
+	
+	//액터 : 시스템관리자 ==> 학교관리자 리스트 출력
+	public List<AdminList> adminListService(){
+		return dao.adminList();
 	}
 	
 }

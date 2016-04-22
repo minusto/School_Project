@@ -4,7 +4,7 @@
 
 <mapper namespace="kosta.mapper.Mapper">
 	<cache />
-	<!-- 글등록 -->
+	<!-- 시스템관리자 ==> 학교관리자 등록 -->
 	<insert id="insertSchoolAdmin" parameterType="SchoolAdmin">
 		insert into SchoolAdmin(
 			SchoolAdminId,SchoolAdminPassword,SchoolAdminName,SchoolAdminTel,DeleteRequest
@@ -27,6 +27,13 @@
 		FROM member m, student st
 		WHERE m.memberid = st.memberid
 		ORDER BY m.memberid
+	</select>
+	
+	<!-- 액터 : 시스템관리자 ==> 학교관리자 리스트 출력 schoolAdminList.jsp -->
+	<select id="adminList" resultType="AdminList">
+		select a.schooladminid,a.schooladmintel,a.deleterequest,b.schoolregistdate,b.schoolenddate
+		from schooladmin a,schooladminregist b
+		where a.schooladminid=b.schooladminid
 	</select>
 	
 	

@@ -78,4 +78,17 @@ public class SchoolDao {
 		return list;
 	}
 
+	//액터 : 시스템관리자 ==> 학교관리자리스트 출력
+	public List<AdminList> adminList(){
+		SqlSession session=getSqlSessionFactory().openSession();
+		List<AdminList> list=null;
+		try {
+			list=session.getMapper(Mapper.class).adminList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
 }

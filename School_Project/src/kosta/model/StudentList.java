@@ -1,11 +1,12 @@
 package kosta.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class StudentList implements Serializable {
 	private String memberId;
 	private String memberName;
-	private String memberBirthday;
+	private Timestamp memberBirthday;
 	private String schoolId;
 	private String studentCode;
 	private int studentGrade;
@@ -30,11 +31,11 @@ public class StudentList implements Serializable {
 		this.memberName = memberName;
 	}
 
-	public String getMemberBirthday() {
+	public Timestamp getMemberBirthday() {
 		return memberBirthday;
 	}
 
-	public void setMemberBirthday(String memberBirthday) {
+	public void setMemberBirthday(Timestamp memberBirthday) {
 		this.memberBirthday = memberBirthday;
 	}
 
