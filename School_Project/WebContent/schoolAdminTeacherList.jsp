@@ -33,7 +33,7 @@
             <!-- 메인 컨텐츠  -->
     		<div class = "container-fluid">
     			<div class = "side-body">
-    				<jsp:include page="noticeBoardList.jsp"/>
+    				<jsp:include page="teacherList.jsp"/>
     			</div>
     		</div>
       	</div>       
