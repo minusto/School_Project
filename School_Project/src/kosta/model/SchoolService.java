@@ -22,10 +22,16 @@ public class SchoolService {
 	public List<StudentList> studentListService(){
 		return dao.studentList();
 	}
+	public int insertParentService(Parent parent){
+		return dao.insertParent(parent);
+	}
 	
 	//액터 : 시스템관리자 ==> 학교관리자 리스트 출력
 	public List<AdminList> adminListService(){
 		return dao.adminList();
+	}
+	public List<ParentList> parentListService(){
+		return dao.parentList();
 	}
 	
 }

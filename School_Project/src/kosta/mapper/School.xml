@@ -28,12 +28,27 @@
 		WHERE m.memberid = st.memberid
 		ORDER BY m.memberid
 	</select>
-	
+
+	<!-- 학부모 정보 입력 -->
+	<update id="insertParent" parameterType="Parent">
+		UPDATE parent SET 
+			parentName = #{parentName}, familyRelation =  #{familyRelation}, memberId = #{memberId}
+		WHERE parentId = #{parentId}
+	</update>
+
 	<!-- 액터 : 시스템관리자 ==> 학교관리자 리스트 출력 schoolAdminList.jsp -->
 	<select id="adminList" resultType="AdminList">
 		select a.schooladminid,a.schooladmintel,a.deleterequest,b.schoolregistdate,b.schoolenddate
 		from schooladmin a,schooladminregist b
 		where a.schooladminid=b.schooladminid
+	</select>
+
+	<!-- 액터 : 교사 => 학부모리스트 출력 -->
+	<select id="parentList" resultType="ParentList">
+		SELECT p.parentId, p.parentName, p.familyRelation, st.memberId, m.memberName
+		FROM parent p, student st, member m
+		WHERE p.memberId = st.memberId
+			AND st.memberId = m.memberId
 	</select>
 	
 	
