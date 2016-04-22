@@ -35,11 +35,11 @@
                     <div class="row">
                         <div class="col-xs-12">
                            <div class="card-body">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" action="logic/insertParentOk.jsp" method="POST">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">학부모ID</label>
                                             <div class="col-sm-5">
-                                            	<input type="text" class="form-control" id="inputPassword3" placeholder="parentID">
+                                            	<input type="text" class="form-control" id="parentId" name="parentId" placeholder="parentID">
                                                 <!-- Button trigger modal -->
                                         		<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary" >
                                             		학부모ID 찾기
@@ -98,24 +98,24 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="Name">
+                                                <input type="text" class="form-control" id="parentName"  name="parentName" placeholder="Name">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">가족관계</label>
                                             <div class="col-sm-5">
-                                                <input type="date" class="form-control" id="inputPassword3" placeholder="ex)'부' 혹은 '모'">
+                                                <input type="text" class="form-control" id="familyRelation" name="familyRelation" placeholder="ex)'부' 혹은 '모'">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학생ID</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" placeholder="StudentID">
+                                                <input type="text" class="form-control" id="memberId" name="memberId" placeholder="StudentID">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">등록</button>
+                                                <input type="submit" class="btn btn-default" value="등록">
                                             </div>
                                         </div>
                                     </form>

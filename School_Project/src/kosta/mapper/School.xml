@@ -29,6 +29,13 @@
 		ORDER BY m.memberid
 	</select>
 	
+	<!-- 학부모 정보 입력 -->
+	<update id="insertParent" parameterType="Parent">
+		UPDATE parent SET 
+			parentName = #{parentName}, familyRelation =  #{familyRelation}, memberId = #{memberId}
+		WHERE parentId = #{parentId}
+	</update>
+	
 	
 	
 </mapper>

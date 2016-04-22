@@ -78,4 +78,21 @@ public class SchoolDao {
 		return list;
 	}
 
+	public int insertParent(Parent parent) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).insertParent(parent);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+		}
 }

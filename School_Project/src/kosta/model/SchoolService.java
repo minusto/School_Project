@@ -20,5 +20,8 @@ public class SchoolService {
 	public List<StudentList> studentListService(){
 		return dao.studentList();
 	}
+	public int insertParentService(Parent parent){
+		return dao.insertParent(parent);
+	}
 	
 }
