@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%
-	request.setAttribute("path", "게시판관리> 게시판 목록");
+	request.setAttribute("path", "교사관리>교사 목록 ");
 %>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -33,17 +33,11 @@
             <!-- 메인 컨텐츠  -->
     		<div class = "container-fluid">
     			<div class = "side-body">
-    				<jsp:include page="classBoardList.jsp"/>
+    				<jsp:include page="noticeBoardList.jsp"/>
     			</div>
     		</div>
-      </div>       
-<!--         컨텐츠 끝 -->
-        <footer class="app-footer">
-            <div class="wrapper">
-                <span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-            </div>
-        </footer>
-        </div>
+      	</div>       
+     </div>
             <!-- Javascript Libs -->
             <script type="text/javascript" src="lib/js/jquery.min.js"></script>
             <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>

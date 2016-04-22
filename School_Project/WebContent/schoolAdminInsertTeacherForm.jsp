@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+		<%
+	request.setAttribute("path", "교사관리> 교사 등록");
+%>
 <!DOCTYPE html>
 <html>
 

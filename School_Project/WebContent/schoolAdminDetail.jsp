@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+	request.setAttribute("path", "학교관리자> 상세보기");
+%>
 <html>
 
 <head>
@@ -33,7 +36,7 @@
 <body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
-			<jsp:include page="schoolAdminMenu.jsp"/>
+			<jsp:include page="systemAdminMenu.jsp"/>
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body padding-top" id="content">
