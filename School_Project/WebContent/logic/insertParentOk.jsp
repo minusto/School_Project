@@ -10,6 +10,7 @@
 <%
 	SchoolService service = SchoolService.getInstance();
 	int re = service.insertParentService(Parent);
+	response.sendRedirect("../teacherListParent.jsp");
 %>
 
 <!DOCTYPE html>
