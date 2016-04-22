@@ -144,5 +144,20 @@ public class SchoolDao {
 		}
 		return re;
 	}
+	
+	// 액터 : 시스템관리자 ==> 학교관리자 상세보기
+	public SchoolAdminDetail schoolAdminDetail(String id){
+		SqlSession session=getSqlSessionFactory().openSession();
+		SchoolAdminDetail saDetail=null;
+		try {
+			saDetail=session.getMapper(Mapper.class).schoolAdminDetail(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return saDetail;
+	}
+	
 
 }

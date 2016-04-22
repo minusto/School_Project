@@ -59,6 +59,15 @@
 		)
 	</insert>
 	
-	
+	<!-- 액터 : 시스템관리자 ==> 학교관리자 상세보기 -->
+	<select id="schoolAdminDetail" resultType="SchoolAdminDetail" parameterType="String">
+		SELECT s.schoolname,sa.schooladminid,sa.schooladminname,sa.schooladmintel,
+		sa.deleterequest,sar.schoolregistdate,sar.schoolenddate
+		FROM schooladmin sa,schoolregist sr,school s,schooladminregist sar
+		WHERE sa.schooladminid=sr.schooladminid
+		AND sr.schoolid=s.schoolid
+		AND sa.schooladminid=sar.schooladminid
+		AND sa.schooladminid=#{id}
+	</select>
 	
 </mapper>

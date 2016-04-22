@@ -1,9 +1,17 @@
+<%@page import="kosta.model.SchoolService"%>
+<%@page import="kosta.model.SchoolAdminDetail"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	request.setAttribute("path", "학교관리자> 상세보기");
+	request.setCharacterEncoding("UTF-8");
+	String id=request.getParameter("id");
+	SchoolService service=SchoolService.getInstance();
+	SchoolAdminDetail sad=service.schoolAdminDetailService(id);
+	request.setAttribute("sad", sad);
 %>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -36,7 +44,7 @@
 <body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
-			<jsp:include page="systemAdminMenu.jsp"/>
+			<jsp:include page="schoolAdminMenu.jsp"/>
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body padding-top" id="content">
@@ -50,25 +58,18 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-										<div class="col-sm-1">
-											<a class="thumbnail fancybox" rel="ligthbox"
-												href="http://placehold.it/300x320.png"> <img
-												class="img-responsive" alt=""
-												src="http://placehold.it/320x320" />
-												<div class='text-right'>
-													<small class='text-muted'>Image Title</small>
-												</div> <!-- text-right / end -->
-											</a>
-										</div>									
+												
 										<div class="col-sm-5">
 											<div class="panel panel-default">
 												<div class="panel-heading">
-													<span class="text-muted">OO고등학교</span>
+													<span class="text-muted">${sad.schoolName }</span>
 												</div>
-												<div class="panel-body">이름</div>
-												<div class="panel-body">전화번호</div>
-												<div class="panel-body">비밀번호</div>
-
+												<div class="panel-body">ID : ${sad.schoolAdminId }</div>
+												<div class="panel-body">이름 : ${sad.schoolAdminName }</div>
+												<div class="panel-body">전화번호 : ${sad.schoolAdminTel }</div>
+												<div class="panel-body">삭제신청여부 : ${sad.deleteRequest }</div>
+												<div class="panel-body">등록일 : <fmt:formatDate value="${sad.schoolRegistDate }" pattern="yyyy-MM-dd"/></div>
+												<div class="panel-body">만료일 : <fmt:formatDate value="${(sad.schoolEndDate) }" pattern="yyyy-MM-dd"/></div>
 												<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDefault">
                                             		수정하기
                                         		</button>
@@ -81,9 +82,12 @@
                                                         <h4 class="modal-title" id="myModalLabel">홍 길 동</h4>
                                                     </div>
                                                     <div class="modal-body col-md-8">
+                                                        	<div>ID <input type="text" class="form-control" id="inputPassword3" placeholder="Name"> </div>
                                                         	<div>이름 <input type="text" class="form-control" id="inputPassword3" placeholder="Name"> </div>
                                                         	<div>전화번호 <input type="text" class="form-control" id="inputPassword3" placeholder="Tel"> </div>
-                                                        	<div>비밀번호 <input type="text" class="form-control" id="inputPassword3" placeholder="Password"> </div>
+                                                        	<div>삭제신청여부 <input type="text" class="form-control" id="inputPassword3" placeholder="Tel"> </div>
+                                                        	<div>등록일 <input type="text" class="form-control" id="inputPassword3" placeholder="Password"> </div>
+                                                        	<div>만료일 <input type="text" class="form-control" id="inputPassword3" placeholder="Password"> </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                     	
@@ -131,3 +135,4 @@
 
 </html>
 ​
+	

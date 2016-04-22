@@ -48,4 +48,9 @@ public class SchoolService {
 		return dao.insertSchool(school);
 	}
 	
+	//액터 : 시스템관리자 ==> 학교관리자 상세보기
+	public SchoolAdminDetail schoolAdminDetailService(String id){
+		return dao.schoolAdminDetail(id);
+	}
+	
 }

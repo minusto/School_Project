@@ -12,6 +12,7 @@
       <typeAlias type="kosta.model.ParentList" alias="ParentList"/>
       <typeAlias type="kosta.model.AdminList" alias="AdminList"/>
       <typeAlias type="kosta.model.School" alias="School"/>
+	  <typeAlias type="kosta.model.SchoolAdminDetail" alias="SchoolAdminDetail"/>
 
    </typeAliases>
    

@@ -72,11 +72,10 @@
 											
 										<tbody>
 											<tr>
-												<td>${list.schoolAdminId }</td>
+												<td><a href="schoolAdminDetail.jsp?id=${list.schoolAdminId }">${list.schoolAdminId }</a></td>
 												<td>${list.schoolAdminTel }</td>
 												<td>${list.deleteRequest }</td>
 												<td>
-												
 												<fmt:formatDate value="${list.schoolRegistDate }" pattern="yyyy-MM-dd"/>
 												</td>
 												<td>
