@@ -1,5 +1,7 @@
 package kosta.model;
 
+import java.util.List;
+
 public class SchoolService {
 	public static SchoolDao dao;
 	public static SchoolService service=new SchoolService();
@@ -13,6 +15,10 @@ public class SchoolService {
 	}
 	public int insertSchoolAdminRegistService(SchoolAdminRegist schoolAdminRegist){
 		return dao.insertSchoolAdminRegist(schoolAdminRegist);
+	}
+	
+	public List<StudentList> studentListService(){
+		return dao.studentList();
 	}
 	
 }

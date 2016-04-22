@@ -17,9 +17,17 @@
 		insert into SchoolAdminRegist(
 			SystemAdminId,SchoolAdminId,SchoolRegistDate,SchoolEndDate
 		)values(
-			#{systemAdminId},#{schoolAdminId},sysdate,#{schoolEndDate}
+			#{systemAdminId},#{schoolAdminId},SYSDATE,#{schoolEndDate}
 		)
 	</insert>
+	
+	<!-- 학생목록 출력 -->
+	<select id="studentList" resultType="StudentList">
+		SELECT m.memberid, m.membername, m.memberbirthday, m.schoolid, st.studentcode, st.studentgrade, st.studentclass, st.studentnum, st.studentgender, st.studentmajor 
+		FROM member m, student st
+		WHERE m.memberid = st.memberid
+		ORDER BY m.memberid
+	</select>
 	
 	
 	
