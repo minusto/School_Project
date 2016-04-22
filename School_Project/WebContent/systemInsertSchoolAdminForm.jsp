@@ -77,24 +77,6 @@
 												</div>
 											</div>
 
-											
-											
-											<div class="control-group">
-											<label class="control-label" for="DeleteRequest">삭제신청여부</label>
-											</div>
-											
-											<div class="radio3 radio-check radio-inline">
-                                            <input type="radio" id="radio4" name="radio2" value="option1" checked="">
-                                            <label for="radio4">
-                                             YES
-                                            </label>
-                                          </div>
-                                          <div class="radio3 radio-check radio-success radio-inline">
-                                            <input type="radio" id="radio5" name="radio2" value="option2">
-                                            <label for="radio5">
-                                              NO
-                                            </label>
-                                          </div>
                                           
                                           <div class="control-group">
 												<label class="control-label" for="SchoolRegiDate">등록일</label>
