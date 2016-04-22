@@ -82,7 +82,7 @@
 											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>
 										</ul>
 									</div>
-								</div></li>
+								</div></li> 
 								
 							<li class="panel panel-default dropdown"><a
 								data-toggle="collapse" href="#dropdown-table"> <span
