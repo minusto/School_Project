@@ -112,4 +112,18 @@ public class SchoolDao {
 		return list;
 	}
 
+	//액터 : 교사 => 학부모리스트 출력
+	public List<ParentList> parentList() {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<ParentList> list = null;
+		try {
+			list = session.getMapper(Mapper.class).parentList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+
 }

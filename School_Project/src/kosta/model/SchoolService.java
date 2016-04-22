@@ -30,5 +30,8 @@ public class SchoolService {
 	public List<AdminList> adminListService(){
 		return dao.adminList();
 	}
+	public List<ParentList> parentListService(){
+		return dao.parentList();
+	}
 	
 }
