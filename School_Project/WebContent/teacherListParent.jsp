@@ -1,7 +1,15 @@
+<%@page import="kosta.model.ParentList"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학부모 관리 > 학부모 정보 열람");
+	SchoolService service = SchoolService.getInstance();
+	List<ParentList> list = service.parentListService();
+	request.setAttribute("list", list);
 %>
 <html>
 
@@ -61,28 +69,16 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>Parent_01</td>
-												<td>홍길동1세</td>
-												<td>부</td>
-												<td>Student_01</td>
-												<td>홍길동2세</td>
-											</tr>
-											<tr>
-												<td>Parent_02</td>
-												<td>홍길똥1세</td>
-												<td>부</td>
-												<td>Student_02</td>
-												<td>홍길똥2세</td>
-											</tr>
-											<tr>
-												<td>Parent_03</td>
-												<td>홍길뜡1세</td>
-												<td>부</td>
-												<td>Student_03</td>
-												<td>홍길뜡2세</td>
-											</tr>
-										</tbody> 
+											<c:forEach var="list" items="${list}">
+												<tr>
+													<td>${list.parentId }</td>
+													<td>${list.parentName }</td>
+													<td>${list.familyRelation }</td>
+													<td>${list.memberId }</td>
+													<td>${list.memberName }</td>
+												</tr>
+											</c:forEach>
+										</tbody>
 									</table>
 									<!--페이지 -->
 									<a href="teacherInsertParentForm.jsp" class="pull-right" ><button class="btn btn-default">학부모 등록</button></a><br><br>
