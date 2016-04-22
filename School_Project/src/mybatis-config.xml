@@ -9,6 +9,8 @@
       <typeAlias type="kosta.model.SchoolAdminRegist" alias="SchoolAdminRegist"/>
       <typeAlias type="kosta.model.StudentList" alias="StudentList"/>
       <typeAlias type="kosta.model.Parent" alias="Parent" />
+      <typeAlias type="kosta.model.AdminList" alias="AdminList"/>
+
       
    </typeAliases>
    

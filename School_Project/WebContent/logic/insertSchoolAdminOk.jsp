@@ -14,6 +14,7 @@
  	SchoolService service=SchoolService.getInstance();
 	int re=service.insertSchoolAdminService(SchoolAdmin);
 	int re2=service.insertSchoolAdminRegistService(SchoolAdminRegist);
+	response.sendRedirect("../schoolAdminList.jsp");
 %>
 <html>
 <head>

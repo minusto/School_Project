@@ -65,6 +65,7 @@ public class SchoolDao {
 		return re;
 	}
 
+	//학생목록 출력
 	public List<StudentList> studentList() {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<StudentList> list = null;
@@ -78,6 +79,7 @@ public class SchoolDao {
 		return list;
 	}
 
+	//교사가 학부모 정보 입력
 	public int insertParent(Parent parent) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = 0;
@@ -95,4 +97,19 @@ public class SchoolDao {
 		}
 		return re;
 		}
+
+	//액터 : 시스템관리자 ==> 학교관리자리스트 출력
+	public List<AdminList> adminList(){
+		SqlSession session=getSqlSessionFactory().openSession();
+		List<AdminList> list=null;
+		try {
+			list=session.getMapper(Mapper.class).adminList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
+
 }
