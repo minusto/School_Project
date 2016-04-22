@@ -5,18 +5,11 @@ import java.sql.Timestamp;
 
 public class SchoolAdmin implements Serializable {
 
-	private String systemAdminId;
 	private String schoolAdminId;
-	private Timestamp schoolRegistDate;
-	private Timestamp schoolEndDate;
-
-	public String getSystemAdminId() {
-		return systemAdminId;
-	}
-
-	public void setSystemAdminId(String systemAdminId) {
-		this.systemAdminId = systemAdminId;
-	}
+	private String schoolAdminPassword;
+	private String schoolAdminName;
+	private String schoolAdminTel;
+	private String deleteRequest;
 
 	public String getSchoolAdminId() {
 		return schoolAdminId;
@@ -26,20 +19,36 @@ public class SchoolAdmin implements Serializable {
 		this.schoolAdminId = schoolAdminId;
 	}
 
-	public Timestamp getSchoolRegistDate() {
-		return schoolRegistDate;
+	public String getSchoolAdminPassword() {
+		return schoolAdminPassword;
 	}
 
-	public void setSchoolRegistDate(Timestamp schoolRegistDate) {
-		this.schoolRegistDate = schoolRegistDate;
+	public void setSchoolAdminPassword(String schoolAdminPassword) {
+		this.schoolAdminPassword = schoolAdminPassword;
 	}
 
-	public Timestamp getSchoolEndDate() {
-		return schoolEndDate;
+	public String getSchoolAdminName() {
+		return schoolAdminName;
 	}
 
-	public void setSchoolEndDate(Timestamp schoolEndDate) {
-		this.schoolEndDate = schoolEndDate;
+	public void setSchoolAdminName(String schoolAdminName) {
+		this.schoolAdminName = schoolAdminName;
+	}
+
+	public String getSchoolAdminTel() {
+		return schoolAdminTel;
+	}
+
+	public void setSchoolAdminTel(String schoolAdminTel) {
+		this.schoolAdminTel = schoolAdminTel;
+	}
+
+	public String getDeleteRequest() {
+		return deleteRequest;
+	}
+
+	public void setDeleteRequest(String deleteRequest) {
+		this.deleteRequest = deleteRequest;
 	}
 
 }
