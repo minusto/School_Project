@@ -8,7 +8,18 @@ public class SchoolAdminRegist implements Serializable {
 	private String systemAdminId;
 	private String schoolAdminId;
 	private Timestamp schoolRegistDate;
-	private Timestamp schoolEndDate;
+	private String schoolEndDate;
+
+	public SchoolAdminRegist(){}
+
+	public SchoolAdminRegist(String systemAdminId, String schoolAdminId, Timestamp schoolRegistDate,
+			String schoolEndDate) {
+		super();
+		this.systemAdminId = systemAdminId;
+		this.schoolAdminId = schoolAdminId;
+		this.schoolRegistDate = schoolRegistDate;
+		this.schoolEndDate = schoolEndDate;
+	}
 
 	public String getSystemAdminId() {
 		return systemAdminId;
@@ -34,11 +45,13 @@ public class SchoolAdminRegist implements Serializable {
 		this.schoolRegistDate = schoolRegistDate;
 	}
 
-	public Timestamp getSchoolEndDate() {
+	public String getSchoolEndDate() {
 		return schoolEndDate;
 	}
 
-	public void setSchoolEndDate(Timestamp schoolEndDate) {
+	public void setSchoolEndDate(String schoolEndDate) {
 		this.schoolEndDate = schoolEndDate;
 	}
+	
+	
 }

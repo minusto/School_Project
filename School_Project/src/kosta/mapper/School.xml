@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kosta.mapper.Mapper">
+	<cache />
+	<!-- 글등록 -->
+	<insert id="insertSchoolAdmin" parameterType="SchoolAdmin">
+		insert into SchoolAdmin(
+			SchoolAdminId,SchoolAdminPassword,SchoolAdminName,SchoolAdminTel,DeleteRequest
+		)
+		values(
+			#{schoolAdminId},'1234',#{schoolAdminName},#{schoolAdminTel},'n'
+		)
+	</insert>
+	<insert id="insertSchoolAdminRegist" parameterType="SchoolAdminRegist">
+		insert into SchoolAdminRegist(
+			SystemAdminId,SchoolAdminId,SchoolRegistDate,SchoolEndDate
+		)values(
+			#{systemAdminId},#{schoolAdminId},SYSDATE,#{schoolEndDate}
+		)
+	</insert>
+	
+	<!-- 학생목록 출력 -->
+	<select id="studentList" resultType="StudentList">
+		SELECT m.memberid, m.membername, m.memberbirthday, m.schoolid, st.studentcode, st.studentgrade, st.studentclass, st.studentnum, st.studentgender, st.studentmajor 
+		FROM member m, student st
+		WHERE m.memberid = st.memberid
+		ORDER BY m.memberid
+	</select>
+	
+	
+	
+</mapper>

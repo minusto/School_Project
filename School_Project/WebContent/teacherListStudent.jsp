@@ -1,8 +1,17 @@
+<%@page import="java.sql.Timestamp"%>
+<%@page import="kosta.model.StudentList"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생관리 > 학생 정보 열람");
-
+	SchoolService service = SchoolService.getInstance();
+	List<StudentList> list = service.studentListService();
+	request.setAttribute("list", list);
 %>
 <html>
 <head>
@@ -70,42 +79,20 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr onclick="fn_detail()">
-												<td >ST_01</td>
-												<td>김상완</td>
-												<td>1991-12-14</td>
-												<td>KOSTA_HIGH_01</td>
-												<td>10101</td>
-												<td>1</td>												
-												<td>1</td>												
-												<td>1</td>												
-												<td>남자</td>												
-												<td>이과</td>											
-											</tr>
-											<tr onclick="fn_detail()">
-												<td>ST_02</td>
-												<td>최지웅</td>
-												<td>1990-06-03</td>
-												<td>KOSTA_HIGH_01</td>
-												<td>10102</td>
-												<td>1</td>												
-												<td>1</td>												
-												<td>2</td>												
-												<td>여자</td>												
-												<td>이과</td>
-											</tr>
-											<tr onclick="fn_detail()">
-												<td>ST_03</td>
-												<td>이재승</td>
-												<td>1993-05-08</td>
-												<td>KOSTA_HIGH_01</td>
-												<td>10103</td>
-												<td>1</td>												
-												<td>1</td>												
-												<td>3</td>												
-												<td>남자</td>												
-												<td>이과</td>	
-											</tr>
+											<c:forEach var="list" items="${list}">
+												<tr onclick="fn_detail()">
+													<td>${list.memberId }</td>
+													<td>${list.memberName }</td>
+													<td>${list.memberBirthday}</td>
+													<td>${list.schoolId }</td>
+													<td>${list.studentCode }</td>
+													<td>${list.studentGrade }</td>
+													<td>${list.studentClass }</td>
+													<td>${list.studentNum }</td>
+													<td>${list.studentGender }</td>
+													<td>${list.studentMajor }</td>
+												</tr>
+											</c:forEach>
 										</tbody> 
 									</table>
 									<!--페이지 -->
