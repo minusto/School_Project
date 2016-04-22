@@ -84,8 +84,6 @@
 												<td><a href="#">PR002</a></td>
 												<td>학부모</td>
 											</tr>
-											
-										
 
 										</tbody> 
 									</table>
