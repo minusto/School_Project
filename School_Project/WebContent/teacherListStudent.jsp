@@ -83,7 +83,7 @@
 												<tr onclick="fn_detail()">
 													<td>${list.memberId }</td>
 													<td>${list.memberName }</td>
-													<td>${list.memberBirthday}</td>
+													<td><fmt:formatDate value="${list.memberBirthday}" pattern="yyyy-MM-dd"/></td>
 													<td>${list.schoolId }</td>
 													<td>${list.studentCode }</td>
 													<td>${list.studentGrade }</td>
