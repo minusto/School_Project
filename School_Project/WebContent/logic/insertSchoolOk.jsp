@@ -8,7 +8,6 @@
     <%
     SchoolService service = SchoolService.getInstance();
     int re = service.insertSchool(request);
-    System.out.print(re);
     if(re >0 ){
     	response.sendRedirect("../schoolAdminInsertSchoolForm.jsp");
     }else{
