@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+		<%
+	request.setAttribute("path", "학교관리> 사용자 ID 등록");
+%>
 <!DOCTYPE html>
 <html>
 

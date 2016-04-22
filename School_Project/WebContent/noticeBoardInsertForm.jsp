@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
-	request.setAttribute("path", "학교관리> 학교 정보 조회");
-%>
 <!DOCTYPE html>
 <html>
 
@@ -31,12 +28,16 @@
 <!-- CSS App -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+
 </head>
 
 <body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
 			<jsp:include page="schoolAdminMenu.jsp"/>
+
+
+
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body">
@@ -45,40 +46,57 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">
-										<div class="title">학교 목록</div>
+										<div class="title">공지사항</div>
 									</div>
 								</div>
-								<div class="col-sm-2"></div>
-								<div class="card-body table-responsive col-sm-8">
-									<!-- Table -->
-									<table class="table table-striped">
-										<tr height="30">
-											<th width="150">학교아이디</th>
-											<td width="150">123123</td>
-										</tr>
-										
-										<tr height="30">
-											<th width="150">학교이름</th>
-											<td width="150">11</td>
-										</tr>
-										<tr height="30">
-											<th width="150">주소</th>
-											<td width="150">서울시 가산</td>
-										</tr>
-										<tr height="30">
-											<th width="150">작성일</th>
-											<td width="150"> 02-444-4444</td>
-										</tr>
-									</table>
-									<a href="#" class="pull-right" ><button type="button" class="btn btn-primary">정보수정</button></a>
+								<div class="card-body table-responsive col-md-5">
+									<form id="contact-form" method="post" action="#" role="form">
+										<div class="messages"></div>
+										<div class="controls">
+											<div class="row">
+												<div class="col-md-12">
+													<label for="form_name">제목</label> <input id="form_name"
+														type="text" name="name" class="form-control"
+														placeholder="제목을 적어주세요" required="required">
+												</div>
+											
+												<div class="col-md-12">
+													<label for="form_contents">내용</label>
+													<textarea id="form_contents" name="contents"
+														class="form-control" placeholder="내용을 입력해주세요" rows="10"
+														required="required"></textarea>
+												</div>
+												<div class="col-md-12">
+													<label for="exampleInputFile">File input</label> <input
+														type="file" id="exampleInputFile">
+													<p class="help-block">사진을 업로드 해주세요</p>
+
+												</div>
+												<div class="pull-right">
+													<input type="submit" class="btn btn-default" value="글쓰기">
+													&nbsp;&nbsp;&nbsp;
+													<input type="reset" class="btn btn-default" value="취소">
+												</div>
+
+											</div>
+										</div>
+									</form>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<!--         컨텐츠 끝 -->
+			<footer class="app-footer">
+				<div class="wrapper">
+					<span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
+				</div>
+			</footer>
 		</div>
-	</div>
 		<!-- Javascript Libs -->
 		<script type="text/javascript" src="lib/js/jquery.min.js"></script>
 		<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>

@@ -34,6 +34,7 @@
 	<div class="app-container">
 		<div class="row content-container">
 		<jsp:include page="schoolAdminMenu.jsp"/>
+		
 		<!-- 메인 컨텐츠 -->
 			<div class = "container-fluid">
     			<div class = "side-body">
@@ -183,7 +184,7 @@
 																<div class="modal-body"> 
 																	<div class="row">
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="noticeBoardList.jsp">
+																			<a href="schoolAdminNoticeBoardList.jsp">
 																			<h3>공지사항</h3>
 																			</a>
 																		</div>
@@ -193,7 +194,7 @@
 																			</a>
 																		</div>
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="classBoardList.jsp">
+																			<a href="schoolAdminClassBoardList.jsp">
 																			<h3>학급 게시판 </h3>
 																			</a>
 																		</div>

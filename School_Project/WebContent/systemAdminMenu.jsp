@@ -24,29 +24,29 @@
 							data-toggle="dropdown" role="button" aria-expanded="false"><i
 								class="fa fa-comments-o"></i></a>
 							<ul class="dropdown-menu animated fadeInDown">
-								<li class="title">Notification <span
+								<li class="title">알림 <span
 									class="badge pull-right">0</span>
 								</li>
-								<li class="message">No new notification</li>
+								<li class="message">알림 없음</li>
 							</ul></li>
 
 						<li class="dropdown profile"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-expanded="false">이용갑<span class="caret"></span></a>
+							aria-expanded="false">시스템<span class="caret"></span></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="profile-img"><img
 									src="img/profile/picjumbo.com_HNCK4153_resize.jpg"
 									class="profile-img"></li>
 								<li>
 									<div class="profile-info">
-										<h4 class="username">이용갑</h4>
-										<p>이용갑@이용갑.com</p>
+										<h4 class="username">시스템</h4>
+										<p>system@korea.com</p>
 										<div class="btn-group margin-bottom-2x" role="group">
 											<button type="button" class="btn btn-default">
-												<i class="fa fa-user"></i> Profile
+												<i class="fa fa-user"></i> 프로필
 											</button>
 											<button type="button" class="btn btn-default">
-												<i class="fa fa-sign-out"></i> Logout
+												<i class="fa fa-sign-out"></i> 로그아웃
 											</button>
 										</div>
 									</div>
@@ -59,7 +59,7 @@
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="side-menu-container">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
+							<a class="navbar-brand" href="systemAdminMain.jsp">
 								<div class="icon fa fa-book"></div>
 								<div class="title">학사관리</div>
 							</a>
@@ -76,37 +76,8 @@
 								<div id="dropdown-element" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<li><a href="schoolAdminInsertSchoolForm.jsp">학교등록</a></li>
-											<li><a href="schoolDetail.jsp">학교 정보 조회</a></li>
-											<li><a href="schoolAdminInsertUserIdForm.jsp">사용자 ID 등록</a></li>
-											<li><a href="userIdList.jsp">사용자 ID 목록</a></li>
-										</ul>
-									</div>
-								</div></li>
-								
-							<li class="panel panel-default dropdown"><a
-								data-toggle="collapse" href="#dropdown-table"> <span
-									class="icon fa fa-table"></span><span class="title">교사관리</span>
-							</a> <!-- Dropdown level 1 -->
-								<div id="dropdown-table" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul class="nav navbar-nav">
-											<li><a href="schoolAdminInsertTeacherForm.jsp">교사 등록</a></li>
-											<li><a href="schoolAdminTeacherList.jsp">교사 목록</a></li>
-										</ul>
-									</div>
-								</div></li>
-								
-							<li class="panel panel-default dropdown"><a
-								data-toggle="collapse" href="#dropdown-form"> <span
-									class="icon fa fa-file-text-o"></span><span class="title">게시판관리</span>
-							</a> <!-- Dropdown level 1 -->
-								<div id="dropdown-form" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul class="nav navbar-nav">
-											<li><a href="schoolAdminNoticeBoardList.jsp">공지사항</a></li>
-											<li><a href="scheduleList.jsp">학사일정</a></li>
-											<li><a href=schoolAdminClassBoardList.jsp>학급게시판</a></li>
+											<li><a href="systemInsertSchoolAdminForm.jsp">학교관리자 등록</a></li>
+											<li><a href="schoolAdminList.jsp">학교관리자 목록</a></li>
 										</ul>
 									</div>
 								</div></li>

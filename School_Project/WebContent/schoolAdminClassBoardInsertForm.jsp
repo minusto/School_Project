@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+	request.setAttribute("path", "게시판관리> 게시글 등록 ");
+%>
 <html>
  
 <head>

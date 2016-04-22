@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	request.setAttribute("path", "게시판 관리>공지사항 ");
+%>
 <!DOCTYPE html>
 <html>
 
