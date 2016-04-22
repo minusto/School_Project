@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal" action="insertOk.jsp">
+                                    <form class="form-horizontal" action="../logic/1111.jsp" method="post">
                                     <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학교ID</label>
                                             <div class="col-sm-5">

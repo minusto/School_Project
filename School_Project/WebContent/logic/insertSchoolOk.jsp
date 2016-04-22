@@ -10,7 +10,7 @@
     int re = service.insertSchool(request);
     System.out.print(re);
     if(re >0 ){
-    	response.sendRedirect("schoolAdminInsertSchoolForm.jsp");
+    	response.sendRedirect("../schoolAdminInsertSchoolForm.jsp");
     }else{
     	System.out.print("입력실패");
     }
