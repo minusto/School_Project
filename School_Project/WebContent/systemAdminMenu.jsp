@@ -32,7 +32,7 @@
 
 						<li class="dropdown profile"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-expanded="false">시스템<span class="caret"></span></a>
+							aria-expanded="false">시스템관리자<span class="caret"></span></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="profile-img"><img
 									src="img/profile/picjumbo.com_HNCK4153_resize.jpg"

@@ -1,7 +1,9 @@
+<%@page import="kosta.model.Member"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
-	request.setAttribute("path", "시스템");
+<%
+	request.setAttribute("path", "Main");
 %>
 <!DOCTYPE html>
 <html>

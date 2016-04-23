@@ -12,15 +12,15 @@
 			if(pass.equals("1234")){
 				response.sendRedirect("../passwordModForm.jsp?id="+id);
 			}else if(mc.getMemberGrade().equals("교사")){
-				response.sendRedirect("../teacherMain.jsp");
+				response.sendRedirect("../teacherMain.jsp?id="+id);
 			}else if(mc.getMemberGrade().equals("학생")){
-				response.sendRedirect("../studentMain.jsp");
+				response.sendRedirect("../studentMain.jsp?id="+id);
 			}else if(mc.getMemberGrade().equals("학부모")){
-				response.sendRedirect("../studentMain.jsp");
+				response.sendRedirect("../studentMain.jsp?id="+id);
 			}else if(mc.getMemberGrade().equals("학교관리자")){
-				response.sendRedirect("../schoolAdminMain.jsp");
+				response.sendRedirect("../schoolAdminMain.jsp?id="+id);
 			}else if(mc.getMemberGrade().equals("시스템관리자")){
-				response.sendRedirect("../systemAdminMain.jsp");
+				response.sendRedirect("../systemAdminMain.jsp?id="+id);
 			}
 		}else{
 			response.sendRedirect("../main.jsp?login=fail");
