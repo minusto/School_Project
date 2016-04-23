@@ -222,5 +222,19 @@ public class SchoolDao {
 		}
 		return teacher;
 	}
+	
+	//액터 : 모든사용자 ==> 로그인정보 확인
+	public MemberCheck memberCheck(String id){
+		SqlSession session=getSqlSessionFactory().openSession();
+		MemberCheck mc=null;
+		try {
+			mc=session.getMapper(Mapper.class).memberCheck(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return mc;
+	}
 
 }

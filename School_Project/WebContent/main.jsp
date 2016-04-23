@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String login=request.getParameter("login");
+	request.setAttribute("login", login);
+%>
 <!DOCTYPE html>
 <html>
 
@@ -34,6 +39,7 @@
 </head>
 
 <body class="flat-blue">
+<input type="hidden" id="loginCheck" value="${login}">
 	<div class="app-container">
 		<div id="mainHeader" class="mainHeader">
 			<a>학사관리 서비스</a>
@@ -110,14 +116,14 @@
 				</div>
 				<div class="modal-body row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="" method="post">
+						<form action="logic/memberCheck.jsp" method="post">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" />
+									size="25" style="margin-top: 10px" name="id"/>
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" />
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -146,14 +152,14 @@
 				</div>
 				<div class="modal-body row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="" method="post">
+						<form action="logic/memberCheck.jsp" method="post">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" />
+									size="25" style="margin-top: 10px" name="id" />
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" />
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -182,14 +188,14 @@
 				</div>
 				<div class="modal-body row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="" method="post">
+						<form action="logic/memberCheck.jsp" method="post">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" />
+									size="25" style="margin-top: 10px" name="id"/>
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" />
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -218,14 +224,14 @@
 				</div>
 				<div class="modal-body row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="" method="post">
+						<form action="logic/memberCheck.jsp" method="post">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" />
+									size="25" style="margin-top: 10px" name="id"/>
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" />
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -256,14 +262,14 @@
 				</div>
 				<div class="modal-body row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="" method="post">
+						<form action="logic/memberCheck.jsp" method="post">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" />
+									size="25" style="margin-top: 10px" name="id"/>
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" />
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
 							</div>
 
 							<div class="login-button text-center">
@@ -293,6 +299,14 @@
 	<!-- Javascript -->
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+	$(window.onload=function(){
+		var loginCheck=$("#loginCheck").attr('value');
+		if(loginCheck=="fail"){
+			alert("아이디 및 비밀번호를 확인하세요");
+		}
+	})
+	</script>
 </body>
 
 </html>

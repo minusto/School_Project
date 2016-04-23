@@ -4,6 +4,7 @@ import java.util.List;
 
 import kosta.model.AdminList;
 import kosta.model.Member;
+import kosta.model.MemberCheck;
 import kosta.model.Parent;
 import kosta.model.ParentList;
 import kosta.model.School;
@@ -27,4 +28,5 @@ public interface Mapper  {
 	public TeacherDetail detailTeacher(int memberId); // 액터 : 교내관리자 =>교사리스트=>상세보기
 	public int insertMember(Member member);// 액터 : 교내관리자 =>교사등록
 	public int insertTeacher(Teacher teacher);
+	public MemberCheck memberCheck(String id); // 액터 : 모든사용자 => 로그인정보 확인
 }

@@ -101,4 +101,12 @@
 	WHERE t.memberId = m.memberId
 	</select>
 	
+	<!-- 액터 : 모든사용자 ==> 로그인정보 확인 -->
+	<select id="memberCheck" resultType="MemberCheck" parameterType="String">
+		SELECT m.memberid,m.memberpassword,rm.membergrade
+		FROM member m,registmanage rm
+		WHERE m.memberid=rm.memberid
+		AND m.memberid=#{id}
+	</select>
+	
 </mapper>

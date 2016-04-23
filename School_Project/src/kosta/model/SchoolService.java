@@ -71,6 +71,9 @@ public class SchoolService {
 		return dao.detailTeacher(memberId);
 	}
 	
-	
+	//액터 : 모든사용자 ==> 로그인정보 확인
+	public MemberCheck memberCheckService(String id){
+		return dao.memberCheck(id);
+	}
 	
 }
