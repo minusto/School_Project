@@ -109,4 +109,19 @@
 		AND m.memberid=#{id}
 	</select>
 	
+	<!-- 액터 : 모든사용자 ==> 유저 정보 출력 -->	
+	<select id="memberDetail" parameterType="String" resultType="Member">
+		SELECT *
+		FROM member
+		WHERE memberid=#{id}
+	</select>
+	
+	<!-- 액터 : 모든사용자 ==> 최초 로그인 비밀번호 1234일 경우 비밀번호 변경 -->
+	<update id="userModPassowrd" parameterType="Member">
+		UPDATE member 
+		SET memberpassword = #{memberPassword}
+		WHERE memberid=#{memberId}
+	</update>
+	
+	
 </mapper>

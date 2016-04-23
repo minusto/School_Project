@@ -29,4 +29,6 @@ public interface Mapper  {
 	public int insertMember(Member member);// 액터 : 교내관리자 =>교사등록
 	public int insertTeacher(Teacher teacher);
 	public MemberCheck memberCheck(String id); // 액터 : 모든사용자 => 로그인정보 확인
+	public Member memberDetail(String id); //액터 : 모든사용자 => 유저정보확인
+	public int userModPassowrd(Member member); //액터 : 모든사용자 => 비밀번호 변경
 }

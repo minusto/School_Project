@@ -1,4 +1,17 @@
+<%@page import="kosta.model.SchoolService"%>
+<%@page import="kosta.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%	
+	request.setCharacterEncoding("UTF-8");
+	String id=request.getParameter("id");
+	SchoolService service=SchoolService.getInstance();
+	Member member=service.memberDetailService(id);
+	request.setAttribute("member", member);
+	
+	String modCheck=request.getParameter("modCheck");
+	request.setAttribute("modCheck", modCheck);
+
+%>
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +36,7 @@
 </head>
 
 <body class="flat-blue">
+<input type="hidden" id="modCheck" value="${modCheck }">
     <div class="app-container">
         <div class="row content-container">
             <nav class="navbar navbar-default navbar-fixed-top navbar-top">
@@ -51,34 +65,31 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal" action="" method="post">
+                                    <form class="form-horizontal" action="logic/modPasswordOk.jsp?id=${member.memberId }" method="post">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">사용자ID</label>
                                             <div class="col-sm-5">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">wotmd15</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">${member.memberId }</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
                                             <div class="col-sm-5">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">이재승</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">${member.memberName }</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">비밀번호</label>
                                             <div class="col-sm-5">
-                                                <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                                                <input type="password" class="form-control" name="modPassword" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">비밀번호확인</label>
                                             <div class="col-sm-5">
-                                                <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                                                <input type="password" class="form-control" name="modPasswordCheck" placeholder="">
                                             </div>
                                         </div>
-                                        
-                                        
-                                        
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <button type="submit" class="btn btn-default">비밀번호 변경</button>
@@ -119,6 +130,15 @@
             <!-- Javascript -->
             <script type="text/javascript" src="js/app.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript">
+
+            $(window.onload=function(){
+            	var modCheck=$("#modCheck").attr('value');
+        		if(modCheck=="fail"){
+        			alert("비밀번호 및 비밀번호확인 칸을 동일하게 입력하세요");
+        		}
+            })
+            </script>
 </body>
 
 </html>

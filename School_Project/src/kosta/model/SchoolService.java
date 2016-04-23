@@ -76,4 +76,13 @@ public class SchoolService {
 		return dao.memberCheck(id);
 	}
 	
+	//액터 : 모든사용자 ==> 유저 상세정보 출력
+	public Member memberDetailService(String id){
+		return dao.memberDetail(id);
+	}
+	
+	//액터 : 모든사용자 ==> 최초로그인시 비밀번호 변경 (UPDATE)	
+	public int userModPassowrdService(Member member){
+		return dao.userModPassowrd(member);
+	}
 }

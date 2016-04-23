@@ -236,5 +236,39 @@ public class SchoolDao {
 		}
 		return mc;
 	}
+	
+	//액터 : 모든사용자 ==> 유저 세부정보 출력
+	public Member memberDetail(String id){
+		SqlSession session=getSqlSessionFactory().openSession();
+		Member member=null;
+		try {
+			member=session.getMapper(Mapper.class).memberDetail(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return member;
+	}
+	
+	//액터 : 모든사용자 ==> 최초로그인시 비밀번호 변경 (UPDATE)
+	public int userModPassowrd(Member member){
+		SqlSession session=getSqlSessionFactory().openSession();
+		int re=0;
+		try {
+			re=session.getMapper(Mapper.class).userModPassowrd(member);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+		
+	}
 
 }
