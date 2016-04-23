@@ -12,6 +12,8 @@
 	if(mc!=null){
 		if(pass.equals(mc.getMemberPassword())){
 			if(pass.equals("1234")){
+				session.setAttribute("id", id);
+				session.setAttribute("grade", grade);
 				response.sendRedirect("../passwordModForm.jsp");
 			}else if(mc.getMemberGrade().equals("교사")){
 				session.setAttribute("id", id);
