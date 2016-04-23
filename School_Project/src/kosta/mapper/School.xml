@@ -70,4 +70,35 @@
 		AND sa.schooladminid=#{id}
 	</select>
 	
+	<!-- 액터 : 학교관리자 ==> 교사등록 -->
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO member(
+			memberId , memberName , memberBirthday , memberTel
+			, memberEmail , memberNote , memberPassword , memberAddress , schoolId
+		)VALUES(
+			#{memberId} , #{memberName} , SYSDATE , #{memberTel}
+			, #{memberEmail} , #{memberNote} ,'1234' , #{memberAddress} , #{schoolId} 
+		)
+	</insert>
+	<insert id="insertTeacher" parameterType="teacher">
+		INSERT INTO teacher(
+		teacherClass , teacherPicture , teacherPosition , subjectId  , memberId
+		)VALUES(
+		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectId} , #{memberId}
+		)
+	</insert>
+	
+	<!-- 액터 : 학교관리자 ==> 교사리스트 -->
+	<select id="listTeacher" resultType="TeacherDetail">
+	SELECT m.memberId , m.memberBirthday , m.memberTel , m.memberEmail , m.memberName , t.teacherClass , t.subjectId
+	FROM teacher t , member m
+	WHERE t.memberId = m.memberId
+	</select>
+	
+	<!-- 액터 : 학교관리자 ==> 교사리스트 ==> 상세보기 --> 
+	<select id="detailTeacher" resultType="TeacherDetail" parameterType="int">
+	SELECT * FROM teacher t , member m
+	WHERE t.memberId = m.memberId
+	</select>
+	
 </mapper>

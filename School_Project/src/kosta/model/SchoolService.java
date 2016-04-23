@@ -53,4 +53,24 @@ public class SchoolService {
 		return dao.schoolAdminDetail(id);
 	}
 	
+	//액터 : 교내관리자 ==> 교사등록
+	public int insertMember(Member member){	
+		return dao.insertMember(member);
+	}
+	public int insertTeacher(Teacher teacher){
+		return dao.insertTeacher(teacher);
+	}
+	
+	//액터: 교내관리자 ==> 교사목록
+	public List<TeacherDetail> listTeacher(){
+		return dao.listTeacher();
+	}
+	
+	//액터 : 교내관리자 ==> 교사목록 ==> 상세보기
+	public TeacherDetail detailTeacher(int memberId){
+		return dao.detailTeacher(memberId);
+	}
+	
+	
+	
 }

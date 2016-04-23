@@ -158,6 +158,69 @@ public class SchoolDao {
 		}
 		return saDetail;
 	}
+	//액터 : 교내관리자 ==> 교사등록
+	public int insertMember(Member member){
+		int re = -1;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(Mapper.class).insertMember(member);
+			if(re > 0){
+				sqlSession.commit();
+			}else{
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return re;
+	}
+	public int insertTeacher(Teacher teacher){		
+		int re = -1;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(Mapper.class).insertTeacher(teacher);
+			if(re > 0){
+				sqlSession.commit();
+			}else{
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return re;
+	}
+	public List<TeacherDetail> listTeacher(){
+		List<TeacherDetail> list = null;
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		try {
+			list = sqlsession.getMapper(Mapper.class).listTeacher();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlsession.close();
+		}
+		return list;
+	}
 	
+	
+	public TeacherDetail detailTeacher(int memberId){
+		TeacherDetail teacher = null;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			teacher = sqlSession.getMapper(Mapper.class).detailTeacher(memberId);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return teacher;
+	}
 
 }
