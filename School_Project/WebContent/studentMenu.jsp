@@ -41,7 +41,7 @@
                                         <p>${member.memberEmail }</p>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button>
+                                            <button type="button" class="btn btn-default" onclick="location.href='logic/logoutOk.jsp'"><i class="fa fa-sign-out"></i> Logout</button>
                                         </div>
                                     </div>
                                 </li>

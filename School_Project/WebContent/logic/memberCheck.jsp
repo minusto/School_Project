@@ -37,8 +37,10 @@
 		}else{
 			response.sendRedirect("../main.jsp?login=fail");
 		}
-	}
+	}else{
+		
 	response.sendRedirect("../main.jsp?login=fail");
+	}
 	
 %>
 <!DOCTYPE html>

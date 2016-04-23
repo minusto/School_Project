@@ -4,6 +4,8 @@
 	request.setCharacterEncoding("UTF-8");
 	String login=request.getParameter("login");
 	request.setAttribute("login", login);
+	String logout=request.getParameter("logout");
+	request.setAttribute("logout", logout);
 %>
 <!DOCTYPE html>
 <html>
@@ -40,17 +42,16 @@
 
 <body class="flat-blue">
 <input type="hidden" id="loginCheck" value="${login}">
+<input type="hidden" id="logout" value="${logout}">
 	<div class="app-container">
 		<div id="mainHeader" class="mainHeader">
 			<a>학사관리 서비스</a>
 		</div>
-
 		<div id="mainPictureDiv" class="mainPicture">
 			<a> <img class="img-responsive hidden-xs" alt="MainPicture"
 				src="img/MainPicture.png">
 			</a>
 		</div>
-
 		<div id="loginSelectStudentDiv" class="loginSelectDiv">
 			<ul class="list-unstyled list-inline">
 				<li id="liStudent" data-toggle="modal" data-target="#modalSuccess">
@@ -98,8 +99,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<!-- LOGIN FORM MODAL START -->
 
 	<!-- 학생 로그인 Modal -->
@@ -304,6 +303,10 @@
 		var loginCheck=$("#loginCheck").attr('value');
 		if(loginCheck=="fail"){
 			alert("아이디 및 비밀번호를 확인하세요");
+		}
+		var logout=$("#logout").attr('value');
+		if(logout=="logout"){
+			alert("로그아웃 완료");
 		}
 	})
 	</script>
