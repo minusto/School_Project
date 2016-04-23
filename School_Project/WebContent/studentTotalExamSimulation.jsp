@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="logic/studentSessionCheck.jsp" %>
 <%
 	request.setAttribute("path", "진학시뮬레이션 > 수시시뮬레이션");
 %>
