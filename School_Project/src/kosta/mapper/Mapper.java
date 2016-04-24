@@ -11,7 +11,10 @@ import kosta.model.School;
 import kosta.model.SchoolAdmin;
 import kosta.model.SchoolAdminDetail;
 import kosta.model.SchoolAdminRegist;
+import kosta.model.Student;
+import kosta.model.StudentDetail;
 import kosta.model.StudentList;
+import kosta.model.StudentNullList;
 import kosta.model.Teacher;
 import kosta.model.TeacherDetail;
 
@@ -31,4 +34,10 @@ public interface Mapper  {
 	public MemberCheck memberCheck(String id); // 액터 : 모든사용자 => 로그인정보 확인
 	public Member memberDetail(String id); //액터 : 모든사용자 => 유저정보확인
 	public int userModPassowrd(Member member); //액터 : 모든사용자 => 비밀번호 변경
+	public int updateMember(Member member); //교사 ==> 학생 입력 및 수정
+	public int updateStudent(Student student); //교사 ==> 학생 입력 및 수정
+	public List<StudentNullList> studentNullList(); //교사 ==> 학생 정보 NULL LIST
+	public StudentDetail selectStudentDetail(String m_id); //교사 ==> 학생 세부 열람
+	public int deleteStudent(String m_id); //교사 ==> 학생 내용 삭제
+	public int deleteStudent2(String m_id); //교사 ==> 학생 내용 삭제
 }

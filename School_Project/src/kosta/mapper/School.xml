@@ -122,6 +122,69 @@
 		SET memberpassword = #{memberPassword}
 		WHERE memberid=#{memberId}
 	</update>
+	<!-- 교사==>학생 입력 및 수정 -->
+	<update id="updateMember" parameterType="Member">
+		UPDATE member SET
+		memberName = #{memberName},
+		memberBirthday = #{memberBirthday},
+		memberAddress = #{memberAddress},
+		memberTel = #{memberTel},
+		memberNote = #{memberNote},
+		memberEmail = #{memberEmail}
+		WHERE memberId = #{memberId}
+	</update>
 	
+	<!-- 교사==>학생 입력 및 수정 -->
+	<update id="updateStudent" parameterType="Student">
+		UPDATE student SET
+		StudentCode = #{studentCode},
+		StudentGrade = #{studentGrade},
+		StudentClass = #{studentClass},
+		StudentNum = #{studentNum},
+		StudentGender = #{studentGender},
+		StudentMajor = #{studentMajor},
+		StudentPicture = #{studentPicture}
+		WHERE memberId = #{memberId}
+	</update>
+	<!-- 교사 ==> 학생 정보 NULL LIST -->
+	<select id="studentNullList" resultType="StudentNullList">
+		SELECT memberId FROM student
+		WHERE studentCode IS NULL
+	</select>
+	<!-- 교사 ==> 학생 세부 열람 -->
+	<select id="selectStudentDetail" resultType="StudentDetail" parameterType="String">
+		SELECT m.memberId, m.memberName, m.memberBirthday, m.memberAddress,
+		 m.memberTel, m.memberEmail, m.memberNote, m.schoolId,
+		st.studentCode, st.studentGrade, st.studentClass, st.studentNum, st.studentGender, 
+		st.studentMajor, st.studentPicture
+		FROM member m, student st
+		WHERE m.memberId = st.memberId
+		AND m.memberId = #{m_id}
+		ORDER BY m.memberId
+	</select>
+	<!-- 교사 ==> 학생 내용 삭제 -->
+	<update id="deleteStudent" parameterType="String">
+		UPDATE member SET
+		memberName = NULL,
+		memberBirthday = NULL,
+		memberAddress = NULL,
+		memberTel = NULL,
+		memberNote = NULL,
+		memberEmail = NULL
+		WHERE memberId = #{m_id}
+	</update>
+	<!-- 교사 ==> 학생 내용 삭제 -->
+	<update id="deleteStudent2" parameterType="String">
+	UPDATE student SET
+		studentCode = NULL,
+		studentGrade = NULL,
+		studentClass = NULL,
+		studentNum = NULL,
+		studentGender = NULL,
+		studentMajor = NULL,
+		studentPicture = NULL
+		WHERE memberId = #{m_id}
+	</update>
+
 	
 </mapper>

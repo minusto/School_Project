@@ -85,4 +85,34 @@ public class SchoolService {
 	public int userModPassowrdService(Member member){
 		return dao.userModPassowrd(member);
 	}
+	
+	//교사 ==> 학생 입력 및 수정
+	public int updateMemberService(Member member){
+		return dao.updateMember(member);
+	}
+	//교사 ==> 학생 입력 및 수정
+	public int updateStudentService(Student student){
+		return dao.updateStudent(student);
+	}
+	
+	//교사 ==> 학생 정보 NULL LIST
+	public List<StudentNullList> studentNullListService(){
+		return dao.studentNullList();
+	}
+	
+	//교사 ==> 학생 세부 열람
+	public StudentDetail selectStudentDetailService(String m_id){
+		return dao.selectStudentDetail(m_id);
+	}
+	
+	//교사 ==> 학생 내용 삭제
+	public int deleteStudentService(String m_id){
+		return dao.deleteStudent(m_id);
+	}
+	//교사 ==> 학생 내용 삭제
+	public int deleteStudentService2(String m_id){
+		return dao.deleteStudent2(m_id);
+	}
+	
+	
 }

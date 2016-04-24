@@ -5,7 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생관리 > 학생 정보 열람");
@@ -22,7 +21,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <!-- CSS Libs -->
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css"> 
     <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
     <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
@@ -32,7 +31,17 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
-    <style type="text/css">
+    <!-- jQuery-->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$('tbody').on('click','tr',function(){
+    		var memberId = $(this).find('#memberId').html();
+    		location.href="teacherListStudentDetail.jsp?m_id="+memberId; 
+    	})
+    })
+	</script>
+	<style type="text/css">
    	 tbody tr:hover td {
 		background: rgba(38, 185, 154, 0.07);
 		border-top: 1px solid rgba(38, 185, 154, 0.11);
@@ -40,11 +49,8 @@
 		}
     </style>
 </head>
-<script type="text/javascript">
-	function fn_detail(){
-	location.href="teacherListStudentDetail.jsp";
-	}
-</script>
+
+
 <body class="flat-blue">
     <div class="app-container">
         <div class="row content-container">
@@ -80,10 +86,10 @@
 										</thead>
 										<tbody>
 											<c:forEach var="list" items="${list}">
-												<tr onclick="fn_detail()">
-													<td>${list.memberId }</td>
+												<tr>
+													<td id="memberId">${list.memberId }</td>
 													<td>${list.memberName }</td>
-													<td><fmt:formatDate value="${list.memberBirthday}" pattern="yyyy-MM-dd"/></td>
+													<td>${list.memberBirthday}</td>
 													<td>${list.schoolId }</td>
 													<td>${list.studentCode }</td>
 													<td>${list.studentGrade }</td>

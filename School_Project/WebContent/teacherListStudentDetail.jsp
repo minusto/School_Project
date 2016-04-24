@@ -1,7 +1,21 @@
+<%@page import="kosta.model.StudentDetail"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<!DOCTYPE html>
+<%
+	request.setAttribute("path", "학생관리 > 학생 정보 열람 > Detail");
+	String m_id = request.getParameter("m_id");
+	if(m_id!=null){
+	SchoolService service = SchoolService.getInstance();
+	StudentDetail student = service.selectStudentDetailService(m_id);
+	request.setAttribute("student", student);
+	}
+%>
+<html>
 <head>
     <title>빈칸</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +34,29 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+	<!-- jQuery-->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$('#correctionOk').on('click','#correction',function(){
+    			$('input[id=inputPassword3]').attr("readonly",false);
+    			$('#correction').css("display","none");
+    			$('#del').css("display","none");
+    			$('#commitGo').css("display","inline");
+    			$('#cancelGo').css("display","inline");
+    		})
+    		$('#correctionOk').on('click','#cancelGo',function(){
+    			$('input[id=inputPassword3]').attr("readonly",true);
+    			$('#commitGo').css("display","none");
+    			$('#cancelGo').css("display","none");
+    			$('#correction').css("display","inline");
+    			$('#del').css("display","inline");
+    		})
+    		$('#deleteOk').click(function(){
+    			location.href="logic/deleteStudentOk.jsp?m_id=${student.memberId}";
+    		})
+    	})
+    </script>
 </head>
 <style type="text/css">
 	.card_wan{
@@ -43,7 +80,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <div class="title">ㅇㅇ 학생 정보 라고 해당하는 애이름으로 만들수있나?</div>
+                                        <div class="title">${student.memberName} 학생 정보</div>
                                     </div>
                                     <div class="pull-right card-action">
                                         <div class="btn-group" role="group" aria-label="...">
@@ -58,7 +95,7 @@
                                         <div class="col-md-4 col-xs-12">
                                             <div class="card profile">
                                                 <div class="card-profile-img">
-                                                    <img src="img/profile/cuttyKid.jpg">
+                                                    <img src="img/profile/${student.studentPicture }">
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="name">
@@ -70,52 +107,55 @@
                                         <div class="col-md-4 col-xs-12">
                                         </div>
                                     </div>
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" action="logic/correctionStudentOk.jsp" method="post">
                                     	<div class="col-xs-12">
                                     		<div class="form-inline">
 												<div class="col-md-5 col-xs-12" >
-													<label for="inputEmail3" class="control-label col-lg-2">학생ID</label>
-													<input id="inputPassword3" class="form-control" type="text" placeholder="StudentID">
+													<label for="inputPassword3" class="control-label col-lg-2">학생ID</label>
+													<input id="inputPassword2" class="form-control" type="text" value="${student.memberId}" name="memberId" readonly="readonly">
 													<br>
                                         			<label for="inputPassword3" class="control-label col-lg-2">이름</label>
-                                                	<input type="text" class="form-control" id="inputPassword3" placeholder="Name">
+                                                	<input type="text" class="form-control" id="inputPassword3" value="${student.memberName}" name="memberName" readonly="readonly">
                                         			<br>
                                         			<label for="inputPassword3" class="control-label col-lg-2">생년월일</label>
-                                                	<input type="date" class="form-control" id="inputPassword3" placeholder="YYYY-MM-dd">
+                                                	<input type="date" class="form-control" id="inputPassword3" value="<fmt:formatDate value="${student.memberBirthday}" pattern="yyyy-MM-dd"/>" name="memberBirthday" readonly="readonly">
                                           	 		<br>
                                         			<label for="inputPassword3" class="control-label col-lg-2">주소</label>
-                                               	 	<input type="text" class="form-control" id="inputPassword3">
+                                               	 	<input type="text" class="form-control" id="inputPassword3" value="${student.memberAddress}" name="memberAddress" readonly="readonly">
                                            		 	<br>
                                            		 	<label for="inputPassword3" class="control-label col-lg-2">전화번호</label>
-                                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Tel">
+                                                    <input type="text" class="form-control" id="inputPassword3" value="${student.memberTel}" name="memberTel" readonly="readonly">
                                            		 	<br>
                                            		 	<label for="inputPassword3" class="control-label col-lg-2">이메일</label>
-                                           			<input type="email" class="form-control" id="inputPassword3" placeholder="aaa@bbb.com">
+                                           			<input type="email" class="form-control" id="inputPassword3" value="${student.memberEmail}" name="memberEmail" readonly="readonly">
                                            			<br>
                                            			<label for="inputPassword3" class="control-label col-lg-2">학교ID</label>
-                                            		<input type="text" class="form-control" id="inputPassword3">
+                                            		<input type="text" class="form-control" id="inputPassword3" value="${student.schoolId}" name="schoolId" readonly="readonly">
                                         		</div>
 												<div class="col-md-5 col-xs-12">
 											 		<label for="inputEmail3" class="control-label col-lg-2">학번</label>
-                                           		 	<input type="text" class="form-control" id="inputPassword3">
+                                           		 	<input type="text" class="form-control" id="inputPassword3" value="${student.studentCode}" name="studentCode" readonly="readonly">
                                         			<br>
                                         			<label for="inputPassword3" class="control-label col-lg-2">학년</label>
-                                                	<input type="text" class="form-control" id="inputPassword3">
+                                                	<input type="text" class="form-control" id="inputPassword3" value="${student.studentGrade}" name="studentGrade" readonly="readonly">
                                         			<br>
                                         			<label for="inputPassword3" class="control-label col-lg-2">반</label>
-                                                	<input type="date" class="form-control" id="inputPassword3">
+                                                	<input type="text" class="form-control" id="inputPassword3" value="${student.studentClass}" name="studentClass" readonly="readonly">
                                           	 		<br>
                                         			<label for="inputPassword3" class="control-label col-lg-2">출석번호</label>
-                                               	 	<input type="text" class="form-control" id="inputPassword3">
+                                               	 	<input type="text" class="form-control" id="inputPassword3" value="${student.studentNum}" name="studentNum" readonly="readonly">
                                            		 	<br>
                                            		 	<label for="inputPassword3" class="control-label col-lg-2">성별</label>
-                                                    <input type="text" class="form-control" id="inputPassword3" >
+                                                    <input type="text" class="form-control" id="inputPassword3" value="${student.studentGender}" name="studentGender" readonly="readonly">
                                            		 	<br>
                                            		 	<label for="inputPassword3" class="control-label col-lg-2">학과</label>
-                                           			<input type="email" class="form-control" id="inputPassword3" >
+                                           			<input type="text" class="form-control" id="inputPassword3" value="${student.studentMajor}" name="studentMajor" readonly="readonly">
                                            			<br>
                                            			<label for="inputPassword3" class="control-label col-lg-2">비고</label>
-                                            		<input type="text" class="form-control" id="inputPassword3">
+                                            		<input type="text" class="form-control" id="inputPassword3" value="${student.memberNote}" name="memberNote" readonly="readonly">
+                                        			<!-- 이미지사진 파일 -->
+                                        			<input type="hidden" class="form-control" id="inputPassword3" value="${student.studentPicture}" name="studentPicture" readonly="readonly">
+                                        			
                                         		</div>
 											</div>
                                     	</div>
@@ -155,16 +195,15 @@
 														</div>
                                                 	</div>
                                             </div>
-                                            <div class="col-md-3 col-xs-12">
+                                            <div class="col-md-3 col-xs-12" id="correctionOk">
                                             	<!--수정 Button-->
-                                                <button type="button" class="btn btn-primary btn-primary">
-                                            		수정
-                                        		</button>
+                                                <input type="button" class="btn btn-primary btn-primary" id="correction" value="수정">
                                                 <!--삭제 Button trigger modal -->
-                                        		<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary">
-                                            		삭제
-                                        		</button>
-
+                                        		<input type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary" id="del" value="삭제">
+                                        		<!-- 수정 완료 -->
+                                        		<input type="submit" class="btn btn-primary btn-primary" id="commitGo" style="display:none" value="완료">
+                                        		<!--수정 취소  -->
+                                        		<input type="button" class="btn btn-primary btn-primary" id="cancelGo" style="display:none" value="취소">
                                         		<!--삭제 알림 Modal -->
                                         		<div class="modal fade modal-primary" id="modalPrimary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             		<div class="modal-dialog">
@@ -178,7 +217,7 @@
                                                         	</div>
                                                     		<div class="modal-footer">
                                                         		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        		<button type="button" class="btn btn-primary">OK</button>
+                                                        		<button type="button" class="btn btn-primary" id="deleteOk">OK</button>
                                                     		</div>
                                                 		</div>
                                             		</div>

@@ -8,9 +8,7 @@ public class Member implements Serializable {
 	private String memberId;
 	private String memberPassword;
 	private String memberName;
-
-	private Timestamp memberBirthday;
-
+	private String memberBirthday;
 	private String memberAddress;
 	private String memberTel;
 	private String memberNote;
@@ -41,11 +39,13 @@ public class Member implements Serializable {
 		this.memberName = memberName;
 	}
 
-	public Timestamp getMemberBirthday() {
+	
+
+	public String getMemberBirthday() {
 		return memberBirthday;
 	}
 
-	public void setMemberBirthday(Timestamp memberBirthday) {
+	public void setMemberBirthday(String memberBirthday) {
 		this.memberBirthday = memberBirthday;
 	}
 

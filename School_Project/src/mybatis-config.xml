@@ -17,6 +17,9 @@
 	  <typeAlias type="kosta.model.Member" alias="Member"/>
 	  <typeAlias type="kosta.model.Teacher" alias="Teacher"/>
 	  <typeAlias type="kosta.model.MemberCheck" alias="MemberCheck"/>
+	  <typeAlias type="kosta.model.Student" alias="Student"/>
+      <typeAlias type="kosta.model.StudentNullList" alias="StudentNullList"/>
+      <typeAlias type="kosta.model.StudentDetail" alias="StudentDetail"/>
    </typeAliases>
    
    <environments default="development">

@@ -270,5 +270,105 @@ public class SchoolDao {
 		return re;
 		
 	}
+	
+	//교사 ==> 학생 입력 및 수정
+	public int updateMember(Member member) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).updateMember(member);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+	//교사 ==> 학생 입력 및 수정
+	public int updateStudent(Student student) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).updateStudent(student);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+	//교사 ==> 학생 정보 NULL LIST
+	public List<StudentNullList> studentNullList() {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<StudentNullList> list = null;
+		try {
+			list = session.getMapper(Mapper.class).studentNullList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+	//교사 ==> 학생 세부 열람
+	public StudentDetail selectStudentDetail(String m_id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		StudentDetail student = null;
+		try {
+			student = session.getMapper(Mapper.class).selectStudentDetail(m_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return student;
+	}
+	//교사 ==> 학생 내용 삭제
+	public int deleteStudent(String m_id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).deleteStudent(m_id);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+	//교사 ==> 학생 내용 삭제
+		public int deleteStudent2(String m_id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = 0;
+			try {
+				re = session.getMapper(Mapper.class).deleteStudent2(m_id);
+				if (re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
+
 
 }
