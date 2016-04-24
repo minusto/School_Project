@@ -186,7 +186,7 @@ tbody tr.selected td {
 														    
 														    <c:otherwise>
 														    <c:if test="${listModel.startPage > 5}">
-																<a href="SchoolAdminNoticeBoardList.jsp?pageNum=${listModel.startPage - 5}">[이전]</a>	
+																<a href="schoolAdminNoticeBoardList.jsp?pageNum=${listModel.startPage - 5}">[이전]</a>	
 															</c:if>
 															
 															<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
