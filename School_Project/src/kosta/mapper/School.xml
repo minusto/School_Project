@@ -185,6 +185,62 @@
 		studentPicture = NULL
 		WHERE memberId = #{m_id}
 	</update>
+	
+	<!-- 공지사항 글번호 -->
+	<select id="noticeBoardNum" resultType="Integer">
+		select max(NoticeBoardNum) from noticeBoard
+	</select>
+	
+	<!-- 학교관리자 ==>공지사항등록 -->
+	<insert id="insertNoticeBoard" parameterType="NoticeBoard">
+		INSERT INTO noticeBoard(
+			noticeBoardNum,noticeBoardTitle,noticeBoardDate,noticeBoardPassword,
+			noticeBoardHitcount,noticeBoardFileName,noticeBoardContent,schoolAdminId
+		)VALUES(
+			#{noticeBoardNum}, #{noticeBoardTitle} ,SYSDATE,#{noticeBoardPassword},
+		    0 , #{noticeBoardFileName}, #{noticeBoardContent} ,#{schoolAdminId}
+		)
+	</insert>
+	
+	<!-- 페이지 갯수 -->
+	<select id="noticeCountBoard" resultType="int" parameterType="Search">
+		select count(*) from noticeBoard
+		<if test="area != null">
+			<where>
+				<foreach collection="area" item="item" separator="or" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach>
+			</where>
+		</if>
+	</select>
+	
+	<!-- 공지사항 목록 -->
+	<select id="noticeBoardList" resultType="NoticeBoard" parameterType="Search">
+		select * from noticeBoard 
+		<if test="area != null">
+			<where>
+				<foreach collection="area" item="item" separator="or" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach>
+			</where>
+		</if>
+		order by noticeBoardNum DESC
+	</select>
+	
+	<!--  공지사항 조회수 -->
+	 <update id="addHitcount" parameterType="int">
+		update noticeBoard set noticeBoardHitcount = noticeBoardHitcount + 1 where noticeBoardNum = #{noticeBoardNum}
+	</update>
+	
+	<!-- 공지사항 상세보기 -->
+	<select id="noticeBoardDetail" parameterType="int" resultType="NoticeBoard">
+		select * from noticeBoard where noticeBoardNum = #{noticeBoardNum}
+	</select>
+	<!-- 학교정보조회 -->
+	<select id="schoolDetail" resultType="School" >
+	SELECT * 
+	FROM SCHOOL
+	</select>
 
 	
 </mapper>

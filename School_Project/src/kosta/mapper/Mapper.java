@@ -2,15 +2,19 @@ package kosta.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
+
 import kosta.model.AdminList;
 import kosta.model.Member;
 import kosta.model.MemberCheck;
+import kosta.model.NoticeBoard;
 import kosta.model.Parent;
 import kosta.model.ParentList;
 import kosta.model.School;
 import kosta.model.SchoolAdmin;
 import kosta.model.SchoolAdminDetail;
 import kosta.model.SchoolAdminRegist;
+import kosta.model.Search;
 import kosta.model.Student;
 import kosta.model.StudentDetail;
 import kosta.model.StudentList;
@@ -40,4 +44,11 @@ public interface Mapper  {
 	public StudentDetail selectStudentDetail(String m_id); //교사 ==> 학생 세부 열람
 	public int deleteStudent(String m_id); //교사 ==> 학생 내용 삭제
 	public int deleteStudent2(String m_id); //교사 ==> 학생 내용 삭제
+	public int insertNoticeBoard(NoticeBoard noticeBoard); //관지라-> 공지사항 등록
+	public Integer noticeBoardNum(); //공지사항 글번호
+	public int noticeCountBoard(Search search); //페이징 처리 공지사항글번호
+	public List<NoticeBoard> noticeBoardList(RowBounds row, Search search); //공지사항 목록
+	public int addHitcount(int noticeBoardNum); //공지사항조회수
+	public NoticeBoard noticeBoardDetail(int noticeBoardNum); //공지사항 상세
+	public School schoolDetail(); //학교정보조회
 }

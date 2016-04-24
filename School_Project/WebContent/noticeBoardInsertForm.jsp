@@ -50,28 +50,34 @@
 									</div>
 								</div>
 								<div class="card-body table-responsive col-md-5">
-									<form id="contact-form" method="post" action="#" role="form">
+									<form id="contact-form" method="post" action="logic/insertNoticeboardOk.jsp"	enctype="multipart/form-data">
 										<div class="messages"></div>
 										<div class="controls">
 											<div class="row">
 												<div class="col-md-12">
-													<label for="form_name">제목</label> <input id="form_name"
-														type="text" name="name" class="form-control"
+													<label for="form_name">제목</label> 
+													<input  type="text" name="noticeBoardTitle" class="form-control"
 														placeholder="제목을 적어주세요" required="required">
+												</div>
+												
+												<div class="col-md-12">
+													<label for="form_pword">비밀번호</label> 
+													<input  type="password" name="noticeBoardPassword" class="form-control"
+														required="required">
 												</div>
 											
 												<div class="col-md-12">
 													<label for="form_contents">내용</label>
-													<textarea id="form_contents" name="contents"
-														class="form-control" placeholder="내용을 입력해주세요" rows="10"
+													<textarea name="noticeBoardContent"
+														class="form-control" placeholder="내용을 입력해주세요" rows="20"
 														required="required"></textarea>
 												</div>
 												<div class="col-md-12">
-													<label for="exampleInputFile">File input</label> <input
-														type="file" id="exampleInputFile">
-													<p class="help-block">사진을 업로드 해주세요</p>
-
+													<label for="exampleInputFile">File input</label> 
+													<input type="file"  name="noticeBoardFileName">
+													<p class="help-block">영문명 파일로 올려주세요</p>
 												</div>
+												<input type="hidden" name="schoolAdminId" value="admin">
 												<div class="pull-right">
 													<input type="submit" class="btn btn-default" value="글쓰기">
 													&nbsp;&nbsp;&nbsp;

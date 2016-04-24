@@ -3,10 +3,16 @@ package kosta.model;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class SchoolService {
 	public static SchoolDao dao;
 	public static SchoolService service=new SchoolService();
+	
+	private static final int PAGE_SIZE = 3;
 	
 	public static SchoolService getInstance(){
 		dao=SchoolDao.getInstance();
@@ -113,6 +119,105 @@ public class SchoolService {
 	public int deleteStudentService2(String m_id){
 		return dao.deleteStudent2(m_id);
 	}
+	
+	//관리자 -> 공지사항 등록
+	public int insertNoticeBoardService(HttpServletRequest request) throws Exception{
+
+		NoticeBoard noticeBoard=new NoticeBoard();
+		
+		String uploadPath  = request.getRealPath("upload");
+		int size = 20*1024*1024; //20mb
+		
+		
+		
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+		 
+		
+		
+		noticeBoard.setNoticeBoardTitle(multi.getParameter("noticeBoardTitle"));
+		noticeBoard.setNoticeBoardPassword(multi.getParameter("noticeBoardPassword"));
+		noticeBoard.setNoticeBoardContent(multi.getParameter("noticeBoardContent"));
+		
+		noticeBoard.setSchoolAdminId(multi.getParameter("schoolAdminId"));
+		noticeBoard.setNoticeBoardNum(dao.noticeBoardNum()+1);
+		
+		//파일업로드
+		if(multi.getFilesystemName("noticeBoardFileName")!=null){
+			String noticeBoardFileName  = multi.getFilesystemName("noticeBoardFileName"); //이메소드로 파일 이름 구할수 잇음
+			noticeBoard.setNoticeBoardFileName(noticeBoardFileName);  //노티스 보드객체에 추가 
+			
+			
+		}else{
+			noticeBoard.setNoticeBoardFileName(""); 
+		}
+		
+		return dao.insertNoticeBoard(noticeBoard);
+	}
+	
+	
+	//공지사항 목록
+	public ListModel noticeBoardListService(int requestPage,
+			HttpServletRequest request) {
+
+		Search search = new Search();
+		HttpSession session = request.getSession();
+
+		// 기존에 검색된 세션내용 삭제
+		if (request.getParameter("temp") != null) {
+			session.removeAttribute("search");
+
+		}
+		// 검색시
+		if (request.getParameterValues("area") != null) {
+			search.setArea(request.getParameterValues("area"));
+			search.setSearchKey("%" + request.getParameter("searchKey") + "%");
+			session.setAttribute("search", search);
+
+			// 검색후 페이징 클릭
+		} else if ((Search) session.getAttribute("search") != null) {
+			search = (Search) session.getAttribute("search");
+
+		}
+
+		int totalCount = dao.noticeCountBoard(search);// countBoard에 search를 넣어서 총 글
+												// 갯수를 다시 설정
+		int totalPageCount = totalCount / PAGE_SIZE;
+		if (totalCount % PAGE_SIZE > 0) {
+			totalPageCount++;
+		}
+
+		int startPage = requestPage - (requestPage - 1) % 5;
+
+		int endPage = startPage + 4;
+
+		if (endPage > totalPageCount) {
+			endPage = totalPageCount;
+		}
+
+		List<NoticeBoard> list = dao.noticeBoardList((requestPage - 1)
+				* PAGE_SIZE, search); //
+
+		return new ListModel(list, requestPage, totalPageCount, startPage,
+				endPage);
+	}
+	
+	//히트카운트
+		public int addHitcountService(int noticeBoardNum) {
+			return dao.addHitcount(noticeBoardNum);
+		}
+		
+		
+		//공지사항 세부보기
+
+		public NoticeBoard noticeBoardDetailService(int noticeBoardNum){
+			
+			return dao. noticeBoardDetail(noticeBoardNum) ;
+			
+		}
+		//학교 정보조회
+		public School SchoolDetail(){
+			return dao.schoolDetail();
+		}
 	
 	
 }

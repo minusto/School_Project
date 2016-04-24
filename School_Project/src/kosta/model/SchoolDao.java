@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -369,6 +370,116 @@ public class SchoolDao {
 			}
 			return re;
 		}
+		//관리자 ->공지사항 등록
+				public int insertNoticeBoard(NoticeBoard noticeBoard) {
+					SqlSession sqlSession = getSqlSessionFactory().openSession();
+					int re = -1;
+					try {
+						re = sqlSession.getMapper(Mapper.class).insertNoticeBoard(noticeBoard);
+						if(re > 0){
+							sqlSession.commit();
+						}else{
+							sqlSession.rollback();
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}finally{
+						sqlSession.close();
+					}
+					return re;
+					
+				}
+		
+		//공지사항 글번호 
+				public int noticeBoardNum() {
+					SqlSession sqlSession = getSqlSessionFactory().openSession();
+
+					if(sqlSession.getMapper(Mapper.class).noticeBoardNum()==null){
+						return 0;
+					}else{
+						return  sqlSession.getMapper(Mapper.class).noticeBoardNum();
+					}
+				}
+				
+				//페이징처리 글갯수 세기
+				public int noticeCountBoard(Search search) {
+					SqlSession sqlSession = getSqlSessionFactory().openSession();
+					int re = 0;
+					try {
+						re = sqlSession.getMapper(Mapper.class).noticeCountBoard(search);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}finally{
+						sqlSession.close();
+					}
+					return re;
+				}
+				
+				// 공지사항 보드 리스트
+				public List<NoticeBoard> noticeBoardList(int startRow, Search search) {
+					SqlSession sqlSession = getSqlSessionFactory().openSession();
+					List<NoticeBoard> list = null;
+					try {
+						list = sqlSession.getMapper(Mapper.class).noticeBoardList(new RowBounds(startRow, 5), search);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}finally{
+						sqlSession.close();
+					}
+					
+					return list; 
+				}
+				//공지사항조회수
+				public int addHitcount(int noticeBoardNum) {
+					SqlSession sqlSession = getSqlSessionFactory().openSession();
+					int re = -1;
+					try {
+						re = sqlSession.getMapper(Mapper.class).addHitcount(noticeBoardNum);
+						if(re > 0){
+							sqlSession.commit();
+						}else{
+							sqlSession.rollback();
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}finally{
+						sqlSession.close();
+					}
+					return re;
+					
+				}
+				
+				//공지사항 세부보기
+
+				public NoticeBoard noticeBoardDetail(int noticeBoardNum) {
+					SqlSession sqlSession = getSqlSessionFactory().openSession();
+					NoticeBoard noticeBoard = null;
+					try {
+						noticeBoard = sqlSession.getMapper(Mapper.class).noticeBoardDetail(noticeBoardNum);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}finally{
+						sqlSession.close();
+					}
+					
+					return noticeBoard; 
+				}
+				
+				//학교정보조회
+				public School schoolDetail() {
+					SqlSession session=getSqlSessionFactory().openSession();
+					School school = null;
+					try {
+						school=session.getMapper(Mapper.class).schoolDetail();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}finally {
+						session.close();
+					}
+					return school;
+				}
+				
+				
 
 
 }

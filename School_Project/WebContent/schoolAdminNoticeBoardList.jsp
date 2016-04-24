@@ -34,6 +34,8 @@
     		<div class = "container-fluid">
     			<div class = "side-body">
     				<jsp:include page="noticeBoardList.jsp"/>
+    				<button type="button" class="btn btn-primary"
+							onclick="location.href='noticeBoardInsertForm.jsp' ">등록</button>
     			</div>
     		</div>
       	</div>       

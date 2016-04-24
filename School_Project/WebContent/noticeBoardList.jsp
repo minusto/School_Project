@@ -1,5 +1,25 @@
+<%@page import="kosta.model.ListModel"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+ 
+
+<%
+	session.getAttribute("a");
+	request.setCharacterEncoding("UTF-8");
+	String pageNum = request.getParameter("pageNum");
+	if(pageNum == null) { //insert를 하고 온 것이라면 첫번째 페이지가 되어야 할 것이다.
+		pageNum = "1"; //이것을 listBoardService에 가져가야 한다.
+		}
+	int requestPage = Integer.parseInt(pageNum);
+	SchoolService service = SchoolService.getInstance();
+	ListModel listModel = service.noticeBoardListService(requestPage,request);
+	request.setAttribute("listModel", listModel);
+
+%>
 <!DOCTYPE html>
 <html>
 
@@ -74,48 +94,121 @@ tbody tr.selected td {
 											</tr>
 										</thead>
 										<tbody>
+										<c:forEach var="noticeBoard" items="${listModel.list}">
 											<tr>
-												<td>1</td>
-												<td>공지사항1</td>
-												<td>관리자</td>
-												<td>2016-05-15</td>
-												<td>0</td>
+												<td>${noticeBoard.noticeBoardNum}</td>
+												<c:set var="name" value="${a}" />
+
+														<c:choose>
+														    <c:when test="${name eq 'student'}">
+														    <td><a href="schoolAdminNoticeBoardDetail.jsp?noticeBoardNum=${noticeBoard.noticeBoardNum}">${noticeBoard.noticeBoardTitle}</a></td>
+														    </c:when>
+														    <c:when test="${name eq 'teacher'}">
+														      <td><a href="teacherNoticeBoardDetail.jsp?noticeBoardNum=${noticeBoard.noticeBoardNum}">${noticeBoard.noticeBoardTitle}</a></td>
+														    </c:when>
+														    <c:when test="${name eq 'parent'}">
+														      <td><a href="teacherNoticeBoardDetail.jsp?noticeBoardNum=${noticeBoard.noticeBoardNum}">${noticeBoard.noticeBoardTitle}</a></td>
+														    </c:when>
+														    <c:otherwise>
+															 <td><a href="schoolAdminNoticeBoardDetail.jsp?noticeBoardNum=${noticeBoard.noticeBoardNum}">${noticeBoard.noticeBoardTitle}</a></td>
+														    </c:otherwise>
+														</c:choose>
+												
+												<td>${noticeBoard.schoolAdminId}</td>
+												<td>
+												<fmt:formatDate value="${noticeBoard.noticeBoardDate}" pattern="yyyy-MM-dd"/>
+												</td>
+												<td>${noticeBoard.noticeBoardHitcount}</td>
 											</tr>
-											<tr>
-												<td>1</td>
-												<td>공지사항1</td>
-												<td>관리자</td>
-												<td>2016-05-15</td>
-												<td>0</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>공지사항1</td>
-												<td>관리자</td>
-												<td>2016-05-15</td>
-												<td>0</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>공지사항1</td>
-												<td>관리자</td>
-												<td>2016-05-15</td>
-												<td>0</td>
-											</tr>
+											</c:forEach>
+
 
 										</tbody> 
 									</table>
+									
+									
 									<!--페이지 -->
+									<c:set var="name" value="${a}" />
+
+														<c:choose>
+														    <c:when test="${name eq 'student'}">
+														    <c:if test="${listModel.startPage > 5}">
+																<a href="studentNoticeBoardList.jsp?pageNum=${listModel.startPage - 5}">[이전]</a>	
+															</c:if>
+															
+															<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
+																<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+																	<a href="studentNoticeBoardList.jsp?pageNum=${pageNo}">[${pageNo}]</a>
+																<c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+															</c:forEach>
+															
+															<c:if test="${listModel.endPage < listModel.totalPageCount}">
+																<a href="studentNoticeBoardList.jsp?pageNum=${listModel.startPage + 5}">[다음]</a>
+															</c:if>
+														    
+														    </c:when>
+														    
+														    <c:when test="${name eq 'teacher'}">
+														    <c:if test="${listModel.startPage > 5}">
+																<a href="teacherNoticeBoardList.jsp?pageNum=${listModel.startPage - 5}">[이전]</a>	
+															</c:if>
+															
+															<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
+																<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+																	<a href="teacherNoticeBoardList.jsp?pageNum=${pageNo}">[${pageNo}]</a>
+																<c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+															</c:forEach>
+															
+															<c:if test="${listModel.endPage < listModel.totalPageCount}">
+																<a href="teacherNoticeBoardList.jsp?pageNum=${listModel.startPage + 5}">[다음]</a>
+															</c:if>
+														    </c:when>
+														    
+														    <c:when test="${name eq 'parent'}">
+														      <c:if test="${listModel.startPage > 5}">
+																	<a href="parentNoticeBoardList.jsp?pageNum=${listModel.startPage - 5}">[이전]</a>	
+																</c:if>
+																
+																<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
+																	<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+																		<a href="parentNoticeBoardList.jsp?pageNum=${pageNo}">[${pageNo}]</a>
+																	<c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+																</c:forEach>
+																
+																<c:if test="${listModel.endPage < listModel.totalPageCount}">
+																	<a href="parentNoticeBoardList.jsp?pageNum=${listModel.startPage + 5}">[다음]</a>
+																</c:if>
+														    </c:when>
+														    
+														    <c:otherwise>
+														    <c:if test="${listModel.startPage > 5}">
+																<a href="SchoolAdminNoticeBoardList.jsp?pageNum=${listModel.startPage - 5}">[이전]</a>	
+															</c:if>
+															
+															<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
+																<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+																	<a href="schoolAdminNoticeBoardList.jsp?pageNum=${pageNo}">[${pageNo}]</a>
+																<c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+															</c:forEach>
+															
+															<c:if test="${listModel.endPage < listModel.totalPageCount}">
+																<a href="schoolAdminNoticeBoardList.jsp?pageNum=${listModel.startPage + 5}">[다음]</a>
+															</c:if>
+															
+														    </c:otherwise>
+														</c:choose>
+
  
 									<!-- 검색 -->
 									<form action="" method="post" class="pull-right">
-										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
+										<input type="checkbox" id="checkbox-1"name="area" value="noticeBoardTitle"> 
 										<label> 제목</label>
-										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
+										<input type="checkbox" id="checkbox-1"name="area" value="schoolAdminId"> 
 										<label> 작성자</label>
 										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
 										<input type="hidden" name="temp" value="temp" >
 										<input class="btn btn-default" type="submit" value="검색">
+										<button class="btn btn-default" onclick="javascript :location.replace()">검색초기화</button>
 								</form>
 								
 							</div>

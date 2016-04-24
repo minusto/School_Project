@@ -1,7 +1,14 @@
+<%@page import="kosta.model.School"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
+
+<%
 	request.setAttribute("path", "학교관리> 학교 정보 조회");
+	request.setCharacterEncoding("UTF-8");
+	SchoolService service=SchoolService.getInstance();
+	School school=service.SchoolDetail();
+	request.setAttribute("school", school);
 %>
 <!DOCTYPE html>
 <html>
@@ -45,7 +52,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">
-										<div class="title">학교 목록</div>
+										<div class="title">학교 정보</div>
 									</div>
 								</div>
 								<div class="col-sm-2"></div>
@@ -54,20 +61,20 @@
 									<table class="table table-striped">
 										<tr height="30">
 											<th width="150">학교아이디</th>
-											<td width="150">123123</td>
+											<td width="150">${school.schoolId}</td>
 										</tr>
 										
 										<tr height="30">
 											<th width="150">학교이름</th>
-											<td width="150">11</td>
+											<td width="150">${school.schoolName}</td>
 										</tr>
 										<tr height="30">
 											<th width="150">주소</th>
-											<td width="150">서울시 가산</td>
+											<td width="150">${school.schoolAddress}</td>
 										</tr>
 										<tr height="30">
-											<th width="150">작성일</th>
-											<td width="150"> 02-444-4444</td>
+											<th width="150">전화번호</th>
+											<td width="150"> ${school.schoolTel}</td>
 										</tr>
 									</table>
 									<a href="#" class="pull-right" ><button type="button" class="btn btn-primary">정보수정</button></a>
