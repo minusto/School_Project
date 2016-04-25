@@ -203,7 +203,7 @@
 													<td>${teacher.memberTel}</td>
 													<td>${teacher.memberEmail}</td>
 													<td>${teacher.teacherClass}</td>
-													<td>${teacher.subjectId}</td>
+													<td>${teacher.subjectName}</td>
 												</tr>
 											</c:forEach>
 										</tbody>
