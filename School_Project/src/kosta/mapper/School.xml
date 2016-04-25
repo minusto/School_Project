@@ -77,7 +77,7 @@
 			, memberEmail , memberNote , memberPassword , memberAddress , schoolId
 		)VALUES(
 			#{memberId} , #{memberName} , SYSDATE , #{memberTel}
-			, #{memberEmail} , #{memberNote} ,'1234' , #{memberAddress} , #{schoolId} 
+			, #{memberEmail} , #{memberNote} ,'1234' , #{memberAddress} , 'YongKab' 
 		)
 	</insert>
 	<insert id="insertTeacher" parameterType="teacher">
