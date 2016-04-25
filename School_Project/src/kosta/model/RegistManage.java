@@ -7,7 +7,7 @@ public class RegistManage implements Serializable {
 	private int registNum;
 	private String schoolAdminId;
 	private String memberId;
-	private String userGrade;
+	private String memberGrade;
 
 	public int getRegistNum() {
 		return registNum;
@@ -33,11 +33,11 @@ public class RegistManage implements Serializable {
 		this.memberId = memberId;
 	}
 
-	public String getUserGrade() {
-		return userGrade;
+	public String getmemberGrade() {
+		return memberGrade;
 	}
 
-	public void setUserGrade(String userGrade) {
-		this.userGrade = userGrade;
+	public void setmemberGrade(String memberGrade) {
+		this.memberGrade = memberGrade;
 	}
 }

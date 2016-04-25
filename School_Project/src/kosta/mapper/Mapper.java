@@ -11,6 +11,7 @@ import kosta.model.NoticeBoard;
 import kosta.model.Parent;
 import kosta.model.ParentList;
 import kosta.model.ParentNullList;
+import kosta.model.RegistManage;
 import kosta.model.School;
 import kosta.model.SchoolAdmin;
 import kosta.model.SchoolAdminDetail;
@@ -64,4 +65,10 @@ public interface Mapper  {
 	public List<ParentNullList> parentNullList();//액터  : 교사 ==> 학부모 정보 NULL LIST
 	public List<Subject> subjectList(); // 과목정보조회
 	public List<School> schoolList(); // 학교정보조회
+	public int insertRegistManage(RegistManage registManage);//사용자 등급등록
+	public int insertMemberId(Member member);//사용자 iD등록
+	public int insertStudentIdManage(Student student);//학생아이디 등록+나머지 null;
+	public int insertParentId(String parent); //학부모 아이디 등록
+	public List<RegistManage> userList(); //유저리스트
+	public int insertTeacherGrade(RegistManage registManage);// 교사등급 등록
 }

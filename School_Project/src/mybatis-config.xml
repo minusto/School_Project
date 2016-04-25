@@ -27,6 +27,7 @@
       <typeAlias type="kosta.model.SchoolRegist" alias="SchoolRegist"/>
       <typeAlias type="kosta.model.ParentNullList" alias="ParentNullList"/>
       <typeAlias type="kosta.model.Subject" alias="Subject"/>
+      <typeAlias type="kosta.model.RegistManage" alias="RegistManage"/>
    </typeAliases>
    
    <environments default="development">

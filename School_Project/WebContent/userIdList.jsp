@@ -1,9 +1,23 @@
+<%@page import="kosta.model.RegistManage"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학교관리>사용자 ID 목록");
-%>
+%><%
+	request.setCharacterEncoding("utf-8");
+	%>
+	<%
+	SchoolService service = SchoolService.getInstance();
+	
+	List<RegistManage> list = service.userListService();
+	request.setAttribute("list", list);
+	%>
+
+
 <html>
 
 <head>
@@ -59,34 +73,13 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td><a href="#">ST001</a></td>
-												<td>학생</td>
-											</tr>
-											<tr>
-												<td><a href="#">ST002</a></td>
-												<td>학생</td>
-											</tr>
-											<tr>
-												<td><a href="#">ST003</a></td>
-												<td>학생</td>
-											</tr>
-											<tr>
-												<td><a href="#">TT001</a></td>
-												<td>교사</td>
-											</tr>
-											<tr>
-												<td><a href="#">ST002</a></td>
-												<td>교사</td>
-											</tr>
-											<tr>
-												<td><a href="#">PR001</a></td>
-												<td>학부모</td>
-											</tr>
-											<tr>
-												<td><a href="#">PR002</a></td>
-												<td>학부모</td>
-											</tr>
+											<c:forEach var="list" items="${list}">
+												<tr>
+													<td><a href="#">${list.memberId}</a></td>
+													<td>${list.memberGrade}</td>
+													
+												</tr>
+											</c:forEach>
 
 										</tbody> 
 									</table>

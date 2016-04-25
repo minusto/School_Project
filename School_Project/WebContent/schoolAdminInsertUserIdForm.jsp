@@ -1,7 +1,11 @@
+<%@page import="kosta.model.School"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 		<%
 	request.setAttribute("path", "학교관리> 사용자 ID 등록");
+
+		
 %>
 <!DOCTYPE html>
 <html>
@@ -49,17 +53,31 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" action="logic/insertUserIdOk.jsp" method="post">
+                                    <input type="hidden" name="schoolAdminId" value="admin"> <!-- 세션값으로 넣어야하나? -->
                                         <div class="form-group">
                                             <label  class="col-sm-2 control-label">사용자 ID</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control"  placeholder="schoolName">
+                                                <input type="text" class="form-control" name="memberId">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">등급</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" placeholder="schoolAddress">
+                                            <div>
+<!--                                           <div class="radio3 radio-check radio-inline"> -->
+<!--                                             <input type="radio" id="radio4" name="memberGrade" value="교사" checked=""> -->
+<!--                                             <label for="radio4">교사</label> -->
+<!--                                           </div> -->
+                                          <div class="radio3 radio-check radio-inline">
+                                            <input type="radio" id="radio5" name="memberGrade" value="학생">
+                                            <label for="radio5">학생</label>
+                                          </div>
+                                          <div class="radio3 radio-check radio-inline">
+                                            <input type="radio" id="radio6" name="memberGrade" value="학부모">
+                                            <label for="radio6">학부모</label>
+                                          </div>
+                                        </div>
                                             </div>
                                         </div>
                                         <div class="form-group">

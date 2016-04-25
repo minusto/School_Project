@@ -8,10 +8,14 @@
     <jsp:setProperty property="*" name="member"/>
     <jsp:useBean id="teacher" class="kosta.model.Teacher"></jsp:useBean>
     <jsp:setProperty property="*" name="teacher"/>
+    
+    <jsp:useBean id="registManage" class="kosta.model.RegistManage"></jsp:useBean>
+    <jsp:setProperty property="memberId" name="registManage"/>
 <%
     SchoolService service = SchoolService.getInstance();
     int re = service.insertMember(member);
     int re2 = service.insertTeacher(teacher);
+    int re3 =service.insertTeacherGradeService(registManage);
     
     if(re >0 && re2 > 0 ){
     	response.sendRedirect("../schoolAdminInsertTeacherForm.jsp");

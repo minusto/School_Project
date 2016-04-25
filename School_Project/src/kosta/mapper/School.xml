@@ -297,6 +297,64 @@
 		SELECT * FROM school
 	</select>
 	
+		<!-- 사용자 등급 등록 -->
+	<insert id="insertRegistManage" parameterType="RegistManage">
+		insert into RegistManage (
+			registNum, schoolAdminId, memberId, memberGrade
+		)values(
+			REGISTMANAGE_SEQ.NEXTVAL,#{schoolAdminId},#{memberId},#{memberGrade}
+		)
+	</insert>
+	
+	<!-- 사용자 iD 등록 -->
+	<insert id="insertMemberId" parameterType="member">
+		INSERT INTO member(
+			memberId , memberName , memberBirthday , memberTel
+			, memberEmail , memberNote , memberPassword , memberAddress , schoolId
+		)VALUES(
+			#{memberId} , null , null , null
+			, null ,null ,null ,null ,'YD_01'
+		)
+	</insert>
+	
+	<!-- 학생 iD 등록 +나머지 null -->
+	<insert id="insertStudentIdManage" parameterType="Student">
+		INSERT INTO student(
+			memberId , studentCode , studentGrade , studentClass
+			, studentNum , studentGender , studentMajor , studentPicture
+		)VALUES(
+			#{memberId} , '' ,  ''  ,  '' 
+			  ,  ''  , ''  , ''  , ''  
+		)
+	</insert>
+	
+
+<!-- 학부모 아이디 -->
+<insert id="insertParentId" parameterType="String">
+		INSERT INTO parent(
+			parentId , familyRelation , parentName , parentPassword
+			, memberId
+		)VALUES(
+			#{parentId} , null , null , null , null
+		)
+	</insert>
+	
+<!-- 		 	사용자 ID목록  -->
+	<select id="userList" parameterType="RegistManage"  resultType="RegistManage">
+	select *
+	from RegistManage
+	
+	</select>
+	
+ 	<!-- 	교사 등급 등록  --> 
+	<insert id="insertTeacherGrade" parameterType="RegistManage">
+		insert into RegistManage (
+			registNum, schoolAdminId, memberId, memberGrade
+		)values(
+			REGISTMANAGE_SEQ.NEXTVAL,#{schoolAdminId}, #{memberId},'교사'
+		)
+	</insert>
+	
 	
 	
 </mapper>
