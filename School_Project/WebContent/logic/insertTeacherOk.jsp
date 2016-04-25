@@ -15,7 +15,7 @@
     int re2 = service.insertTeacher(teacher);
     
     if(re >0 && re2 > 0 ){
-    	response.sendRedirect("/schoolAdminInsertTeacherForm.jsp");
+    	response.sendRedirect("../schoolAdminInsertTeacherForm.jsp");
     }else{
     	System.out.print("입력실패");
     }
