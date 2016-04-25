@@ -7,6 +7,7 @@
 	request.setAttribute("path", "학교관리자> 상세보기");
 	request.setCharacterEncoding("UTF-8");
 	String id=request.getParameter("id");
+	System.out.println(id);
 	SchoolService service=SchoolService.getInstance();
 	SchoolAdminDetail sad=service.schoolAdminDetailService(id);
 	request.setAttribute("sad", sad);

@@ -37,8 +37,8 @@
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">${member.memberName }</h4>
-                                        <p>${member.memberEmail }</p>
+                                        <h4 class="username">${member.memberName }${parent.parentName }</h4>
+                                        <p>${member.memberEmail }${parent.familyRelation }</p>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
                                             <button type="button" class="btn btn-default" onclick="location.href='logic/logoutOk.jsp'"><i class="fa fa-sign-out"></i> Logout</button>

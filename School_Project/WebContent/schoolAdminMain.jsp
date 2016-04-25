@@ -87,7 +87,7 @@
 																<div class="modal-body"> 
 																	<div class="row">
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="adminInsertSchoolForm.jsp">
+																			<a href="schoolAdminInsertSchoolForm.jsp">
 																			<h3>학교 등록</h3>
 																			</a>
 																		</div>
@@ -97,7 +97,7 @@
 																			</a>
 																		</div>
 																		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-																			<a href="adminInsertUserIdForm.jsp">
+																			<a href="schoolAdminInsertUserIdForm.jsp">
 																			<h3>사용자 ID 등록</h3>
 																				</a>
 																		</div>

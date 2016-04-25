@@ -1,12 +1,28 @@
+<%@page import="kosta.model.SchoolAdmin"%>
+<%@page import="kosta.model.Parent"%>
 <%@page import="kosta.model.SchoolService"%>
 <%@page import="kosta.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%	
 	request.setCharacterEncoding("UTF-8");
 	String id=(String)session.getAttribute("id");
+	String grade=(String)session.getAttribute("grade");
+	String name=null;
+	request.setAttribute("id", id);
 	SchoolService service=SchoolService.getInstance();
-	Member member=service.memberDetailService(id);
-	request.setAttribute("member", member);
+	if(grade.equals("학생")||grade.equals("교사")){
+		Member member=service.memberDetailService(id);
+		name=member.getMemberName();
+		request.setAttribute("name", name);
+	}else if(grade.equals("학부모")){
+		Parent parent=service.parentInfoDetailService(id);
+		name=parent.getParentName();
+		request.setAttribute("name", name);
+	}else if(grade.equals("학교관리자")){
+		SchoolAdmin sa=service.schoolAdminInfoDetailService(id);
+		name=sa.getSchoolAdminName();
+		request.setAttribute("name", name);
+	}
 	
 	String modCheck=request.getParameter("modCheck");
 	request.setAttribute("modCheck", modCheck);
@@ -65,17 +81,17 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal" action="logic/modPasswordOk.jsp?id=${member.memberId }" method="post">
+                                    <form class="form-horizontal" action="logic/modPasswordOk.jsp?id=${id }" method="post">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">사용자ID</label>
                                             <div class="col-sm-5">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">${member.memberId }</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">${id }</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
                                             <div class="col-sm-5">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">${member.memberName }</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">${name }</label>
                                             </div>
                                         </div>
                                         <div class="form-group">

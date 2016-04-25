@@ -23,6 +23,8 @@
       <typeAlias type="kosta.model.NoticeBoard" alias="NoticeBoard"/>
       <typeAlias type="kosta.model.Search" alias="Search"/>
       <typeAlias type="kosta.model.School" alias="School"/>
+      <typeAlias type="kosta.model.SystemAdmin" alias="SystemAdmin"/>
+      <typeAlias type="kosta.model.SchoolRegist" alias="SchoolRegist"/>
    </typeAliases>
    
    <environments default="development">
