@@ -1,13 +1,10 @@
 <%@page import="kosta.model.SchoolService"%>
 <%@page import="kosta.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="logic/teacherSessionCheck.jsp" %>
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "Main");
-	String id=request.getParameter("id");
-	SchoolService service=SchoolService.getInstance();
-	Member member=service.memberDetailService(id);
-	request.setAttribute("member", member);
 %>
 <html>
 <head>

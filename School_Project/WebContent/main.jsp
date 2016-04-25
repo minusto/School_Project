@@ -262,6 +262,7 @@
 				<div class="modal-body row">
 					<div class="col-md-8 col-md-offset-2">
 						<form action="logic/memberCheck.jsp" method="post">
+						<input type="hidden" name="systemAdminLogin" value="systemAdmin">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
 									size="25" style="margin-top: 10px" name="id"/>
