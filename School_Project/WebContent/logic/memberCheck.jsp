@@ -29,7 +29,7 @@
 					session.setAttribute("id", id);
 					session.setAttribute("name", sa.getSchoolAdminName());
 					session.setAttribute("grade", "학교관리자");
-					response.sendRedirect("../teacherMain.jsp");
+					response.sendRedirect("../schoolAdminMain.jsp");
 				} else {
 					response.sendRedirect("../main.jsp?login=fail");
 				}

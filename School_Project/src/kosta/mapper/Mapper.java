@@ -14,6 +14,7 @@ import kosta.model.School;
 import kosta.model.SchoolAdmin;
 import kosta.model.SchoolAdminDetail;
 import kosta.model.SchoolAdminRegist;
+import kosta.model.SchoolRegist;
 import kosta.model.Search;
 import kosta.model.Student;
 import kosta.model.StudentDetail;
@@ -57,4 +58,5 @@ public interface Mapper  {
 	public SystemAdmin systemAdminInfoDetail(String id);//액터  : 시스템 ==>시스템관리자테이블 정보조회
 	public int parentModPassword(Parent parent);//액터  : 학부모 ==>최초로그인 비밀번호 변경
 	public int schoolAdminModPassword(SchoolAdmin schoolAdmin);//액터  : 학교관리자 ==>최초로그인 비밀번호 변경
+	public int insertSchoolRegist(SchoolRegist schoolRegist);//액터 학교관리자 ==> 학교등록
 }

@@ -279,6 +279,8 @@
 		WHERE schoolAdminId=#{schoolAdminId}
 	</update>
 	
-	
+	<insert id="insertSchoolRegist" parameterType="SchoolRegist">
+		INSERT into schoolregist values(#{schoolId},#{schoolAdminId})
+	</insert>
 	
 </mapper>
