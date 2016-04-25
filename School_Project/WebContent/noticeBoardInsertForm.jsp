@@ -77,7 +77,7 @@
 													<input type="file"  name="noticeBoardFileName">
 													<p class="help-block">영문명 파일로 올려주세요</p>
 												</div>
-												<input type="hidden" name="schoolAdminId" value="admin">
+												<input type="hidden" name="schoolAdminId" value="admin"><!-- 밸류값을 세션으로 받아야 글이써짐  -->
 												<div class="pull-right">
 													<input type="submit" class="btn btn-default" value="글쓰기">
 													&nbsp;&nbsp;&nbsp;
