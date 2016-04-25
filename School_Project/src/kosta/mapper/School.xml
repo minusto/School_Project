@@ -27,6 +27,7 @@
 		FROM member m, student st
 		WHERE m.memberid = st.memberid
 		ORDER BY m.memberid
+		
 	</select>
 
 	<!-- 학부모 정보 입력 -->
