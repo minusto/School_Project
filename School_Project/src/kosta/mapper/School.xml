@@ -20,12 +20,12 @@
 			#{systemAdminId},#{schoolAdminId},SYSDATE,#{schoolEndDate}
 		)
 	</insert>
-	
 	<!-- 학생목록 출력 -->
 	<select id="studentList" resultType="StudentList">
 		SELECT m.memberid, m.membername, m.memberbirthday, m.schoolid, st.studentcode, st.studentgrade, st.studentclass, st.studentnum, st.studentgender, st.studentmajor 
 		FROM member m, student st
 		WHERE m.memberid = st.memberid
+		AND st.studentCode IS NOT NULL
 		ORDER BY m.memberid
 	</select>
 
@@ -76,15 +76,15 @@
 			memberId , memberName , memberBirthday , memberTel
 			, memberEmail , memberNote , memberPassword , memberAddress , schoolId
 		)VALUES(
-			#{memberId} , #{memberName} , SYSDATE , #{memberTel}
-			, #{memberEmail} , #{memberNote} ,'1234' , #{memberAddress} , #{schoolId} 
+			#{memberId} , #{memberName} , #{memberBirthday} , #{memberTel}
+			, #{memberEmail} , #{memberNote} ,'1234' , #{memberAddress} , 'KOHIGH'
 		)
 	</insert>
 	<insert id="insertTeacher" parameterType="teacher">
 		INSERT INTO teacher(
-		teacherClass , teacherPicture , teacherPosition , subjectName  , memberId
+		teacherClass , teacherPicture , teacherPosition , subjectId  , memberId
 		)VALUES(
-		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectName} , #{memberId}
+		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectId} , #{memberId}
 		)
 	</insert>
 	
@@ -282,5 +282,21 @@
 	<insert id="insertSchoolRegist" parameterType="SchoolRegist">
 		INSERT into schoolregist values(#{schoolId},#{schoolAdminId})
 	</insert>
+	
+	<!-- 액터  : 교사 ==> 학부모 정보 NULL LIST -->
+	<select id="parentNullList" resultType="ParentNullList">
+		SELECT parentId FROM parent
+		WHERE memberId IS NULL
+	</select>
+	<!-- 과목정보조회 -->
+	<select id="subjectList" resultType="Subject">
+		SELECT * FROM subject
+	</select>
+	<!-- 학교정보조회  -->
+	<select id="schoolList" resultType="School">
+		SELECT * FROM school
+	</select>
+	
+	
 	
 </mapper>

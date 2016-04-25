@@ -587,6 +587,46 @@ public class SchoolDao {
 		return re;
 	}
 	
+	//학부모 정보 NULL List
+	public List<ParentNullList> parentNullList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<ParentNullList> list = null;
+		try {
+			list = sqlSession.getMapper(Mapper.class).parentNullList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	//과목 정보 조회	
+	public List<Subject> subjectList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Subject> list = null;
+		try {
+			list = sqlSession.getMapper(Mapper.class).subjectList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	//학교 정보 조회
+	public List<School> schoolList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<School> list = null;
+		try {
+			list = sqlSession.getMapper(Mapper.class).schoolList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
 	
 	
 }

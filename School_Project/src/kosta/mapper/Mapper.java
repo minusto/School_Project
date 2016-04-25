@@ -10,6 +10,7 @@ import kosta.model.MemberCheck;
 import kosta.model.NoticeBoard;
 import kosta.model.Parent;
 import kosta.model.ParentList;
+import kosta.model.ParentNullList;
 import kosta.model.School;
 import kosta.model.SchoolAdmin;
 import kosta.model.SchoolAdminDetail;
@@ -20,6 +21,7 @@ import kosta.model.Student;
 import kosta.model.StudentDetail;
 import kosta.model.StudentList;
 import kosta.model.StudentNullList;
+import kosta.model.Subject;
 import kosta.model.SystemAdmin;
 import kosta.model.Teacher;
 import kosta.model.TeacherDetail;
@@ -59,4 +61,7 @@ public interface Mapper  {
 	public int parentModPassword(Parent parent);//액터  : 학부모 ==>최초로그인 비밀번호 변경
 	public int schoolAdminModPassword(SchoolAdmin schoolAdmin);//액터  : 학교관리자 ==>최초로그인 비밀번호 변경
 	public int insertSchoolRegist(SchoolRegist schoolRegist);//액터 학교관리자 ==> 학교등록
+	public List<ParentNullList> parentNullList();//액터  : 교사 ==> 학부모 정보 NULL LIST
+	public List<Subject> subjectList(); // 과목정보조회
+	public List<School> schoolList(); // 학교정보조회
 }

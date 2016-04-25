@@ -1,7 +1,21 @@
+<%@page import="kosta.model.StudentList"%>
+<%@page import="kosta.model.ParentNullList"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <%
+	int i = 1;
+	int j = 1;
 	request.setAttribute("path", "학부모 관리 > 학부모 정보 입력");
+	SchoolService service = SchoolService.getInstance();
+	List<ParentNullList> list = service.ParentNullListService();
+	request.setAttribute("list", list);
+	List<StudentList> list2 = service.studentListService();
+	request.setAttribute("list2", list2);
 %>
 <html>
 
@@ -23,8 +37,36 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
-</head>
-
+<!-- jQuery-->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$('tbody:eq(0)').on('click','#clickStu',function(){
+				$('input[name=parentId]').val($(this).html());
+				$('button[class=close]').trigger('click'); 
+			})
+			$('tbody:eq(0) #clickStu').on({
+				 mouseenter: function(){
+				  $(this).css('color','red');
+				 },
+				 mouseleave: function(){
+				  $(this).css('color','#333');
+				 }
+			});
+			$('tbody:eq(1)').on('click','#clickStu',function(){
+				$('input[name=memberId]').val($(this).html());
+				$('button[class=close]').trigger('click'); 
+			})
+			$('tbody:eq(1) #clickStu').on({
+				 mouseenter: function(){
+				  $(this).css('color','red');
+				 },
+				 mouseleave: function(){
+				  $(this).css('color','#333');
+				 }
+			});
+		})
+	</script>
 <body class="flat-blue">
     <div class="app-container">
         <div class="row content-container">
@@ -65,26 +107,12 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<tr>
-																			<td>1</td>
-																			<th>p1</th>
+																		<c:forEach var="parent" items="${list }">
+																		<tr >
+																			<td><%=i++ %></td>
+																			<td id="clickStu" style="cursor:pointer">${parent.parentId }</td>
 																		</tr>
-																		<tr>
-																			<td>1</td>
-																			<th>p1</th>
-																		</tr>
-																		<tr>
-																			<td>1</td>
-																			<th>p1</th>
-																		</tr>
-																		<tr>
-																			<td>1</td>
-																			<th>p1</th>
-																		</tr>
-																		<tr>
-																			<td>1</td>
-																			<th>p1</th>
-																		</tr>
+																		</c:forEach>
 																	</tbody>
 																</table>
 																</div>
@@ -111,6 +139,48 @@
                                             <label for="inputPassword3" class="col-sm-2 control-label">학생ID</label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" id="memberId" name="memberId" placeholder="StudentID">
+                                            	<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary2" >
+                                            		학생ID 찾기
+                                      			</button>
+                                      			<!-- Modal -->
+                                      			<div class="modal fade modal-primary" id="modalPrimary2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            		<div class="modal-dialog">
+                                               			<div class="modal-content">
+                                                    		<div class="modal-header">
+                                                        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        		<h4 class="modal-title" id="myModalLabel">학생ID 리스트</h4>
+                                                    		</div>
+                                                    		<div class="modal-body">
+                                                               	<div class="row" style="width:100%; height:200px; overflow:auto">
+																<!-- Table -->
+																<div class="col-md-2"></div>
+																<div class="col-md-8">
+																<table class="table table-striped">
+																	<thead>
+																		<tr class="headings">
+																			<th>번호</th>
+																			<th>학생ID</th>
+																			<th>이름</th>
+																			<th>생년월일</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<c:forEach var="student" items="${list2 }">
+																		<tr >
+																			<td><%=j++ %></td>
+																			<td id="clickStu" style="cursor:pointer">${student.memberId }</td>
+																			<td>${student.memberName }</td>
+																			<td><fmt:formatDate value="${student.memberBirthday }" pattern="yyyy-MM-dd"/></td>
+																		</tr>
+																		</c:forEach>
+																	</tbody>
+																</table>
+																</div>
+																</div>
+                                                    		</div>
+                                                 		</div>
+                                             		</div>
+                                         		</div>
                                             </div>
                                         </div>
                                         <div class="form-group">

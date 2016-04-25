@@ -230,5 +230,18 @@ public class SchoolService {
 		return dao.insertSchoolRegist(schoolRegist);
 	}
 	
+	//학부모 정보 NULL List
+	public List<ParentNullList> ParentNullListService(){
+		return dao.parentNullList();
+	}
+	//과목 정보 조회
+	public List<Subject> subjectListService(){
+		return dao.subjectList();
+	}
+	//학교 정보 조회
+	public List<School> schoolListService(){
+		return dao.schoolList();
+	}
+	
 	
 }
