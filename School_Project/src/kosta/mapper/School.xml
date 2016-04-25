@@ -82,15 +82,15 @@
 	</insert>
 	<insert id="insertTeacher" parameterType="teacher">
 		INSERT INTO teacher(
-		teacherClass , teacherPicture , teacherPosition , subjectId  , memberId
+		teacherClass , teacherPicture , teacherPosition , subjectName  , memberId
 		)VALUES(
-		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectId} , #{memberId}
+		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectName} , #{memberId}
 		)
 	</insert>
 	
 	<!-- 액터 : 학교관리자 ==> 교사리스트 -->
 	<select id="listTeacher" resultType="TeacherDetail">
-	SELECT m.memberId , m.memberBirthday , m.memberTel , m.memberEmail , m.memberName , t.teacherClass , t.subjectId
+	SELECT m.memberId , m.memberBirthday , m.memberTel , m.memberEmail , m.memberName , t.teacherClass , t.subjectName
 	FROM teacher t , member m
 	WHERE t.memberId = m.memberId
 	</select>

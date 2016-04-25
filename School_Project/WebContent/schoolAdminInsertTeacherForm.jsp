@@ -107,21 +107,22 @@
                                                 <input type="text" class="form-control" name="teacherClass" placeholder="TeacherClass">
                                             </div>
                                         </div>
+                                      
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">담당과목</label>
                                             <div class="col-sm-5">
-												<select id="kkkk" class="col-md-12 form-control" name="subjectId">
+												<select id="kkkk" class="col-md-12 form-control" name="subjectName">
 													<option>수학</option>
 													<option>영어</option>
 													<option>언어</option>
 													<option>탐구</option>
 												</select>
 											</div>
-                                        </div>
+                                        </div> 
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">사진</label>
                                             <div class="col-sm-5">
-                                               <input type="file" id="exampleInputFile" name="teacherPicture">
+                                               <input type="file" id="exampleInputFile" name="teacherPicture" >
                                             <p class="help-block">jpg 형식의 파일만 지원합니다.</p>
                                             </div>
                                         </div> 

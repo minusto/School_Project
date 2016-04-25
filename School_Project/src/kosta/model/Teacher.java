@@ -9,6 +9,17 @@ public class Teacher implements Serializable {
 	private String teacherPicture;
 	private String teacherPosition;
 	private String subjectId;
+	private String subjectName;
+	
+	
+
+	public String getSubjectName() {
+		return subjectName;
+	}
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
 
 	public String getMemberId() {
 		return memberId;
