@@ -237,11 +237,48 @@
 	<select id="noticeBoardDetail" parameterType="int" resultType="NoticeBoard">
 		select * from noticeBoard where noticeBoardNum = #{noticeBoardNum}
 	</select>
+
 	<!-- 학교정보조회 -->
 	<select id="schoolDetail" resultType="School" >
 	SELECT * 
 	FROM SCHOOL
 	</select>
 
+	<!-- 액터 : 시스템 ==> 학교관리자 테이블 정보 조회 -->
+	<select id="schoolAdminInfoDetail" resultType="SchoolAdmin" parameterType="String">
+		SELECT * 
+		FROM schooladmin
+		WHERE schooladminid=#{id}
+	</select>
+	
+	<!-- 액터 : 시스템  ==> 학부모 테이블 정보 조회 -->
+	<select id="parentInfoDetail" resultType="Parent" parameterType="String">
+		SELECT * 
+		FROM parent
+		WHERE parentid=#{id}
+	</select>
+	
+	<!-- 액터 : 시스템 ==> 시스템 테이블 관리자 정보조회 -->
+	<select id="systemAdminInfoDetail" resultType="SystemAdmin" parameterType="String">
+		SELECT *
+		FROM systemadmin
+		WHERE systemAdminId=#{id}
+	</select>
+	
+	<!-- 액터 : 학부모 ==> 최초로그인 비밀번호 변경 -->
+	<update id="parentModPassword" parameterType="Parent">
+		UPDATE parent
+		SET parentpassword = #{parentPassword}
+		WHERE parentid=#{parentId}
+	</update>
+
+	<!-- 액터 : 학교관리자 ==> 최초로그인 비밀번호 변경 -->
+	<update id="schoolAdminModPassword" parameterType="SchoolAdmin">
+		UPDATE schooladmin
+		SET schoolAdminPassword = #{schoolAdminPassword}
+		WHERE schoolAdminId=#{schoolAdminId}
+	</update>
+	
+	
 	
 </mapper>

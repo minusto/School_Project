@@ -122,22 +122,14 @@ public class SchoolService {
 	
 	//관리자 -> 공지사항 등록
 	public int insertNoticeBoardService(HttpServletRequest request) throws Exception{
-
-		NoticeBoard noticeBoard=new NoticeBoard();
-		
+		NoticeBoard noticeBoard=new NoticeBoard();		
 		String uploadPath  = request.getRealPath("upload");
 		int size = 20*1024*1024; //20mb
-		
-		
-		
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
-		 
-		
-		
+			
 		noticeBoard.setNoticeBoardTitle(multi.getParameter("noticeBoardTitle"));
 		noticeBoard.setNoticeBoardPassword(multi.getParameter("noticeBoardPassword"));
-		noticeBoard.setNoticeBoardContent(multi.getParameter("noticeBoardContent"));
-		
+		noticeBoard.setNoticeBoardContent(multi.getParameter("noticeBoardContent"));		
 		noticeBoard.setSchoolAdminId(multi.getParameter("schoolAdminId"));
 		noticeBoard.setNoticeBoardNum(dao.noticeBoardNum()+1);
 		
@@ -145,12 +137,9 @@ public class SchoolService {
 		if(multi.getFilesystemName("noticeBoardFileName")!=null){
 			String noticeBoardFileName  = multi.getFilesystemName("noticeBoardFileName"); //이메소드로 파일 이름 구할수 잇음
 			noticeBoard.setNoticeBoardFileName(noticeBoardFileName);  //노티스 보드객체에 추가 
-			
-			
 		}else{
 			noticeBoard.setNoticeBoardFileName(""); 
 		}
-		
 		return dao.insertNoticeBoard(noticeBoard);
 	}
 	
@@ -202,22 +191,39 @@ public class SchoolService {
 	}
 	
 	//히트카운트
-		public int addHitcountService(int noticeBoardNum) {
-			return dao.addHitcount(noticeBoardNum);
-		}
-		
-		
-		//공지사항 세부보기
+	public int addHitcountService(int noticeBoardNum) {
+		return dao.addHitcount(noticeBoardNum);
+	}
+	//공지사항 세부보기
 
-		public NoticeBoard noticeBoardDetailService(int noticeBoardNum){
-			
-			return dao. noticeBoardDetail(noticeBoardNum) ;
-			
-		}
-		//학교 정보조회
-		public School SchoolDetail(){
-			return dao.schoolDetail();
-		}
+	public NoticeBoard noticeBoardDetailService(int noticeBoardNum){		
+		return dao. noticeBoardDetail(noticeBoardNum) ;		
+	}
+	//학교 정보조회
+	public School SchoolDetail(){
+		return dao.schoolDetail();
+	}
+	
+	//액터 : 시스템 ==> 학교관리자 테이블 정보 조회
+	public SchoolAdmin schoolAdminInfoDetailService(String id){
+		return dao.schoolAdminInfoDetail(id);
+	}	
+	//액터 : 시스템 ==> 학부모 테이블 정보 조회
+	public Parent parentInfoDetailService(String id){
+		return dao.parentInfoDetail(id);
+	}
+	//액터 : 시스템 ==> 시스템관리자 테이블 정보 조회	
+	public SystemAdmin systemAdminInfoDetailService(String id){
+		return dao.systemAdminInfoDetail(id);
+	}
+	//액터 : 학교관리자 ==> 최초로그인 비밀번호변경		
+	public int schoolAdminModPasswordService(SchoolAdmin schoolAdmin){
+		return dao.schoolAdminModPassword(schoolAdmin);
+	}
+	//액터 : 학부모 ==> 최초로그인 비밀번호변경
+	public int parentModPasswordService(Parent parent){
+		return dao.parentModPassword(parent);
+	}
 	
 	
 }
