@@ -225,5 +225,10 @@ public class SchoolService {
 		return dao.parentModPassword(parent);
 	}
 	
+	//액터 : 학교관리자 ==> 학교등록
+	public int insertSchoolRegistService(SchoolRegist schoolRegist){
+		return dao.insertSchoolRegist(schoolRegist);
+	}
+	
 	
 }

@@ -568,4 +568,25 @@ public class SchoolDao {
 		return re;
 	}
 	
+	// 액터 : 학교관리자 ==> 학교등록
+	public int insertSchoolRegist(SchoolRegist schoolRegist){
+		SqlSession session=getSqlSessionFactory().openSession();
+		int re=0;
+		try {
+			re=session.getMapper(Mapper.class).insertSchoolRegist(schoolRegist);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	
+	
 }

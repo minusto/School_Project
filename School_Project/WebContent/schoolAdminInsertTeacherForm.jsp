@@ -111,7 +111,7 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">담당과목</label>
                                             <div class="col-sm-5">
-												<select id="kkkk" class="col-md-12 form-control" name="subjectName">
+												<select id="kkkk" class="col-md-12 form-control" name="subjectId">
 													<option>수학</option>
 													<option>영어</option>
 													<option>언어</option>
