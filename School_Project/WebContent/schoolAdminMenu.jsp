@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 			<nav class="navbar navbar-default navbar-fixed-top navbar-top">
 				<div class="container-fluid">
@@ -32,15 +33,15 @@
 
 						<li class="dropdown profile"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-expanded="false">${member.memberName }<span class="caret"></span></a>
+							aria-expanded="false">${schoolAdmin.schoolAdminName }<span class="caret"></span></a>
 							<ul class="dropdown-menu animated fadeInDown">
 								<li class="profile-img"><img
 									src="img/profile/picjumbo.com_HNCK4153_resize.jpg"
 									class="profile-img"></li>
 								<li>
 									<div class="profile-info">
-                                        <h4 class="username">${member.memberName }</h4>
-                                        <p>${member.memberEmail }</p>
+                                        <h4 class="username">${schoolAdmin.schoolAdminName }</h4>
+                                        <p>${schoolAdmin.schoolAdminTel }</p>
 										<div class="btn-group margin-bottom-2x" role="group">
 											<button type="button" class="btn btn-default">
 												<i class="fa fa-user"></i> Profile

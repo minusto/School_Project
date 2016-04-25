@@ -19,6 +19,7 @@ import kosta.model.Student;
 import kosta.model.StudentDetail;
 import kosta.model.StudentList;
 import kosta.model.StudentNullList;
+import kosta.model.SystemAdmin;
 import kosta.model.Teacher;
 import kosta.model.TeacherDetail;
 
@@ -51,4 +52,9 @@ public interface Mapper  {
 	public int addHitcount(int noticeBoardNum); //공지사항조회수
 	public NoticeBoard noticeBoardDetail(int noticeBoardNum); //공지사항 상세
 	public School schoolDetail(); //학교정보조회
+	public SchoolAdmin schoolAdminInfoDetail(String id);//액터  : 시스템 ==>학교관리자테이블 정보조회
+	public Parent parentInfoDetail(String id);//액터  : 시스템 ==>학부모테이블 정보조회
+	public SystemAdmin systemAdminInfoDetail(String id);//액터  : 시스템 ==>시스템관리자테이블 정보조회
+	public int parentModPassword(Parent parent);//액터  : 학부모 ==>최초로그인 비밀번호 변경
+	public int schoolAdminModPassword(SchoolAdmin schoolAdmin);//액터  : 학교관리자 ==>최초로그인 비밀번호 변경
 }
