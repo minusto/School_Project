@@ -93,7 +93,6 @@
                                 </div>
                                 <div class="card-body">
                                     <form class="form-horizontal" action="logic/insertTeacherOk.jsp " method="post">
-                                    	<input type="hidden" name="schoolId" value="KOHIGH" />
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">사용자ID</label>
                                             <div class="col-sm-5">
