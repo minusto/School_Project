@@ -50,7 +50,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal" action="logic/insertTeacherOk.jsp ">
+                                    <form class="form-horizontal" action="logic/insertTeacherOk.jsp " method="post">
                                     
                                     	<input type="hidden" name="schoolId" value="111" />
                                     
