@@ -82,9 +82,9 @@
 	</insert>
 	<insert id="insertTeacher" parameterType="teacher">
 		INSERT INTO teacher(
-		teacherClass , teacherPicture , teacherPosition , subjectName  , memberId
+		teacherClass , teacherPicture , teacherPosition , subjectId  , memberId
 		)VALUES(
-		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectName} , #{memberId}
+		${teacherClass}, #{teacherPicture} , #{teacherPosition} , #{subjectId} , #{memberId}
 		)
 	</insert>
 	
