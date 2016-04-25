@@ -6,6 +6,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%
 	request.setCharacterEncoding("utf-8");
 	%>
@@ -14,7 +16,6 @@
 	
 	List<TeacherDetail> listTeacher = service.listTeacher();
 	request.setAttribute("listTeacher", listTeacher);
-	System.out.print("===============리스트 ::" + listTeacher.size());
 	
 
 	
@@ -185,7 +186,7 @@
 									<!-- Table -->
 									<table class="table table-striped">
 										<thead>
-											<tr class="headings">
+											<tr class="headings" height="30">
 												<th>이름</th>
 												<th>생년월일</th>
 												<th>전화번호</th>
@@ -195,18 +196,19 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<c:forEach var="teacher" items="${listTeacher}">
-												<td><a href="teacherListDetail.jsp?memberId=${teacher.memberId}">${teacher.memberName }</a></td>
-												<td>${teacher.memberBirthday}</td>
-												<td>${teacher.memberTel}</td>
-												<td>${teacher.memberEmail}</td>																							
-												<td>${teacher.teacherClass}</td>
-												<td>${teacher.subjectId}</td>
-												</c:forEach>
-																	</tr>
+											<c:forEach var="teacher" items="${listTeacher}">
+												<tr>
+													<td><a href="teacherListDetail.jsp?memberId=${teacher.memberId}">${teacher.memberName}</a></td>
+													<td>${teacher.memberBirthday}</td>
+													<td>${teacher.memberTel}</td>
+													<td>${teacher.memberEmail}</td>
+													<td>${teacher.teacherClass}</td>
+													<td>${teacher.subjectId}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
 											
-										</tbody> 
+				
 									</table>
 									<!--페이지 -->
  									

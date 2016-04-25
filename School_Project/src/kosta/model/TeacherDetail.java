@@ -11,9 +11,21 @@ public class TeacherDetail implements Serializable {
 	private int teacherClass;
 	private String subjectId;
 	
-	
-	
-	
+	public TeacherDetail(){}
+		
+	public TeacherDetail(String memberId, String memberName,
+			String memberBirthday, String memberTel, String memberEmail,
+			int teacherClass, String subjectId) {
+		super();
+		this.memberId = memberId;
+		this.memberName = memberName;
+		this.memberBirthday = memberBirthday;
+		this.memberTel = memberTel;
+		this.memberEmail = memberEmail;
+		this.teacherClass = teacherClass;
+		this.subjectId = subjectId;
+	}
+
 	public String getMemberEmail() {
 		return memberEmail;
 	}
