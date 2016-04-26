@@ -189,6 +189,79 @@
 		WHERE memberId = #{m_id}
 	</update>
 	
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기 -->
+	<select id="selectExistStudent" resultType="ExistStudentList">
+		SELECT m.memberId, m.memberName, s.studentCode, s.studentGrade, s.studentclass, s.studentNum
+		FROM student s, member m
+		WHERE s.memberId = m.memberId
+		AND studentCode IS NOT NULL 
+	</select>
+	<!-- 액터 : 교사 => 학생 모의고사 점수 입력 - 탐구 과목 리스트 가져오기 -->
+	<select id="selectResearchSubjectList" resultType="ResearchSubject">
+		SELECT * FROM researchSubject ORDER BY researchSubjectId
+	</select>
+	<!-- 액터 : 교사 => 학생 모의고사 점수 입력 - 제2외국어 과목 리스트 가져오기 -->
+	<select id="selectSecondLanguageSubjectList" resultType="SecondLanguage">
+		SELECT * FROM secondLanguage ORDER BY languageId
+	</select>
+	<!-- 액터 : 교사 => 학생 모의고사 점수 입력 - 모의고사 아이디 가져오기 -->
+	<select id="selectMockId" parameterType="MockType" resultType="String">
+		SELECT mockId FROM MockType WHERE mockYear = #{mockYear} AND mockMonth = #{mockMonth} AND mockGrade = #{mockGrade}
+	</select>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 탐구과목 아이디 가져오기 -->
+	<select id="selectResearchId" parameterType="String" resultType="String">
+		SELECT researchSubjectId FROM researchSubject WHERE researchSubjectName = #{researchName}
+	</select>
+	<!-- 액터 : 교사 => 학생 모의고사 점수 입력 - 제2외국어 아이디 가져오기 -->
+	<select id="selectSecondLanguageId" parameterType="String" resultType="String">
+		SELECT languageId FROM secondLanguage WHERE languageSubjectName = #{languageSubjectName}
+	</select>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 1학년 -->
+	<insert id="insertMockTest1Grade" parameterType="MockTest">
+		INSERT INTO mockTest(
+			mockId, memberId, languageOriginalScore, languageStandardScore, languageType, mathType, mathOriginalScore, mathStandardScore, englishOriginalScore, englishStandardScore, languageId
+		)
+		VALUES (
+			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, '', '', #{mathOriginalScore}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, ''
+		)
+	</insert>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년 -->
+	<insert id="insertMockTest2Grade" parameterType="MockTest">
+		INSERT INTO mockTest(
+			mockId, memberId, languageOriginalScore, languageStandardScore, languageType, mathType, mathOriginalScore, mathStandardScore, englishOriginalScore, englishStandardScore, languageId
+		)
+		VALUES (
+			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, '', #{mathType}, #{mathOriginalScore}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, #{languageId}
+		)
+	</insert>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년 -->
+	<insert id="insertMockTest3Grade" parameterType="MockTest">
+		INSERT INTO mockTest(
+			mockId, memberId, languageOriginalScore, languageStandardScore, languageType, mathType, mathOriginalScore, mathStandardScore, englishOriginalScore, englishStandardScore, languageId
+		)
+		VALUES (
+			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, #{languageType}, #{mathType}, #{mathOriginalScore}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, #{languageId}
+		)
+	</insert>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기 -->
+	<insert id="insertResearchScore" parameterType="ResearchSubjectScore">
+		INSERT INTO researchSubjectScore (
+			mockId, memberId, researchSubjectId, researchSubjectOriginalScore, researchSubjectStandardScore
+		)
+		VALUES (
+			#{mockId}, #{memberId}, #{researchSubjectId}, #{researchSubjectOriginalScore}, #{researchSubjectStandardScore}
+		)
+	</insert>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만 -->
+	<insert id="insertSecondLangScore" parameterType="SecondLanguageScore">
+		INSERT INTO secondLanguageScore (
+			mockId, memberId, secondLanguageOriginalScore, secondLanguageStandardScore
+		)
+		VALUES (
+			#{mockId}, #{memberId}, #{secondLanguageOriginalScore}, #{secondLanguageStandardScore}
+		)
+	</insert>
+	
 	<!-- 공지사항 글번호 -->
 	<select id="noticeBoardNum" resultType="Integer">
 		select max(NoticeBoardNum) from noticeBoard

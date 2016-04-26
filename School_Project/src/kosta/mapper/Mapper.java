@@ -5,19 +5,26 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 
 import kosta.model.AdminList;
+import kosta.model.ExistStudentList;
 import kosta.model.Member;
 import kosta.model.MemberCheck;
+import kosta.model.MockTest;
+import kosta.model.MockType;
 import kosta.model.NoticeBoard;
 import kosta.model.Parent;
 import kosta.model.ParentList;
 import kosta.model.ParentNullList;
 import kosta.model.RegistManage;
+import kosta.model.ResearchSubject;
+import kosta.model.ResearchSubjectScore;
 import kosta.model.School;
 import kosta.model.SchoolAdmin;
 import kosta.model.SchoolAdminDetail;
 import kosta.model.SchoolAdminRegist;
 import kosta.model.SchoolRegist;
 import kosta.model.Search;
+import kosta.model.SecondLanguage;
+import kosta.model.SecondLanguageScore;
 import kosta.model.Student;
 import kosta.model.StudentDetail;
 import kosta.model.StudentList;
@@ -49,6 +56,17 @@ public interface Mapper  {
 	public StudentDetail selectStudentDetail(String m_id); //교사 ==> 학생 세부 열람
 	public int deleteStudent(String m_id); //교사 ==> 학생 내용 삭제
 	public int deleteStudent2(String m_id); //교사 ==> 학생 내용 삭제
+	public List<ExistStudentList> selectExistStudent(); //교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
+	public List<ResearchSubject> selectResearchSubjectList(); //교사 => 학생 모의고사 점수 입력 - 탐구 과목 리스트 가져오기
+	public List<SecondLanguage> selectSecondLanguageSubjectList(); //교사 => 학생 모의고사 점수 입력 - 제2외국어 과목 리스트 가져오기
+	public String selectMockId(MockType mockType); //교사 ==> 학생 모의고사 점수 입력 - 모의고사 아이디 가져오기
+	public String selectResearchId(String researchName); //교사 ==> 학생 모의고사 점수 입력 - 탐구과목 아이디 가져오기
+	public String selectSecondLanguageId(String languageName); //교사 => 학생 모의고사 점수 입력 - 제2외국어 아이디 가져오기
+	public int insertMockTest1Grade(MockTest mocckTest); //교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 1학년
+	public int insertMockTest2Grade(MockTest mockTest); //교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년
+	public int insertMockTest3Grade(MockTest mockTest); //교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 3학년
+	public int insertResearchScore(ResearchSubjectScore researchScore); //교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기
+	public int insertSecondLangScore(SecondLanguageScore secondLanguageScore); //교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만
 	public int insertNoticeBoard(NoticeBoard noticeBoard); //관지라-> 공지사항 등록
 	public Integer noticeBoardNum(); //공지사항 글번호
 	public int noticeCountBoard(Search search); //페이징 처리 공지사항글번호

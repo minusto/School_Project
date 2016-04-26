@@ -378,6 +378,175 @@ public class SchoolDao {
 		}
 		return re;
 	}
+	
+	//교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
+		public List<ExistStudentList> selectExistStudent() {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<ExistStudentList> list = null;
+			try {
+				list = session.getMapper(Mapper.class).selectExistStudent();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+		//교사 => 학생 모의고사 점수 입력 - 탐구 과목 리스트 가져오기
+		public List<ResearchSubject> selectResearchSubjectList() {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<ResearchSubject> list = null;
+			try {
+				list = session.getMapper(Mapper.class).selectResearchSubjectList();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+		//교사 => 학생 모의고사 점수 입력 - 제2외국어 과목 리스트 가져오기
+		public List<SecondLanguage> selectSecondLanguageSubjectList() {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<SecondLanguage> list = null;
+			try {
+				list = session.getMapper(Mapper.class).selectSecondLanguageSubjectList();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 모의고사 아이디 가져오기
+		public String selectMockID(MockType mockType) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			String id = null;
+			try {
+				id = session.getMapper(Mapper.class).selectMockId(mockType);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return id;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 탐구과목 아이디 가져오기
+		public String selectResearchId(String researchName) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			String id = null;
+			try {
+				id = session.getMapper(Mapper.class).selectResearchId(researchName);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return id;
+		}
+		//교사 => 학생 모의고사 점수 입력 - 제2외국어 아이디 가져오기
+		public String selectSecondLanguageId(String languageName) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			String id = null;
+			try {
+				id = session.getMapper(Mapper.class).selectSecondLanguageId(languageName);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return id;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 1학년
+		public int insertMockTest1Grade(MockTest mockTest) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(Mapper.class).insertMockTest1Grade(mockTest);
+				if(re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년
+		public int insertMockTest2Grade(MockTest mockTest) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(Mapper.class).insertMockTest2Grade(mockTest);
+				if(re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 3학년
+		public int insertMockTest3Grade(MockTest mockTest) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(Mapper.class).insertMockTest3Grade(mockTest);
+				if(re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기
+		public int insertResearchScore(ResearchSubjectScore researchScore) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(Mapper.class).insertResearchScore(researchScore);
+				if(re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
+		//교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만
+		public int insertSecondLangScore(SecondLanguageScore secondLanguageScore) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(Mapper.class).insertSecondLangScore(secondLanguageScore);
+				if(re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
 
 	// 관리자 ->공지사항 등록
 	public int insertNoticeBoard(NoticeBoard noticeBoard) {

@@ -28,6 +28,14 @@
       <typeAlias type="kosta.model.ParentNullList" alias="ParentNullList"/>
       <typeAlias type="kosta.model.Subject" alias="Subject"/>
       <typeAlias type="kosta.model.RegistManage" alias="RegistManage"/>
+      <typeAlias type="kosta.model.MockType" alias="MockType"/>
+      <typeAlias type="kosta.model.MockTest" alias="MockTest"/>
+      <typeAlias type="kosta.model.ResearchSubject" alias="ResearchSubject"/>
+      <typeAlias type="kosta.model.SecondLanguage" alias="SecondLanguage"/>
+      <typeAlias type="kosta.model.ExistStudentList" alias="ExistStudentList"/>
+      <typeAlias type="kosta.model.TwoResearchSubject" alias="TwoResearchSubject"/>
+      <typeAlias type="kosta.model.ResearchSubjectScore" alias="ResearchSubjectScore"/>
+      <typeAlias type="kosta.model.SecondLanguageScore" alias="SecondLanguageScore"/>
    </typeAliases>
    
    <environments default="development">

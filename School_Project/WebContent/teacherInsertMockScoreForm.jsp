@@ -1,7 +1,20 @@
+<%@page import="kosta.model.SecondLanguage"%>
+<%@page import="kosta.model.ResearchSubject"%>
+<%@page import="kosta.model.ExistStudentList"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생 관리 > 모의고사 성적 입력");
+	SchoolService service = SchoolService.getInstance();
+	List<ExistStudentList> list = service.selectExistStudentSerevice();
+	request.setAttribute("list", list);
+	List<ResearchSubject> researchList = service.selectResearchSubjectListService();
+	request.setAttribute("researchList", researchList);
+	List<SecondLanguage> secondLanguageList = service.selectSecondLanguageSubjectListService();
+	request.setAttribute("secondLanguageList", secondLanguageList);
 %>
 <html>
 <head>
@@ -22,6 +35,96 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    	$(function() {
+    		$('#mockGrade').change(function() {
+    			var grade = $(this).val();
+    			switch (grade) {
+				case '1':
+					var content = '<table id="inserttable" class="table table-striped">';
+					content += '<thead><tr class="headings"><th colspan="4">1학년</th></tr></thead>';
+					content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td></tr>';
+					content += '<tr><td colspan="2">언어</td><td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td colspan="2">수리</td><td><input name="mathOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td></tr></tbody></table>';
+
+					$('#inserttable').html(content);
+					break;
+				case '2':
+					var content = '<table id="inserttable" class="table table-striped">';
+					content += '<thead><tr class="headings"><th colspan="4">2학년</th></tr></thead>';
+					content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td></tr>';
+					content += '<tr><td colspan="2">언어</td><td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>수리</td><td><select name="mathType"><option>수리 가</option><option>수리 나</option></select></td><td><input name="mathOriginalScore"  type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>제2외국어</td><td><select id="secondLangSelect" name="languageSubjectName"><c:forEach var="secondLanguageList" items="${secondLanguageList }"><option>${secondLanguageList.languageSubjectName }</option></c:forEach></select></td><td><input id="secondLanguageOriginalScore" name="secondLanguageOriginalScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguageStandardScore" name="secondLanguageStandardScore" type="hidden" class="form-control" value="-1" size="1"></td></tr></tbody></table';
+					
+					$('#inserttable').html(content);
+					break;
+				case '3':
+					var content = '<table class="table table-striped">';
+					content += '<thead><tr class="headings"><th colspan="4">3학년</th></tr></thead>';
+					content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td></tr>';
+					content += '<tr><td>언어</td><td><select name="languageType"><option>국어A</option><option>국어B</option></select></td><td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>수리</td><td><select name="mathType"><option>수리 가</option><option>수리 나</option></select></td><td><input name="mathOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td></tr>';
+					content += '<tr><td>제2외국어</td><td><select id="secondLangSelect" name="languageSubjectName"><c:forEach var="secondLanguageList" items="${secondLanguageList }"><option>${secondLanguageList.languageSubjectName }</option></c:forEach></select></td><td><input id="secondLanguageOriginalScore" name="secondLanguageOriginalScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguageStandardScore" name="secondLanguageStandardScore" type="hidden" class="form-control" value="-1" size="1"></td></tr></tbody></table>';
+					
+					$('#inserttable').html(content);
+					break;
+				}
+    		});
+    		$(document).on('change', '#secondLangSelect', function() {
+    			var secondSubName = $(this).val();
+    			if(secondSubName == '미응시') {
+    				$('input[id=secondLanguageOriginalScore]').attr('type', 'hidden');
+    				$('input[id=secondLanguageOriginalScore]').val('-1');
+    				
+    				$('input[id=secondLanguageStandardScore]').attr('type', 'hidden');
+    				$('input[id=secondLanguageStandardScore]').val('-1');
+    				
+    			} else {
+    				$('input[id=secondLanguageOriginalScore]').attr('type', 'text');
+    				$('input[id=secondLanguageOriginalScore]').val('');
+    				
+    				$('input[id=secondLanguageStandardScore]').attr('type', 'text');
+    				$('input[id=secondLanguageStandardScore]').val('');
+    			}
+    		});
+    	});
+    	
+    	$(function(){
+			$('tbody').on('click','#clickStu',function(){
+				$('input[name=memberId]').val($(this).html());
+				$('button[class=close]').trigger('click'); 
+			})
+			$('tbody #clickStu').on({
+				 mouseenter: function(){
+				  $(this).css('color','red');
+				 },
+				 mouseleave: function(){
+				  $(this).css('color','#333');
+				 }
+			});
+		});
+    	
+    </script>
+    <style type="text/css">
+    	#selectGrade {
+    		padding : 20px;
+    	}
+    	#submitButton {
+    		width : 100px;
+    		height : 35px;
+    	}
+    </style>
 </head>
 
 <body class="flat-blue">
@@ -39,265 +142,134 @@
 										<div class="title">모의고사 성적 입력</div>
 									</div>
 								</div>
-								<div class="card-body table-responsive">
-									<!-- Table -->
-									<table class="table table-striped">
+								<div class="card-body">
+									<!-- form -->
+									<form action="logic/insertMockTestScoreOk.jsp" method="post">
+									<div id="selectStudentId" class="col-md-8 col-md-offset-2">
+										<div class="col-md-2 col-sm-4">
+										<input type="text" class="form-control" id="inputPassword3" name="memberId">
+										</div>
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary" >
+											학생ID 찾기
+										</button>
+										<!-- Modal -->
+										<div class="modal fade modal-primary" id="modalPrimary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+														<h4 class="modal-title" id="myModalLabel">학생ID 리스트</h4>
+													</div>
+													<div class="modal-body">
+														<div class="row" style="width:100%; height:200px; overflow:auto">
+														<!-- Table -->
+														<div class="col-md-8 col-md-offset-2">
+															<table class="table table-striped">
+															<thead>
+																<tr class="headings">
+																	<th>번호</th>
+																	<th>학생ID</th>
+																	<th>학생 이름</th>
+																</tr>
+															</thead>
+															<tbody>
+																<c:forEach var="list" items="${list }">
+																	<tr>
+																		<td>${list.studentNum }</td>
+																		<td id="clickStu" style="cursor:pointer">${list.memberId }</td>
+																		<td>${list.memberName }</td>
+																	</tr>
+																</c:forEach>
+															</tbody>
+															</table>
+														</div>
+														</div>
+                                                    </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+									</div>
+									<div id="selectGrade" class="col-md-8 col-md-offset-2">
+										<select name="mockYear">
+											<option selected>2016</option>
+											<option>2015</option>
+											<option>2014</option>
+										</select>
+										<span>년도</span>
+										<select id="mockGrade" name="mockGrade">
+											<option selected>1</option>
+											<option>2</option>
+											<option>3</option>											
+										</select>
+										<span>학년&nbsp;</span>
+										<select name="mockMonth">
+											<option selected>3</option>
+											<option>6</option>
+											<option>9</option>
+										</select>
+										<span>월</span>
+									</div>
+									<div id="inserttable" class="col-md-8 col-md-offset-2 table-responsive">
+										<!-- table --><!-- 1학년 -->
+										<table id="inserttable" class="table table-striped">
 										<thead>
 											<tr class="headings">
 												<th colspan="4">1학년</th>
-												<th colspan="4">2학년</th>
-												<th colspan="4">3학년</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td colspan="2">영역</td>
-												<td>원점수</td>
-												<td>표준점수</td>
-												<td colspan="2">영역</td>
-												<td>원점수</td>
-												<td>표준점수</td>
-												<td colspan="2">영역</td>
-												<td>원점수</td>
-												<td>표준점수</td>
-											</tr>
-											
-											<tr>
-												<td colspan="2">언어</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td colspan="2">언어</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>언어</td>
-												<td>
-												<select>
-                                              	  <option>국어A</option>
-                                              	  <option>국어B</option>
-                                            	</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-											</tr>
-												
-											<tr>
-												<td colspan="2">수리</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>수리</td>
-												<td>
-													<select>
-														<option>수리 가</option>
-                                              	  		<option>수리 나</option>
-													</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>수리</td>
-												<td>
-													<select>
-														<option>수리 가</option>
-                                              	  		<option>수리 나</option>
-													</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-											</tr>
-											
-											<tr>
-												<td colspan="2">외국어</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td colspan="2">외국어</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td colspan="2">외국어</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-											</tr>
-											
-											<tr>
-												<td>탐구영역 1</td>
-												<td><select>
-													<optgroup label="사회">
-													<option>도덕</option>
-													<option>한국사</option>
-													<option>사회지리</option>
-													<option>일반사회</option>
-													</optgroup>
-													<optgroup label="과학">
-													<option>물리</option>
-													<option>화학</option>
-													<option>생명과학</option>
-													<option>지구과학</option>
-													</optgroup>
-												</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>탐구영역 1</td>
-												<td><select>
-													<optgroup label="사회">
-													<option>생활과 윤리</option>
-													<option>윤리와 사상</option>
-													<option>한국사</option>
-													<option>한국지리</option>
-													<option>세계지리</option>
-													<option>동아시아사</option>
-													<option>세계사</option>
-													<option>법과정치</option>
-													<option>경제</option>
-													<option>사회문화</option>
-													</optgroup>
-													<optgroup label="과학">
-													<option>물리1</option>
-													<option>화학1</option>
-													<option>생명과학1</option>
-													<option>지구과학1</option>
-													</optgroup>
+										<tr>
+											<td colspan="2">영역</td>
+											<td>원점수</td>
+											<td>표준점수</td>
+										</tr>
+										<tr>
+											<td colspan="2">언어</td>
+											<td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+										</tr>
+										<tr>
+											<td colspan="2">수리</td>
+											<td><input name="mathOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+										</tr>
+										<tr>
+											<td colspan="2">외국어</td>
+											<td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td>
+										</tr>
+										<tr>
+											<td>탐구영역 1</td>
+											<td>
+												<select id="researchSubjectName1" name="researchSubjectName1">
+												<c:forEach var="researchList" items="${researchList }">
+													<option>${researchList.researchSubjectName }</option>
+												</c:forEach>
 												</select>
-												</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>탐구영역 1</td>
-												<td><select>
-													<optgroup label="사회">
-													<option>생활과 윤리</option>
-													<option>윤리와 사상</option>
-													<option>한국사</option>
-													<option>한국지리</option>
-													<option>세계지리</option>
-													<option>동아시아사</option>
-													<option>세계사</option>
-													<option>법과정치</option>
-													<option>경제</option>
-													<option>사회문화</option>
-													</optgroup>
-													<optgroup label="과학">
-													<option>물리1</option>
-													<option>화학1</option>
-													<option>생명과학1</option>
-													<option>지구과학1</option>
-													<option>물리2</option>
-													<option>화학2</option>
-													<option>생명과학2</option>
-													<option>지구과학2</option>
-													</optgroup>
+											</td>
+											<td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td>
+										</tr>
+										<tr>
+											<td>탐구영역 2</td>
+											<td>
+												<select id="researchSubjectName2" name="researchSubjectName2">
+												<c:forEach var="researchList" items="${researchList }">
+													<option>${researchList.researchSubjectName }</option>
+												</c:forEach>
 												</select>
-												</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-											</tr>
-											
-											<tr>
-												<td>탐구영역 2</td>
-												<td><select>
-													<optgroup label="사회">
-													<option>도덕</option>
-													<option>한국사</option>
-													<option>사회지리</option>
-													<option>일반사회</option>
-													</optgroup>
-													<optgroup label="과학">
-													<option>물리</option>
-													<option>화학</option>
-													<option>생명과학</option>
-													<option>지구과학</option>
-													</optgroup>
-												</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>탐구영역 2</td>
-												<td><select>
-													<optgroup label="사회">
-													<option>생활과 윤리</option>
-													<option>윤리와 사상</option>
-													<option>한국사</option>
-													<option>한국지리</option>
-													<option>세계지리</option>
-													<option>동아시아사</option>
-													<option>세계사</option>
-													<option>법과정치</option>
-													<option>경제</option>
-													<option>사회문화</option>
-													</optgroup>
-													<optgroup label="과학">
-													<option>물리1</option>
-													<option>화학1</option>
-													<option>생명과학1</option>
-													<option>지구과학1</option>
-													</optgroup>
-												</select>
-												</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>탐구영역 2</td>
-												<td><select>
-													<optgroup label="사회">
-													<option>생활과 윤리</option>
-													<option>윤리와 사상</option>
-													<option>한국사</option>
-													<option>한국지리</option>
-													<option>세계지리</option>
-													<option>동아시아사</option>
-													<option>세계사</option>
-													<option>법과정치</option>
-													<option>경제</option>
-													<option>사회문화</option>
-													</optgroup>
-													<optgroup label="과학">
-													<option>물리1</option>
-													<option>화학1</option>
-													<option>생명과학1</option>
-													<option>지구과학1</option>
-													<option>물리2</option>
-													<option>화학2</option>
-													<option>생명과학2</option>
-													<option>지구과학2</option>
-													</optgroup>
-												</select>
-												</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-											</tr>
-											
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td>제2외국어</td>
-												<td><select>
-													<option>미응시</option>
-													<option>독일어</option>
-													<option>프랑스어</option>
-													<option>스페인어</option>
-													<option>중국어</option>
-													<option>일본어</option>
-													<option>러시아어</option>
-													<option>아랍어</option>
-													<option>베트남어</option>
-													<option>한문</option>
-												</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>제2외국어</td>
-												<td><select>
-													<option>미응시</option>
-													<option>독일어</option>
-													<option>프랑스어</option>
-													<option>스페인어</option>
-													<option>중국어</option>
-													<option>일본어</option>
-													<option>러시아어</option>
-													<option>아랍어</option>
-													<option>베트남어</option>
-													<option>한문</option>
-												</select></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-											</tr>
-										</tbody> 
-									</table>
-									<!--페이지 -->
-									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
- 									<br><br>
+											</td>
+											<td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td>
+										</tr>
+										</table>
+									</div>
+									<div class="col-md-12" style="text-align : center">
+										<input class="flat-blue btn btn-primary" id="submitButton" type="submit" value="입력">
+										<br><br>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

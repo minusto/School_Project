@@ -120,6 +120,57 @@ public class SchoolService {
 		return dao.deleteStudent2(m_id);
 	}
 	
+	//교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
+	public List<ExistStudentList> selectExistStudentSerevice() {
+		return dao.selectExistStudent();
+	}
+	//교사 => 학생 모의고사 점수 입력 - 탐구 과목 리스트 가져오기
+	public List<ResearchSubject> selectResearchSubjectListService() {
+		return dao.selectResearchSubjectList();
+	}
+	//교사 => 학생 모의고사 점수 입력 - 제2외국어 과목 리스트 가져오기
+	public List<SecondLanguage> selectSecondLanguageSubjectListService() {
+		return dao.selectSecondLanguageSubjectList();
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 모의고사 아이디 가져오기
+	public String selectMockIDService(MockType mockType) {
+		return dao.selectMockID(mockType);
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 탐구과목 아이디 가져오기
+	public String selectResearchIdService(String researchName) {
+		return dao.selectResearchId(researchName);
+	}
+	//교사 => 학생 모의고사 점수 입력 - 제2외국어 아이디 가져오기
+	public String selectSecondLanguageId(String languageName) {
+		return dao.selectSecondLanguageId(languageName);
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 1학년
+	public int insertMockTest1GradeService(MockTest mockTest) {
+		return dao.insertMockTest1Grade(mockTest);
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년
+	public int insertMockTest2GradeService(MockTest mockTest) {
+		return dao.insertMockTest2Grade(mockTest);
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 3학년
+	public int insertMockTest3GradeService(MockTest mockTest) {
+		return dao.insertMockTest3Grade(mockTest);
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기
+	public int insertResearchScoreService(ResearchSubjectScore researchScore1, ResearchSubjectScore researchScore2) {
+		int check = -1;
+		int re1 = dao.insertResearchScore(researchScore1);
+		int re2 = dao.insertResearchScore(researchScore2);
+		if(re1 >0 && re2 >0) {
+			check = 1;
+		}
+		return check;
+	}
+	//교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만
+	public int insertSecondLangScoreService(SecondLanguageScore secondLanguageScore) {
+		return dao.insertSecondLangScore(secondLanguageScore);
+	}
+	
 	//관리자 -> 공지사항 등록
 	public int insertNoticeBoardService(HttpServletRequest request,String id) throws Exception{
 		NoticeBoard noticeBoard=new NoticeBoard();		
