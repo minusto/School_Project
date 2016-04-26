@@ -2,7 +2,7 @@ package kosta.model;
 
 import java.io.Serializable;
 
-public class SecondLaguage implements Serializable {
+public class SecondLanguage implements Serializable {
 	
 	private String languageId;
     private String languageSubjectName;
