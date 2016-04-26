@@ -40,7 +40,7 @@
 										<div class="title">내신 성적 입력</div>
 									</div>
 								</div>
-								<div class="card-body table-responsive">
+								<div class="card-body table-responsive col-xs-8">
 									<!-- Table -->
 									<table class="table table-striped">
 										<thead>
@@ -48,19 +48,21 @@
 												<th rowspan="2">학년</th>
 												<th rowspan="2">교과</th>
 												<th rowspan="2">과목</th>
-												<th colspan="4">1학기</th>
-												<th colspan="4">2학기</th>
+												<th colspan="4">
+													<select>
+														<optgroup label="학기">
+															<option>1학기</option>
+															<option>2학기</option>
+														</optgroup>
+													</select>
+												</th>
 												<th rowspan="2">비고</th>
 											</tr>
 											<tr>
-												<td>단위수</td>
-												<td>중간고사</td>
-												<td>기말고사</td>
-												<td>수행평가</td>
-												<td>단위수</td>
-												<td>중간고사</td>
-												<td>기말고사</td>
-												<td>수행평가</td>
+												<th>단위수</th>
+												<th>중간고사</th>
+												<th>기말고사</th>
+												<th>수행평가</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -73,19 +75,14 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>4</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
+												
 											</tr>
 											<tr>
 												<td>도덕</td>
 												<td>도덕</td>
 												<td>1</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>1</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -97,9 +94,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>2</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -107,9 +101,6 @@
 												<td>사회</td>
 												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -121,9 +112,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -133,9 +121,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>4</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -143,9 +128,6 @@
 												<td>기술가정</td>
 												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -155,9 +137,6 @@
 												<td>영어</td>
 												<td>4</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>4</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -171,9 +150,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>5</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -183,9 +159,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -193,9 +166,6 @@
 												<td>한문</td>
 												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -207,9 +177,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>4</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -217,9 +184,6 @@
 												<td>영어 1</td>
 												<td>6</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -232,9 +196,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>6</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -242,9 +203,6 @@
 												<td>윤리와 사상</td>
 												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -256,9 +214,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>2</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -268,9 +223,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -278,9 +230,6 @@
 												<td>화학</td>
 												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -294,9 +243,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>5</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -304,9 +250,6 @@
 												<td>문법</td>
 												<td>2</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>2</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -318,10 +261,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
-												<td><inp   
-												ut type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -329,9 +268,6 @@
 												<td>미적분과 통계 기본</td>
 												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
@@ -343,9 +279,6 @@
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>3</td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 											</tr>
 											<tr>
@@ -353,9 +286,6 @@
 												<td>전통윤리</td>
 												<td>2</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
-												<td>2</td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
 												<td><input type="text" class="form-control" id="inputPassword3" size="1"></td>
