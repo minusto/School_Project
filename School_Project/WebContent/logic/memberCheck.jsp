@@ -49,7 +49,7 @@
 					session.setAttribute("id", id);
 					session.setAttribute("name", parent.getParentName());
 					session.setAttribute("grade", "학부모");
-					response.sendRedirect("../studentMain.jsp");
+					response.sendRedirect("../parentMain.jsp");
 				} else {
 					response.sendRedirect("../main.jsp?login=fail");
 				}
