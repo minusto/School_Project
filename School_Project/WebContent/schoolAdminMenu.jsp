@@ -21,15 +21,15 @@
 							class="navbar-right-expand-toggle pull-right visible-xs">
 							<i class="fa fa-times icon"></i>
 						</button>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false"><i
-								class="fa fa-comments-o"></i></a>
-							<ul class="dropdown-menu animated fadeInDown">
-								<li class="title">Notification <span
-									class="badge pull-right">0</span>
-								</li>
-								<li class="message">No new notification</li>
-							</ul></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown" role="button" aria-expanded="false"><i
+					class="fa fa-comments-o"></i></a>
+				<ul class="dropdown-menu animated fadeInDown">
+					<li class="title">채팅 <span class="badge pull-right"></span>
+					</li>
+					<li class="message"><a href="http://localhost:50000">채팅하기</a>
+					</li>
+				</ul></li>
 
 						<li class="dropdown profile"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"

@@ -52,7 +52,7 @@
 <body>
 	<div data-role="page">
 		<div data-role="header">
-			<a href="http://localhost:8081/Schoo_Project/main.jsp">돌아가기</a><h1>학사관리시스템 채팅</h1> 
+			<a href="http://localhost:8081/School_Project/main.jsp">돌아가기</a><h1>학사관리시스템 채팅</h1> 
 			<!--  <a href="http://localhost:8081/Test/main.jsp">돌아가기</a><h1>학사관리시스템 채팅</h1>-->
 		</div>
 		<div data-role="content">
@@ -63,7 +63,7 @@
 	</div>
 	<div data-role="page" id="chatpage">
 		<div data-role="header">
-			<a href="http://localhost:8081/Schoo_Project/main.jsp">돌아가기</a><h1>학사관리시스템 채팅</h1> 
+			<a href="http://localhost:8081/School_Project/main.jsp">돌아가기</a><h1>학사관리시스템 채팅</h1> 
 			<!-- <a href="http://localhost:8081/Test/main.jsp">돌아가기</a><h1>학사관리시스템 채팅</h1>-->
 		</div>
 		<div data-role="content">
