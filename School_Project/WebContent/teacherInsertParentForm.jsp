@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
     <link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css"> 
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
