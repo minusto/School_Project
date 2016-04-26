@@ -230,5 +230,50 @@ public class SchoolService {
 		return dao.insertSchoolRegist(schoolRegist);
 	}
 	
+	//학부모 정보 NULL List
+	public List<ParentNullList> ParentNullListService(){
+		return dao.parentNullList();
+	}
+	//과목 정보 조회
+	public List<Subject> subjectListService(){
+		return dao.subjectList();
+	}
+	//학교 정보 조회
+	public List<School> schoolListService(){
+		return dao.schoolList();
+	}
+	
+	//사용자iD등록
+		public int insertMemberIdService(Member member){
+			return dao.insertMemberId(member);
+		}
+		
+		//학부모iD등록
+		public int insertParentIdService(String parent){
+			return dao.insertParentId(parent);
+		}
+		
+		//사용자 등급 등록
+		public int insertRegistManageService(RegistManage registManage){
+			return dao.insertRegistManage(registManage);
+		}
+		//학생아이디 등록+나머지null 등록
+		public int insertStudentIdService(Student student){
+			return dao.insertStudentIdManage(student);
+		}
+
+		//사용자 ID 목록
+
+		public List<RegistManage> userListService(){
+			return dao.userList();
+		}
+		//교사 등급 등록
+		public int insertTeacherGradeService(RegistManage registManage){
+			//String id = dao.getAdminId();
+			String id ="admin";
+			registManage.setSchoolAdminId(id);
+			return dao.insertTeacherGrade(registManage);
+		}
+	
 	
 }

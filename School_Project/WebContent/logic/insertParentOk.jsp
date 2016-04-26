@@ -12,7 +12,6 @@
 	int re = service.insertParentService(Parent);
 	response.sendRedirect("../teacherListParent.jsp");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>

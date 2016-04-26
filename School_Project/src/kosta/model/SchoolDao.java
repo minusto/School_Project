@@ -587,6 +587,156 @@ public class SchoolDao {
 		return re;
 	}
 	
+	//학부모 정보 NULL List
+	public List<ParentNullList> parentNullList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<ParentNullList> list = null;
+		try {
+			list = sqlSession.getMapper(Mapper.class).parentNullList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	//과목 정보 조회	
+	public List<Subject> subjectList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Subject> list = null;
+		try {
+			list = sqlSession.getMapper(Mapper.class).subjectList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	//학교 정보 조회
+	public List<School> schoolList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<School> list = null;
+		try {
+			list = sqlSession.getMapper(Mapper.class).schoolList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
+	//사용자 ID,등급 등록
+	public int insertRegistManage(RegistManage registManage) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).insertRegistManage(registManage);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+     //사용자 iD등록
+	public int insertMemberId(Member member) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).insertMemberId(member);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+	
+	//학생아이디 등록+나머지null 등록
+	public int insertStudentIdManage(Student student) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).insertStudentIdManage(student);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+
+ //학부모 아이디
+	public int insertParentId(String parent) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).insertParentId(parent);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+		
+	}
+	 //유저 리스트
+	public List<RegistManage> userList() {
+		List<RegistManage> list = null;
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		try {
+			list = sqlsession.getMapper(Mapper.class).userList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlsession.close();
+		}
+		return list;
+	}
+	
+	//교사 등급
+		public int insertTeacherGrade(RegistManage registManage) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = 0;
+			try {
+				re = session.getMapper(Mapper.class).insertTeacherGrade(registManage);
+				if (re > 0) {
+					session.commit();
+				} else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return re;
+		}
+	
+	
+	
 	
 	
 }

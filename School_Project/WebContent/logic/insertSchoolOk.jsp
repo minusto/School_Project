@@ -12,9 +12,9 @@
     SchoolRegist sr=new SchoolRegist();
     sr.setSchoolId(schoolId);
     sr.setSchoolAdminId(id);
-    int re2 = service.insertSchoolRegistService(sr);
     if(re >0 ){
        response.sendRedirect("../schoolAdminInsertSchoolForm.jsp");
+       int re2 = service.insertSchoolRegistService(sr);
     }else{
        System.out.print("입력실패");
     }
