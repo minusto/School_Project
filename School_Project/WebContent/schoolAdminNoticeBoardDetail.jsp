@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ include file="logic/schoolAdminSessionCheck.jsp" %>
 	<%
 	request.setAttribute("path", "공지사항>상세보기");
 %>

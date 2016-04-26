@@ -200,11 +200,11 @@ public class SchoolDao {
 		return re;
 	}
 
-	public List<TeacherDetail> listTeacher() {
+	public List<TeacherDetail> listTeacher(String id) {
 		List<TeacherDetail> list = null;
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		try {
-			list = sqlsession.getMapper(Mapper.class).listTeacher();
+			list = sqlsession.getMapper(Mapper.class).listTeacher(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -213,7 +213,7 @@ public class SchoolDao {
 		return list;
 	}
 
-	public TeacherDetail detailTeacher(int memberId) {
+	public TeacherDetail detailTeacher(String memberId) {
 		TeacherDetail teacher = null;
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
@@ -476,11 +476,11 @@ public class SchoolDao {
 	}
 
 	// 학교정보조회
-	public School schoolDetail() {
+	public School schoolDetail(String id) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		School school = null;
 		try {
-			school = session.getMapper(Mapper.class).schoolDetail();
+			school = session.getMapper(Mapper.class).schoolDetail(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -490,104 +490,105 @@ public class SchoolDao {
 	}
 
 	// 액터 : 시스템 ==> 학교관리자 테이블 정보조회
-	public SchoolAdmin schoolAdminInfoDetail(String id){
-		SqlSession session=getSqlSessionFactory().openSession();
-		SchoolAdmin schoolAdmin=null;
+	public SchoolAdmin schoolAdminInfoDetail(String id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		SchoolAdmin schoolAdmin = null;
 		try {
-			schoolAdmin=session.getMapper(Mapper.class).schoolAdminInfoDetail(id);
+			schoolAdmin = session.getMapper(Mapper.class).schoolAdminInfoDetail(id);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			session.close();
 		}
 		return schoolAdmin;
 	}
-	
+
 	// 액터 : 시스템 ==>학부모 테이블 정보조회
-	public Parent parentInfoDetail(String id){
-		SqlSession session=getSqlSessionFactory().openSession();
-		Parent parent=null;
+	public Parent parentInfoDetail(String id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		Parent parent = null;
 		try {
-			parent=session.getMapper(Mapper.class).parentInfoDetail(id);
+			parent = session.getMapper(Mapper.class).parentInfoDetail(id);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			session.close();
 		}
 		return parent;
 	}
-	
+
 	// 액터 : 시스템 ==> 시스템관리자 테이블 정보조회
 	public SystemAdmin systemAdminInfoDetail(String id) {
-		SqlSession session=getSqlSessionFactory().openSession();
-		SystemAdmin sa=null;
+		SqlSession session = getSqlSessionFactory().openSession();
+		SystemAdmin sa = null;
 		try {
-			sa=session.getMapper(Mapper.class).systemAdminInfoDetail(id);
+			sa = session.getMapper(Mapper.class).systemAdminInfoDetail(id);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			session.close();
 		}
 		return sa;
 	}
-	
+
 	// 액터 : 학부모 ==> 최초로그인시 비밀번호 변경
-	public int parentModPassword(Parent parent){
-		SqlSession session=getSqlSessionFactory().openSession();
-		int re=0;
+	public int parentModPassword(Parent parent) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
 		try {
-			re=session.getMapper(Mapper.class).parentModPassword(parent);
-			if(re>0){
+			re = session.getMapper(Mapper.class).parentModPassword(parent);
+			if (re > 0) {
 				session.commit();
-			}else{
+			} else {
 				session.rollback();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			session.close();
 		}
-		return re;	
+		return re;
 	}
+
 	// 액터 : 학교관리자 ==> 최초로그인시 비밀번호 변경
-	public int schoolAdminModPassword(SchoolAdmin schoolAdmin){
-		SqlSession session=getSqlSessionFactory().openSession();
-		int re=0;
+	public int schoolAdminModPassword(SchoolAdmin schoolAdmin) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
 		try {
-			re=session.getMapper(Mapper.class).schoolAdminModPassword(schoolAdmin);
-			if(re>0){
+			re = session.getMapper(Mapper.class).schoolAdminModPassword(schoolAdmin);
+			if (re > 0) {
 				session.commit();
-			}else{
+			} else {
 				session.rollback();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			session.close();
 		}
 		return re;
 	}
-	
+
 	// 액터 : 학교관리자 ==> 학교등록
-	public int insertSchoolRegist(SchoolRegist schoolRegist){
-		SqlSession session=getSqlSessionFactory().openSession();
-		int re=0;
+	public int insertSchoolRegist(SchoolRegist schoolRegist) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
 		try {
-			re=session.getMapper(Mapper.class).insertSchoolRegist(schoolRegist);
-			if(re>0){
+			re = session.getMapper(Mapper.class).insertSchoolRegist(schoolRegist);
+			if (re > 0) {
 				session.commit();
-			}else{
+			} else {
 				session.rollback();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			session.close();
 		}
 		return re;
 	}
-	
-	//학부모 정보 NULL List
+
+	// 학부모 정보 NULL List
 	public List<ParentNullList> parentNullList() {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<ParentNullList> list = null;
@@ -600,7 +601,8 @@ public class SchoolDao {
 		}
 		return list;
 	}
-	//과목 정보 조회	
+
+	// 과목 정보 조회
 	public List<Subject> subjectList() {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Subject> list = null;
@@ -613,7 +615,8 @@ public class SchoolDao {
 		}
 		return list;
 	}
-	//학교 정보 조회
+
+	// 학교 정보 조회
 	public List<School> schoolList() {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<School> list = null;
@@ -626,8 +629,8 @@ public class SchoolDao {
 		}
 		return list;
 	}
-	
-	//사용자 ID,등급 등록
+
+	// 사용자 ID,등급 등록
 	public int insertRegistManage(RegistManage registManage) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = 0;
@@ -645,7 +648,8 @@ public class SchoolDao {
 		}
 		return re;
 	}
-     //사용자 iD등록
+
+	// 사용자 iD등록
 	public int insertMemberId(Member member) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = 0;
@@ -663,8 +667,8 @@ public class SchoolDao {
 		}
 		return re;
 	}
-	
-	//학생아이디 등록+나머지null 등록
+
+	// 학생아이디 등록+나머지null 등록
 	public int insertStudentIdManage(Student student) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = 0;
@@ -683,7 +687,7 @@ public class SchoolDao {
 		return re;
 	}
 
- //학부모 아이디
+	// 학부모 아이디
 	public int insertParentId(String parent) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = 0;
@@ -700,14 +704,15 @@ public class SchoolDao {
 			session.close();
 		}
 		return re;
-		
+
 	}
-	 //유저 리스트
-	public List<RegistManage> userList() {
+
+	// 유저 리스트
+	public List<RegistManage> userList(String id) {
 		List<RegistManage> list = null;
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		try {
-			list = sqlsession.getMapper(Mapper.class).userList();
+			list = sqlsession.getMapper(Mapper.class).userList(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -715,28 +720,50 @@ public class SchoolDao {
 		}
 		return list;
 	}
-	
-	//교사 등급
-		public int insertTeacherGrade(RegistManage registManage) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			int re = 0;
-			try {
-				re = session.getMapper(Mapper.class).insertTeacherGrade(registManage);
-				if (re > 0) {
-					session.commit();
-				} else {
-					session.rollback();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
+
+	// 교사 등급
+	public int insertTeacherGrade(RegistManage registManage) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(Mapper.class).insertTeacherGrade(registManage);
+			if (re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
 			}
-			return re;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-	
-	
-	
-	
-	
+		return re;
+	}
+
+	public SchoolRegist schoolRegistSchoolId(String id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		SchoolRegist sr=null;
+		try {
+			sr = session.getMapper(Mapper.class).schoolRegistSchoolId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return sr;
+	}
+
+	public RegistManage getSchoolAdminId(String id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		RegistManage rm=null;
+		try {
+			rm = session.getMapper(Mapper.class).getSchoolAdminId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return rm;
+	}
+
 }

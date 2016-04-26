@@ -5,10 +5,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="logic/teacherSessionCheck.jsp" %>
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생관리 > 학생 정보 열람");
-	SchoolService service = SchoolService.getInstance();
 	List<StudentList> list = service.studentListService();
 	request.setAttribute("list", list);
 %>
@@ -102,7 +102,7 @@
 										</tbody> 
 									</table>
 									<!--페이지 -->
-									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
+									<a href="teacherInsertStudentForm.jsp" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
  									<br><br>
 									<!-- 검색 -->
 									<form action="" method="post" class="pull-right">

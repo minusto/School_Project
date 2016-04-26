@@ -68,12 +68,12 @@ public class SchoolService {
 	}
 	
 	//액터: 교내관리자 ==> 교사목록
-	public List<TeacherDetail> listTeacher(){
-		return dao.listTeacher();
+	public List<TeacherDetail> listTeacher(String id){
+		return dao.listTeacher(id);
 	}
 	
 	//액터 : 교내관리자 ==> 교사목록 ==> 상세보기
-	public TeacherDetail detailTeacher(int memberId){
+	public TeacherDetail detailTeacher(String memberId){
 		return dao.detailTeacher(memberId);
 	}
 	
@@ -121,7 +121,7 @@ public class SchoolService {
 	}
 	
 	//관리자 -> 공지사항 등록
-	public int insertNoticeBoardService(HttpServletRequest request) throws Exception{
+	public int insertNoticeBoardService(HttpServletRequest request,String id) throws Exception{
 		NoticeBoard noticeBoard=new NoticeBoard();		
 		String uploadPath  = request.getRealPath("upload");
 		int size = 20*1024*1024; //20mb
@@ -129,8 +129,8 @@ public class SchoolService {
 			
 		noticeBoard.setNoticeBoardTitle(multi.getParameter("noticeBoardTitle"));
 		noticeBoard.setNoticeBoardPassword(multi.getParameter("noticeBoardPassword"));
-		noticeBoard.setNoticeBoardContent(multi.getParameter("noticeBoardContent"));		
-		noticeBoard.setSchoolAdminId(multi.getParameter("schoolAdminId"));
+		noticeBoard.setNoticeBoardContent(multi.getParameter("noticeBoardContent"));
+		noticeBoard.setSchoolAdminId(id);
 		noticeBoard.setNoticeBoardNum(dao.noticeBoardNum()+1);
 		
 		//파일업로드
@@ -200,8 +200,8 @@ public class SchoolService {
 		return dao. noticeBoardDetail(noticeBoardNum) ;		
 	}
 	//학교 정보조회
-	public School SchoolDetail(){
-		return dao.schoolDetail();
+	public School SchoolDetail(String id){
+		return dao.schoolDetail(id);
 	}
 	
 	//액터 : 시스템 ==> 학교관리자 테이블 정보 조회
@@ -264,15 +264,20 @@ public class SchoolService {
 
 		//사용자 ID 목록
 
-		public List<RegistManage> userListService(){
-			return dao.userList();
+		public List<RegistManage> userListService(String id){
+			return dao.userList(id);
 		}
 		//교사 등급 등록
 		public int insertTeacherGradeService(RegistManage registManage){
-			//String id = dao.getAdminId();
-			String id ="admin";
-			registManage.setSchoolAdminId(id);
 			return dao.insertTeacherGrade(registManage);
+		}
+		
+		public SchoolRegist schoolRegistSchoolIdService(String id){
+			return dao.schoolRegistSchoolId(id);
+		}
+		
+		public RegistManage getSchoolAdminIdService(String id){
+			return dao.getSchoolAdminId(id);
 		}
 	
 	

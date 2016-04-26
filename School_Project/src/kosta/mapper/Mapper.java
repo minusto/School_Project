@@ -36,8 +36,8 @@ public interface Mapper  {
 	public List<ParentList> parentList(); ///액터: 교사 => 학부모리스트 출력
 	public int insertSchool(School school); //액터 : 교내관리자 => 학교등록
 	public SchoolAdminDetail schoolAdminDetail(String id); //액터 : 시스템관리자 =>학교관리자 상세보기
-	public List<TeacherDetail> listTeacher(); // 액터 : 교내관리자 =>교사리스트
-	public TeacherDetail detailTeacher(int memberId); // 액터 : 교내관리자 =>교사리스트=>상세보기
+	public List<TeacherDetail> listTeacher(String id); // 액터 : 교내관리자 =>교사리스트
+	public TeacherDetail detailTeacher(String memberId); // 액터 : 교내관리자 =>교사리스트=>상세보기
 	public int insertMember(Member member);// 액터 : 교내관리자 =>교사등록
 	public int insertTeacher(Teacher teacher);
 	public MemberCheck memberCheck(String id); // 액터 : 모든사용자 => 로그인정보 확인
@@ -55,7 +55,7 @@ public interface Mapper  {
 	public List<NoticeBoard> noticeBoardList(RowBounds row, Search search); //공지사항 목록
 	public int addHitcount(int noticeBoardNum); //공지사항조회수
 	public NoticeBoard noticeBoardDetail(int noticeBoardNum); //공지사항 상세
-	public School schoolDetail(); //학교정보조회
+	public School schoolDetail(String id); //학교정보조회
 	public SchoolAdmin schoolAdminInfoDetail(String id);//액터  : 시스템 ==>학교관리자테이블 정보조회
 	public Parent parentInfoDetail(String id);//액터  : 시스템 ==>학부모테이블 정보조회
 	public SystemAdmin systemAdminInfoDetail(String id);//액터  : 시스템 ==>시스템관리자테이블 정보조회
@@ -69,6 +69,8 @@ public interface Mapper  {
 	public int insertMemberId(Member member);//사용자 iD등록
 	public int insertStudentIdManage(Student student);//학생아이디 등록+나머지 null;
 	public int insertParentId(String parent); //학부모 아이디 등록
-	public List<RegistManage> userList(); //유저리스트
+	public List<RegistManage> userList(String id); //유저리스트
 	public int insertTeacherGrade(RegistManage registManage);// 교사등급 등록
+	public SchoolRegist schoolRegistSchoolId(String id);
+	public RegistManage getSchoolAdminId(String id);
 }

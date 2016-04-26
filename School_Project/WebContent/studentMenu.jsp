@@ -30,7 +30,7 @@
                         </li>
            
                         <li class="dropdown profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${member.memberName }<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${member.memberName }${parent.parentName }<span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
                                     <img src="img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">

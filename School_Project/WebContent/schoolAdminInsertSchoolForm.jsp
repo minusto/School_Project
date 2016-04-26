@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="logic/schoolAdminSessionCheck.jsp" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String insert=request.getParameter("insert");
+	request.setAttribute("insert", insert);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +31,7 @@
 </head>
 
 <body class="flat-blue">
+<input type="hidden" id="insertOk" value="${insert }">
    <div class="app-container">
       <div class="row content-container">
          <jsp:include page="schoolAdminMenu.jsp"/>
@@ -95,6 +101,14 @@
    <!-- Javascript -->
    <script type="text/javascript" src="js/app.js"></script>
    <script type="text/javascript" src="js/index.js"></script>
+   <script type="text/javascript">
+   	$(window.onload=function(){
+   		var insertOk=$("#insertOk").attr('value');
+   		if(insertOk=='fail'){
+   			alert("관리자에게 문의하세요");
+   		}
+   	})
+   </script>
 </body>
 
 </html>

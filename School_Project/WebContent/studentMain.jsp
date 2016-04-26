@@ -34,7 +34,7 @@
     		<div class = "container-fluid">
     			<div class = "side-body">
     				<div class = "page-title">
-    					<span class="title">학생</span>ㅊ
+    					<span class="title">${grade }</span>
     					</div>
     					<div class="row">
     						<div class="col-sm-12">

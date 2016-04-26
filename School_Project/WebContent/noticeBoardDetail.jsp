@@ -19,8 +19,6 @@
 	NoticeBoard detail = service.noticeBoardDetailService(noticeBoardNum);
  	request.setAttribute("detail", detail);
 	
-
-
 %>
 <!DOCTYPE html>
 <html>
@@ -110,7 +108,7 @@ tbody th{
 <!-- 													</td> -->
 <!-- 												</tr> -->
 											</table>
-                                		<button class="btn btn-primary" onclick="javascript :history.back(); location.reload();">목록보기</button>
+                                		<button class="btn btn-primary" onclick="javascript :history.go(-1); ">목록보기</button>
                                 	
 
                                 		

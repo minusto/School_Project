@@ -2,10 +2,24 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("UTF-8");
-	String login=request.getParameter("login");
+	String login = request.getParameter("login");
 	request.setAttribute("login", login);
-	String logout=request.getParameter("logout");
+	String logout = request.getParameter("logout");
 	request.setAttribute("logout", logout);
+	if (session != null) {
+		if (session.getAttribute("grade") != null) {
+			String grade = (String) session.getAttribute("grade");
+			if (grade.equals("학교관리자")) {
+				response.sendRedirect("schoolAdminMain.jsp");
+			} else if (grade.equals("교사")) {
+				response.sendRedirect("teacherMain.jsp");
+			} else if (grade.equals("학생")) {
+				response.sendRedirect("studentMain.jsp");
+			} else if (grade.equals("학부모")) {
+				response.sendRedirect("studnetMain.jsp");
+			}
+		}
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -41,8 +55,8 @@
 </head>
 
 <body class="flat-blue">
-<input type="hidden" id="loginCheck" value="${login}">
-<input type="hidden" id="logout" value="${logout}">
+	<input type="hidden" id="loginCheck" value="${login}">
+	<input type="hidden" id="logout" value="${logout}">
 	<div class="app-container">
 		<div id="mainHeader" class="mainHeader">
 			<a>학사관리 서비스</a>
@@ -79,12 +93,12 @@
 		<div id="mainFooter" class="row">
 			<div class="footerImg col-md-3">
 				<div id="footerImg">
-					<img alt="" src="img/study.png">
-					<img alt="" src="img/keris.png" id="keris">
+					<img alt="" src="img/study.png"> <img alt=""
+						src="img/keris.png" id="keris">
 				</div>
 			</div>
-			<div class="footerNav col-md-5 col-xs-8" >
-				<ul style="padding:  0px">
+			<div class="footerNav col-md-5 col-xs-8">
+				<ul style="padding: 0px">
 					<li><a href="#">시스템소개</a></li>
 					<li><a href="#">저작권</a></li>
 					<li><a href="#">교육청</a></li>
@@ -95,7 +109,8 @@
 			</div>
 			<div class="wrapper" id="syslogin">
 				<span class="pull-right"><a id="sysLoginA"
-					data-toggle="modal" data-target="#modalPrimary" style="color: #e5e5e9">시스템 로그인</a></span>
+					data-toggle="modal" data-target="#modalPrimary"
+					style="color: #e5e5e9">시스템 로그인</a></span>
 			</div>
 		</div>
 	</div>
@@ -118,11 +133,11 @@
 						<form action="logic/memberCheck.jsp" method="post">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" name="id"/>
+									size="25" style="margin-top: 10px" name="id" />
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass" />
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -158,7 +173,7 @@
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass" />
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -191,11 +206,11 @@
 							<input type="hidden" name="parentLogin" value="parent">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" name="id"/>
+									size="25" style="margin-top: 10px" name="id" />
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass" />
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -228,11 +243,11 @@
 							<input type="hidden" name="schoolAdminLogin" value="schoolAdmin">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" name="id"/>
+									size="25" style="margin-top: 10px" name="id" />
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass" />
 							</div>
 							<div class="lostPass">
 								<br> <a>비밀번호 찾기</a>
@@ -267,11 +282,11 @@
 							<input type="hidden" name="systemAdminLogin" value="systemAdmin">
 							<div class="control">
 								<input type="text" class="form-control" placeholder="아이디를 입력하세요"
-									size="25" style="margin-top: 10px" name="id"/>
+									size="25" style="margin-top: 10px" name="id" />
 							</div>
 							<div class="control">
 								<input type="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass"/>
+									placeholder="비밀번호를 입력하세요" style="margin-top: 10px" name="pass" />
 							</div>
 
 							<div class="login-button text-center">
@@ -302,16 +317,16 @@
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript">
-	$(window.onload=function(){
-		var loginCheck=$("#loginCheck").attr('value');
-		if(loginCheck=="fail"){
-			alert("아이디 및 비밀번호를 확인하세요");
-		}
-		var logout=$("#logout").attr('value');
-		if(logout=="logout"){
-			alert("로그아웃 완료");
-		}
-	})
+		$(window.onload = function() {
+			var loginCheck = $("#loginCheck").attr('value');
+			if (loginCheck == "fail") {
+				alert("아이디 및 비밀번호를 확인하세요");
+			}
+			var logout = $("#logout").attr('value');
+			if (logout == "logout") {
+				alert("로그아웃 완료");
+			}
+		})
 	</script>
 </body>
 

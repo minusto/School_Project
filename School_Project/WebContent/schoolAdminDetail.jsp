@@ -1,14 +1,15 @@
 <%@page import="kosta.model.SchoolService"%>
 <%@page import="kosta.model.SchoolAdminDetail"%>
+<%@ include file="logic/systemAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 	request.setAttribute("path", "학교관리자> 상세보기");
 	request.setCharacterEncoding("UTF-8");
-	String id = request.getParameter("id");
-	SchoolService service = SchoolService.getInstance();
-	SchoolAdminDetail sad = service.schoolAdminDetailService(id);
+	String id1 = request.getParameter("id");
+
+	SchoolAdminDetail sad = service.schoolAdminDetailService(id1);
 	request.setAttribute("sad", sad);
 %>
 <!DOCTYPE html>
@@ -44,7 +45,7 @@
 <body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
-			<jsp:include page="schoolAdminMenu.jsp" />
+			<jsp:include page="systemAdminMenu.jsp" />
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body padding-top" id="content">
@@ -53,7 +54,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">
-										<div class="title">교내관리자상세페이지</div>
+										<div class="title">학교관리자 상세정보</div>
 									</div>
 								</div>
 								<div class="card-body">

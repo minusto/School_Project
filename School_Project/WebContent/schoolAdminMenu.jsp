@@ -46,7 +46,7 @@
 											<button type="button" class="btn btn-default">
 												<i class="fa fa-user"></i> Profile
 											</button>
-											<button type="button" class="btn btn-default">
+											<button type="button" class="btn btn-default" onclick="location.href='logic/logoutOk.jsp'">
 												<i class="fa fa-sign-out"></i> Logout
 											</button>
 										</div>
@@ -62,7 +62,7 @@
 						<div class="navbar-header">
 							<a class="navbar-brand" href="#">
 								<div class="icon fa fa-book"></div>
-								<div class="title">학사관리</div>
+								<div class="title" onclick="location.href='schoolAdminMain.jsp'">학사관리</div>
 							</a>
 							<button type="button"
 								class="navbar-expand-toggle pull-right visible-xs">

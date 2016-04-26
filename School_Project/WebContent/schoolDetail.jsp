@@ -1,13 +1,17 @@
+<%@page import="kosta.model.SchoolRegist"%>
 <%@page import="kosta.model.School"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="logic/schoolAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 
 <%
 	request.setAttribute("path", "학교관리> 학교 정보 조회");
 	request.setCharacterEncoding("UTF-8");
-	SchoolService service=SchoolService.getInstance();
-	School school=service.SchoolDetail();
+	SchoolRegist sr=service.schoolRegistSchoolIdService(id);
+	String schoolId=sr.getSchoolId();
+	School school=service.SchoolDetail(schoolId);
 	request.setAttribute("school", school);
 %>
 <!DOCTYPE html>

@@ -2,6 +2,7 @@
 <%@page import="kosta.model.ParentNullList"%>
 <%@page import="java.util.List"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="logic/teacherSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -11,7 +12,6 @@
 	int i = 1;
 	int j = 1;
 	request.setAttribute("path", "학부모 관리 > 학부모 정보 입력");
-	SchoolService service = SchoolService.getInstance();
 	List<ParentNullList> list = service.ParentNullListService();
 	request.setAttribute("list", list);
 	List<StudentList> list2 = service.studentListService();

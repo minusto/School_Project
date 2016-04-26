@@ -1,13 +1,13 @@
 <%@page import="kosta.model.ParentList"%>
 <%@page import="java.util.List"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="logic/teacherSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학부모 관리 > 학부모 정보 열람");
-	SchoolService service = SchoolService.getInstance();
 	List<ParentList> list = service.parentListService();
 	request.setAttribute("list", list);
 %>

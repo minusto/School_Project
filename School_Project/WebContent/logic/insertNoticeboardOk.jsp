@@ -1,11 +1,12 @@
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="schoolAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <%
     	request.setCharacterEncoding("utf-8");
- 
-    	SchoolService service = SchoolService.getInstance();
-    	int re = service.insertNoticeBoardService(request);
+ 		request.setAttribute("schoolAdminId", id);
+		System.out.println(id);
+    	int re = service.insertNoticeBoardService(request,id);
     	if(re>0){
         	response.sendRedirect("../schoolAdminNoticeBoardList.jsp");
         }else{

@@ -1,13 +1,13 @@
 <%@page import="kosta.model.AdminList"%>
 <%@page import="java.util.List"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="logic/systemAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	request.setCharacterEncoding("UTF-8");
-	SchoolService service=SchoolService.getInstance();
 	List<AdminList> list=service.adminListService();
 	request.setAttribute("list", list);
 %>
@@ -44,7 +44,7 @@
 <body class="flat-blue">
 	<div class="app-container">
 		<div class="row content-container">
-			<jsp:include page="schoolAdminMenu.jsp"/>
+			<jsp:include page="systemAdminMenu.jsp"/>
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body">
@@ -90,7 +90,7 @@
 									
 									
  									
- 									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
+ 									<a href="#" class="pull-right" ><button class="btn btn-default" onclick="location.href='systemInsertSchoolAdminForm.jsp'">등록</button></a><br><br>
  									<br><br>
 									<!-- 검색 -->
 									<form action="" method="post" class="pull-right">

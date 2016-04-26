@@ -1,5 +1,6 @@
 <%@page import="kosta.model.Member"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@ include file="logic/systemAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%

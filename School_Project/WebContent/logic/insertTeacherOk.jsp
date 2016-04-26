@@ -1,4 +1,6 @@
+<%@page import="kosta.model.SchoolRegist"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@ include file="schoolAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <!DOCTYPE html>
 <%
@@ -12,7 +14,8 @@
     <jsp:useBean id="registManage" class="kosta.model.RegistManage"></jsp:useBean>
     <jsp:setProperty property="memberId" name="registManage"/>
 <%
-    SchoolService service = SchoolService.getInstance();
+
+	registManage.setSchoolAdminId(id);
     int re = service.insertMember(member);
     int re2 = service.insertTeacher(teacher);
     int re3 =service.insertTeacherGradeService(registManage);

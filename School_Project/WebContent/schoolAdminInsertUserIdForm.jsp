@@ -1,11 +1,10 @@
 <%@page import="kosta.model.School"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="logic/schoolAdminSessionCheck.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-		<%
+<%
 	request.setAttribute("path", "학교관리> 사용자 ID 등록");
-
-		
 %>
 <!DOCTYPE html>
 <html>
@@ -54,7 +53,7 @@
                                 </div>
                                 <div class="card-body">
                                     <form class="form-horizontal" action="logic/insertUserIdOk.jsp" method="post">
-                                    <input type="hidden" name="schoolAdminId" value="admin"> <!-- 세션값으로 넣어야하나? -->
+                                    <input type="hidden" name="schoolAdminId" value="${id }"> <!-- 세션값으로 넣어야하나? -->
                                         <div class="form-group">
                                             <label  class="col-sm-2 control-label">사용자 ID</label>
                                             <div class="col-sm-5">

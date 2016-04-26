@@ -2,18 +2,16 @@
 <%@page import="kosta.model.Member"%>
 <%@page import="kosta.model.Teacher"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@include file="logic/schoolAdminSessionCheck.jsp" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
+<%
 	request.setCharacterEncoding("utf-8");
-	%>
-	<%
-	SchoolService service = SchoolService.getInstance();
-	int memberId = Integer.parseInt(request.getParameter("memberId"));
+	String memberId =request.getParameter("memberId");
 	TeacherDetail teacher = service.detailTeacher(memberId);
 	request.setAttribute("teacher", teacher);
-
-	%>
+%>
 <!DOCTYPE html>
 <html>
 
@@ -56,7 +54,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">
-										<div class="title">학교 목록</div>
+										<div class="title">교사 목록</div>
 									</div>
 								</div>
 								<div class="col-sm-2"></div>
@@ -70,8 +68,8 @@
 										
 										<tr height="30">
 											<th width="150">생년월일</th>
-											<td width="150">${teacher.memberBirthday}</td>
-										</tr>
+										 	<td width="150">${(teacher.memberBirthday).substring(0, 10)}</td>
+										 	</tr>
 										<tr height="30">
 											<th width="150">전화번호</th>
 											<td width="150">${teacher.memberTel}</td>

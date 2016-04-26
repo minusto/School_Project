@@ -13,10 +13,10 @@
     sr.setSchoolId(schoolId);
     sr.setSchoolAdminId(id);
     if(re >0 ){
-       response.sendRedirect("../schoolAdminInsertSchoolForm.jsp");
+       response.sendRedirect("../schoolDetail.jsp");
        int re2 = service.insertSchoolRegistService(sr);
     }else{
-       System.out.print("입력실패");
+       response.sendRedirect("../schoolAdminInsertSchoolForm.jsp?insert=fail");
     }
 %>
     

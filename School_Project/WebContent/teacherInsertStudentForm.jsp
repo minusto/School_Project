@@ -3,6 +3,7 @@
 <%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="logic/teacherSessionCheck.jsp" %>
 <!DOCTYPE html>
 <%
 	String m_id = request.getParameter("m_id");
@@ -10,7 +11,6 @@
 		request.setAttribute("m_id", m_id);
 	}
 	request.setAttribute("path", "학생 관리 > 학생 정보 입력");
-	SchoolService service = SchoolService.getInstance();
 	List<StudentNullList> list = service.studentNullListService();
 	request.setAttribute("list", list);
 	int i = 1;
@@ -139,12 +139,7 @@
                                                 <input type="email" class="form-control" id="inputPassword3" name="memberEmail" placeholder="aaa@bbb.com">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">학교ID</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="schoolId" value="KOHIGH">
-                                            </div>
-                                        </div>
+                                       
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학번</label>
                                             <div class="col-sm-5">

@@ -89,14 +89,16 @@
 	</insert>
 	
 	<!-- 액터 : 학교관리자 ==> 교사리스트 -->
-	<select id="listTeacher" resultType="TeacherDetail">
-	SELECT m.memberId , m.memberBirthday , m.memberTel , m.memberEmail , m.memberName , t.teacherClass , t.subjectName
-	FROM teacher t , member m
+	<select id="listTeacher" resultType="TeacherDetail" parameterType="String">
+	SELECT m.memberId , m.memberBirthday , m.memberTel , m.memberEmail , m.memberName , t.teacherClass , t.subjectId
+	FROM teacher t , member m , registmanage r
 	WHERE t.memberId = m.memberId
+	AND  m.memberId=r.memberId
+	AND r.schooladminid=#{id}
 	</select>
 	
 	<!-- 액터 : 학교관리자 ==> 교사리스트 ==> 상세보기 --> 
-	<select id="detailTeacher" resultType="TeacherDetail" parameterType="int">
+	<select id="detailTeacher" resultType="TeacherDetail" parameterType="String">
 	SELECT * FROM teacher t , member m
 	WHERE t.memberId = m.memberId
 	AND m.memberId = #{memberId}
@@ -239,9 +241,10 @@
 	</select>
 
 	<!-- 학교정보조회 -->
-	<select id="schoolDetail" resultType="School" >
+	<select id="schoolDetail" resultType="School" parameterType="String">
 	SELECT * 
 	FROM SCHOOL
+	WHERE schoolId=#{id}
 	</select>
 
 	<!-- 액터 : 시스템 ==> 학교관리자 테이블 정보 조회 -->
@@ -313,7 +316,7 @@
 			, memberEmail , memberNote , memberPassword , memberAddress , schoolId
 		)VALUES(
 			#{memberId} , null , null , null
-			, null ,null ,null ,null ,'YD_01'
+			, null ,null ,'1234' ,null ,#{schoolId}
 		)
 	</insert>
 	
@@ -335,15 +338,15 @@
 			parentId , familyRelation , parentName , parentPassword
 			, memberId
 		)VALUES(
-			#{parentId} , null , null , null , null
+			#{parentId} , null , null , '1234' , null
 		)
 	</insert>
 	
 <!-- 		 	사용자 ID목록  -->
-	<select id="userList" parameterType="RegistManage"  resultType="RegistManage">
-	select *
-	from RegistManage
-	
+	<select id="userList" parameterType="String"  resultType="RegistManage">
+	SELECT *
+	FROM RegistManage
+	WHERE schooladminid=#{id}
 	</select>
 	
  	<!-- 	교사 등급 등록  --> 
@@ -355,6 +358,17 @@
 		)
 	</insert>
 	
+	<select id="schoolRegistSchoolId" parameterType="String" resultType="SchoolRegist">
+		SELECT * 
+		FROM schoolregist
+		WHERE schooladminid=#{id}
+	</select>
 	
+	<!-- 액터 : 교사 ==> 학교관리자 ID를 추출해서 학교ID를 추출하기 위한 용도 -->
+	<select id="getSchoolAdminId" parameterType="String"  resultType="RegistManage">
+	SELECT *
+	FROM RegistManage
+	WHERE memberid=#{id}
+	</select>
 	
 </mapper>

@@ -38,7 +38,7 @@
 						class="profile-img"></li>
 					<li>
 						<div class="profile-info">
-							<h4 class="username">시스템</h4>
+							<h4 class="username">${systemAdmin.systemAdminId }</h4>
 							<p>system@korea.com</p>
 							<div class="btn-group margin-bottom-2x" role="group">
 								<button type="button" class="btn btn-default">
@@ -46,7 +46,7 @@
 								</button>
 								<button type="button" class="btn btn-default"
 									onclick="location.href='logic/logoutOk.jsp'">
-									<i class="fa fa-sign-out"></i> 로그아웃
+									<i class="fa fa-sign-out" onclick="location.href='logic/logoutOk.jsp'"></i> 로그아웃
 								</button>
 							</div>
 						</div>

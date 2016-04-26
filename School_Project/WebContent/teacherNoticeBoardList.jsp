@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="logic/teacherSessionCheck.jsp" %>
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "소통공간 > 교내 공지사항");

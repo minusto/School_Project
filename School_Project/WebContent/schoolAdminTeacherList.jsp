@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="logic/schoolAdminSessionCheck.jsp" %>
 <%
 	request.setAttribute("path", "교사관리>교사 목록 ");
 %>

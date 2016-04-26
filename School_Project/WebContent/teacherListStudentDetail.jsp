@@ -4,13 +4,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="logic/teacherSessionCheck.jsp" %>
 
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생관리 > 학생 정보 열람 > Detail");
 	String m_id = request.getParameter("m_id");
 	if(m_id!=null){
-	SchoolService service = SchoolService.getInstance();
 	StudentDetail student = service.selectStudentDetailService(m_id);
 	request.setAttribute("student", student);
 	}
@@ -96,11 +96,6 @@
                                             <div class="card profile">
                                                 <div class="card-profile-img">
                                                     <img src="img/profile/${student.studentPicture }">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="name">
-                                                    	김상완
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
