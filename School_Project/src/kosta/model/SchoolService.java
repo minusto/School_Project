@@ -157,11 +157,26 @@ public class SchoolService {
 		return dao.insertMockTest3Grade(mockTest);
 	}
 	//교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기
-	public int insertResearchScoreService(ResearchSubjectScore researchScore1, ResearchSubjectScore researchScore2) {
+	public int insertResearchScoreService(ResearchSubjectScore researchScore0, ResearchSubjectScore researchScore1, ResearchSubjectScore researchScore2) {
 		int check = -1;
-		int re1 = dao.insertResearchScore(researchScore1);
-		int re2 = dao.insertResearchScore(researchScore2);
-		if(re1 >0 && re2 >0) {
+		int re0, re1, re2;
+		if(researchScore0.getMockId() != null) {
+			re0 = dao.insertResearchScore(researchScore0);
+		} else {
+			re0 = 0;
+		}
+		if(researchScore1.getMockId() != null) {
+			re1 = dao.insertResearchScore(researchScore1);
+		} else {
+			re1 = 0;
+		}
+		if(researchScore2.getMockId() != null) {
+			re2 = dao.insertResearchScore(researchScore2);
+		} else {
+			re2 = 0;
+		}
+		
+		if((re0 + re1 + re2) > 2) {
 			check = 1;
 		}
 		return check;

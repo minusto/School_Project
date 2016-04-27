@@ -37,74 +37,101 @@
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
-    $(function() {
-		$('#mockGrade').change(function() {
-			var grade = $(this).val();
-			switch (grade) {
-			case '1':
-				var content = '<table id="inserttable" class="table table-striped">';
-				content += '<thead><tr class="headings"><th colspan="4">1학년</th></tr></thead>';
-				content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td><td>백분위</td></tr>';
-				content += '<tr><td colspan="2">언어</td><td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languagePercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td colspan="2">수리</td><td><input name="mathOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathPercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishPercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td></tr></tbody></table>';
-
-				$('#inserttable').html(content);
-				break;
-			case '2':
-				var content = '<table id="inserttable" class="table table-striped">';
-				content += '<thead><tr class="headings"><th colspan="4">2학년</th></tr></thead>';
-				content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td><td>백분위</td></tr>';
-				content += '<tr><td colspan="2">언어</td><td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languagePercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>수리</td><td><select name="mathType"><option>수리 가</option><option>수리 나</option></select></td><td><input name="mathOriginalScore"  type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathPercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishPercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>제2외국어</td><td><select id="secondLangSelect" name="languageSubjectName"><c:forEach var="secondLanguageList" items="${secondLanguageList }"><option>${secondLanguageList.languageSubjectName }</option></c:forEach></select></td><td><input id="secondLanguageOriginalScore" name="secondLanguageOriginalScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguageStandardScore" name="secondLanguageStandardScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguagePercentile" name="secondLanguagePercentile" type="hidden" class="form-control" size="1"></td></tr></tbody></table';
-				
-				$('#inserttable').html(content);
-				break;
-			case '3':
-				var content = '<table class="table table-striped">';
-				content += '<thead><tr class="headings"><th colspan="4">3학년</th></tr></thead>';
-				content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td><td>백분위</td></tr>';
-				content += '<tr><td>언어</td><td><select name="languageType"><option>국어A</option><option>국어B</option></select></td><td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="languagePercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>수리</td><td><select name="mathType"><option>수리 가</option><option>수리 나</option></select></td><td><input name="mathOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="mathPercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishPercentile" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td></tr>';
-				content += '<tr><td>제2외국어</td><td><select id="secondLangSelect" name="languageSubjectName"><c:forEach var="secondLanguageList" items="${secondLanguageList }"><option>${secondLanguageList.languageSubjectName }</option></c:forEach></select></td><td><input id="secondLanguageOriginalScore" name="secondLanguageOriginalScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguageStandardScore" name="secondLanguageStandardScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguagePercentile" name="secondLanguagePercentile" type="hidden" class="form-control" size="1"></td></tr></tbody></table>';
-				
-				$('#inserttable').html(content);
-				break;
-			}
+	    $(function() {
+			$('#mockGrade').change(function() {
+				var grade = $(this).val();
+				switch (grade) {
+				case '1':
+					var content = '<table id="inserttable" class="table table-striped">';
+					content += '<thead><tr class="headings"><th colspan="4">1학년</th></tr></thead>';
+					content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td><td>백분위</td></tr>';
+					content += '<tr><td colspan="2">언어</td><td><input name="languageOriginalScore" type="text" class="form-control" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" size="1"></td><td><input name="languagePercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td colspan="2">수리</td><td><input name="mathOriginalScore" type="text" class="form-control" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" size="1"></td><td><input name="mathPercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" size="1"></td><td><input name="englishPercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>한국사</td><td><select id="researchSubjectName0" name="researchSubjectName0"><option>미응시</option><option>한국사</option></select></td><td><input id="researchSubjectOriginalScore0" name="researchSubjectOriginalScore0" type="hidden" class="form-control" size="1"></td><td><input id="researchSubjectStandardScore0" name="researchSubjectStandardScore0" type="hidden" class="form-control" size="1"></td><td><input id="researchSubjectPercentile0" name="researchSubjectPercentile0" type="hidden" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" size="1"></td><td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" size="1"></td><td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td></tr></tbody></table>';
+	
+					$('#inserttable').html(content);
+					break;
+				case '2':
+					var content = '<table id="inserttable" class="table table-striped">';
+					content += '<thead><tr class="headings"><th colspan="4">2학년</th></tr></thead>';
+					content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td><td>백분위</td></tr>';
+					content += '<tr><td colspan="2">언어</td><td><input name="languageOriginalScore" type="text" class="form-control" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" size="1"></td><td><input name="languagePercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>수리</td><td><select name="mathType"><option>수리 가</option><option>수리 나</option></select></td><td><input name="mathOriginalScore"  type="text" class="form-control" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" size="1"></td><td><input name="mathPercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" size="1"></td><td><input name="englishPercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>한국사</td><td><select id="researchSubjectName0" name="researchSubjectName0"><option>미응시</option><option>한국사</option></select></td><td><input id="researchSubjectOriginalScore0" name="researchSubjectOriginalScore0" type="hidden" class="form-control" size="1"></td><td><input id="researchSubjectStandardScore0" name="researchSubjectStandardScore0" type="hidden" class="form-control" size="1"></td><td><input id="researchSubjectPercentile0" name="researchSubjectPercentile0" type="hidden" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" size="1"></td><td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" size="1"></td><td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>제2외국어</td><td><select id="secondLangSelect" name="languageSubjectName"><c:forEach var="secondLanguageList" items="${secondLanguageList }"><option>${secondLanguageList.languageSubjectName }</option></c:forEach></select></td><td><input id="secondLanguageOriginalScore" name="secondLanguageOriginalScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguageStandardScore" name="secondLanguageStandardScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguagePercentile" name="secondLanguagePercentile" type="hidden" class="form-control" size="1"></td></tr></tbody></table';
+					
+					$('#inserttable').html(content);
+					break;
+				case '3':
+					var content = '<table class="table table-striped">';
+					content += '<thead><tr class="headings"><th colspan="4">3학년</th></tr></thead>';
+					content += '<tbody><tr><td colspan="2">영역</td><td>원점수</td><td>표준점수</td><td>백분위</td></tr>';
+					content += '<tr><td>언어</td><td><select name="languageType"><option>국어A</option><option>국어B</option></select></td><td><input name="languageOriginalScore" type="text" class="form-control" size="1"></td><td><input name="languageStandardScore" type="text" class="form-control" size="1"></td><td><input name="languagePercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>수리</td><td><select name="mathType"><option>수리 가</option><option>수리 나</option></select></td><td><input name="mathOriginalScore" type="text" class="form-control" size="1"></td><td><input name="mathStandardScore" type="text" class="form-control" size="1"></td><td><input name="mathPercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td colspan="2">외국어</td><td><input name="englishOriginalScore" type="text" class="form-control" size="1"></td><td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td><td><input name="englishPercentile" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>한국사</td><td><select id="researchSubjectName0" name="researchSubjectName0"><option>미응시</option><option>한국사</option></select></td><td><input id="researchSubjectOriginalScore0" name="researchSubjectOriginalScore0" type="hidden" class="form-control" size="1"></td><td><input id="researchSubjectStandardScore0" name="researchSubjectStandardScore0" type="hidden" class="form-control" size="1"></td><td><input id="researchSubjectPercentile0" name="researchSubjectPercentile0" type="hidden" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 1</td><td><select id="researchSubjectName1" name="researchSubjectName1"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore1" type="text" class="form-control" size="1"></td><td><input name="researchSubjectStandardScore1" type="text" class="form-control" size="1"></td><td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>탐구영역 2</td><td><select id="researchSubjectName2" name="researchSubjectName2"><c:forEach var="researchList" items="${researchList }"><option>${researchList.researchSubjectName }</option></c:forEach></select></td><td><input name="researchSubjectOriginalScore2" type="text" class="form-control" size="1"></td><td><input name="researchSubjectStandardScore2" type="text" class="form-control" size="1"></td><td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td></tr>';
+					content += '<tr><td>제2외국어</td><td><select id="secondLangSelect" name="languageSubjectName"><c:forEach var="secondLanguageList" items="${secondLanguageList }"><option>${secondLanguageList.languageSubjectName }</option></c:forEach></select></td><td><input id="secondLanguageOriginalScore" name="secondLanguageOriginalScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguageStandardScore" name="secondLanguageStandardScore" type="hidden" class="form-control" value="-1" size="1"></td><td><input id="secondLanguagePercentile" name="secondLanguagePercentile" type="hidden" class="form-control" size="1"></td></tr></tbody></table>';
+					
+					$('#inserttable').html(content);
+					break;
+				}
+			});
+			//제2외국어가 미응시일 경우 input 태그를 숨김
+			$(document).on('change', '#secondLangSelect', function() {
+				var secondSubName = $(this).val();
+				if(secondSubName == '미응시') {
+					$('input[id=secondLanguageOriginalScore]').attr('type', 'hidden');
+					$('input[id=secondLanguageOriginalScore]').val('-1');
+					
+					$('input[id=secondLanguageStandardScore]').attr('type', 'hidden');
+					$('input[id=secondLanguageStandardScore]').val('-1');
+					
+					$('input[id=secondLanguagePercentile]').attr('type', 'hidden');
+					$('input[id=secondLanguagePercentile]').val('-1');
+				} else {
+					$('input[id=secondLanguageOriginalScore]').attr('type', 'text');
+					$('input[id=secondLanguageOriginalScore]').val('');
+					
+					$('input[id=secondLanguageStandardScore]').attr('type', 'text');
+					$('input[id=secondLanguageStandardScore]').val('');
+					
+					$('input[id=secondLanguagePercentile]').attr('type', 'text');
+					$('input[id=secondLanguagePercentile]').val('');
+				}
+			});
+			//한국사가 미응시일 경우 input 태그를 숨김
+			$(document).on('change', '#researchSubjectName0', function() {
+				var hangooksaName = $(this).val();
+				if(hangooksaName == '미응시') {
+					$('input[id=researchSubjectOriginalScore0]').attr('type', 'hidden');
+					$('input[id=researchSubjectOriginalScore0]').val('-1');
+					
+					$('input[id=researchSubjectStandardScore0]').attr('type', 'hidden');
+					$('input[id=researchSubjectStandardScore0]').val('-1');
+					
+					$('input[id=researchSubjectPercentile0]').attr('type', 'hidden');
+					$('input[id=researchSubjectPercentile0]').val('-1');
+				} else {
+					$('input[id=researchSubjectOriginalScore0]').attr('type', 'text');
+					$('input[id=researchSubjectOriginalScore0]').val('');
+					
+					$('input[id=researchSubjectStandardScore0]').attr('type', 'text');
+					$('input[id=researchSubjectStandardScore0]').val('');
+					
+					$('input[id=researchSubjectPercentile0]').attr('type', 'text');
+					$('input[id=researchSubjectPercentile0]').val('');
+				}
+			})
+			
 		});
-		$(document).on('change', '#secondLangSelect', function() {
-			var secondSubName = $(this).val();
-			if(secondSubName == '미응시') {
-				$('input[id=secondLanguageOriginalScore]').attr('type', 'hidden');
-				$('input[id=secondLanguageOriginalScore]').val('-1');
-				
-				$('input[id=secondLanguageStandardScore]').attr('type', 'hidden');
-				$('input[id=secondLanguageStandardScore]').val('-1');
-				
-				$('input[id=secondLanguagePercentile]').attr('type', 'hidden');
-				$('input[id=secondLanguagePercentile]').val('-1');
-				
-			} else {
-				$('input[id=secondLanguageOriginalScore]').attr('type', 'text');
-				$('input[id=secondLanguageOriginalScore]').val('');
-				
-				$('input[id=secondLanguageStandardScore]').attr('type', 'text');
-				$('input[id=secondLanguageStandardScore]').val('');
-				
-				$('input[id=secondLanguagePercentile]').attr('type', 'text');
-				$('input[id=secondLanguagePercentile]').val('');
-			}
-		});
-	});
     	
     	$(function(){
 			$('tbody').on('click','#clickStu',function(){
@@ -233,21 +260,33 @@
 										</tr>
 										<tr>
 											<td colspan="2">언어</td>
-											<td><input name="languageOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
-											<td><input name="languageStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="languageOriginalScore" type="text" class="form-control" size="1"></td>
+											<td><input name="languageStandardScore" type="text" class="form-control" size="1"></td>
 											<td><input name="languagePercentile" type="text" class="form-control" size="1"></td>
 										</tr>
 										<tr>
 											<td colspan="2">수리</td>
-											<td><input name="mathOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
-											<td><input name="mathStandardScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="mathOriginalScore" type="text" class="form-control" size="1"></td>
+											<td><input name="mathStandardScore" type="text" class="form-control" size="1"></td>
 											<td><input name="mathPercentile" type="text" class="form-control" size="1"></td>
 										</tr>
 										<tr>
 											<td colspan="2">외국어</td>
-											<td><input name="englishOriginalScore" type="text" class="form-control" id="inputPassword3" size="1"></td>
-											<td><input name="englishStandardScore"" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="englishOriginalScore" type="text" class="form-control" size="1"></td>
+											<td><input name="englishStandardScore"" type="text" class="form-control" size="1"></td>
 											<td><input name="englishPercentile" type="text" class="form-control" size="1"></td>
+										</tr>
+										<tr>
+											<td>한국사</td>
+											<td>
+												<select id="researchSubjectName0" name="researchSubjectName0">
+													<option>미응시</option>
+													<option>한국사</option>
+												</select>
+											</td>
+											<td><input id="researchSubjectOriginalScore0" name="researchSubjectOriginalScore0" type="hidden" class="form-control" size="1"></td>
+											<td><input id="researchSubjectStandardScore0" name="researchSubjectStandardScore0" type="hidden" class="form-control" size="1"></td>
+											<td><input id="researchSubjectPercentile0" name="researchSubjectPercentile0" type="hidden" class="form-control" size="1"></td>
 										</tr>
 										<tr>
 											<td>탐구영역 1</td>
@@ -258,8 +297,8 @@
 												</c:forEach>
 												</select>
 											</td>
-											<td><input name="researchSubjectOriginalScore1" type="text" class="form-control" id="inputPassword3" size="1"></td>
-											<td><input name="researchSubjectStandardScore1" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="researchSubjectOriginalScore1" type="text" class="form-control" size="1"></td>
+											<td><input name="researchSubjectStandardScore1" type="text" class="form-control" size="1"></td>
 											<td><input name="researchSubjectPercentile1" type="text" class="form-control" size="1"></td>
 										</tr>
 										<tr>
@@ -271,8 +310,8 @@
 												</c:forEach>
 												</select>
 											</td>
-											<td><input name="researchSubjectOriginalScore2" type="text" class="form-control" id="inputPassword3" size="1"></td>
-											<td><input name="researchSubjectStandardScore2" type="text" class="form-control" id="inputPassword3" size="1"></td>
+											<td><input name="researchSubjectOriginalScore2" type="text" class="form-control" size="1"></td>
+											<td><input name="researchSubjectStandardScore2" type="text" class="form-control" size="1"></td>
 											<td><input name="researchSubjectPercentile2" type="text" class="form-control" size="1"></td>
 										</tr>
 										</table>
