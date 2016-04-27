@@ -67,6 +67,7 @@ public interface Mapper  {
 	public int insertMockTest3Grade(MockTest mockTest); //교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 3학년
 	public int insertResearchScore(ResearchSubjectScore researchScore); //교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기
 	public int insertSecondLangScore(SecondLanguageScore secondLanguageScore); //교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만
+	public MockTest checkMockTestInsertedScore(MockTest mockTest);//교사 ==> 학생 모의고사 점수 입력 - 입력된 모의고사였는지 검사
 	public int insertNoticeBoard(NoticeBoard noticeBoard); //관지라-> 공지사항 등록
 	public Integer noticeBoardNum(); //공지사항 글번호
 	public int noticeCountBoard(Search search); //페이징 처리 공지사항글번호

@@ -262,6 +262,10 @@
 			#{mockId}, #{memberId}, #{secondLanguageOriginalScore}, #{secondLanguageStandardScore}
 		)
 	</insert>
+	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 입력된 모의고사였는지 검사 -->
+	<select id="checkMockTestInsertedScore" parameterType="MockTest" resultType="MockTest">
+		SELECT * FROM mockTest WHERE mockId = #{mockId} AND memberId = #{memberId}
+	</select>
 	
 	<!-- 공지사항 글번호 -->
 	<select id="noticeBoardNum" resultType="Integer">

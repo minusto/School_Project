@@ -16,29 +16,34 @@
 <jsp:setProperty property="*" name="secondLanguageScore"/>
 <%
 	if(mockTest.getMemberId() == null) {
-		out.println("<script type='text/javascript'>alert('학생 아이디가 없음');history.go(-1);</script>");
+		out.println("<script type='text/javascript'>alert('학생 아이디가 없습니다');history.go(-1);</script>");
 	}
 	else if(twoResearch.getResearchSubjectName1().equals(twoResearch.getResearchSubjectName2())) {
-		out.println("<script type='text/javascript'>alert('탐구 과목이 중복됨');history.go(-1);</script>");
+		out.println("<script type='text/javascript'>alert('탐구 과목이 중복됩니다');history.go(-1);</script>");
 	} else {
-		
 		SchoolService service = SchoolService.getInstance();
 		String mockId = service.selectMockIDService(mockType); //모의고사 정보로 아이디를 가져온다.
 		mockTest.setMockId(mockId);
-		String seconLangId = null;
-		if(secondLanguage.getLanguageSubjectName() != null) { //제2외국어 이름이 들어왔다면 2학년 혹은 3학년인 것. 제2외국어 이름에 따라 id를 가져온다.
-			seconLangId = service.selectSecondLanguageId(secondLanguage.getLanguageSubjectName());
-			mockTest.setLanguageId(seconLangId);
-			secondLanguageScore.setMockId(mockId);
-		}
 		
-		ResearchSubjectScore rScore1 = new ResearchSubjectScore(); //탐구 점수를 각각 담기 위한 탐구 객체 두개
-		ResearchSubjectScore rScore2 = new ResearchSubjectScore();
-		
-		String researchId1 = service.selectResearchIdService(twoResearch.getResearchSubjectName1());
-		String researchId2 = service.selectResearchIdService(twoResearch.getResearchSubjectName2());
-		
-		try {
+		int checkMockTest = service.checkMockTestInsertedScoreService(mockTest); //모의고사 점수가 이미 입력되었는지 검사
+		if(checkMockTest < 0) { //이미 점수가 있음
+			out.println("<script type='text/javascript'>alert('해당하는 모의고사 점수가 이미 있습니다');history.go(-1);</script>");
+		} else if (checkMockTest == 0) {
+			out.println("<script type='text/javascript'>alert('모의고사 체크 오류');history.go(-1);</script>");
+		} else { //모의고사 점수가 입력된 것이 없다면
+			String seconLangId = null;
+			if(secondLanguage.getLanguageSubjectName() != null) { //제2외국어 이름이 들어왔다면 2학년 혹은 3학년인 것. 제2외국어 이름에 따라 id를 가져온다.
+				seconLangId = service.selectSecondLanguageId(secondLanguage.getLanguageSubjectName());
+				mockTest.setLanguageId(seconLangId);
+				secondLanguageScore.setMockId(mockId);
+			}
+			
+			ResearchSubjectScore rScore1 = new ResearchSubjectScore(); //탐구 점수를 각각 담기 위한 탐구 객체 두개
+			ResearchSubjectScore rScore2 = new ResearchSubjectScore();
+			
+			String researchId1 = service.selectResearchIdService(twoResearch.getResearchSubjectName1());
+			String researchId2 = service.selectResearchIdService(twoResearch.getResearchSubjectName2());
+			
 			rScore1.setMockId(mockId); //탐구 객체에 각각 내용을 집어넣기
 			rScore1.setMemberId(mockTest.getMemberId());
 			rScore1.setResearchSubjectId(researchId1);
@@ -50,7 +55,7 @@
 			rScore2.setResearchSubjectId(researchId2);
 			rScore2.setResearchSubjectOriginalScore(twoResearch.getResearchSubjectOriginalScore2());
 			rScore2.setResearchSubjectStandardScore(twoResearch.getResearchSubjectStandardScore2());
-			
+				
 			int mockRe = -1; //모의고사 내용을 insert 한 결과
 			
 			switch (mockType.getMockGrade()) {
@@ -69,28 +74,26 @@
 			int secondLangRe = -1; //제2외국어 insert 결과
 			if(mockRe > 0) { //모의고사 점수가 들어갔다면 다음으로 탐구 점수를 insert
 				researchRe = service.insertResearchScoreService(rScore1, rScore2);
-				if(mockType.getMockGrade() != 1) { //1학년이 아니라면 제2외국어를 insert
-					if(secondLanguageScore.getSecondLanguageOriginalScore() > 0) {
+				if(researchRe > 0) { //탐구점수 입력이 성공하면
+					if(mockType.getMockGrade() != 1 && secondLanguageScore.getSecondLanguageOriginalScore() > 0) { //1학년이 아니고 제2외국어 점수가 있다면 제2외국어를 insert
 						secondLangRe = service.insertSecondLangScoreService(secondLanguageScore);
-						if(secondLangRe < 0) {
-							researchRe = -1;
+						if(secondLangRe > 0) { //제2외국어 입력 성공
+							out.println("<script type='text/javascript'>alert('입력 성공');");
+							response.sendRedirect("../teacherInsertMockScoreForm.jsp");													
+						} else { //제2외국어 입력 실패
+							out.println("<script type='text/javascript'>alert('제2외국어 입력에 실패했습니다');history.go(-1);</script>");							
 						}
+					} else { //1학년일 경우, 탐구점수 입력에 성공했으므로 모의고사 점수 입력 모두 성공
+						out.println("<script type='text/javascript'>alert('입력 성공');");
+						response.sendRedirect("../teacherInsertMockScoreForm.jsp");						
 					}
+				} else { //탐구 점수 입력에 실패하면 다시 되돌아감
+					out.println("<script type='text/javascript'>alert('탐구 입력에 실패했습니다');history.go(-1);</script>");
 				}
 			} else {
-				out.println("<script type='text/javascript'>alert('입력 실패');history.go(-1);</script>"); //모의고사 내용을 입력 실패했을 경우 이전으로 돌아감
+				out.println("<script type='text/javascript'>alert('모의고사 점수 입력에 실패했습니다');history.go(-1);</script>"); //모의고사 내용을 입력 실패했을 경우 이전으로 돌아감
 			}
-			
-			if(researchRe > 0) { //탐구점수와 제2외국어 점수 입력이 모두 성공하면 이동
-				out.println("<script type='text/javascript'>alert('입력 성공');");
-				response.sendRedirect("../teacherInsertMockScoreForm.jsp");
-			} else {
-				out.println("<script type='text/javascript'>alert('입력 실패');history.go(-1);</script>");
-			}
-		} catch(Exception e) {
-			e.printStackTrace();
 		}
-		
 	}
 
 	

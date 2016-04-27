@@ -170,6 +170,17 @@ public class SchoolService {
 	public int insertSecondLangScoreService(SecondLanguageScore secondLanguageScore) {
 		return dao.insertSecondLangScore(secondLanguageScore);
 	}
+	//교사 ==> 학생 모의고사 점수 입력 - 입력된 모의고사였는지 검사
+	public int checkMockTestInsertedScoreService(MockTest mockTest) {
+		MockTest m = dao.checkMockTestInsertedScore(mockTest);
+		int re = 0;
+		if(m != null) {
+			re = -1;
+		} else {
+			re = 1;
+		}
+		return re;
+	}
 	
 	//관리자 -> 공지사항 등록
 	public int insertNoticeBoardService(HttpServletRequest request,String id) throws Exception{
