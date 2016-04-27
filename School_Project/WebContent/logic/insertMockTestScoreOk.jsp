@@ -49,12 +49,14 @@
 			rScore1.setResearchSubjectId(researchId1);
 			rScore1.setResearchSubjectOriginalScore(twoResearch.getResearchSubjectOriginalScore1());
 			rScore1.setResearchSubjectStandardScore(twoResearch.getResearchSubjectStandardScore1());
+			rScore1.setResearchSubjectPercentile(twoResearch.getResearchSubjectPercentile1());
 			
 			rScore2.setMockId(mockId);
 			rScore2.setMemberId(mockTest.getMemberId());
 			rScore2.setResearchSubjectId(researchId2);
 			rScore2.setResearchSubjectOriginalScore(twoResearch.getResearchSubjectOriginalScore2());
 			rScore2.setResearchSubjectStandardScore(twoResearch.getResearchSubjectStandardScore2());
+			rScore2.setResearchSubjectPercentile(twoResearch.getResearchSubjectPercentile2());
 				
 			int mockRe = -1; //모의고사 내용을 insert 한 결과
 			

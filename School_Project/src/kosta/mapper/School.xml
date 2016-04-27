@@ -220,46 +220,46 @@
 	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 1학년 -->
 	<insert id="insertMockTest1Grade" parameterType="MockTest">
 		INSERT INTO mockTest(
-			mockId, memberId, languageOriginalScore, languageStandardScore, languageType, mathType, mathOriginalScore, mathStandardScore, englishOriginalScore, englishStandardScore, languageId
+			mockId, memberId, languageOriginalScore, languageStandardScore, languagePercentile, languageType, mathType, mathOriginalScore, mathStandardScore, mathPercentile, englishOriginalScore, englishStandardScore, englishPercentile, languageId
 		)
 		VALUES (
-			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, '', '', #{mathOriginalScore}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, ''
+			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, #{languagePercentile}, '', '', #{mathOriginalScore}, #{mathStandardScore}, #{mathPercentile}, #{englishOriginalScore}, #{englishStandardScore}, #{englishPercentile}, ''
 		)
 	</insert>
 	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년 -->
 	<insert id="insertMockTest2Grade" parameterType="MockTest">
 		INSERT INTO mockTest(
-			mockId, memberId, languageOriginalScore, languageStandardScore, languageType, mathType, mathOriginalScore, mathStandardScore, englishOriginalScore, englishStandardScore, languageId
+			mockId, memberId, languageOriginalScore, languageStandardScore, languagePercentile, languageType, mathType, mathOriginalScore, mathStandardScore, mathPercentile, englishOriginalScore, englishStandardScore, englishPercentile, languageId
 		)
 		VALUES (
-			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, '', #{mathType}, #{mathOriginalScore}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, #{languageId}
+			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, #{languagePercentile}, '', #{mathType}, #{mathOriginalScore}, #{mathPercentile}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, #{englishPercentile}, #{languageId}
 		)
 	</insert>
 	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 모의고사 점수 넣기 - 2학년 -->
 	<insert id="insertMockTest3Grade" parameterType="MockTest">
 		INSERT INTO mockTest(
-			mockId, memberId, languageOriginalScore, languageStandardScore, languageType, mathType, mathOriginalScore, mathStandardScore, englishOriginalScore, englishStandardScore, languageId
+			mockId, memberId, languageOriginalScore, languageStandardScore, languagePercentile, languageType, mathType, mathOriginalScore, mathStandardScore, mathPercentile, englishOriginalScore, englishStandardScore, englishPercentile, languageId
 		)
 		VALUES (
-			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, #{languageType}, #{mathType}, #{mathOriginalScore}, #{mathStandardScore}, #{englishOriginalScore}, #{englishStandardScore}, #{languageId}
+			#{mockId}, #{memberId}, #{languageOriginalScore}, #{languageStandardScore}, #{languagePercentile}, #{languageType}, #{mathType}, #{mathOriginalScore}, #{mathStandardScore}, #{mathPercentile}, #{englishOriginalScore}, #{englishStandardScore}, #{englishPercentile}, #{languageId}
 		)
 	</insert>
 	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기 -->
 	<insert id="insertResearchScore" parameterType="ResearchSubjectScore">
 		INSERT INTO researchSubjectScore (
-			mockId, memberId, researchSubjectId, researchSubjectOriginalScore, researchSubjectStandardScore
+			mockId, memberId, researchSubjectId, researchSubjectOriginalScore, researchSubjectStandardScore, researchSubjectPercentile
 		)
 		VALUES (
-			#{mockId}, #{memberId}, #{researchSubjectId}, #{researchSubjectOriginalScore}, #{researchSubjectStandardScore}
+			#{mockId}, #{memberId}, #{researchSubjectId}, #{researchSubjectOriginalScore}, #{researchSubjectStandardScore}, #{researchSubjectPercentile}
 		)
 	</insert>
 	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만 -->
 	<insert id="insertSecondLangScore" parameterType="SecondLanguageScore">
 		INSERT INTO secondLanguageScore (
-			mockId, memberId, secondLanguageOriginalScore, secondLanguageStandardScore
+			mockId, memberId, secondLanguageOriginalScore, secondLanguageStandardScore, secondLanguagePercentile
 		)
 		VALUES (
-			#{mockId}, #{memberId}, #{secondLanguageOriginalScore}, #{secondLanguageStandardScore}
+			#{mockId}, #{memberId}, #{secondLanguageOriginalScore}, #{secondLanguageStandardScore}, #{secondLanguagePercentile}
 		)
 	</insert>
 	<!-- 액터 : 교사 ==> 학생 모의고사 점수 입력 - 입력된 모의고사였는지 검사 -->
