@@ -11,7 +11,9 @@
 		request.setAttribute("m_id", m_id);
 	}
 	request.setAttribute("path", "학생 관리 > 학생 정보 입력");
-	List<StudentNullList> list = service.studentNullListService();
+	Member member=service.memberDetailService(id);
+	List<Member> list=service.sameSchoolStudentNullListService(member.getSchoolId());
+	// List<StudentNullList> list = service.studentNullListService();
 	request.setAttribute("list", list);
 	int i = 1;
 %>

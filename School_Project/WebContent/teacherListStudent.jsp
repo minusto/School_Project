@@ -9,7 +9,8 @@
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생관리 > 학생 정보 열람");
-	List<StudentList> list = service.studentListService();
+	Member member=service.memberDetailService(id);
+	List<StudentList> list = service.studentListService(member.getSchoolId());
 	request.setAttribute("list", list);
 %>
 <html>
@@ -89,7 +90,7 @@
 												<tr>
 													<td id="memberId">${list.memberId }</td>
 													<td>${list.memberName }</td>
-													<td>${list.memberBirthday}</td>
+													<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.memberBirthday}"/></td>
 													<td>${list.schoolId }</td>
 													<td>${list.studentCode }</td>
 													<td>${list.studentGrade }</td>

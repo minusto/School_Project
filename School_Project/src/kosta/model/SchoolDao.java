@@ -67,11 +67,11 @@ public class SchoolDao {
 	}
 
 	// 학생목록 출력
-	public List<StudentList> studentList() {
+	public List<StudentList> studentList(String schoolId) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<StudentList> list = null;
 		try {
-			list = session.getMapper(Mapper.class).studentList();
+			list = session.getMapper(Mapper.class).studentList(schoolId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -933,6 +933,20 @@ public class SchoolDao {
 			session.close();
 		}
 		return rm;
+	}
+
+	public List<Member> sameSchoolStudentNullList(String id) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<Member> list=null;
+		try {
+			list = session.getMapper(Mapper.class).sameSchoolStudentNullList(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+		
 	}
 
 }

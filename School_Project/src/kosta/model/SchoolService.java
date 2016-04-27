@@ -27,8 +27,8 @@ public class SchoolService {
 		return dao.insertSchoolAdminRegist(schoolAdminRegist);
 	}
 	
-	public List<StudentList> studentListService(){
-		return dao.studentList();
+	public List<StudentList> studentListService(String schoolId){
+		return dao.studentList(schoolId);
 	}
 	public int insertParentService(Parent parent){
 		return dao.insertParent(parent);
@@ -331,5 +331,7 @@ public class SchoolService {
 			return dao.getSchoolAdminId(id);
 		}
 	
-	
+		public List<Member> sameSchoolStudentNullListService(String id){
+			return dao.sameSchoolStudentNullList(id);
+		}
 }

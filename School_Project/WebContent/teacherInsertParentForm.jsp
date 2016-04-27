@@ -14,7 +14,8 @@
 	request.setAttribute("path", "학부모 관리 > 학부모 정보 입력");
 	List<ParentNullList> list = service.ParentNullListService();
 	request.setAttribute("list", list);
-	List<StudentList> list2 = service.studentListService();
+	Member member=service.memberDetailService(id);
+	List<StudentList> list2 = service.studentListService(member.getSchoolId());
 	request.setAttribute("list2", list2);
 %>
 <html>

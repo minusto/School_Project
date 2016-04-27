@@ -21,10 +21,11 @@
 		)
 	</insert>
 	<!-- 학생목록 출력 -->
-	<select id="studentList" resultType="StudentList">
+	<select id="studentList" resultType="StudentList" parameterType="String">
 		SELECT m.memberid, m.membername, m.memberbirthday, m.schoolid, st.studentcode, st.studentgrade, st.studentclass, st.studentnum, st.studentgender, st.studentmajor 
 		FROM member m, student st
 		WHERE m.memberid = st.memberid
+		AND m.schoolid=#{schoolId}
 		AND st.studentCode IS NOT NULL
 		ORDER BY m.memberid
 	</select>
@@ -442,6 +443,15 @@
 	SELECT *
 	FROM RegistManage
 	WHERE memberid=#{id}
+	</select>
+	
+	<select id="sameSchoolStudentNullList" parameterType="String" resultType="Member">
+		SELECT m.memberid,memberpassword,membername,memberbirthday,memberaddress,
+				membertel,membernote,memberemail,schoolid
+		FROM member m,student s
+		WHERE m.schoolid=#{id}
+		AND m.memberid=s.memberid
+		AND s.studentcode IS NULL
 	</select>
 	
 </mapper>
