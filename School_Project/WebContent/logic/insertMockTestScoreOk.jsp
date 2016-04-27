@@ -8,8 +8,8 @@
 <jsp:setProperty property="*" name="mockType"/>
 <jsp:useBean id="mockTest" class="kosta.model.MockTest"></jsp:useBean>
 <jsp:setProperty property="*" name="mockTest"/>
-<jsp:useBean id="twoResearch" class="kosta.model.TwoResearchSubject"></jsp:useBean>
-<jsp:setProperty property="*" name="twoResearch"/>
+<jsp:useBean id="researchPackage" class="kosta.model.ResearchSubjectPackage"></jsp:useBean>
+<jsp:setProperty property="*" name="researchPackage"/>
 <jsp:useBean id="secondLanguage" class="kosta.model.SecondLanguage"></jsp:useBean>
 <jsp:setProperty property="*" name="secondLanguage"/>
 <jsp:useBean id="secondLanguageScore" class="kosta.model.SecondLanguageScore"></jsp:useBean>
@@ -18,7 +18,8 @@
 	if(mockTest.getMemberId() == null) {
 		out.println("<script type='text/javascript'>alert('학생 아이디가 없습니다');history.go(-1);</script>");
 	}
-	else if(twoResearch.getResearchSubjectName1().equals(twoResearch.getResearchSubjectName2())) {
+	else if(researchPackage.getResearchSubjectName0().equals(researchPackage.getResearchSubjectName1()) || researchPackage.getResearchSubjectName0().equals(researchPackage.getResearchSubjectName2()) 
+			|| researchPackage.getResearchSubjectName1().equals(researchPackage.getResearchSubjectName2())) {
 		out.println("<script type='text/javascript'>alert('탐구 과목이 중복됩니다');history.go(-1);</script>");
 	} else {
 		SchoolService service = SchoolService.getInstance();
@@ -38,31 +39,10 @@
 				secondLanguageScore.setMockId(mockId);
 			}
 			
-			ResearchSubjectScore rScore1 = new ResearchSubjectScore(); //탐구 점수를 각각 담기 위한 탐구 객체 두개
-			ResearchSubjectScore rScore2 = new ResearchSubjectScore();
-			
-			String researchId1 = service.selectResearchIdService(twoResearch.getResearchSubjectName1());
-			String researchId2 = service.selectResearchIdService(twoResearch.getResearchSubjectName2());
-			
-			rScore1.setMockId(mockId); //탐구 객체에 각각 내용을 집어넣기
-			rScore1.setMemberId(mockTest.getMemberId());
-			rScore1.setResearchSubjectId(researchId1);
-			rScore1.setResearchSubjectOriginalScore(twoResearch.getResearchSubjectOriginalScore1());
-			rScore1.setResearchSubjectStandardScore(twoResearch.getResearchSubjectStandardScore1());
-			rScore1.setResearchSubjectPercentile(twoResearch.getResearchSubjectPercentile1());
-			
-			rScore2.setMockId(mockId);
-			rScore2.setMemberId(mockTest.getMemberId());
-			rScore2.setResearchSubjectId(researchId2);
-			rScore2.setResearchSubjectOriginalScore(twoResearch.getResearchSubjectOriginalScore2());
-			rScore2.setResearchSubjectStandardScore(twoResearch.getResearchSubjectStandardScore2());
-			rScore2.setResearchSubjectPercentile(twoResearch.getResearchSubjectPercentile2());
-				
 			int mockRe = -1; //모의고사 내용을 insert 한 결과
-			
-			switch (mockType.getMockGrade()) {
+			switch (mockType.getMockGrade()) { //학년에 맞게 모의고사 내용을 집어넣기	
 			case 1:
-				mockRe = service.insertMockTest1GradeService(mockTest);	//학년에 맞게 모의고사 내용을 집어넣기	
+				mockRe = service.insertMockTest1GradeService(mockTest);
 				break;
 			case 2:
 				mockRe = service.insertMockTest2GradeService(mockTest);			
@@ -72,10 +52,42 @@
 				break;
 			}
 			
+			//탐구
+			ResearchSubjectScore rScore0 = new ResearchSubjectScore(); //한국사를 위한 객체
+			ResearchSubjectScore rScore1 = new ResearchSubjectScore(); //탐구 점수를 각각 담기 위한 탐구 객체 두개
+			ResearchSubjectScore rScore2 = new ResearchSubjectScore();
+			
+			String researchId1 = service.selectResearchIdService(researchPackage.getResearchSubjectName1());
+			String researchId2 = service.selectResearchIdService(researchPackage.getResearchSubjectName2());
+			
+			rScore1.setMockId(mockId); //탐구 객체에 각각 내용을 집어넣기
+			rScore1.setMemberId(mockTest.getMemberId());
+			rScore1.setResearchSubjectId(researchId1);
+			rScore1.setResearchSubjectOriginalScore(researchPackage.getResearchSubjectOriginalScore1());
+			rScore1.setResearchSubjectStandardScore(researchPackage.getResearchSubjectStandardScore1());
+			rScore1.setResearchSubjectPercentile(researchPackage.getResearchSubjectPercentile1());
+			
+			rScore2.setMockId(mockId);
+			rScore2.setMemberId(mockTest.getMemberId());
+			rScore2.setResearchSubjectId(researchId2);
+			rScore2.setResearchSubjectOriginalScore(researchPackage.getResearchSubjectOriginalScore2());
+			rScore2.setResearchSubjectStandardScore(researchPackage.getResearchSubjectStandardScore2());
+			rScore2.setResearchSubjectPercentile(researchPackage.getResearchSubjectPercentile2());
+			
+			if(researchPackage.getResearchSubjectOriginalScore0() > 0) {
+				String researchId0 = service.selectResearchIdService(researchPackage.getResearchSubjectName0());
+				rScore0.setMockId(mockId);
+				rScore0.setMemberId(mockTest.getMemberId());
+				rScore0.setResearchSubjectId(researchId0);
+				rScore0.setResearchSubjectOriginalScore(researchPackage.getResearchSubjectOriginalScore0());
+				rScore0.setResearchSubjectStandardScore(researchPackage.getResearchSubjectStandardScore0());
+				rScore0.setResearchSubjectPercentile(researchPackage.getResearchSubjectPercentile0());
+			}
+			
 			int researchRe = -1; //탐구 점수 insert 결과
 			int secondLangRe = -1; //제2외국어 insert 결과
 			if(mockRe > 0) { //모의고사 점수가 들어갔다면 다음으로 탐구 점수를 insert
-				researchRe = service.insertResearchScoreService(rScore1, rScore2);
+				researchRe = service.insertResearchScoreService(rScore0, rScore1, rScore2);
 				if(researchRe > 0) { //탐구점수 입력이 성공하면
 					if(mockType.getMockGrade() != 1 && secondLanguageScore.getSecondLanguageOriginalScore() > 0) { //1학년이 아니고 제2외국어 점수가 있다면 제2외국어를 insert
 						secondLangRe = service.insertSecondLangScoreService(secondLanguageScore);

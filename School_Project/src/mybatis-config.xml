@@ -33,7 +33,7 @@
       <typeAlias type="kosta.model.ResearchSubject" alias="ResearchSubject"/>
       <typeAlias type="kosta.model.SecondLanguage" alias="SecondLanguage"/>
       <typeAlias type="kosta.model.ExistStudentList" alias="ExistStudentList"/>
-      <typeAlias type="kosta.model.TwoResearchSubject" alias="TwoResearchSubject"/>
+      <typeAlias type="kosta.model.ResearchSubjectPackage" alias="ResearchSubjectPackage"/>
       <typeAlias type="kosta.model.ResearchSubjectScore" alias="ResearchSubjectScore"/>
       <typeAlias type="kosta.model.SecondLanguageScore" alias="SecondLanguageScore"/>
    </typeAliases>
