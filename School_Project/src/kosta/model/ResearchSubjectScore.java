@@ -9,6 +9,7 @@ public class ResearchSubjectScore implements Serializable {
 	private String memberId;
 	private int researchSubjectOriginalScore;
 	private int researchSubjectStandardScore;
+	private double researchSubjectPercentile;
 
 	public String getMockId() {
 		return mockId;
@@ -50,4 +51,12 @@ public class ResearchSubjectScore implements Serializable {
 		this.researchSubjectStandardScore = researchSubjectStandardScore;
 	}
 
+	public double getResearchSubjectPercentile() {
+		return researchSubjectPercentile;
+	}
+
+	public void setResearchSubjectPercentile(double researchSubjectPercentile) {
+		this.researchSubjectPercentile = researchSubjectPercentile;
+	}	
+	
 }

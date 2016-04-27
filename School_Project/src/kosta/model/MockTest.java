@@ -15,6 +15,9 @@ public class MockTest implements Serializable {
     private Integer englishOriginalScore;
     private Integer englishStandardScore;
     private String languageId;
+    private double languagePercentile;
+    private double mathPercentile;
+    private double englishPercentile;
     
 	public String getMockId() {
 		return mockId;
@@ -81,5 +84,23 @@ public class MockTest implements Serializable {
 	}
 	public void setLanguageId(String languageId) {
 		this.languageId = languageId;
+	}
+	public double getLanguagePercentile() {
+		return languagePercentile;
+	}
+	public void setLanguagePercentile(double languagePercentile) {
+		this.languagePercentile = languagePercentile;
+	}
+	public double getMathPercentile() {
+		return mathPercentile;
+	}
+	public void setMathPercentile(double mathPercentile) {
+		this.mathPercentile = mathPercentile;
+	}
+	public double getEnglishPercentile() {
+		return englishPercentile;
+	}
+	public void setEnglishPercentile(double englishPercentile) {
+		this.englishPercentile = englishPercentile;
 	}
 }
