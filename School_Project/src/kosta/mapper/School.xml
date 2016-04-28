@@ -277,9 +277,13 @@
 		WHERE universityId IN (SELECT DISTINCT universityId FROM entranceInfo) 
 		ORDER BY universityName
 	</select>
-	<!-- 진학시뮬레이션 - 학과 리스트 조회 -->
-	<select id="selectMajorList" resultType="Major">
-		SELECT * FROM major ORDER BY majorId
+	<!-- 진학시뮬레이션 - EntranceInfo에 있는 해당하는 대학교의 학과 리스트 조회  -->
+	<select id="selectMajorList" parameterType="String" resultType="Major">
+		SELECT * FROM major
+		WHERE majorId IN (SELECT DISTINCT majorId 
+							FROM entranceInfo WHERE universityId IN (SELECT DISTINCT universityId 
+												FROM university WHERE universityName = #{universityName}))
+		ORDER BY majorName
 	</select>
 	<!-- 진학시뮬레이션 - 대학교 이름으로 아이디 가져오기 -->
 	<select id="selectUniversityId" parameterType="String" resultType="String">

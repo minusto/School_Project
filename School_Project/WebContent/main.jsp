@@ -58,14 +58,16 @@
 	<input type="hidden" id="loginCheck" value="${login}">
 	<input type="hidden" id="logout" value="${logout}">
 	<div class="app-container">
-		<div id="mainHeader" class="mainHeader">
-			<a>학사관리 서비스</a>
-		</div>
+<!-- 		<div id="mainHeader" class="mainHeader"> -->
+<!-- 			<a>학사관리 서비스</a> -->
+<!-- 		</div> -->
+		<br><br>
 		<div id="mainPictureDiv" class="mainPicture">
 			<a> <img class="img-responsive hidden-xs" alt="MainPicture"
 				src="img/MainPicture.png">
 			</a>
 		</div>
+		<br>
 		<div id="loginSelectStudentDiv" class="loginSelectDiv">
 			<ul class="list-unstyled list-inline">
 				<li id="liStudent" data-toggle="modal" data-target="#modalSuccess">
@@ -92,25 +94,22 @@
 		</div>
 		<div id="mainFooter" class="row">
 			<div class="footerImg col-md-3">
-				<div id="footerImg">
-					<img alt="" src="img/study.png"> <img alt=""
-						src="img/keris.png" id="keris">
-				</div>
+
 			</div>
-			<div class="footerNav col-md-5 col-xs-8">
+			<div class="footerNav col-md-5 col-xs-8" align="center">
 				<ul style="padding: 0px">
 					<li><a href="#">시스템소개</a></li>
 					<li><a href="#">저작권</a></li>
 					<li><a href="#">교육청</a></li>
 					<li><a href="#">시·도교육청 상담센터 안내</a></li>
-					<li>일평균방문자수 : 416,794명</li>
+					<li><a href="#">Contact Us</a></li>
 				</ul>
-				<address>Copyright (c) 우리꺼얌. All Rights Reserved</address>
+				<address>Copyright (c) YG Family. All Rights Reserved</address>
 			</div>
-			<div class="wrapper" id="syslogin">
+			<div class="wrapper" id="syslogin" >
 				<span class="pull-right"><a id="sysLoginA"
 					data-toggle="modal" data-target="#modalPrimary"
-					style="color: #e5e5e9">시스템 로그인</a></span>
+					style="color: #e5e5e9">시스템 로그인</a></span> 
 			</div>
 		</div>
 	</div>

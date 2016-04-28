@@ -176,7 +176,7 @@ public class SchoolService {
 			re2 = 0;
 		}
 		
-		if((re0 + re1 + re2) > 2) {
+		if((re0 + re1 + re2) >= 2) {
 			check = 1;
 		}
 		return check;
@@ -212,9 +212,9 @@ public class SchoolService {
 		public List<University> selectUniversityListService() {
 			return dao.selectUniversityList();
 		}
-		//진학시뮬레이션 - 학과 리스트 조회
-		public List<Major> selectMajorListService() {
-			return dao.selectMajorList();
+		//진학시뮬레이션 - EntranceInfo에 있는 해당하는 대학교의 학과 리스트 조회
+		public List<Major> selectMajorListService(String universityName) {
+			return dao.selectMajorList(universityName);
 		}
 		//진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
 		public String selectUniversityIdService(String universityName) {

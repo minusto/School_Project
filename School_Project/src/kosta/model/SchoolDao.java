@@ -587,12 +587,12 @@ public class SchoolDao {
 			}
 			return list;
 		}
-		//진학시뮬레이션 - 학과 리스트 조회
-		public List<Major> selectMajorList() {
+		//진학시뮬레이션 - EntranceInfo에 있는 해당하는 대학교의 학과 리스트 조회
+		public List<Major> selectMajorList(String universityName) {
 			SqlSession session = getSqlSessionFactory().openSession();
 			List<Major> list = null;
 			try {
-				list = session.getMapper(Mapper.class).selectMajorList();
+				list = session.getMapper(Mapper.class).selectMajorList(universityName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
