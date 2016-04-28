@@ -121,7 +121,7 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" name="memberAddress" placeholder="Tel">
+                                                <input type="text" class="form-control" name="memberAddress" placeholder="address">
                                             </div>
                                         </div>
                                         <div class="form-group">
