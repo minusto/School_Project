@@ -92,7 +92,7 @@
                     					<c:when test="${checkHopeUniversityExist > 0}">
                     						<table id="hopeUniversityTable" class="table table-bordered">
 	                    						<tr>
-					                    			<th>현재 모의고사 평균 등급</th>
+					                    			<th>모의고사 총합</th>
 					                    			<th>목표대학</th>
 					                    			<th>목표학과</th>
 					                    			<th>정시 커트라인</th>

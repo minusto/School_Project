@@ -224,7 +224,7 @@ public class SchoolService {
 		public String selectMajorIdService(String majorName) {
 			return dao.selectMajorId(majorName);
 		}
-		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 알아내기
+		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 가져오기
 		public int selectEntranceInfoYearService(EntranceInfo entranceInfo) {
 			return dao.selectEntranceInfoYear(entranceInfo);
 		}
