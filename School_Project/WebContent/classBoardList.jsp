@@ -77,29 +77,29 @@ tbody tr.selected td {
 											<tr>
 												<td>1</td>
 												<td><a href="#">안녕하세요 반가워요</a></td>
-												<td>멍청이</td>
+												<td>ST_01</td>
 												<td>2016-05-15</td>
 												<td>0</td>
 											</tr>
 											<tr>
 												<td>1</td>
-												<td><a href="#">ㅎㅇㅎㅇ</a></td>
-												<td>관리자</td>
-												<td>2016-05-15</td>
+												<td><a href="#">알고 있니?</a></td>
+												<td>ST_23</td>
+												<td>2016-05-14</td>
 												<td>0</td>
 											</tr>
 											<tr>
 												<td>1</td>
-												<td><a href="#">ㅎㅇㅎㅇ</a></td>
-												<td>ㅎㅇㅎㅇ</td>
-												<td>2016-05-15</td>
+												<td><a href="#">안녕 애들아!</a></td>
+												<td>ST_20</td>
+												<td>2016-05-14</td>
 												<td>0</td>
 											</tr>
 											<tr>
 												<td>1</td>
-												<td><a href="#">ㅎㅇㅎㅇ</a></td>
-												<td>ㅇㅇㅇ</td>
-												<td>2016-05-15</td>
+												<td><a href="#">첫글입니다 ㅎ</a></td>
+												<td>ST_09</td>
+												<td>2016-05-13</td>
 												<td>0</td>
 											</tr>
 
