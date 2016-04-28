@@ -295,16 +295,6 @@
 									<!--페이지 -->
 									<a href="#" class="pull-right" ><button class="btn btn-default">등록</button></a><br><br>
  									<br><br>
-									<!-- 검색 -->
-									<form action="" method="post" class="pull-right">
-										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
-										<label> 제목</label>
-										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
-										<label> 작성자</label>
-										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
-										<input type="hidden" name="temp" value="temp" >
-										<input class="btn btn-default" type="submit" value="검색">
-								</form><br><br>
 							</div>
 						</div>
 					</div>

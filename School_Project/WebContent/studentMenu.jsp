@@ -1,15 +1,14 @@
 <%@page import="kosta.model.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@include file="logic/studentSessionCheck.jsp" %>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-	<%
-		//SchoolService service = SchoolService.getInstance();
-		Student student = service.studentImageService(id);
-		request.setAttribute("student", student);
-
-	%>
+<%@include file="logic/studentSessionCheck.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+	//SchoolService service = SchoolService.getInstance();
+	Student student = service.studentImageService(id);
+	request.setAttribute("student", student);
+%>
 <!DOCTYPE html>
 <nav class="navbar navbar-default navbar-fixed-top navbar-top">
 	<div class="container-fluid">
@@ -45,17 +44,20 @@
 					class="caret"></span></a>
 				<ul class="dropdown-menu animated fadeInDown">
 					<c:if test="${student.studentPicture!=null }">
-						<c:set var="head" value="${fn:substring(student.studentPicture,0,fn:length(student.studentPicture)-4) }"></c:set>
-						<c:set var="pattern" value="${fn:substringAfter(student.studentPicture,head) }"></c:set>
-						<li class="profile-img"><img src="upload/${ head}_resize${pattern}"class="profile-img"></li>
+						<c:set var="head"
+							value="${fn:substring(student.studentPicture,0,fn:length(student.studentPicture)-4) }"></c:set>
+						<c:set var="pattern"
+							value="${fn:substringAfter(student.studentPicture,head) }"></c:set>
+						<li class="profile-img"><img
+							src="upload/${ head}_resize${pattern}" class="profile-img"></li>
 					</c:if>
 					<c:if test="${grade eq '학부모'}">
 						<li class="profile-img"><img
-									src="img/profile/picjumbo.com_HNCK4153_resize.jpg"
-									class="profile-img"></li>
-					</c:if> 
-					
-<%-- 							<li class="profile-img"><img src="upload/${student.studentPicture}"class="profile-img"></li> --%>
+							src="img/profile/picjumbo.com_HNCK4153_resize.jpg"
+							class="profile-img"></li>
+					</c:if>
+
+					<%-- 							<li class="profile-img"><img src="upload/${student.studentPicture}"class="profile-img"></li> --%>
 
 					<li>
 						<div class="profile-info">
@@ -80,14 +82,24 @@
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="side-menu-container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="teacherMain.jsp">
-					<div class="icon fa fa-book"></div>
-					<div class="title">학사관리</div>
-				</a>
-				<button type="button"
-					class="navbar-expand-toggle pull-right visible-xs">
-					<i class="fa fa-times icon"></i>
-				</button>
+				 <c:choose>
+						<c:when test="${grade eq '학생'}">
+							<a class="navbar-brand" href="studentMain.jsp">
+								<div class="icon fa fa-book"></div>
+								<div class="title">학사관리</div>
+							</a>
+						</c:when>
+						<c:otherwise>
+							<a class="navbar-brand" href="parentMain.jsp">
+								<div class="icon fa fa-book"></div>
+								<div class="title">학사관리</div>
+							</a>
+						</c:otherwise>
+					</c:choose>
+					<button type="button"
+						class="navbar-expand-toggle pull-right visible-xs">
+						<i class="fa fa-times icon"></i>
+					</button>
 			</div>
 			<ul class="nav navbar-nav">
 				<!-- 

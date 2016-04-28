@@ -5,7 +5,6 @@
      <%
     	request.setCharacterEncoding("utf-8");
  		request.setAttribute("schoolAdminId", id);
-		System.out.println(id);
     	int re = service.insertNoticeBoardService(request,id);
     	if(re>0){
         	response.sendRedirect("../schoolAdminNoticeBoardList.jsp");

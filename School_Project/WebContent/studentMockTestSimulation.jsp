@@ -92,7 +92,7 @@
                     					<c:when test="${checkHopeUniversityExist > 0}">
                     						<table id="hopeUniversityTable" class="table table-bordered">
 	                    						<tr>
-					                    			<th>현재 모의고사 평균 등급</th>
+					                    			<th>모의고사 총합</th>
 					                    			<th>목표대학</th>
 					                    			<th>목표학과</th>
 					                    			<th>정시 커트라인</th>
@@ -132,30 +132,32 @@
                     				</c:choose>
                     			</c:when>
 	                    		<c:otherwise>
-	                    			<c:when test="${checkHopeUniversityExist > 0}">
-	                    				<table id="hopeUniversityTable" class="table table-bordered">
-	                    					<tr>
-				                    			<th>현재 모의고사 평균 등급</th>
-				                    			<th>목표대학</th>
-				                    			<th>목표학과</th>
-				                    			<th>정시 커트라인</th>
-				                    			<th>점수 차이</th>
-				                    		</tr>
-				                    		<tr>
-				                    			<td>2.4</td>
-				                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
-				                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-				                    			<td>1.6</td>
-				                    			<td>0.8</td>
-				                    		</tr>
-                    					</table>
-	                   				</c:when>
-	                   				<c:otherwise>
-	                   					<table id="hopeUniversityTable" class="table table-bordered">
-			                    			<tr><th colspan="4">학생이 아님</th></tr>
-			                    			<tr><td colspan="4">희망대학이 설정되어있지 않습니다</td></tr>
-		                    			</table>	                    						
-	                   				</c:otherwise>
+		                    		<c:choose>
+		                    			<c:when test="${checkHopeUniversityExist > 0}">
+		                    				<table id="hopeUniversityTable" class="table table-bordered">
+		                    					<tr>
+					                    			<th>현재 모의고사 평균 등급</th>
+					                    			<th>목표대학</th>
+					                    			<th>목표학과</th>
+					                    			<th>정시 커트라인</th>
+					                    			<th>점수 차이</th>
+					                    		</tr>
+					                    		<tr>
+					                    			<td>2.4</td>
+					                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
+					                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
+					                    			<td>1.6</td>
+					                    			<td>0.8</td>
+					                    		</tr>
+	                    					</table>
+		                   				</c:when>
+		                   				<c:otherwise>
+		                   					<table id="hopeUniversityTable" class="table table-bordered">
+				                    			<tr><th colspan="4">학생이 아님</th></tr>
+				                    			<tr><td colspan="4">희망대학이 설정되어있지 않습니다</td></tr>
+			                    			</table>	                    						
+		                   				</c:otherwise>
+	                   				</c:choose>
 	                    		</c:otherwise>
 	                    	</c:choose>
                 			<br><br>

@@ -165,7 +165,7 @@
                                         <div class="col-xs-12">
                                         <br><br>
                                             <div class="col-md-3 col-xs-12">
-                                                <a href="teacherListStudent.jsp"><button type="button" class="btn btn-default">이전페이지</button></a>
+                                                <button type="button" class="btn btn-default" onclick="location.href='teacherListStudent.jsp'">이전페이지</button>
                                             </div>
                                             <div class="col-md-3 col-xs-12">
                                                 <button class="btn btn-primary btn-success" data-target="#modalSuccess" data-toggle="modal" type="button"> 성적조회 </button>

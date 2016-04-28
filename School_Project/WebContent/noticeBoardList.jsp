@@ -106,7 +106,7 @@ tbody tr.selected td {
 										</c:when>
 										<c:when test="${grade eq '학부모'}">
 											<td><a
-												href="parentNoticeDetail.jsp?noticeBoardNum=${noticeBoard.noticeBoardNum}">${noticeBoard.noticeBoardTitle}</a></td>
+												href="studentNoticeBoardDetail.jsp?noticeBoardNum=${noticeBoard.noticeBoardNum}">${noticeBoard.noticeBoardTitle}</a></td>
 										</c:when>
 										<c:otherwise>
 											<td><a

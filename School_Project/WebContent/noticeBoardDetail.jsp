@@ -81,7 +81,7 @@ tbody th{
 												</tr>
 												<tr height="30">
 													<th width="150">작성자</th>
-													<td width="150">${detail.noticeBoardTitle }</td>
+													<td width="150">${detail.schoolAdminId }</td>
 													<th width="150">작성일</th>
 													<td width="150">
 														<fmt:formatDate value="${detail.noticeBoardDate}" pattern="yyyy-MM-dd"/>

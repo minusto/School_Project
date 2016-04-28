@@ -293,9 +293,11 @@
 	<select id="selectMajorId" parameterType="String" resultType="String">
 		SELECT majorId FROM major WHERE majorName = #{majorName}
 	</select>
-	<!-- 진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 알아내기 -->
+	<!-- 진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 가져오기 -->
 	<select id="selectEntranceInfoYear" parameterType="EntranceInfo" resultType="Integer">
-		SELECT entranceYear FROM entranceInfo WHERE majorId = #{majorId} AND universityId = #{universityId}
+		SELECT * FROM entranceInfo
+			WHERE majorId = #{majorId} AND universityId = #{universityId}
+			AND entranceYear = (SELECT MAX(entranceYear) FROM entranceInfo WHERE majorId = #{majorId} AND universityId = #{universityId})
 	</select>
 	<!-- 진학시뮬레이션 - 희망대학 입력하기 -->
 	<insert id="insertHopeUniversity" parameterType="HopeUniversity">
