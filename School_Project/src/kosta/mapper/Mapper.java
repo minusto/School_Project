@@ -1,10 +1,12 @@
 package kosta.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 
 import kosta.model.AdminList;
+import kosta.model.Cutline;
 import kosta.model.EntranceInfo;
 import kosta.model.ExistStudentList;
 import kosta.model.HopeUniversity;
@@ -108,4 +110,6 @@ public interface Mapper  {
 	public List<Member> sameSchoolStudentNullList(String id); //액터 :교사 ==> 학생정보입력시 자신과 같은 학교의 학생만 보여줌
 	public Teacher teacherImage(String id);//교사 사진 추출
 	public Student studentImage(String id); //학생사진 추출
+	public EntranceInfo mocktestCutline(Cutline cutline);//희망대학 정시커트라인
+	public List<Map<String, Object>> mockTestSum(Map<String, Object> paramMap);//자기 모의고사 점수 합계
 }

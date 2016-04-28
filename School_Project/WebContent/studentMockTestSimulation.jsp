@@ -1,3 +1,6 @@
+<%@page import="java.util.Map"%>
+<%@page import="kosta.model.Cutline"%>
+<%@page import="kosta.model.EntranceInfo"%>
 <%@page import="kosta.model.Major"%>
 <%@page import="kosta.model.University"%>
 <%@page import="java.util.List"%>
@@ -5,8 +8,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="logic/studentSessionCheck.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 	request.setAttribute("path", "진학시뮬레이션 > 정시시뮬레이션");
+	request.setCharacterEncoding("UTF-8");
 	
 	String selectUniversityName = request.getParameter("selectUniversityName"); //희망대학이 입력되어있지 않을 경우 대학을 선택했을 때의 대학 이름
 	
@@ -24,6 +29,13 @@
 			String universityName = service.selectUniversityNameService(hopeUniversity.getUniversityId());
 			String majorName = service.selectMajorNameService(hopeUniversity.getMajorId());
 			
+			//희망대학 정시커트라인
+			Cutline cutline = new Cutline();
+			cutline.setMajorId(hopeUniversity.getMajorId());
+			cutline.setUniversityId(hopeUniversity.getUniversityId());
+			EntranceInfo info = service.mockTestCutlineService(cutline);
+			
+			request.setAttribute("info", info);
 			request.setAttribute("universityName", universityName);
 			request.setAttribute("majorName", majorName);
 		} else {
@@ -41,6 +53,11 @@
 	}
 	request.setAttribute("grade", grade); //html에서 학생과 학생이 아닌 경우를 나눠 choose를 사용하기 위해 등급을 set을 해줌
 	request.setAttribute("checkHopeUniversityExist", checkHopeUniversityExist); //희망대학 유무 결과 set
+	
+	//세션으로 id값을 받아오고 전체모의고사합 객체를가져옴
+	HttpSession httpSession = request.getSession();
+	List<Map<String, Object>> mockTestSumList = service.mockTestSum(httpSession);
+	request.setAttribute("mockTestSumList", mockTestSumList);
 %>
 <!DOCTYPE html>
 <html>
@@ -99,11 +116,12 @@
 					                    			<th>점수 차이</th>
 					                    		</tr>
 					                    		<tr>
-					                    			<td>2.4</td>
+					                    			<td>${mockTestSumList[0].TOTAL}</td>
 					                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">${universityName }</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
 					                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">${majorName }</a></td>
-					                    			<td>1.6</td>
-					                    			<td>0.8</td>
+					                    			<td>${info.mockTestCutline}</td>
+					                    			<fmt:formatNumber var="finalTotal" value="${mockTestSumList[0].TOTAL - info.mockTestCutline}" pattern="#.00" />
+					                    			<td>${finalTotal}</td>
 					                    		</tr>
 	                    					</table>
                     					</c:when>
