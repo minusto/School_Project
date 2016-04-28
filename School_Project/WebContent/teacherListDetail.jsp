@@ -2,6 +2,8 @@
 <%@page import="kosta.model.Member"%>
 <%@page import="kosta.model.Teacher"%>
 <%@page import="kosta.model.SchoolService"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@include file="logic/schoolAdminSessionCheck.jsp" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,7 +12,9 @@
 	request.setCharacterEncoding("utf-8");
 	String memberId =request.getParameter("memberId");
 	TeacherDetail teacher = service.detailTeacher(memberId);
+	Teacher teacher2 = service.teacherImageService(memberId );
 	request.setAttribute("teacher", teacher);
+	request.setAttribute("teacher2", teacher2);
 %>
 <!DOCTYPE html>
 <html>
@@ -57,8 +61,19 @@
 										<div class="title">교사 목록</div>
 									</div>
 								</div>
+								
 								<div class="col-sm-2"></div>
 								<div class="card-body table-responsive col-sm-8">
+								<div class="col-sm-1" align="center" >
+                                                <c:if test="${teacher2.teacherPicture!=null }">
+													<c:set var="head" value="${fn:substring(teacher2.teacherPicture,0,fn:length(teacher2.teacherPicture)-4) }"></c:set>
+													<c:set var="pattern" value="${fn:substringAfter(teacher2.teacherPicture,head) }"></c:set>
+													<img src="upload/${ head}_resize${pattern}">
+												</c:if>
+                                     	</div>
+                                     	<div>
+                                     	</div>
+                                     	<br><br>
 									<!-- Table -->
 									<table class="table table-striped">
 										<tr height="30">
