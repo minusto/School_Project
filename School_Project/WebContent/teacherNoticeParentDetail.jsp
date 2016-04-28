@@ -50,7 +50,22 @@
 										</thead>
 										<tbody>
 											<tr>
-											 <td colspan="3" align="center"><textarea cols="150"  rows="25" disabled="disabled">가정통신문 내용</textarea></td>
+											 <td colspan="3" align="center"><textarea cols="150"  rows="25" disabled="disabled">
+											 학부모님께 드림
+											 어느덧 여름의 향기가 느껴지는 5월입니다.
+											 가정마다 편안함과 함께 행운이 깃들길 바랍니다.
+											 아이들의 여름캠프를 앞당겨 진행할 예정 입니다.
+											 기존 7월1일로 예정 되어있던 캠프는 6월21일로
+											 앞당길 예정입니다. 아래 일시 및 준비물을 참고하셔서
+											 즐거운 물놀이 시간을 준비해 주시기 바랍니다.
+											 
+											 
+											 체험활동 일시
+											 2016년 6월 21일(금요일) 오전 9시 ~1시 
+											 
+											 준비물
+											 도시락,수영복,수영모,물안경,튜브(안전조끼)
+											 </textarea></td>
 											</tr>
 											
 											<tr>

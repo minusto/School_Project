@@ -59,7 +59,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="pt-footer">
-                                                    <button class="btn btn-primary btn-success" data-target="#modalSuccess" data-toggle="modal" type="button"> 클릭^^ </button>
+                                                    <button class="btn btn-primary btn-success" data-target="#modalSuccess" data-toggle="modal" type="button"> 선택 </button>
                                                 	<div id="modalSuccess" class="modal fade modal-success" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" style="display: none;">
 														<div class="modal-dialog">
 															<div class="modal-content">
@@ -117,7 +117,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="pt-footer">
-                                                    <button class="btn btn-primary btn-info" data-target="#modalInfo" data-toggle="modal" type="button"> 클릭^^ </button>
+                                                    <button class="btn btn-primary btn-info" data-target="#modalInfo" data-toggle="modal" type="button"> 선택 </button>
                                                 	<div id="modalInfo" class="modal fade modal-info" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" style="display: none;">
 														<div class="modal-dialog">
 															<div class="modal-content">
@@ -165,7 +165,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="pt-footer">
-                                                    <button class="btn btn-primary btn-warning" data-target="#modalWarning" data-toggle="modal" type="button"> 클릭^^ </button>
+                                                    <button class="btn btn-primary btn-warning" data-target="#modalWarning" data-toggle="modal" type="button"> 선택 </button>
 													<div id="modalWarning" class="modal fade modal-warning" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1">
 														<div class="modal-dialog">
 															<div class="modal-content">
@@ -213,7 +213,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="pt-footer">
-                                                	<button class="btn btn-primary btn-danger" data-target="#modalDanger" data-toggle="modal" type="button"> 클릭^^ </button>
+                                                	<button class="btn btn-primary btn-danger" data-target="#modalDanger" data-toggle="modal" type="button"> 선택 </button>
 													<div id="modalDanger" class="modal fade modal-danger" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1">
                                                     <div class="modal-dialog">
 															<div class="modal-content">
@@ -255,17 +255,17 @@
     						</div>
     					</div>
     				</div>
-    				<div class="page-title">
-    					<span class="title">일정표</span>
-    				</div>
-    				<div class="row">
-    					<div class="col-sm-12">
-    						<div class="card">
-								<div class="card-body">
-								</div>
-							</div>
-    					</div>
-    				</div>
+<!--     				<div class="page-title"> -->
+<!--     					<span class="title">일정표</span> -->
+<!--     				</div> -->
+<!--     				<div class="row"> -->
+<!--     					<div class="col-sm-12"> -->
+<!--     						<div class="card"> -->
+<!-- 								<div class="card-body"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!--     					</div> -->
+<!--     				</div> -->
     			</div>
     		</div>
       </div>       

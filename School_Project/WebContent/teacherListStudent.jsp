@@ -108,9 +108,9 @@
 									<!-- 검색 -->
 									<form action="" method="post" class="pull-right">
 										<input type="checkbox" id="checkbox-1"name="area" value="b_title"> 
-										<label> 제목</label>
+										<label> 사용자ID</label>
 										<input type="checkbox" id="checkbox-1"name="area" value="b_name"> 
-										<label> 작성자</label>
+										<label>이름</label>
 										<input class="btn btn-default" type="text" name="searchKey" size="10"> 
 										<input type="hidden" name="temp" value="temp" >
 										<input class="btn btn-default" type="submit" value="검색">

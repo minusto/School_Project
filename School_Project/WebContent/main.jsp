@@ -16,7 +16,7 @@
 			} else if (grade.equals("학생")) {
 				response.sendRedirect("studentMain.jsp");
 			} else if (grade.equals("학부모")) {
-				response.sendRedirect("studnetMain.jsp");
+				response.sendRedirect("parentMain.jsp");
 			}
 		}
 	}
