@@ -130,11 +130,6 @@
         
         
 		<!-- 컨텐츠 끝 -->
-        <footer class="app-footer">
-            <div class="wrapper">
-                <span class="pull-right">오른쪽쓸것 <a href="#"></a></span> 왼쪽
-            </div>
-        </footer>
         </div>
             <!-- Javascript Libs -->
             <script type="text/javascript" src="lib/js/jquery.min.js"></script>
