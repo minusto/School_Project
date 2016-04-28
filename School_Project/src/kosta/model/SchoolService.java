@@ -197,6 +197,54 @@ public class SchoolService {
 		return re;
 	}
 	
+	//진학시뮬레이션 - memberId에 대해 희망대학이 있는지 검사
+		public int checkHopeUniversityService(String memberId) {
+			int re = 0;
+			HopeUniversity hu = dao.selectHopeUniversity(memberId);
+			if(hu == null) {
+				re = -1;
+			} else {
+				re = 1;
+			}
+			return re;
+		}
+		//진학시뮬레이션 - 대학교 리스트 조회
+		public List<University> selectUniversityListService() {
+			return dao.selectUniversityList();
+		}
+		//진학시뮬레이션 - 학과 리스트 조회
+		public List<Major> selectMajorListService() {
+			return dao.selectMajorList();
+		}
+		//진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
+		public String selectUniversityIdService(String universityName) {
+			return dao.selectUniversityId(universityName);
+		}
+		//진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
+		public String selectMajorIdService(String majorName) {
+			return dao.selectMajorId(majorName);
+		}
+		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 알아내기
+		public int selectEntranceInfoYearService(EntranceInfo entranceInfo) {
+			return dao.selectEntranceInfoYear(entranceInfo);
+		}
+		//진학시뮬레이션 - 희망대학 입력하기
+		public int insertHopeUniversityService(HopeUniversity hopeUniversity) {
+			return dao.insertHopeUniversity(hopeUniversity);
+		}
+		//진학시뮬레이션 - 학생의 아이디로 입력되어있는 희망 대학을 반환
+		public HopeUniversity selectHopeUniversityService(String memberId) {
+			return dao.selectHopeUniversity(memberId);
+		}
+		//진학시뮬레이션 - 대학교 아이디로 이름 가져오기
+		public String selectUniversityNameService(String universityId) {
+			return dao.selectUniversityName(universityId);
+		}
+		//진학시뮬레이션 - 학과 아이디로 이름 가져오기
+		public String selectMajorNameService(String majorId) {
+			return dao.selectMajorName(majorId);
+		}
+	
 	//관리자 -> 공지사항 등록
 	public int insertNoticeBoardService(HttpServletRequest request,String id) throws Exception{
 		NoticeBoard noticeBoard=new NoticeBoard();		

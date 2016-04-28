@@ -5,7 +5,10 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 
 import kosta.model.AdminList;
+import kosta.model.EntranceInfo;
 import kosta.model.ExistStudentList;
+import kosta.model.HopeUniversity;
+import kosta.model.Major;
 import kosta.model.Member;
 import kosta.model.MemberCheck;
 import kosta.model.MockTest;
@@ -33,6 +36,7 @@ import kosta.model.Subject;
 import kosta.model.SystemAdmin;
 import kosta.model.Teacher;
 import kosta.model.TeacherDetail;
+import kosta.model.University;
 
 public interface Mapper  {
 	public int insertSchoolAdmin(SchoolAdmin schoolAdmin); //액터 : 시스템관리자 ==> 학교관리자 등록
@@ -68,6 +72,15 @@ public interface Mapper  {
 	public int insertResearchScore(ResearchSubjectScore researchScore); //교사 ==> 학생 모의고사 점수 입력 - 탐구 점수 넣기
 	public int insertSecondLangScore(SecondLanguageScore secondLanguageScore); //교사 ==> 학생 모의고사 점수 입력 - 제2외국어 점수 넣기 - 2학년, 3학년만
 	public MockTest checkMockTestInsertedScore(MockTest mockTest);//교사 ==> 학생 모의고사 점수 입력 - 입력된 모의고사였는지 검사
+	public HopeUniversity selectHopeUniversity(String memberId); //진학시뮬레이션 - 학생의 아이디로 입력되어있는 희망 대학을 반환
+	public List<University> selectUniversityList(); //진학시뮬레이션 - 대학교 리스트 조회
+	public List<Major> selectMajorList(); //진학시뮬레이션 - 학과 리스트 조회
+	public String selectUniversityId(String universityName); //진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
+	public String selectMajorId(String majorName); //진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
+	public int selectEntranceInfoYear(EntranceInfo entranceInfo); //진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 알아내기
+	public int insertHopeUniversity(HopeUniversity hopeUniversity); //진학시뮬레이션 - 희망대학 입력하기
+	public String selctUniversityName(String universityId); //진학시뮬레이션 - 대학교 아이디로 이름 가져오기
+	public String selectMajorName(String majorId); //진학시뮬레이션 - 학과 아이디로 이름 가져오기
 	public int insertNoticeBoard(NoticeBoard noticeBoard); //관지라-> 공지사항 등록
 	public Integer noticeBoardNum(); //공지사항 글번호
 	public int noticeCountBoard(Search search); //페이징 처리 공지사항글번호
