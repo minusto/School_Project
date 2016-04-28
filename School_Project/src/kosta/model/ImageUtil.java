@@ -32,7 +32,7 @@ public class ImageUtil {
         int srcWidth = srcImg.getWidth();
         int srcHeight = srcImg.getHeight();
         
-        int destWidth = 500, destHeight = 667;
+        int destWidth = 300, destHeight = 300;
         
 //        if (width == SAME) {
 //            destWidth = srcWidth;
