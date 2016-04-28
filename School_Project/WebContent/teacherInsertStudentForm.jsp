@@ -69,7 +69,7 @@
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">학생ID</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="memberId"  >
+                                                <input type="text" class="form-control"  name="memberId"  >
                                                 <!-- Button trigger modal -->
                                         		<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#modalPrimary" >
                                             		학생ID 찾기
@@ -114,81 +114,81 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">이름</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="memberName" >
+                                                <input type="text" class="form-control"  name="memberName" placeholder="memberName">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">생년월일</label>
                                             <div class="col-sm-5">
-                                                <input type="date" class="form-control" id="inputPassword3" name="memberBirthday" placeholder="YYYY-MM-dd">
+                                                <input type="date" class="form-control" name="memberBirthday" placeholder="YYYY-MM-dd">
                                             </div>
                                         </div>
                                           <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">주소</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="memberAddress">
+                                                <input type="text" class="form-control"  name="memberAddress" placeholder="memberAddress">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">전화번호</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="memberTel" placeholder="Tel">
+                                                <input type="text" class="form-control" name="memberTel" placeholder="Tel">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">이메일</label>
                                             <div class="col-sm-5">
-                                                <input type="email" class="form-control" id="inputPassword3" name="memberEmail" placeholder="aaa@bbb.com">
+                                                <input type="email" class="form-control"  name="memberEmail" placeholder="aaa@bbb.com">
                                             </div>
                                         </div>
                                        
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학번</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="studentCode">
+                                                <input type="text" class="form-control" name="studentCode" placeholder="memberAddress">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학년</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="studentGrade">
+                                                <input type="text" class="form-control"  name="studentGrade" placeholder="studentGrade">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">반</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="studentClass">
+                                                <input type="text" class="form-control"  name="studentClass" placeholder="studentClass">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">출석번호</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="studentNum">
+                                                <input type="text" class="form-control"  name="studentNum" placeholder="studentNum">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">성별</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="studentGender">
+                                                <input type="text" class="form-control"  name="studentGender" placeholder="studentGender">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">학과</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="studentMajor">
+                                                <input type="text" class="form-control"  name="studentMajor" placeholder="문과/이과">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">사진</label>
                                             <div class="col-sm-5">
-                                               <input type="file" id="exampleInputFile" name="studentPicture">
+                                               <input type="file"  name="studentPicture">
                                             <p class="help-block">jpg 형식의 파일만 지원합니다.</p>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">비고</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" id="inputPassword3" name="memberNote">
+                                                <input type="text" class="form-control" name="memberNote" value="없음">
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -107,14 +107,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">생년월일</label>
+                                            <label  class="col-sm-2 control-label">생년월일</label>
                                             <div class="col-sm-5">
-													<div class='input-group date' id='datetimepicker1'>
-														<input type='text' class="form-control" name="memberBirthday"/> <span
-															class="input-group-addon"> <span
-															class="glyphicon glyphicon-calendar"></span>
-														</span>
-													</div>
+														<input type='date' class="form-control" name="memberBirthday"placeholder="YYYY-MM-DD"/> 
 											</div>
                                         </div>
                                         <div class="form-group">
@@ -138,7 +133,7 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">비고</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" name="memberNote">
+                                                <input type="text" class="form-control" name="memberNote" value="없음">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -250,7 +245,7 @@
                                         <div class="form-group">
                                             <label for="inputPassword3" class="col-sm-2 control-label">직책</label>
                                             <div class="col-sm-5">
-                                                <input type="text" class="form-control" name="teacherPosition" placeholder="Tel">
+                                                <input type="text" class="form-control" name="teacherPosition" placeholder="Position">
                                             </div>
                                         </div>
                                         <div class="form-group">

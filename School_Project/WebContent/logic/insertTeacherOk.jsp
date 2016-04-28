@@ -7,7 +7,6 @@
     <!DOCTYPE html>
 <%
     request.setCharacterEncoding("utf-8");
-
 	Member member = new Member();
 
 try {
@@ -30,6 +29,7 @@ try {
 		RegistManage registManage=new RegistManage();
 		registManage.setSchoolAdminId(id);
   		registManage.setMemberId(member.getMemberId());
+
     int re = service.insertMember(member);
     int re3 =service.insertTeacherGradeService(registManage);
     

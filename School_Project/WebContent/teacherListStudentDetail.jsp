@@ -96,12 +96,14 @@
                                         <div class="col-md-4 col-xs-12">
                                             <div class="card profile">
                                                 <div class="card-profile-img">
+
 <%--                                                     <img src="upload/${student.studentPicture }"> --%>
                                                     <c:if test="${student.studentPicture!=null }">
 														<c:set var="head" value="${fn:substring(student.studentPicture,0,fn:length(student.studentPicture)-4) }"></c:set>
 														<c:set var="pattern" value="${fn:substringAfter(student.studentPicture,head) }"></c:set>
 														<li class="profile-img"><img src="upload/${ head}_resize${pattern}"class="profile-img"></li>
 													</c:if>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -184,7 +186,7 @@
 																			</a>
 																		</div>
 																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
-																			<a href="studentMockTestListScore.jsp">
+																			<a href="studentListMockTestScore.jsp">
 																			<h3>모의고사 성적 조회</h3>
 																			</a>
 																		</div>
