@@ -1,3 +1,6 @@
+<%@page import="kosta.model.Student"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="kosta.model.SchoolRegist"%>
 <%@page import="kosta.model.RegistManage"%>
 <%@page import="java.sql.Timestamp"%>
@@ -6,20 +9,40 @@
 <%@include file="teacherSessionCheck.jsp" %>
 <!DOCTYPE html>
 <%
+	
 	request.setCharacterEncoding("UTF-8");
-%>
-<jsp:useBean id="member" class="kosta.model.Member"></jsp:useBean>
-<jsp:setProperty property="*" name="member"/>
-<jsp:useBean id="student" class="kosta.model.Student"></jsp:useBean>
-<jsp:setProperty property="*" name="student"/>
-<%
+
+
+	Member member = new Member();
+	Student student = new Student();
 	RegistManage rm=service.getSchoolAdminIdService(id);
 	SchoolRegist sr=service.schoolRegistSchoolIdService(rm.getSchoolAdminId());
-	member.setSchoolId(sr.getSchoolId());
+	
+	String sid = sr.getSchoolId();
+	try {
+		
+	
+   String uploadPath  = request.getRealPath("upload");
+ 	int size = 20*1024*1024; //20mb
+ 	
+ 	MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+	session.setAttribute("request12", multi);
+ 	member.setSchoolId(sr.getSchoolId());
+	member.setMemberId(multi.getParameter("memberId"));
+	member.setMemberAddress(multi.getParameter("memberAddress"));
+	member.setMemberName(multi.getParameter("memberName"));
+	member.setMemberBirthday(multi.getParameter("memberBirthday"));
+	member.setMemberEmail(multi.getParameter("memberEmail"));
+	member.setMemberNote(multi.getParameter("memberNote"));
+	member.setMemberTel(multi.getParameter("memberTel"));
+		
 	int re = service.updateMemberService(member);
-	int re2 = service.updateStudentService(student);
-	if(re>0 && re2>0){
-		response.sendRedirect("../teacherInsertStudentForm.jsp");
+ 	if(re>0){
+ 		response.sendRedirect("insertStudentOk2.jsp");
+ 	}
+
+	} catch (Exception e) {
+		e.printStackTrace();
 	}
 %>
 <html>

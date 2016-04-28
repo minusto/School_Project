@@ -1,5 +1,16 @@
+<%@page import="kosta.model.Teacher"%>
+<%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@include file="logic/teacherSessionCheck.jsp" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+	<%
+		//SchoolService service = SchoolService.getInstance();
+		Teacher teacher = service.teacherImageService(id);
+		request.setAttribute("teacher", teacher);
+
+	%>
 <!DOCTYPE html>
 
 <nav class="navbar navbar-default navbar-fixed-top navbar-top">
@@ -35,9 +46,12 @@
 				data-toggle="dropdown" role="button" aria-expanded="false">${member.memberName }<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu animated fadeInDown">
-					<li class="profile-img"><img
-						src="img/profile/picjumbo.com_HNCK4153_resize.jpg"
-						class="profile-img"></li>
+					<c:if test="${teacher.teacherPicture!=null }">
+						<c:set var="head" value="${fn:substring(teacher.teacherPicture,0,fn:length(teacher.teacherPicture)-4) }"></c:set>
+						<c:set var="pattern" value="${fn:substringAfter(teacher.teacherPicture,head) }"></c:set>
+						<li class="profile-img"><img src="upload/${ head}_resize${pattern}"class="profile-img"></li>
+					</c:if>
+<%-- 							<li class="profile-img"><img src="upload/${teacher.teacherPicture}"class="profile-img"></li> --%>
 					<li>
 						<div class="profile-info">
 							<h4 class="username">${member.memberName }</h4>
