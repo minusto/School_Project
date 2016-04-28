@@ -95,7 +95,7 @@
                                         <div class="col-md-4 col-xs-12">
                                             <div class="card profile">
                                                 <div class="card-profile-img">
-                                                    <img src="img/profile/${student.studentPicture }">
+                                                    <img src="upload/${student.studentPicture }">
                                                 </div>
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@
 																			</a>
 																		</div>
 																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
-																			<a href="studentMockTestListScore.jsp">
+																			<a href="studentListMockTestScore.jsp">
 																			<h3>모의고사 성적 조회</h3>
 																			</a>
 																		</div>

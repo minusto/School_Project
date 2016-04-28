@@ -14,7 +14,9 @@
     <jsp:useBean id="registManage" class="kosta.model.RegistManage"></jsp:useBean>
     <jsp:setProperty property="memberId" name="registManage"/>
 <%
-
+	if(request.getParameter("memberNote")==""){
+		member.setMemberNote("");
+	}
 	registManage.setSchoolAdminId(id);
     int re = service.insertMember(member);
     int re2 = service.insertTeacher(teacher);
