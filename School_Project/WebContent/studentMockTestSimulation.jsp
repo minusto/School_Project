@@ -7,7 +7,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	request.setAttribute("path", "진학시뮬레이션 > 정시시뮬레이션");
-
+	
+	String selectUniversityName = request.getParameter("selectUniversityName"); //희망대학이 입력되어있지 않을 경우 대학을 선택했을 때의 대학 이름
+	
+	if(selectUniversityName != null) { //희망대학 미입력상태일 경우 선택한 대학에 맞는 학과 리스트를 가져온다.
+		List<Major> majorList = service.selectMajorListService(selectUniversityName);
+		request.setAttribute("majorList", majorList);
+		request.setAttribute("selectUniversityName", selectUniversityName);
+	}
+	
 	int checkHopeUniversityExist = 0; //희망대학이 설정되어있는지 체크할 변수
 	if(id != null && grade.equals("학생")) {
 		checkHopeUniversityExist = service.checkHopeUniversityService(id); //학생일 경우 id로 희망대학 유무 체크
@@ -22,9 +30,6 @@
 			//희망대학을 입력해야 할 경우
 			List<University> universityList = service.selectUniversityListService(); //대학교 리스트를 가져옴
 			request.setAttribute("universityList", universityList);
-			List<Major> majorList = service.selectMajorListService(); //학과 리스트를 가져옴
-			//ArrayList<Major> majorList = service.selectMajorListService(universityName); //학과 리스트를 가져옴
-			request.setAttribute("majorList", majorList);
 			
 			request.setAttribute("id", id);					
 		}
@@ -59,6 +64,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
 	<link rel="stylesheet" type="text/css" href="css/ghi.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(document).on('change', '#selectUniversity', function() { //희망대학 입력 - 대학교 선택했을 경우 대학교 이름을 가지고 새로고침
+				var uniName = $(this).val();
+				location.href = "studentMockTestSimulation.jsp?selectUniversityName="+uniName;
+			});
+		});
+		
+	</script>
 </head>
 
 <body class="flat-blue">
@@ -96,9 +111,14 @@
                     						<form action="logic/insertHopeUniversityOk.jsp?id=${id}" method="post">
                     							<h4>희망대학 설정하기</h4>
 	                    						대학교 : <select id="selectUniversity" name="universityName">
-	                    							<c:forEach var="universityList" items="${universityList }">
-		                    							<option>${universityList.universityName }</option>
-	                    							</c:forEach>
+	                    							<optgroup label="선택한 대학">
+		                    							<option>${selectUniversityName }</option>
+	                    							</optgroup>
+	                    							<optgroup label="대학리스트">
+		                    							<c:forEach var="universityList" items="${universityList }">
+			                    							<option>${universityList.universityName }</option>
+		                    							</c:forEach>
+	                    							</optgroup>
 	                    						</select>&nbsp;&nbsp;
 	                    						학과 : <select id="selectMajor" name="majorName">
 	                    							<c:forEach var="majorList" items="${majorList }">

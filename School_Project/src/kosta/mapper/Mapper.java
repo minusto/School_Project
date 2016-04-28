@@ -74,7 +74,7 @@ public interface Mapper  {
 	public MockTest checkMockTestInsertedScore(MockTest mockTest);//교사 ==> 학생 모의고사 점수 입력 - 입력된 모의고사였는지 검사
 	public HopeUniversity selectHopeUniversity(String memberId); //진학시뮬레이션 - 학생의 아이디로 입력되어있는 희망 대학을 반환
 	public List<University> selectUniversityList(); //진학시뮬레이션 - 대학교 리스트 조회
-	public List<Major> selectMajorList(); //진학시뮬레이션 - 학과 리스트 조회
+	public List<Major> selectMajorList(String universityName); //진학시뮬레이션 - 학과 리스트 조회
 	public String selectUniversityId(String universityName); //진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
 	public String selectMajorId(String majorName); //진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
 	public int selectEntranceInfoYear(EntranceInfo entranceInfo); //진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 알아내기
