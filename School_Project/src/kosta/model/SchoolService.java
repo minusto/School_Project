@@ -360,4 +360,14 @@ public class SchoolService {
 		public List<Member> sameSchoolStudentNullListService(String id){
 			return dao.sameSchoolStudentNullList(id);
 		}
+		
+		//교사 사진 추출
+		public Teacher teacherImageService(String id){
+			return dao.teacherImage(id);
+		}
+		
+		//학생 사진 추출
+		public Student studentImageService(String id){
+			return dao.studentImage(id);
+		}
 }

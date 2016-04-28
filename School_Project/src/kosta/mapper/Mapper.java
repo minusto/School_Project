@@ -93,4 +93,6 @@ public interface Mapper  {
 	public SchoolRegist schoolRegistSchoolId(String id);
 	public RegistManage getSchoolAdminId(String id);
 	public List<Member> sameSchoolStudentNullList(String id); //액터 :교사 ==> 학생정보입력시 자신과 같은 학교의 학생만 보여줌
+	public Teacher teacherImage(String id);//교사 사진 추출
+	public Student studentImage(String id); //학생사진 추출
 }

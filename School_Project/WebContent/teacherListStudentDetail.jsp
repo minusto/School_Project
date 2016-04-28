@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ include file="logic/teacherSessionCheck.jsp" %>
 
 <!DOCTYPE html>
@@ -95,7 +96,12 @@
                                         <div class="col-md-4 col-xs-12">
                                             <div class="card profile">
                                                 <div class="card-profile-img">
-                                                    <img src="img/profile/${student.studentPicture }">
+<%--                                                     <img src="upload/${student.studentPicture }"> --%>
+                                                    <c:if test="${student.studentPicture!=null }">
+														<c:set var="head" value="${fn:substring(student.studentPicture,0,fn:length(student.studentPicture)-4) }"></c:set>
+														<c:set var="pattern" value="${fn:substringAfter(student.studentPicture,head) }"></c:set>
+														<li class="profile-img"><img src="upload/${ head}_resize${pattern}"class="profile-img"></li>
+													</c:if>
                                                 </div>
                                             </div>
                                         </div>

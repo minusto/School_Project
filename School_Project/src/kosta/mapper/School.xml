@@ -458,4 +458,18 @@
 		AND s.studentcode IS NULL
 	</select>
 	
+	<!-- 교사 사진 추출 -->
+	<select id="teacherImage" parameterType="String" resultType="teacher">
+		select teacherPicture
+		from teacher
+		where memberid=#{id}
+	</select>
+	
+	<!-- 학생 사진 추출 -->
+	<select id="studentImage" parameterType="String" resultType="Student">
+		select studentPicture
+		from student
+		where memberid=#{id}
+	</select>
+	
 </mapper>

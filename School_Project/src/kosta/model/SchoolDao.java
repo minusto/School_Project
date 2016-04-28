@@ -961,5 +961,31 @@ public class SchoolDao {
 		return list;
 		
 	}
+	//교사 사진 추출
+		public Teacher teacherImage(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			Teacher teacher=null;
+			try {
+				teacher = session.getMapper(Mapper.class).teacherImage(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return teacher;
+		}
+		//학생 사진 추출
+		public Student studentImage(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			Student student=null;
+			try {
+				student = session.getMapper(Mapper.class).studentImage(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return student;
+		}
 
 }
