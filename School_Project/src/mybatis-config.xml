@@ -36,6 +36,10 @@
       <typeAlias type="kosta.model.ResearchSubjectPackage" alias="ResearchSubjectPackage"/>
       <typeAlias type="kosta.model.ResearchSubjectScore" alias="ResearchSubjectScore"/>
       <typeAlias type="kosta.model.SecondLanguageScore" alias="SecondLanguageScore"/>
+      <typeAlias type="kosta.model.HopeUniversity" alias="HopeUniversity"/>
+      <typeAlias type="kosta.model.University" alias="University"/>
+      <typeAlias type="kosta.model.Major" alias="Major"/>
+      <typeAlias type="kosta.model.EntranceInfo" alias="EntranceInfo"/>
    </typeAliases>
    
    <environments default="development">
