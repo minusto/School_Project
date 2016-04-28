@@ -13,9 +13,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
     MultipartRequest mr =(MultipartRequest)session.getAttribute("request12");
-	System.out.println("코드"+mr.getParameter("studentCode"));
-	System.out.println("클래스"+mr.getParameter("studentCode"));
-	System.out.println("넘"+mr.getParameter("studentNum"));
+
 	
 	String uploadPath  = request.getRealPath("upload");
 	int size = 20*1024*1024; //20mb
