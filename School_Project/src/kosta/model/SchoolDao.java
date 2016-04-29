@@ -382,11 +382,11 @@ public class SchoolDao {
 	}
 	
 	//교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
-	public List<ExistStudentList> selectExistStudent() {
+	public List<ExistStudentList> selectExistStudent(String id) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<ExistStudentList> list = null;
 		try {
-			list = session.getMapper(Mapper.class).selectExistStudent();
+			list = session.getMapper(Mapper.class).selectExistStudent(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

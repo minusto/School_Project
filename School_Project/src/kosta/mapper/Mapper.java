@@ -66,7 +66,7 @@ public interface Mapper  {
 	public StudentDetail selectStudentDetail(String m_id); //교사 ==> 학생 세부 열람
 	public int deleteStudent(String m_id); //교사 ==> 학생 내용 삭제
 	public int deleteStudent2(String m_id); //교사 ==> 학생 내용 삭제
-	public List<ExistStudentList> selectExistStudent(); //교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
+	public List<ExistStudentList> selectExistStudent(String id); //교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
 	public List<ResearchSubject> selectResearchSubjectList(); //교사 => 학생 모의고사 점수 입력 - 탐구 과목 리스트 가져오기
 	public List<SecondLanguage> selectSecondLanguageSubjectList(); //교사 => 학생 모의고사 점수 입력 - 제2외국어 과목 리스트 가져오기
 	public String selectMockId(MockType mockType); //교사 ==> 학생 모의고사 점수 입력 - 모의고사 아이디 가져오기

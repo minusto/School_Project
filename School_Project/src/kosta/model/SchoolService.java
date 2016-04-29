@@ -123,8 +123,8 @@ public class SchoolService {
 	}
 	
 	//교사 ==> 학생 모의고사 점수 입력 - 정보가 입력된 학생 리스트 가져오기
-	public List<ExistStudentList> selectExistStudentSerevice() {
-		return dao.selectExistStudent();
+	public List<ExistStudentList> selectExistStudentSerevice(String id) {
+		return dao.selectExistStudent(id);
 	}
 	//교사 => 학생 모의고사 점수 입력 - 탐구 과목 리스트 가져오기
 	public List<ResearchSubject> selectResearchSubjectListService() {

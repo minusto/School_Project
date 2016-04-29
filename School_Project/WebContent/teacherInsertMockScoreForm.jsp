@@ -5,11 +5,12 @@
 <%@page import="kosta.model.SchoolService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="logic/teacherSessionCheck.jsp" %>
 <!DOCTYPE html>
 <%
 	request.setAttribute("path", "학생 관리 > 모의고사 성적 입력");
-	SchoolService service = SchoolService.getInstance();
-	List<ExistStudentList> list = service.selectExistStudentSerevice();
+	Member member=service.memberDetailService(id);
+	List<ExistStudentList> list = service.selectExistStudentSerevice(member.getSchoolId());
 	request.setAttribute("list", list);
 	List<ResearchSubject> researchList = service.selectResearchSubjectListService();
 	request.setAttribute("researchList", researchList);
