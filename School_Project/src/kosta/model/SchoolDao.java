@@ -628,7 +628,7 @@ public class SchoolDao {
 			}
 			return majorId;
 		}
-		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 가져오기
+		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 가져오기
 		public int selectEntranceInfoYear(EntranceInfo entranceInfo) {
 			SqlSession session = getSqlSessionFactory().openSession();
 			int entranceYear = 0;

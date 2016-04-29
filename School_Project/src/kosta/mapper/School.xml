@@ -295,7 +295,7 @@
 	</select>
 	<!-- 진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 가져오기 -->
 	<select id="selectEntranceInfoYear" parameterType="EntranceInfo" resultType="Integer">
-		SELECT * FROM entranceInfo
+		SELECT entranceYear FROM entranceInfo
 			WHERE majorId = #{majorId} AND universityId = #{universityId}
 			AND entranceYear = (SELECT MAX(entranceYear) FROM entranceInfo WHERE majorId = #{majorId} AND universityId = #{universityId})
 	</select>
