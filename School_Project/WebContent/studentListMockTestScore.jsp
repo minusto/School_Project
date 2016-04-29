@@ -268,7 +268,7 @@
 									<!-- 제2외국어 -->
 									<c:forEach items="${mockScoreDetailList }" var="list">
 										<c:if test="${list.mockId == mockId }">
-											<c:if test="${!(list.languageId eq secondLang00)}">
+											<c:if test="${(!(list.languageId eq 'secondLang00'))&&(list.languageId!=null)}">
 												<tr>
 													<td>제2외국어</td>
 													<td>${list.languageSubjectName }</td>

@@ -615,7 +615,7 @@
 	WHERE m.languageid=sl.languageid(+)
 	AND sls.mockid(+)=m.mockid
 	AND sls.memberid(+)=m.memberid
-	AND m.memberid='ST_01'
+	AND m.memberid=#{id}
 	ORDER BY m.mockid DESC
 	</select>
 	
