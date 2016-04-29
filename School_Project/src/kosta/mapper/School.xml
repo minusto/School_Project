@@ -533,6 +533,30 @@
 	<!-- 국영수사탐 합계   -->
 	<select id="mockTestSum" parameterType="java.util.Map" resultType="java.util.HashMap">
 		select
+	  (
+	    select
+	    	nvl(sum(a.LANGUAGESTANDARDSCORE), 0)
+	        + nvl(sum(a.MATHSTANDARDSCORE), 0)
+	    	+ nvl(sum(a.ENGLISHSTANDARDSCORE), 0)
+	    from
+			mocktest a
+	    where
+	      a.memberid = 'ST_01' and a.mockid = (select max(mockid) from mocktest)
+	  )
+	  +
+	  (
+	    select
+	      nvl(sum(b.RESEARCHSUBJECTSTANDARDSCORE), 0)
+	    from
+	      Researchsubjectscore b
+	    where
+	      b.memberid = 'ST_01' and b.mockid = (select max(mockid) from Researchsubjectscore)
+	  )
+	  as total
+	from
+	  dual 
+		
+		<!-- select
 			(
 				a.LANGUAGESTANDARDSCORE
 				+ a.MATHSTANDARDSCORE
@@ -546,7 +570,7 @@
 			on a.memberid = b.memberid and a.mockid = b.mockid
 		where
 			a.memberid = #{memberId}
-			and a.mockid = #{mockId}
+			and a.mockid = #{mockId} -->
 	</select>
 	
 </mapper>

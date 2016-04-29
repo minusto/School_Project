@@ -428,10 +428,10 @@ public class SchoolService {
 		public List<Map<String, Object>> mockTestSum(HttpSession session) {
 			Map<String, Object> paramMap = new HashMap<String, Object>();
 			String memberId = session.getAttribute("id").toString();
-			String mockId = "mock019";
-					
+			/*String mockId = "mock019";*/
+			
 			paramMap.put("memberId", memberId);
-			paramMap.put("mockId", mockId);
+			/*paramMap.put("mockId", mockId);*/
 			
 			return dao.mockTestSum(paramMap);
 				}
