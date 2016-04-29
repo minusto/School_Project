@@ -38,12 +38,15 @@
 
 		// 버튼을 클릭할 때
 		$('button').click(function() {
-			socket.emit('message', {
-				name : $('#name').val(),
-				message : $('#message').val()
-			});
-			$('#message').val('');			
+			if($('#message').val() != ""){
+				socket.emit('message', {
+					name : $('#name').val(),
+					message : $('#message').val()
+				});
+				$('#message').val('');
+			}
 		});
+
 		var userName = $('#userName').attr('value');
 		$('#name').attr('value', userName);
 	});
@@ -68,7 +71,7 @@
 		</div>
 		<div data-role="content">
 			<h3>채팅하기</h3>
-			<input id="message" type="text" />
+			<input id="message" type="text" onKeypress="javascript:if(event.keyCode==13) {$('button').click();}" />
 			<button>전송</button>
 			<!-- simpleListView 사용 -->
 			<ul id="content" data-role="listview" data-inset="true">
