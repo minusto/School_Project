@@ -1,7 +1,9 @@
 package kosta.model;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.RowBounds;
@@ -1110,5 +1112,32 @@ public class SchoolDao {
 			}
 			return student;
 		}
+		//진학시뮬레이션 정시커트라인
+		public EntranceInfo mocktestCutline(Cutline cutline) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			EntranceInfo entranceInfo = null;
+			try {
+				entranceInfo = session.getMapper(Mapper.class).mocktestCutline(cutline);
+				} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						session.close();
+					}
+					return entranceInfo;
+				}
+
+				//국영수사탐 합계 (이용갑)
+		public List<Map<String, Object>> mockTestSum(Map<String, Object> paramMap) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+			try {
+				list = session.getMapper(Mapper.class).mockTestSum(paramMap);
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						session.close();
+					}
+					return list;
+				}
 
 }

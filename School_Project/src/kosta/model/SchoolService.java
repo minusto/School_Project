@@ -1,6 +1,8 @@
 package kosta.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -418,4 +420,20 @@ public class SchoolService {
 		public Student studentImageService(String id){
 			return dao.studentImage(id);
 		}
+		//정시 커트라인 추출
+		public EntranceInfo mockTestCutlineService(Cutline cutline){
+			return dao.mocktestCutline(cutline);
+		}
+		//희망대학 국영수사탐 합계
+		public List<Map<String, Object>> mockTestSum(HttpSession session) {
+			Map<String, Object> paramMap = new HashMap<String, Object>();
+			String memberId = session.getAttribute("id").toString();
+			String mockId = "mock019";
+					
+			paramMap.put("memberId", memberId);
+			paramMap.put("mockId", mockId);
+			
+			return dao.mockTestSum(paramMap);
+				}
+		
 }

@@ -522,4 +522,31 @@
 		where memberid=#{id}
 	</select>
 	
+	<!-- 대학정시커트라인점수 구하기 -->
+	<select id="mocktestCutline" parameterType="Cutline" resultType="EntranceInfo">
+	select * 
+	from entranceInfo
+	where majorId = #{majorId}
+	AND universityId = #{universityId}
+	</select>
+	
+	<!-- 국영수사탐 합계   -->
+	<select id="mockTestSum" parameterType="java.util.Map" resultType="java.util.HashMap">
+		select
+			(
+				a.LANGUAGESTANDARDSCORE
+				+ a.MATHSTANDARDSCORE
+				+ a.ENGLISHSTANDARDSCORE
+				+ b.SECONDLANGUAGESTANDARDSCORE
+			) total
+		from
+			mocktest a
+		left join
+			secondlanguagescore b
+			on a.memberid = b.memberid and a.mockid = b.mockid
+		where
+			a.memberid = #{memberId}
+			and a.mockid = #{mockId}
+	</select>
+	
 </mapper>
