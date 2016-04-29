@@ -1,4 +1,20 @@
 $(function() {
+	
+	var myKorScore = new Array("0","0","0","0","0","0","0","0","0","0");
+	for(var i in myKorScore){	
+		if(typeof $("#myKorScore"+i).val() !== 'undefined'){
+			myKorScore[i] = $("#myKorScore"+i).val();
+		}
+	}
+	
+	var mockKorAvg=new Array("0","0","0","0","0","0","0","0","0","0");
+	for(var i in mockKorAvg){
+		if(typeof $("#mockKorAvg"+i).val() !== 'undefined'){
+			mockKorAvg[i] = $("#mockKorAvg"+i).val();
+		}		
+	}
+
+	
   var ctx, data, myLineChart, options;
   Chart.defaults.global.responsive = true;
   ctx = $('#line-chart').get(0).getContext('2d');
@@ -20,7 +36,7 @@ $(function() {
     legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
   };
   data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    labels: ['1-3', '1-6', '1-9', '2-3', '2-6', '2-9', '3-3','3-6','3-9'],
     datasets: [
       {
         label: "My First dataset",
@@ -30,7 +46,7 @@ $(function() {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "#1ABC9C",
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [Number(myKorScore[0]), Number(myKorScore[1]), Number(myKorScore[2]) ,Number(myKorScore[3]),Number(myKorScore[4]),Number(myKorScore[5]),Number(myKorScore[6]),Number(myKorScore[7]),Number(myKorScore[8])]
       }, {
         label: "My Second dataset",
         fillColor: "rgba(34, 167, 240,0.2)",
@@ -39,7 +55,7 @@ $(function() {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "#22A7F0",
-        data: [28, 48, 40, 19, 86, 27, 90]
+        data: [Number(mockKorAvg[0]),Number(mockKorAvg[1]),Number(mockKorAvg[2]),Number(mockKorAvg[3]),Number(mockKorAvg[4]),Number(mockKorAvg[5]),Number(mockKorAvg[6]),Number(mockKorAvg[7]),Number(mockKorAvg[8])]
       }
     ]
   };

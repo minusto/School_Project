@@ -13,6 +13,9 @@ import kosta.model.HopeUniversity;
 import kosta.model.Major;
 import kosta.model.Member;
 import kosta.model.MemberCheck;
+import kosta.model.MockKorAvgScore;
+import kosta.model.MockResearchScoreDetailList;
+import kosta.model.MockScoreDetailList;
 import kosta.model.MockTest;
 import kosta.model.MockType;
 import kosta.model.NoticeBoard;
@@ -112,4 +115,13 @@ public interface Mapper  {
 	public Student studentImage(String id); //학생사진 추출
 	public EntranceInfo mocktestCutline(Cutline cutline);//희망대학 정시커트라인
 	public List<Map<String, Object>> mockTestSum(Map<String, Object> paramMap);//자기 모의고사 점수 합계
+	//---------모의고사 성적조회
+	public List<MockType> studentMockTestList(String id);
+	public List<MockTest> studentMockTestScoreList();
+	public List<ResearchSubjectScore> koreaHistroyScoreList(String id);
+	public List<MockScoreDetailList> studentMockScorePlusSecondLangList(String id);
+	public List<MockResearchScoreDetailList> studentMockResearchSocreList(String id);
+	public List<MockTest> selectMyKorScore(String id);
+	public List<MockKorAvgScore> selectMockKorAvgScore(String id);
+	//---------모의고사 성적조회
 }

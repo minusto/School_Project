@@ -548,5 +548,73 @@
 			a.memberid = #{memberId}
 			and a.mockid = #{mockId}
 	</select>
+	<!-- 모의고사 점수 -->
+	<select id="studentMockTestList" parameterType="String" resultType="MockType">
+	
+		SELECT mp.*
+		FROM mocktest mt ,mocktype mp
+		WHERE mt.mockid=mp.mockid
+		AND mt.memberid=#{studentId}
+	
+	</select>
+	
+	<select id="studentMockTestScoreList" resultType="MockTest">
+		select * from mocktest
+	</select>
+	
+	<!-- 한국사 시험을 치룬 학생의 점수 LIST -->
+	<select id="koreaHistroyScoreList" parameterType="String" resultType="ResearchSubjectScore">
+		SELECT rs.*
+		FROM mocktest m , researchsubjectscore rs
+		WHERE m.mockid=rs.mockid
+		AND rs.memberid=m.memberid
+		AND rs.researchsubjectid='rsubA03'
+		AND m.memberid=#{id}
+	</select>
+	
+	<!-- 학생이 치룬 모의고사의 탐구과목을 제외한 나머지 과목의 정보를 가져온다-->
+	<select id="studentMockScorePlusSecondLangList" parameterType="String" resultType="MockScoreDetailList">
+	SELECT DISTINCT m.mockid,m.memberid,m.languagetype,m.languageoriginalscore,m.languagestandardscore,m.languagepercentile
+	,m.mathtype,m.mathoriginalscore,m.mathstandardscore,m.mathpercentile,m.englishoriginalscore,m.englishstandardscore,m.englishpercentile
+	,sl.languagesubjectname,sl.languageId,sls.secondlanguageoriginalscore,sls.secondlanguagestandardscore
+	FROM mocktest m,secondlanguagescore sls,secondlanguage sl
+	WHERE m.languageid=sl.languageid(+)
+	AND sls.mockid(+)=m.mockid
+	AND m.memberid=#{memberId}
+	ORDER BY m.mockid DESC
+	</select>
+	
+	<!-- 해당 모의고사를 치룬 학생의  탐구과목 정보(점수)를 가져온다 -->
+	<select id="studentMockResearchSocreList" parameterType="String" resultType="MockResearchScoreDetailList">
+	SELECT a.memberId , a.MockId, a.researchsubjectid AS researchSubjectid1, a.researchsubjectoriginalscore AS researchsubjectoriginalscore1, a.researchsubjectstandardscore AS researchsubjectstandardscore1 ,a.researchsubjectpercentile AS researchsubjectpercentile1
+	 ,b.researchsubjectid AS researchSubjectid2, b.researchsubjectoriginalscore AS researchSubjectOriginalScore2, b.researchsubjectstandardscore AS researchSubjectStandardScore2,b.researchsubjectpercentile AS researchSubjectPercentile2
+   FROM researchSubjectScore a, researchSubjectScore b
+   WHERE a.memberid = b.memberid
+   AND a.mockid = b.mockid
+   AND a.mockid = #{id}
+   AND a.researchsubjectid <![CDATA[<]]> b.researchsubjectid
+	</select>
+	
+	<select id="selectMyKorScore" parameterType="String" resultType="MockTest">
+		SELECT mockid,languageoriginalscore
+		FROM mocktest
+		WHERE memberid=#{id}
+		ORDER BY mockid ASC
+	</select>
+	
+	<select id="selectMockKorAvgScore" resultType="MockKorAvgScore" parameterType="String">
+		<!-- SELECT mockid,ROUND(AVG(languageoriginalscore),2) AS avg
+		FROM mocktest
+		GROUP BY mockid
+		ORDER BY mockid ASC -->
+		SELECT mockid,ROUND(AVG(languageoriginalscore),2) AS avg
+		FROM mocktest
+		WHERE (mockid,languagetype) in (SELECT mockid, languagetype FROM mocktest WHERE memberid=#{id})
+		OR languagetype is null
+		GROUP BY mockid
+		ORDER BY mockid ASC
+		
+	</select>
+	<!-- 모의고사 점수 END -->
 	
 </mapper>

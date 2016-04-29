@@ -41,6 +41,9 @@
       <typeAlias type="kosta.model.Major" alias="Major"/>
       <typeAlias type="kosta.model.EntranceInfo" alias="EntranceInfo"/>
       <typeAlias type="kosta.model.Cutline" alias="Cutline"/>
+      <typeAlias type="kosta.model.MockScoreDetailList" alias="MockScoreDetailList"/>
+      <typeAlias type="kosta.model.MockResearchScoreDetailList" alias="MockResearchScoreDetailList"/>
+      <typeAlias type="kosta.model.MockKorAvgScore" alias="MockKorAvgScore"/>
    </typeAliases>
    
    <environments default="development">

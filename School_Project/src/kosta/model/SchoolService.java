@@ -436,4 +436,36 @@ public class SchoolService {
 			return dao.mockTestSum(paramMap);
 				}
 		
+		// ---------------------성적조회
+		public List<MockType> studentMockTestListService(String id){
+			return dao.studentMockTestList(id);
+		}
+		
+		public List<MockTest> studentMockTestScoreListService(){
+			return dao.studentMockTestScoreList();
+		}
+		
+		//학생에 따라 한국사 점수리스트
+		public List<ResearchSubjectScore> koreaHistroyScoreListService(String id){
+			return dao.koreaHistroyScoreList(id);
+		}
+		//학생에 따라 탐구과목을 제외한 나머지 과목 점수 리스트
+		public List<MockScoreDetailList> studentMockScorePlusSecondLangListService(String id){
+			return dao.studentMockScorePlusSecondLangList(id);
+		}
+		
+		public List<MockResearchScoreDetailList> studentMockResearchSocreListService(String id){
+			return dao.studentMockResearchSocreList(id);
+		}
+		
+		public List<MockTest> selectMyKorScoreService(String id){
+			return dao.selectMyKorScore(id);
+		}
+		
+		public List<MockKorAvgScore> selectMockKorAvgScoreService(String id){
+			return dao.selectMockKorAvgScore(id);
+		}
+		//----------------------------성적조회
+		
+		
 }

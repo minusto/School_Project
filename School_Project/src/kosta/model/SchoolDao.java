@@ -1140,4 +1140,99 @@ public class SchoolDao {
 					return list;
 				}
 
+		
+		
+		//------------------------모의고사 성적조회
+		public List<MockType> studentMockTestList(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<MockType> list=null;
+			try {
+				list = session.getMapper(Mapper.class).studentMockTestList(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+
+		public List<MockTest> studentMockTestScoreList() {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<MockTest> list=null;
+			try {
+				list = session.getMapper(Mapper.class).studentMockTestScoreList();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+			
+		}
+
+		public List<ResearchSubjectScore> koreaHistroyScoreList(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<ResearchSubjectScore> list=null;
+			try {
+				list = session.getMapper(Mapper.class).koreaHistroyScoreList(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+
+		public List<MockScoreDetailList> studentMockScorePlusSecondLangList(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<MockScoreDetailList> list=null;
+			try {
+				list = session.getMapper(Mapper.class).studentMockScorePlusSecondLangList(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+
+		public List<MockResearchScoreDetailList> studentMockResearchSocreList(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<MockResearchScoreDetailList> list=null;
+			try {
+				list = session.getMapper(Mapper.class).studentMockResearchSocreList(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+
+		public List<MockTest> selectMyKorScore(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<MockTest> list=null;
+			try {
+				list = session.getMapper(Mapper.class).selectMyKorScore(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+
+		public List<MockKorAvgScore> selectMockKorAvgScore(String id) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<MockKorAvgScore> list=null;
+			try {
+				list = session.getMapper(Mapper.class).selectMockKorAvgScore(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
+		//------------------------모의고사 성적조회
 }
