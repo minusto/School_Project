@@ -85,7 +85,7 @@
 
 
 
-									<a href="#" class="pull-right"><button
+									<a href="schoolAdminInsertUserIdForm.jsp" class="pull-right"><button
 											class="btn btn-default">사용자 ID등록</button></a><br>
 									<br> <br>
 									<br>
