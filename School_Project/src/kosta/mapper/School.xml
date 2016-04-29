@@ -541,7 +541,7 @@
 	    from
 			mocktest a
 	    where
-	      a.memberid = 'ST_01' and a.mockid = (select max(mockid) from mocktest)
+	      a.memberid = #{memberId} and a.mockid = (select max(mockid) from mocktest)
 	  )
 	  +
 	  (
@@ -550,7 +550,7 @@
 	    from
 	      Researchsubjectscore b
 	    where
-	      b.memberid = 'ST_01' and b.mockid = (select max(mockid) from Researchsubjectscore)
+	      b.memberid = #{memberId} and b.mockid = (select max(mockid) from Researchsubjectscore)
 	  )
 	  as total
 	from
