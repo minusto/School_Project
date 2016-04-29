@@ -10,7 +10,7 @@
 <%@page import="kosta.model.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@include file="logic/studentSessionCheck.jsp" %>
+<%@include file="logic/teacherSessionCheck.jsp" %>
 <%
 	request.setAttribute("path", "성적조회 > 모의고사성적조회");
 	String studentId=request.getParameter("studentId");
@@ -79,9 +79,8 @@
 		$("#selectMock").change(function(){
 		var mockId=$(this).val();
 		var studentId=$("#studentId").attr('value');
-		location.href="studentListMockTestScore.jsp?studentId="+studentId+"&mockId="+mockId;
+		location.href="teacherListMockTestScore.jsp?studentId="+studentId+"&mockId="+mockId;
 
-			
 		})
 	})
 </script>
@@ -90,7 +89,7 @@
 <body class="flat-blue">
    <div class="app-container">
         <div class="row content-container">
-            <jsp:include page="studentMenu.jsp"/>
+            <jsp:include page="teacherMenu.jsp"/>
 			<!-- 메인 컨텐츠 -->
 			<div class="container-fluid">
 				<div class="side-body padding-top">
