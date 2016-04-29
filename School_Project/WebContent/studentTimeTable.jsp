@@ -40,10 +40,7 @@
                     </div>
                     <div class="row">
 						<div class="col-md-12">
-							<div class="sub-title">
-								Table Bordered <span class="description">(
-									.table-bordered )</span>
-							</div>
+		
 							<table class="table table-bordered">
 								<thead>
 									<tr>
@@ -61,17 +58,17 @@
 										<th>1</th>
 										<td>국어</td>
 										<td>영어</td>
-										<td>수리</td>
+										<td>수학</td>
 										<td>사회문화</td>
 										<td>한국지리</td>
 									</tr>
 									<tr>
 										<th>2</th>
-										<td>수리</td>
+										<td>수학</td>
 										<td>체육</td>
 										<td>영어</td>
 										<td>수학</td>
-										<td>체육</td>
+										<td>한국사</td>
 									</tr>
 									<tr>
 										<th>3</th>
@@ -84,35 +81,35 @@
 									<tr>
 										<th>4</th>
 										<td>화학</td>
-										<td>수리</td>
+										<td>수학</td>
 										<td>국어</td>
 										<td>영어</td>
-										<td>한국지리</td>
+										<td>수학</td>
 									</tr>
 					
 									<tr>
 										<th>5</th>
-										<td>가나</td>
-										<td>꺄꺄</td>
-										<td>수학</td>
+										<td>미술</td>
+										<td>도덕</td>
+										<td>음악</td>
 										<td>체육</td>
-										<td>바둑</td>
+										<td>윤리와사상</td>
 									</tr>
 									<tr>
 										<th>6</th>
-										<td>스타</td>
-										<td>서든</td>
-										<td>롤</td>
-										<td>바봉</td>
-										<td>한국지리</td>
+										<td>중국어1</td>
+										<td>한국사의이해</td>
+										<td>독서</td>
+										<td>국어</td>
+										<td>문학</td>
 									</tr>
 									<tr>
 										<th>7</th>
-										<td>워크</td>
-										<td>클랜전</td>
-										<td>체스</td>
+										<td>영어</td>
+										<td>국어</td>
+										<td>사회문화</td>
 										<td>음악</td>
-										<td>집가고싶다</td>
+										<td>체육</td>
 									</tr>
 								
 								
