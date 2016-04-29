@@ -265,6 +265,7 @@
 											</c:if>
 										</c:forEach>
 									</tr>
+									<!-- 제2외국어 -->
 									<c:forEach items="${mockScoreDetailList }" var="list">
 										<c:if test="${list.mockId == mockId }">
 											<c:if test="${!(list.languageId eq secondLang00)}">

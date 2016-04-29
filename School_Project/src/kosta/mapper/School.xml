@@ -610,12 +610,12 @@
 	<select id="studentMockScorePlusSecondLangList" parameterType="String" resultType="MockScoreDetailList">
 	SELECT DISTINCT m.mockid,m.memberid,m.languagetype,m.languageoriginalscore,m.languagestandardscore,m.languagepercentile
 	,m.mathtype,m.mathoriginalscore,m.mathstandardscore,m.mathpercentile,m.englishoriginalscore,m.englishstandardscore,m.englishpercentile
-	,sl.languagesubjectname,sl.languageId,sls.secondlanguageoriginalscore,sls.secondlanguagestandardscore
+	,sl.languagesubjectname,sl.languageId,sls.secondlanguageoriginalscore,sls.secondlanguagestandardscore,sls.secondlanguagepercentile
 	FROM mocktest m,secondlanguagescore sls,secondlanguage sl
 	WHERE m.languageid=sl.languageid(+)
 	AND sls.mockid(+)=m.mockid
 	AND sls.memberid(+)=m.memberid
-	AND m.memberid=#{id}
+	AND m.memberid='ST_01'
 	ORDER BY m.mockid DESC
 	</select>
 	
