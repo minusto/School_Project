@@ -564,127 +564,140 @@ public class SchoolDao {
 	}
 	
 	//진학시뮬레이션 - 학생의 아이디로 입력되어있는 희망 대학을 반환
-		public HopeUniversity selectHopeUniversity(String memberId) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			HopeUniversity hu = null;
-			try {
-				hu = session.getMapper(Mapper.class).selectHopeUniversity(memberId);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return hu;
+	public HopeUniversity selectHopeUniversity(String memberId) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		HopeUniversity hu = null;
+		try {
+			hu = session.getMapper(Mapper.class).selectHopeUniversity(memberId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 대학교 리스트 조회
-		public List<University> selectUniversityList() {
-			SqlSession session = getSqlSessionFactory().openSession();
-			List<University> list = null;
-			try {
-				list = session.getMapper(Mapper.class).selectUniversityList();
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return list;
+		return hu;
+	}
+	//진학시뮬레이션 - 대학교 리스트 조회
+	public List<University> selectUniversityList() {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<University> list = null;
+		try {
+			list = session.getMapper(Mapper.class).selectUniversityList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - EntranceInfo에 있는 해당하는 대학교의 학과 리스트 조회
-		public List<Major> selectMajorList(String universityName) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			List<Major> list = null;
-			try {
-				list = session.getMapper(Mapper.class).selectMajorList(universityName);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return list;
+		return list;
+	}
+	//진학시뮬레이션 - EntranceInfo에 있는 해당하는 대학교의 학과 리스트 조회
+	public List<Major> selectMajorList(String universityName) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<Major> list = null;
+		try {
+			list = session.getMapper(Mapper.class).selectMajorList(universityName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
-		public String selectUniversityId(String universityName) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			String universityId = null;
-			try {
-				universityId = session.getMapper(Mapper.class).selectUniversityId(universityName);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return universityId;
+		return list;
+	}
+	//진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
+	public String selectUniversityId(String universityName) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String universityId = null;
+		try {
+			universityId = session.getMapper(Mapper.class).selectUniversityId(universityName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 학과 이름으로 아이디 가져오기
-		public String selectMajorId(String majorName) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			String majorId = null;
-			try {
-				majorId = session.getMapper(Mapper.class).selectMajorId(majorName);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return majorId;
+		return universityId;
+	}
+	//진학시뮬레이션 - 학과 이름으로 아이디 가져오기
+	public String selectMajorId(String majorName) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String majorId = null;
+		try {
+			majorId = session.getMapper(Mapper.class).selectMajorId(majorName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 가져오기
-		public int selectEntranceInfoYear(EntranceInfo entranceInfo) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			int entranceYear = 0;
-			try {
-				entranceYear = session.getMapper(Mapper.class).selectEntranceInfoYear(entranceInfo);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return entranceYear;
+		return majorId;
+	}
+	//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 가져오기
+	public int selectEntranceInfoYear(EntranceInfo entranceInfo) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int entranceYear = 0;
+		try {
+			entranceYear = session.getMapper(Mapper.class).selectEntranceInfoYear(entranceInfo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 희망대학 입력하기
-		public int insertHopeUniversity(HopeUniversity hopeUniversity) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			int re = -1;
-			try {
-				re = session.getMapper(Mapper.class).insertHopeUniversity(hopeUniversity);
-				if(re > 0) {
-					session.commit();
-				} else {
-					session.rollback();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
+		return entranceYear;
+	}
+	//진학시뮬레이션 - 희망대학 입력하기
+	public int insertHopeUniversity(HopeUniversity hopeUniversity) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(Mapper.class).insertHopeUniversity(hopeUniversity);
+			if(re > 0) {
+				session.commit();
+			} else {
+				session.rollback();
 			}
-			return re;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 대학교 아이디로 이름 가져오기
-		public String selectUniversityName(String universityId) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			String universityName = null;
-			try {
-				universityName = session.getMapper(Mapper.class).selctUniversityName(universityId);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return universityName;
+		return re;
+	}
+	//진학시뮬레이션 - 대학교 아이디로 이름 가져오기
+	public String selectUniversityName(String universityId) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String universityName = null;
+		try {
+			universityName = session.getMapper(Mapper.class).selctUniversityName(universityId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
-		//진학시뮬레이션 - 학과 아이디로 이름 가져오기
-		public String selectMajorName(String majorId) {
-			SqlSession session = getSqlSessionFactory().openSession();
-			String majorName = null;
-			try {
-				majorName = session.getMapper(Mapper.class).selectMajorName(majorId);
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				session.close();
-			}
-			return majorName;
+		return universityName;
+	}
+	//진학시뮬레이션 - 학과 아이디로 이름 가져오기
+	public String selectMajorName(String majorId) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String majorName = null;
+		try {
+			majorName = session.getMapper(Mapper.class).selectMajorName(majorId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
 		}
+		return majorName;
+	}
+	//진학시뮬레이션 - 모든 대학교 학과 입시정보 리스트 출력
+	public List<AllEntranceInfo> selectAllEntranceInfo() {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<AllEntranceInfo> list = null;
+		try {
+			list = session.getMapper(Mapper.class).selectAllEntranceInfo();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
 		
 
 	// 관리자 ->공지사항 등록

@@ -316,6 +316,16 @@
 	<select id="selectMajorName" parameterType="String" resultType="String">
 		SELECT majorName FROM major WHERE majorId = #{majorId}
 	</select>
+	<!-- 진학시뮬레이션 - 모든 대학교 학과 입시정보 리스트 출력 -->
+	<select id="selectAllEntranceInfo" resultType="AllEntranceInfo">
+		SELECT u.universityId, universityName, campusName, universityLocal, universityURL, universityMark, m.majorId, majorName, e.entranceYear, mockTestcutline, totalExamCutline, MockTestRecruitNum, TotalExamRecruitNum
+		FROM entranceInfo e JOIN major m
+		ON m.majorId = e.majorId
+		JOIN university u 
+		ON u.universityId = e.universityId
+		ORDER BY universityName, majorName
+	</select>
+	
 	
 	<!-- 공지사항 글번호 -->
 	<select id="noticeBoardNum" resultType="Integer">

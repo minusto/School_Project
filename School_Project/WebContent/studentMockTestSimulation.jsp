@@ -1,3 +1,4 @@
+<%@page import="kosta.model.AllEntranceInfo"%>
 <%@page import="java.util.Map"%>
 <%@page import="kosta.model.Cutline"%>
 <%@page import="kosta.model.EntranceInfo"%>
@@ -22,10 +23,25 @@
 	}
 	
 	int checkHopeUniversityExist = 0; //희망대학이 설정되어있는지 체크할 변수
-	if(id != null && grade.equals("학생")) {
-		checkHopeUniversityExist = service.checkHopeUniversityService(id); //학생일 경우 id로 희망대학 유무 체크
-		if(checkHopeUniversityExist > 0) {
-			HopeUniversity hopeUniversity = service.selectHopeUniversityService(id);
+	String studentId = null; //학생의 아이디
+	
+	if(id != null && grade.equals("학생")) { //학생과 학부모의 경우에 따라 성적을 가져오기 위한 학생 아이디를 studentId에 저장해서 사용
+		studentId = id;
+		checkHopeUniversityExist = service.checkHopeUniversityService(studentId); //희망대학 유무 체크
+		if(checkHopeUniversityExist < 0) { //학생의 경우 희망대학이 없다면 선택할 대학교와 학과 리스트를 가져와야 한다.
+			List<University> universityList = service.selectUniversityListService(); //대학교 리스트를 가져옴
+			request.setAttribute("universityList", universityList);
+			request.setAttribute("id", id); //insert 폼에 학생의 아이디를 넘겨주기 위해서 set
+		}
+	} else if(id != null && grade.equals("학부모")) {
+		Parent parent2 = service.parentInfoDetailService(id); //부모일 경우 부모 객체를 먼저 가져옴
+		studentId = parent2.getMemberId();
+		checkHopeUniversityExist = service.checkHopeUniversityService(studentId); //희망대학 유무 체크
+	}
+	
+	if(id != null) {
+		if(checkHopeUniversityExist > 0) { //학부모든 학생이든 희망대학이 있는 경우 -> 희망대학을 출력해야 한다.
+			HopeUniversity hopeUniversity = service.selectHopeUniversityService(studentId);
 			String universityName = service.selectUniversityNameService(hopeUniversity.getUniversityId());
 			String majorName = service.selectMajorNameService(hopeUniversity.getMajorId());
 			
@@ -39,25 +55,21 @@
 			request.setAttribute("universityName", universityName);
 			request.setAttribute("majorName", majorName);
 		} else {
-			//희망대학을 입력해야 할 경우
-			List<University> universityList = service.selectUniversityListService(); //대학교 리스트를 가져옴
-			request.setAttribute("universityList", universityList);
 			
-			request.setAttribute("id", id);					
 		}
-	} else if(id != null && grade.equals("학부모")) {
-		Parent parent2 = service.parentInfoDetailService(id); //부모일 경우 부모 객체를 먼저 가져옴
-		checkHopeUniversityExist = service.checkHopeUniversityService(parent2.getMemberId()); //부모객체에 있는 자녀의 memberId로 희망대학의 유무 체크. 있다면 양수		
-		if(checkHopeUniversityExist > 0) {
-		}
+		request.setAttribute("grade", grade); //html에서 학생과 학생이 아닌 경우를 나눠 choose를 사용하기 위해 등급을 set을 해줌
+		request.setAttribute("checkHopeUniversityExist", checkHopeUniversityExist); //희망대학 유무 결과 set
+		
+		//학생의 모의고사 점수 총합
+		HttpSession httpSession = request.getSession();
+		List<Map<String, Object>> mockTestSumList = service.mockTestSum(httpSession);
+		request.setAttribute("mockTestSumList", mockTestSumList);
+		
+		//모든 학교 학과의 입시정보 리스트 출력
+		List<AllEntranceInfo> allEntranceInfoList = service.selectAllEntranceInfoService();
+		request.setAttribute("allEntranceInfoList", allEntranceInfoList);
+		
 	}
-	request.setAttribute("grade", grade); //html에서 학생과 학생이 아닌 경우를 나눠 choose를 사용하기 위해 등급을 set을 해줌
-	request.setAttribute("checkHopeUniversityExist", checkHopeUniversityExist); //희망대학 유무 결과 set
-	
-	//세션으로 id값을 받아오고 전체모의고사합 객체를가져옴
-	HttpSession httpSession = request.getSession();
-	List<Map<String, Object>> mockTestSumList = service.mockTestSum(httpSession);
-	request.setAttribute("mockTestSumList", mockTestSumList);
 %>
 <!DOCTYPE html>
 <html>
@@ -161,18 +173,19 @@
 					                    			<th>점수 차이</th>
 					                    		</tr>
 					                    		<tr>
-					                    			<td>2.4</td>
-					                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
-					                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-					                    			<td>1.6</td>
-					                    			<td>0.8</td>
+					                    			<td>${mockTestSumList[0].TOTAL}</td>
+					                    			<td><a id="hopeUniversityName" href="universityEntranceInfo.jsp">${universityName }</a></td><!-- 목표대학 목표학과의 상세 페이지를 보여준다. -->
+					                    			<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">${majorName }</a></td>
+					                    			<td>${info.mockTestCutline}</td>
+					                    			<fmt:formatNumber var="finalTotal" value="${mockTestSumList[0].TOTAL - info.mockTestCutline}" pattern="#.00" />
+					                    			<td>${finalTotal}</td>
 					                    		</tr>
 	                    					</table>
 		                   				</c:when>
 		                   				<c:otherwise>
 		                   					<table id="hopeUniversityTable" class="table table-bordered">
-				                    			<tr><th colspan="4">학생이 아님</th></tr>
-				                    			<tr><td colspan="4">희망대학이 설정되어있지 않습니다</td></tr>
+				                    			<tr><th colspan="4">안녕하세요 학부모님</th></tr>
+				                    			<tr><td colspan="4">자녀의 희망대학이 설정되어있지 않습니다</td></tr>
 			                    			</table>	                    						
 		                   				</c:otherwise>
 	                   				</c:choose>
@@ -210,55 +223,54 @@
 					<div class="row">
                     	<div class="col-md-8 col-md-offset-2">
                     		<h3>대학 검색</h3>
-                    		<div>
-                    			<div id="searchUniversity" class="checkbox-round">
-                    				<form id="searchUniversityForm" action="studentTotalExamSimulation.jsp" method="post">
-                    					<input type="checkbox" id="selectUniversityName" name="area">
-                    						<label id="la" for="selectUniversityName">학교이름</label>
-                    					<input type="checkbox" id="selectUniversityMajor" name="area">
-                    						<label id="la" for="selectUniversityMajor">학과이름</label>
-                    					<input type="text" name="searchKey" id="searchKey" size="20"/>
-                    					<input type="submit" value="검색" id="submitButton"/>
-                    				</form>	
+                   			<div id="searchUniversityResult" class="row">
+                    			<div class="table-responsive col-md-12">
+                    				<div class="row">
+                       		 			<div class="col-xs-12">
+		                    				<div class="card">
+			                    				<div class="card-body">
+				                    				<table id="searchResultTable" class="datatable table table-bordered table-striped">
+				                    					<thead>
+					                    					<tr>
+					                    						<th>학교 이름</th>
+					                    						<th>학과 이름</th>
+					                    						<th>정시 커트라인</th>
+					                    						<th>모집인원</th>
+					                    					</tr>
+				                    					</thead>
+				                    					<tfoot>
+				                    						<tr>
+					                    						<th>학교 이름</th>
+					                    						<th>학과 이름</th>
+					                    						<th>정시 커트라인</th>
+					                    						<th>모집인원</th>
+					                    					</tr>
+				                    					</tfoot>
+				                    					<tbody>
+					                    					<c:forEach var="allEntranceInfoList" items="${allEntranceInfoList }">
+					                    						<tr>
+						                    						<td>
+						                    							<img class="tableUniversityMark" alt="서울대학교마크" src="${allEntranceInfoList.universityMark }">
+						                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">${allEntranceInfoList.universityName }</a>
+						                    						</td>
+						                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">${allEntranceInfoList.majorName }</a></td>
+						                    						<td>${allEntranceInfoList.mockTestCutline }</td>
+						                    						<td>${allEntranceInfoList.mockTestRecruitNum }</td>
+						                    					</tr>
+					                    					</c:forEach>
+				                    					</tbody>
+				                    				</table>
+			                    				</div>
+		                    				</div>
+	                    				</div>
+                    				</div>
                     			</div>
-                    			<div id="searchUniversityResult" class="row">
-	                    			<div class="table-responsive col-md-12">
-	                    				<table id="searchResultTable" class="table table-bordered table-striped">
-	                    					<tr>
-	                    						<th>학교 이름</th>
-	                    						<th>학과 이름</th>
-	                    						<th>정시 커트라인</th>
-	                    						<th>모집인원</th>
-	                    					</tr>
-	                    					<!-- 검색된리스트가 들어갈 부분 -->
-	                    					<tr>
-	                    						<td>
-	                    							<img class="tableUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-	                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a>
-	                    						</td>
-	                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-	                    						<td>1.6</td>
-	                    						<td>15</td>
-	                    					</tr>
-	                    					<tr>
-	                    						<td>
-	                    							<img class="tableUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-	                    							<a id="hopeUniversityName" href="universityEntranceInfo.jsp">서울대학교</a>
-	                    						</td>
-	                    						<td><a id="hopeUniversityMajor" href="universityEntranceInfo.jsp">국어국문학과</a></td>
-	                    						<td>1.6</td>
-	                    						<td>15</td>
-	                    					</tr>
-	                    					<!-- 여기까지 -->
-	                    				</table>
-	                    			</div>
-                    			</div>	
-	                    	</div>
+                   			</div>	
                     	</div>
                     </div>
-                    
                 </div>
             </div>
+            <!-- 메인컨텐츠 끝 -->
         </div>
    	</div>
    	

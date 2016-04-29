@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.RowBounds;
 
 import kosta.model.AdminList;
+import kosta.model.AllEntranceInfo;
 import kosta.model.Cutline;
 import kosta.model.EntranceInfo;
 import kosta.model.ExistStudentList;
@@ -86,6 +87,7 @@ public interface Mapper  {
 	public int insertHopeUniversity(HopeUniversity hopeUniversity); //진학시뮬레이션 - 희망대학 입력하기
 	public String selctUniversityName(String universityId); //진학시뮬레이션 - 대학교 아이디로 이름 가져오기
 	public String selectMajorName(String majorId); //진학시뮬레이션 - 학과 아이디로 이름 가져오기
+	public List<AllEntranceInfo> selectAllEntranceInfo(); //진학시뮬레이션 - 모든 대학교 학과 입시정보 리스트 출력
 	public int insertNoticeBoard(NoticeBoard noticeBoard); //관지라-> 공지사항 등록
 	public Integer noticeBoardNum(); //공지사항 글번호
 	public int noticeCountBoard(Search search); //페이징 처리 공지사항글번호
