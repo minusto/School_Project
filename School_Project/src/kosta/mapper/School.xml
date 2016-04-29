@@ -604,7 +604,8 @@
 	FROM mocktest m,secondlanguagescore sls,secondlanguage sl
 	WHERE m.languageid=sl.languageid(+)
 	AND sls.mockid(+)=m.mockid
-	AND m.memberid=#{memberId}
+	AND sls.memberid(+)=m.memberid
+	AND m.memberid=#{id}
 	ORDER BY m.mockid DESC
 	</select>
 	
@@ -616,6 +617,8 @@
    WHERE a.memberid = b.memberid
    AND a.mockid = b.mockid
    AND a.mockid = #{id}
+   AND a.researchsubjectid != 'rsubA03'
+	AND b.researchsubjectid != 'rsubA03'
    AND a.researchsubjectid <![CDATA[<]]> b.researchsubjectid
 	</select>
 	
