@@ -82,7 +82,7 @@ public interface Mapper  {
 	public List<Major> selectMajorList(String universityName); //진학시뮬레이션 - 학과 리스트 조회
 	public String selectUniversityId(String universityName); //진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
 	public String selectMajorId(String majorName); //진학시뮬레이션 - 대학교 이름으로 아이디 가져오기
-	public int selectEntranceInfoYear(EntranceInfo entranceInfo); //진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 가져오기
+	public int selectEntranceInfoYear(EntranceInfo entranceInfo); //진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 가져오기
 	public int insertHopeUniversity(HopeUniversity hopeUniversity); //진학시뮬레이션 - 희망대학 입력하기
 	public String selctUniversityName(String universityId); //진학시뮬레이션 - 대학교 아이디로 이름 가져오기
 	public String selectMajorName(String majorId); //진학시뮬레이션 - 학과 아이디로 이름 가져오기

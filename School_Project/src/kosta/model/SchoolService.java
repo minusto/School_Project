@@ -226,7 +226,7 @@ public class SchoolService {
 		public String selectMajorIdService(String majorName) {
 			return dao.selectMajorId(majorName);
 		}
-		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 가져오기
+		//진학시뮬레이션 - 대학교 학과의 가장 최신 입시요강 연도 가져오기
 		public int selectEntranceInfoYearService(EntranceInfo entranceInfo) {
 			return dao.selectEntranceInfoYear(entranceInfo);
 		}
@@ -428,10 +428,10 @@ public class SchoolService {
 		public List<Map<String, Object>> mockTestSum(HttpSession session) {
 			Map<String, Object> paramMap = new HashMap<String, Object>();
 			String memberId = session.getAttribute("id").toString();
-			String mockId = "mock019";
-					
+			/*String mockId = "mock019";*/
+			
 			paramMap.put("memberId", memberId);
-			paramMap.put("mockId", mockId);
+			/*paramMap.put("mockId", mockId);*/
 			
 			return dao.mockTestSum(paramMap);
 				}
