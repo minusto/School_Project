@@ -8,29 +8,29 @@ public class MockScoreDetailList implements Serializable {
 	private String languageType;
 	private int languageOriginalScore;
 	private int languageStandardScore;
-	private int languagePercentile;
+	private double languagePercentile;
 	private String mathType;
 	private int mathOriginalScore;
 	private int mathStandardScore;
-	private int mathpercentile;
+	private double mathpercentile;
 	private int englishOriginalScore;
 	private int englishStandardScore;
-	private int englishpercentile;
+	private double englishpercentile;
 	private String languageSubjectName;
 	private String languageId;
 	private int secondLanguageOriginalScore;
 	private int secondLanguageStandardScore;
-	private int secondLanguagePercentile;
+	private double secondLanguagePercentile;
 	
 	
 	public MockScoreDetailList(){}
 
 
 	public MockScoreDetailList(String mockId, String memberId, String languageType, int languageOriginalScore,
-			int languageStandardScore, int languagePercentile, String mathType, int mathOriginalScore,
-			int mathStandardScore, int mathpercentile, int englishOriginalScore, int englishStandardScore,
-			int englishpercentile, String languageSubjectName, String languageId, int secondLanguageOriginalScore,
-			int secondLanguageStandardScore, int secondLanguagePercentile) {
+			int languageStandardScore, double languagePercentile, String mathType, int mathOriginalScore,
+			int mathStandardScore, double mathpercentile, int englishOriginalScore, int englishStandardScore,
+			double englishpercentile, String languageSubjectName, String languageId, int secondLanguageOriginalScore,
+			int secondLanguageStandardScore, double secondLanguagePercentile) {
 		super();
 		this.mockId = mockId;
 		this.memberId = memberId;
@@ -103,12 +103,12 @@ public class MockScoreDetailList implements Serializable {
 	}
 
 
-	public int getLanguagePercentile() {
+	public double getLanguagePercentile() {
 		return languagePercentile;
 	}
 
 
-	public void setLanguagePercentile(int languagePercentile) {
+	public void setLanguagePercentile(double languagePercentile) {
 		this.languagePercentile = languagePercentile;
 	}
 
@@ -143,12 +143,12 @@ public class MockScoreDetailList implements Serializable {
 	}
 
 
-	public int getMathpercentile() {
+	public double getMathpercentile() {
 		return mathpercentile;
 	}
 
 
-	public void setMathpercentile(int mathpercentile) {
+	public void setMathpercentile(double mathpercentile) {
 		this.mathpercentile = mathpercentile;
 	}
 
@@ -173,12 +173,12 @@ public class MockScoreDetailList implements Serializable {
 	}
 
 
-	public int getEnglishpercentile() {
+	public double getEnglishpercentile() {
 		return englishpercentile;
 	}
 
 
-	public void setEnglishpercentile(int englishpercentile) {
+	public void setEnglishpercentile(double englishpercentile) {
 		this.englishpercentile = englishpercentile;
 	}
 
@@ -223,12 +223,12 @@ public class MockScoreDetailList implements Serializable {
 	}
 
 
-	public int getSecondLanguagePercentile() {
+	public double getSecondLanguagePercentile() {
 		return secondLanguagePercentile;
 	}
 
 
-	public void setSecondLanguagePercentile(int secondLanguagePercentile) {
+	public void setSecondLanguagePercentile(double secondLanguagePercentile) {
 		this.secondLanguagePercentile = secondLanguagePercentile;
 	}
 

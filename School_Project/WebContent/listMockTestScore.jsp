@@ -144,7 +144,6 @@
 				<!-- 			성적표 예시 나중에 DB연동 			-->
 
 									<tr>
-										
 										<c:forEach var="list" items="${mockScoreDetailList }">
 											<c:if test="${list.mockId == mockId }"> 
 												<c:if test="${list.languageType==null }">
@@ -160,7 +159,37 @@
 												<td>3</td>
 												<td>3</td>
 												<td>${list.languagePercentile }</td>
-												<td>3</td>
+												<td>
+												<c:choose>
+													<c:when test="${list.languagePercentile>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.languagePercentile>=89&&list.languagePercentile<96 }">
+														2
+													</c:when>
+													<c:when test="${list.languagePercentile>=77&&list.languagePercentile<89 }">
+														3
+													</c:when>
+													<c:when test="${list.languagePercentile>=60&&list.languagePercentile<77 }">
+														4
+													</c:when>
+													<c:when test="${list.languagePercentile>=40&&list.languagePercentile<60 }">
+														5
+													</c:when>
+													<c:when test="${list.languagePercentile>=23&&list.languagePercentile<40 }">
+														6
+													</c:when>
+													<c:when test="${list.languagePercentile>=11&&list.languagePercentile<23 }">
+														7
+													</c:when>
+													<c:when test="${list.languagePercentile>=4&&list.languagePercentile<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
  											</c:if> 
  										</c:forEach>
 									</tr>
@@ -180,7 +209,37 @@
 												<td>3</td>
 												<td>3</td>
 												<td>${list.mathpercentile }</td>
-												<td>3</td>
+												<td>
+												<c:choose>
+													<c:when test="${list.mathpercentile>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.mathpercentile>=89&&list.mathpercentile<96 }">
+														2
+													</c:when>
+													<c:when test="${list.mathpercentile>=77&&list.mathpercentile<89 }">
+														3
+													</c:when>
+													<c:when test="${list.mathpercentile>=60&&list.mathpercentile<77 }">
+														4
+													</c:when>
+													<c:when test="${list.mathpercentile>=40&&list.mathpercentile<60 }">
+														5
+													</c:when>
+													<c:when test="${list.mathpercentile>=23&&list.mathpercentile<40 }">
+														6
+													</c:when>
+													<c:when test="${list.mathpercentile>=11&&list.mathpercentile<23 }">
+														7
+													</c:when>
+													<c:when test="${list.mathpercentile>=4&&list.mathpercentile<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
  											</c:if> 
  										</c:forEach>
 
@@ -196,7 +255,37 @@
 												<td>32</td>
 												<td>10</td>
 												<td>${list.englishpercentile }</td>
-												<td>1</td>
+												<td>
+												<c:choose>
+													<c:when test="${list.englishpercentile>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.englishpercentile>=89&&list.englishpercentile<96 }">
+														2
+													</c:when>
+													<c:when test="${list.englishpercentile>=77&&list.englishpercentile<89 }">
+														3
+													</c:when>
+													<c:when test="${list.englishpercentile>=60&&list.englishpercentile<77 }">
+														4
+													</c:when>
+													<c:when test="${list.englishpercentile>=40&&list.englishpercentile<60 }">
+														5
+													</c:when>
+													<c:when test="${list.englishpercentile>=23&&list.englishpercentile<40 }">
+														6
+													</c:when>
+													<c:when test="${list.englishpercentile>=11&&list.englishpercentile<23 }">
+														7
+													</c:when>
+													<c:when test="${list.englishpercentile>=4&&list.englishpercentile<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
  											</c:if> 
  										</c:forEach>
 									</tr>
@@ -212,7 +301,37 @@
 												<td>32</td>
 												<td>10</td>
 												<td>${list.researchSubjectPercentile }</td>
-												<td>1</td>
+												<td>
+												<c:choose>
+													<c:when test="${list.researchSubjectPercentile>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=89&&list.researchSubjectPercentile<96 }">
+														2
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=77&&list.researchSubjectPercentile<89 }">
+														3
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=60&&list.researchSubjectPercentile<77 }">
+														4
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=40&&list.researchSubjectPercentile<60 }">
+														5
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=23&&list.researchSubjectPercentile<40 }">
+														6
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=11&&list.researchSubjectPercentile<23 }">
+														7
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile>=4&&list.researchSubjectPercentile<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
  										</tr>
 										</c:if>
 									
@@ -235,7 +354,37 @@
 												<td>32</td>
 												<td>10</td>
 												<td>${list.researchSubjectPercentile1 }</td>
-												<td>100</td>
+												<td>
+												<c:choose>
+													<c:when test="${list.researchSubjectPercentile1>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=89&&list.researchSubjectPercentile1<96 }">
+														2
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=77&&list.researchSubjectPercentile1<89 }">
+														3
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=60&&list.researchSubjectPercentile1<77 }">
+														4
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=40&&list.researchSubjectPercentile1<60 }">
+														5
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=23&&list.researchSubjectPercentile1<40 }">
+														6
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=11&&list.researchSubjectPercentile1<23 }">
+														7
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile1>=4&&list.researchSubjectPercentile1<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
 											</c:if>
 										</c:forEach>
 									</tr>
@@ -255,7 +404,37 @@
 												<td>320</td>
 												<td>100</td>
 												<td>${list.researchSubjectPercentile2 }</td>
-												<td>300</td>
+												<td>
+												<c:choose>
+													<c:when test="${list.researchSubjectPercentile2>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=89&&list.researchSubjectPercentile2<96 }">
+														2
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=77&&list.researchSubjectPercentile2<89 }">
+														3
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=60&&list.researchSubjectPercentile2<77 }">
+														4
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=40&&list.researchSubjectPercentile2<60 }">
+														5
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=23&&list.researchSubjectPercentile2<40 }">
+														6
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=11&&list.researchSubjectPercentile2<23 }">
+														7
+													</c:when>
+													<c:when test="${list.researchSubjectPercentile2>=4&&list.researchSubjectPercentile2<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
 											</c:if>
 										</c:forEach>
 									</tr>
@@ -273,7 +452,37 @@
 													<td>32</td>
 													<td>10</td>
 													<td>${list.secondLanguagePercentile }</td>
-													<td>1</td>
+													<td>
+													<c:choose>
+													<c:when test="${list.secondLanguagePercentile>=96 }">
+														1
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=89&&list.secondLanguagePercentile<96 }">
+														2
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=77&&list.secondLanguagePercentile<89 }">
+														3
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=60&&list.secondLanguagePercentile<77 }">
+														4
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=40&&list.secondLanguagePercentile<60 }">
+														5
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=23&&list.secondLanguagePercentile<40 }">
+														6
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=11&&list.secondLanguagePercentile<23 }">
+														7
+													</c:when>
+													<c:when test="${list.secondLanguagePercentile>=4&&list.secondLanguagePercentile<11 }">
+														8
+													</c:when>
+													<c:otherwise>
+														9
+													</c:otherwise>
+												</c:choose>
+												</td>
  												</tr>
 											</c:if>
 										</c:if>
