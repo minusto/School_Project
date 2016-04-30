@@ -117,7 +117,7 @@ public interface Mapper  {
 	public Teacher teacherImage(String id);//교사 사진 추출
 	public Student studentImage(String id); //학생사진 추출
 	public EntranceInfo mocktestCutline(Cutline cutline);//희망대학 정시커트라인
-	public List<Map<String, Object>> mockTestSum(Map<String, Object> paramMap);//자기 모의고사 점수 합계
+	public List<Map<String, Object>> mockTestSum(String id);//자기 모의고사 점수 합계
 	//---------모의고사 성적조회
 	public List<MockType> studentMockTestList(String id);
 	public List<MockTest> studentMockTestScoreList();

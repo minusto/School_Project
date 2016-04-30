@@ -63,7 +63,7 @@
 		
 		//학생의 모의고사 점수 총합
 		HttpSession httpSession = request.getSession();
-		List<Map<String, Object>> mockTestSumList = service.mockTestSum(httpSession);
+		List<Map<String, Object>> mockTestSumList = service.mockTestSum(id);
 		request.setAttribute("mockTestSumList", mockTestSumList);
 		
 		//모든 학교 학과의 입시정보 리스트 출력

@@ -1140,11 +1140,11 @@ public class SchoolDao {
 				}
 
 				//국영수사탐 합계 (이용갑)
-		public List<Map<String, Object>> mockTestSum(Map<String, Object> paramMap) {
+		public List<Map<String, Object>> mockTestSum(String id) {
 			SqlSession session = getSqlSessionFactory().openSession();
 			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 			try {
-				list = session.getMapper(Mapper.class).mockTestSum(paramMap);
+				list = session.getMapper(Mapper.class).mockTestSum(id);
 					} catch (Exception e) {
 						e.printStackTrace();
 					} finally {

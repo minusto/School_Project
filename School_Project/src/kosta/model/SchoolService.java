@@ -430,15 +430,12 @@ public class SchoolService {
 			return dao.mocktestCutline(cutline);
 		}
 		//희망대학 국영수사탐 합계
-		public List<Map<String, Object>> mockTestSum(HttpSession session) {
+		public List<Map<String, Object>> mockTestSum(String id) {
 			Map<String, Object> paramMap = new HashMap<String, Object>();
-			String memberId = session.getAttribute("id").toString();
-			/*String mockId = "mock019";*/
-			
-			paramMap.put("memberId", memberId);
+		
 			/*paramMap.put("mockId", mockId);*/
 			
-			return dao.mockTestSum(paramMap);
+			return dao.mockTestSum(id);
 				}
 		
 		// ---------------------성적조회
