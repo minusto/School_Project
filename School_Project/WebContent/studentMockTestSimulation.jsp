@@ -206,13 +206,24 @@
                     		<h3>추천 대학</h3>
                     		<div id="recommendUniversityDiv">
                     			<ul class="list-unstyled list-inline">
-                    			<c:forEach var="re" items="${re}" begin="0" end="2" step="1">
-                    				<li id="recommendContent"><a href="universityEntranceInfo.jsp">
-                    					<img id="recommendUniversityMark" alt="${re.universityName}" src="${re.universityMark}">
-                    					<span id="recommendUniversityName" class="recommendUniversityName">${re.universityName }</span>
-                    					<span id="recommendMajorName" class="recommendMajorName">${re.majorName}</span>
-                    				</a></li>
-                    			</c:forEach>
+                   
+                    			<c:choose>
+										<c:when test="${empty re}">
+											<br><br>
+											추천 가능한 대학이 없습니다
+											<br><br>
+										</c:when>
+					
+										<c:otherwise>
+											<c:forEach var="re" items="${re}" begin="0" end="2" step="1">
+		                    					<li ><a href="universityEntranceInfo.jsp">
+		                    					<img id="SeoulUniversityMark" alt="대학교마크" src="${re.universityMark }">
+		                    					<span id="firstRecommendUniversityName" class="recommendUniversityName">${re.universityName }</span>
+		                    					<span id="firstRecommendMajorName" class="recommendMajorName">${re.majorName }</span>
+		                    				</a></li>
+											</c:forEach>
+										</c:otherwise>
+									</c:choose>
                     			</ul>
                     		</div>
                     	</div>
