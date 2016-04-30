@@ -656,7 +656,7 @@
 	<!-- 모의고사 점수 END -->
 	
 	<!-- 희망대학3개 -->
-	<select id="recommendUniversity"  resultType="RecommendInfo"> 
+	<select id="recommendUniversity"  resultType="RecommendInfo" parameterType="int"> 
 		select  universityName,  
 	          universityURL, 
 	          universityMark,
@@ -667,7 +667,7 @@
 	   ON m.majorId = e.majorId
 	   JOIN university u 
 	   ON u.universityId = e.universityId
-	   where mockTestcutline <![CDATA[ > ]]>=#{total}-10  AND mockTestcutline <![CDATA[ < ]]>=#{total}+10
+	   where mockTestcutline <![CDATA[ > ]]>=#{total}-100  AND mockTestcutline <![CDATA[ < ]]>=#{total}+100
 	   </select>
 	
 </mapper>

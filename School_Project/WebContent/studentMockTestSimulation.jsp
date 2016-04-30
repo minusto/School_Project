@@ -1,3 +1,4 @@
+<%@page import="kosta.model.RecommendInfo"%>
 <%@page import="kosta.model.AllEntranceInfo"%>
 <%@page import="java.util.Map"%>
 <%@page import="kosta.model.Cutline"%>
@@ -69,6 +70,12 @@
 		List<AllEntranceInfo> allEntranceInfoList = service.selectAllEntranceInfoService();
 		request.setAttribute("allEntranceInfoList", allEntranceInfoList);
 		
+		//모의고사총합점수 변수화
+		int total = Integer.parseInt(mockTestSumList.get(0).get("TOTAL").toString());
+		
+		//추천대학 리스트
+		List<RecommendInfo> re = service.recommendUniversityService(total);
+		request.setAttribute("re", re);
 	}
 %>
 <!DOCTYPE html>
@@ -200,21 +207,13 @@
                     		<h3>추천 대학</h3>
                     		<div id="recommendUniversityDiv">
                     			<ul class="list-unstyled list-inline">
+                    			<c:forEach var="re" items="${re}" begin="0" end="2" step="1">
                     				<li id="firstRecommend"><a href="universityEntranceInfo.jsp">
-                    					<img id="SeoulUniversityMark" alt="서울대학교마크" src="img/SeoulUniversityMark.jpg">
-                    					<span id="firstRecommendUniversityName" class="recommendUniversityName">서울대학교</span>
-                    					<span id="firstRecommendMajorName" class="recommendMajorName">국어국문학과</span>
+                    					<img id="SeoulUniversityMark" alt="서울대학교마크" src="${re.universityMark}">
+                    					<span id="firstRecommendUniversityName" class="recommendUniversityName">${re.universityName }</span>
+                    					<span id="firstRecommendMajorName" class="recommendMajorName">${re.majorName}</span>
                     				</a></li>
-                    				<li id="secondRecommend"><a href="#">
-                    					<img id="YonseiUniversityMark" alt="연세대학교마크" src="img/YonseiUniversityMark.jpg">
-                    					<span id="secondRecommendUniversityName" class="recommendUniversityName">연세대학교</span>
-                    					<span id="secondRecommendMajorName" class="recommendMajorName">국어국문학과</span>
-                    				</a></li>
-                    				<li id="thirdRecommend"><a href="#">
-                    					<img id="KoreaUniversityMark" alt="고려대학교마크" src="img/KoreaUniversityMark.jpg">
-                    					<span id="thirdRecommendUniversityName" class="recommendUniversityName">고려대학교</span>
-                    					<span id="thirdRecommendMajorName" class="recommendMajorName">국어국문학과</span>
-                    				</a></li>
+                    			</c:forEach>
                     			</ul>
                     		</div>
                     	</div>

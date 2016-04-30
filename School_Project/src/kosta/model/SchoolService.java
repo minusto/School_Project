@@ -471,8 +471,8 @@ public class SchoolService {
 			return dao.selectMockKorAvgScore(id);
 		}
 		//----------------------------성적조회
-		public List<RecommendInfo> recommendUniversityService(){
-			return dao.recommendUniversity();
+		public List<RecommendInfo> recommendUniversityService(int total){
+			return dao.recommendUniversity(total);
 			
 		}
 		

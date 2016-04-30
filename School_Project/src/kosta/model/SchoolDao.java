@@ -1249,11 +1249,11 @@ public class SchoolDao {
 		}
 		//------------------------모의고사 성적조회
 
-		public List<RecommendInfo> recommendUniversity() {
+		public List<RecommendInfo> recommendUniversity(int total) {
 			SqlSession session = getSqlSessionFactory().openSession();
 			List<RecommendInfo> list=null;
 			try {
-				list = session.getMapper(Mapper.class).recommendUniversity();
+				list = session.getMapper(Mapper.class).recommendUniversity(total);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

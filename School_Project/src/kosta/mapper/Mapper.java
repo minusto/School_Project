@@ -127,5 +127,5 @@ public interface Mapper  {
 	public List<MockTest> selectMyKorScore(String id);
 	public List<MockKorAvgScore> selectMockKorAvgScore(String id);
 	//---------모의고사 성적조회
-	public List<RecommendInfo> recommendUniversity();//희망대학
+	public List<RecommendInfo> recommendUniversity(int total);//희망대학
 }
