@@ -431,12 +431,8 @@ public class SchoolService {
 		}
 		//희망대학 국영수사탐 합계
 		public List<Map<String, Object>> mockTestSum(String id) {
-			Map<String, Object> paramMap = new HashMap<String, Object>();
-		
-			/*paramMap.put("mockId", mockId);*/
-			
 			return dao.mockTestSum(id);
-				}
+		}
 		
 		// ---------------------성적조회
 		public List<MockType> studentMockTestListService(String id){

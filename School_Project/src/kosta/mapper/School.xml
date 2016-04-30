@@ -542,7 +542,7 @@
 	</select>
 	
 	<!-- 국영수사탐 합계   -->
-	<select id="mockTestSum" parameterType="java.util.Map" resultType="java.util.HashMap">
+	<select id="mockTestSum" parameterType="String" resultType="java.util.HashMap">
 		select
 	  (
 	    select

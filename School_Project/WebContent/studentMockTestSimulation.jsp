@@ -62,8 +62,7 @@
 		request.setAttribute("checkHopeUniversityExist", checkHopeUniversityExist); //희망대학 유무 결과 set
 		
 		//학생의 모의고사 점수 총합
-		HttpSession httpSession = request.getSession();
-		List<Map<String, Object>> mockTestSumList = service.mockTestSum(id);
+		List<Map<String, Object>> mockTestSumList = service.mockTestSum(studentId);
 		request.setAttribute("mockTestSumList", mockTestSumList);
 		
 		//모든 학교 학과의 입시정보 리스트 출력
