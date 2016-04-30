@@ -209,7 +209,7 @@
                     			<ul class="list-unstyled list-inline">
                     			<c:forEach var="re" items="${re}" begin="0" end="2" step="1">
                     				<li id="recommendContent"><a href="universityEntranceInfo.jsp">
-                    					<img id="universityMark" alt="${re.universityName}" src="${re.universityMark}">
+                    					<img id="recommendUniversityMark" alt="${re.universityName}" src="${re.universityMark}">
                     					<span id="recommendUniversityName" class="recommendUniversityName">${re.universityName }</span>
                     					<span id="recommendMajorName" class="recommendMajorName">${re.majorName}</span>
                     				</a></li>
