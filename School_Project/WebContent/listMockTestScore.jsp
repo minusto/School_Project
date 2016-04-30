@@ -51,6 +51,7 @@
 	
 	int i = 0;
 	int j = 0;
+	int k = 0;
 %>
 <!DOCTYPE html>
 <html>
@@ -108,7 +109,7 @@
 									</c:if>
 								</c:forEach>
 								<c:forEach var="list" items="${mockList }">
-									<option value="${list.mockId }">${list.mockYear }년도 ${list.mockGrade }학년 ${list.mockMonth }월 모의고사</option>
+									<option id="mockName<%=k++ %>" value="${list.mockId }">${list.mockYear }년도 ${list.mockGrade }학년 ${list.mockMonth }월 모의고사</option>
 								</c:forEach>
 							</select>
 						</div>

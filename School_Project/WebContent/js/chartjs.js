@@ -13,6 +13,14 @@ $(function() {
 			mockKorAvg[i] = $("#mockKorAvg"+i).val();
 		}		
 	}
+	
+	var mockName=new Array("미응시","미응시","미응시","미응시","미응시","미응시","미응시","미응시","미응시");
+	for(var i = 0 ; i < mockName.length; i++){
+		if(typeof $("#mockName"+i).html() !== 'undefined'){
+		mockName[i] = ($("#mockName"+i).html()).substr(7,7);
+		}
+	}
+
 
 	
   var ctx, data, myLineChart, options;
@@ -36,7 +44,8 @@ $(function() {
     legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
   };
   data = {
-    labels: ['1-3', '1-6', '1-9', '2-3', '2-6', '2-9', '3-3','3-6','3-9'],
+    labels: [mockName[0],mockName[1],mockName[2],mockName[3],mockName[4],mockName[5],mockName[6],mockName[7],mockName[8]],
+    //, (mockName[2]).substr(7,7), (mockName[3]).substr(7,7), (mockName[4]).substr(7,7), '2-9', '3-3','3-6','3-9'
     datasets: [
       {
         label: "My First dataset",
