@@ -208,10 +208,10 @@
                     		<div id="recommendUniversityDiv">
                     			<ul class="list-unstyled list-inline">
                     			<c:forEach var="re" items="${re}" begin="0" end="2" step="1">
-                    				<li id="firstRecommend"><a href="universityEntranceInfo.jsp">
-                    					<img id="SeoulUniversityMark" alt="서울대학교마크" src="${re.universityMark}">
-                    					<span id="firstRecommendUniversityName" class="recommendUniversityName">${re.universityName }</span>
-                    					<span id="firstRecommendMajorName" class="recommendMajorName">${re.majorName}</span>
+                    				<li id="recommendContent"><a href="universityEntranceInfo.jsp">
+                    					<img id="universityMark" alt="${re.universityName}" src="${re.universityMark}">
+                    					<span id="recommendUniversityName" class="recommendUniversityName">${re.universityName }</span>
+                    					<span id="recommendMajorName" class="recommendMajorName">${re.majorName}</span>
                     				</a></li>
                     			</c:forEach>
                     			</ul>
