@@ -656,7 +656,7 @@
 	<!-- 모의고사 점수 END -->
 	
 	<!-- 희망대학3개 -->
-	<select id="recommendUniversity" parameterType="Int" resultType="RecommendInfo"> 
+	<select id="recommendUniversity"  resultType="RecommendInfo"> 
 		select  universityName,  
 	          universityURL, 
 	          universityMark,
