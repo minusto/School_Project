@@ -23,6 +23,7 @@ import kosta.model.NoticeBoard;
 import kosta.model.Parent;
 import kosta.model.ParentList;
 import kosta.model.ParentNullList;
+import kosta.model.RecommendInfo;
 import kosta.model.RegistManage;
 import kosta.model.ResearchSubject;
 import kosta.model.ResearchSubjectScore;
@@ -126,4 +127,5 @@ public interface Mapper  {
 	public List<MockTest> selectMyKorScore(String id);
 	public List<MockKorAvgScore> selectMockKorAvgScore(String id);
 	//---------모의고사 성적조회
+	public List<RecommendInfo> recommendUniversity();//희망대학
 }

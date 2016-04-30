@@ -1248,4 +1248,17 @@ public class SchoolDao {
 			return list;
 		}
 		//------------------------모의고사 성적조회
+
+		public List<RecommendInfo> recommendUniversity() {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<RecommendInfo> list=null;
+			try {
+				list = session.getMapper(Mapper.class).recommendUniversity();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return list;
+		}
 }

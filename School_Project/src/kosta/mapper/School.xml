@@ -655,4 +655,19 @@
 	</select>
 	<!-- 모의고사 점수 END -->
 	
+	<!-- 희망대학3개 -->
+	<select id="recommendUniversity" parameterType="Int" resultType="RecommendInfo"> 
+		select  universityName,  
+	          universityURL, 
+	          universityMark,
+	          majorName, 
+	          mockTestcutline
+	          
+	   from entranceInfo e JOIN major m
+	   ON m.majorId = e.majorId
+	   JOIN university u 
+	   ON u.universityId = e.universityId
+	   where mockTestcutline <![CDATA[ > ]]>=#{total}-10  AND mockTestcutline <![CDATA[ < ]]>=#{total}+10
+	   </select>
+	
 </mapper>
