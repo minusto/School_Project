@@ -45,8 +45,12 @@
       <typeAlias type="kosta.model.MockResearchScoreDetailList" alias="MockResearchScoreDetailList"/>
       <typeAlias type="kosta.model.MockKorAvgScore" alias="MockKorAvgScore"/>
       <typeAlias type="kosta.model.AllEntranceInfo" alias="AllEntranceInfo"/> 
-      <typeAlias type="kosta.model.RecommendInfo" alias="RecommendInfo"/>      
-
+      <typeAlias type="kosta.model.RecommendInfo" alias="RecommendInfo"/>
+      <typeAlias type="kosta.model.SubjectScore" alias="SubjectScore"/>
+      <typeAlias type="kosta.model.CreateTable" alias="CreateTable"/>
+      <typeAlias type="kosta.model.AllSubjectScoreList" alias="AllSubjectScoreList"/>
+      <typeAlias type="kosta.model.AllRankingScoreList" alias="AllRankingScoreList"/>
+      <typeAlias type="kosta.model.AllStudentNum" alias="AllStudentNum"/>
    </typeAliases>
    
    <environments default="development">

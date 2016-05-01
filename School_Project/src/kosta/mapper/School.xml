@@ -665,5 +665,80 @@ where b.memberId = #{memberId} and mockId = (select max(mockId) from mockTest wh
 	   ON u.universityId = e.universityId
 	   where mockTestcutline <![CDATA[ > ]]>=#{total}-100  AND mockTestcutline <![CDATA[ < ]]>=#{total}+100
 	   </select>
+	   
+	<!-- 과목 선택 (내신성적입력) -->
+	<select id="selectSubject" resultType="Subject" parameterType="String">
+		SELECT * FROM subject
+		WHERE subjectName = #{s_name}
+	</select>
+	
+	<!-- 내신성적입력 -->
+   <insert id="insertSubjectScore" parameterType="SubjectScore">
+   		INSERT INTO score (subjectId, memberId, midExam , finalExam , perfomanceEvaluation, semester
+   		)VALUES(
+         	#{subjectId},#{memberId}, #{midExam} , #{finalExam} , #{perfomanceEvaluation}, #{semester}
+   		)
+   </insert>
+   
+   <!-- 내신성적 테이블 생성 -->
+   <select id="createTableNum" resultType="Integer">
+   		SELECT MAX(num) FROM createScoreTable
+   </select>
+   <!-- 내신테이블 생성하기위한 데이터 -->
+   <insert id="createTable" parameterType="CreateTable">
+   		INSERT INTO createScoreTable 
+   		(
+   			num, subjectId, subjectGrade , subjectType , subjectName, subjectUnit
+   		)
+   		VALUES
+   		(
+         	#{num},#{subjectId}, #{subjectGrade} , #{subjectType} , #{subjectName}, #{subjectUnit}
+   		)
+   </insert>
+   <!-- 내신테이블 생성 리스트-->
+   <select id="createTableList" resultType="CreateTable">
+   		SELECT * FROM createScoreTable
+   		ORDER BY num
+   </select>
+   
+   <select id="allSubjectScoreList" resultType="AllSubjectScoreList" parameterType="int">
+   		SELECT s.subjectId AS subjectId ,s3.subjectType AS subjectType,s3.subjectName AS subjectName,
+   		s3.subjectUnit AS subjectUnit,
+   		s.memberId AS memberId, (s.midexam*0.4)+(s.finalexam*0.4)+(s.perfomanceevaluation*0.2) AS subjectTotal,
+		s2.subjectAvg AS subjectAvg, s.semester AS semester, s3.subjectGrade AS subjectGrade
+		from score s,
+		(SELECT subjectId, AVG((midexam*0.4)+(finalexam*0.4)+(perfomanceevaluation*0.2)) AS subjectAvg from score
+		WHERE semester = #{semester}
+		GROUP BY subjectId) s2,
+		subject s3
+		WHERE s.subjectId = s2.subjectId
+		AND s.subjectId = s3.subjectId
+		AND semester = #{semester}
+   </select>
+   <!-- 전체 과목별 등수 -->
+   <select id="allRankingScoreList" resultType="AllRankingScoreList" parameterType="int">
+   		SELECT RANK() OVER (partition by s.subjectId ORDER BY s.subjectTotal DESC) AS Rank,
+   		s.subjectId AS subjectId, s.memberId AS memberId, s.subjectTotal AS subjectTotal
+		FROM	
+		(SELECT s.subjectId AS subjectId ,s3.subjectType AS subjectType,s3.subjectName AS subjectName,
+		s3.subjectUnit AS subjectUnit,
+   		s.memberId AS memberId, (s.midexam*0.4)+(s.finalexam*0.4)+(s.perfomanceevaluation*0.2) AS subjectTotal,
+		s2.subjectAvg AS subjectAvg
+		from score s,
+		(SELECT subjectId, AVG((midexam*0.4)+(finalexam*0.4)+(perfomanceevaluation*0.2)) AS subjectAvg from score
+		group by subjectId) s2,
+		subject s3
+		WHERE s.subjectId = s2.subjectId
+		AND s.subjectId = s3.subjectId
+		AND semester= #{semester}) s
+   </select>
+   <!-- 전체 과목별 전체명수  -->
+   <select id="allStudentNum" resultType="AllStudentNum" parameterType="int">
+   		SELECT subjectId,count(*) AS allStudentNum FROM SCORE
+   		WHERE semester = #{semester}
+		GROUP BY subjectId
+   </select>
+	   
+	   
 	
 </mapper>

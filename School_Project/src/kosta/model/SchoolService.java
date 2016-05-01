@@ -468,6 +468,49 @@ public class SchoolService {
 			return dao.recommendUniversity(total);
 			
 		}
+
+		//과목 선택 (내신성적입력)
+		public Subject selectSubjectService(String s_name){
+			return dao.selectSubject(s_name);
+		}
+		
+		//내신성적 입력
+	    public int insertSubjectScore(SubjectScore subjectscore){
+	    	int successCnt = 0;
+	    	for (int i = 0; i < subjectscore.getArrMidExam().length; i++) {
+	            subjectscore.setSubjectId(subjectscore.getArrSubjectId()[i]);
+	            subjectscore.setMemberId(subjectscore.getMemberId());
+	            subjectscore.setSemester(subjectscore.getSemester());
+	            subjectscore.setMidExam(subjectscore.getArrMidExam()[i]);
+	            subjectscore.setFinalExam(subjectscore.getArrFinalExam()[i]);
+	            subjectscore.setPerformanceEvaluation(subjectscore.getArrPerformanceEvaluation()[i]);
+	            successCnt = successCnt + dao.insertSubjectScore(subjectscore);
+	         }
+	         return successCnt;
+	      }
+	    
+	    public int createTableService(CreateTable createTable){
+	    	createTable.setNum(dao.createTableNum()+1);
+	    	return dao.createTable(createTable);
+	    }
+	    
+	    public List<CreateTable> CreateTableListService(){
+	    	return dao.createTableList();
+	    }
+		
+		//전체과목별 내신점수리스트
+	    public List<AllSubjectScoreList> allSubjectScoreListService(int semester){
+	    	return dao.allSubjectScoreList(semester);
+	    }
+	    //전체 과목별 등수
+	    public List<AllRankingScoreList> allRankingScoreListService(int semester){
+	    	return dao.allRankingScoreList(semester);
+	    }
+
+	    //전체 과목별 전체명수
+	    public List<AllStudentNum> allStudentNumService(int semester){
+	    	return dao.allStudentNum(semester);
+	    }
 		
 		
 }

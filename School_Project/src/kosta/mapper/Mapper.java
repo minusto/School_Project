@@ -7,6 +7,10 @@ import org.apache.ibatis.session.RowBounds;
 
 import kosta.model.AdminList;
 import kosta.model.AllEntranceInfo;
+import kosta.model.AllRankingScoreList;
+import kosta.model.AllStudentNum;
+import kosta.model.AllSubjectScoreList;
+import kosta.model.CreateTable;
 import kosta.model.Cutline;
 import kosta.model.EntranceInfo;
 import kosta.model.ExistStudentList;
@@ -40,6 +44,7 @@ import kosta.model.StudentDetail;
 import kosta.model.StudentList;
 import kosta.model.StudentNullList;
 import kosta.model.Subject;
+import kosta.model.SubjectScore;
 import kosta.model.SystemAdmin;
 import kosta.model.Teacher;
 import kosta.model.TeacherDetail;
@@ -128,4 +133,13 @@ public interface Mapper  {
 	public List<MockKorAvgScore> selectMockKorAvgScore(String id);
 	//---------모의고사 성적조회
 	public List<RecommendInfo> recommendUniversity(int total);//희망대학
+	public Subject selectSubject(String s_name); //과목 선택 (내신성적입력)
+	public int insertSubjectScore(SubjectScore subjectscore); //내신성적입력
+	public Integer createTableNum(); //내신성적 테이블 로우 넘버
+	public int createTable(CreateTable createTable);//내신성적 테이블 생성
+	public List<CreateTable> createTableList();//내신성적 테이블 리스트
+	public List<AllSubjectScoreList> allSubjectScoreList(int semester); //전체과목별 내신점수리스트
+	public List<AllRankingScoreList> allRankingScoreList(int semester);  //전체 과목별 등수
+	public List<AllStudentNum> allStudentNum(int semeter); //전체 과목별 전체명수 
+
 }

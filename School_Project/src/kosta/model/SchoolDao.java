@@ -1261,4 +1261,128 @@ public class SchoolDao {
 			}
 			return list;
 		}
+		
+		//과목 선택 (내신성적입력)
+		public Subject selectSubject(String s_name) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			Subject subject = null;
+			try {
+				subject = session.getMapper(Mapper.class).selectSubject(s_name);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return subject;
+		}
+		
+		//학생 내신 성적 입력
+	   public int insertSubjectScore(SubjectScore subjectscore){
+	         SqlSession session = getSqlSessionFactory().openSession();
+	         System.out.print("=======1::" + subjectscore.getSubjectId());
+	         System.out.print("=======2::" + subjectscore.getMemberId());
+	         System.out.print("=======3::" + subjectscore.getMidExam());
+	         System.out.print("=======4::" + subjectscore.getFinalExam());
+	         System.out.print("=======5::" + subjectscore.getPerformanceEvaluation());
+	         System.out.print("=======6::" + subjectscore.getSemester());
+	         
+	         int re = 0;
+	         try {
+	            re = session.getMapper(Mapper.class).insertSubjectScore(subjectscore);
+	            if(re > 0){
+	            	session.commit();
+	            }else{
+	            	session.rollback();
+	            }
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }finally{
+	            session.close();
+	         }
+	         return re;
+	    }
+	   
+	   //테이블 로우넘버
+	   public int createTableNum() {
+			int num = 0;
+			SqlSession sqlsession = getSqlSessionFactory().openSession();
+			if(sqlsession.getMapper(Mapper.class).createTableNum()==null){
+				sqlsession.close();
+			}else{
+				num = sqlsession.getMapper(Mapper.class).createTableNum();
+				sqlsession.close();
+			}
+			return num;
+		}
+	    
+	    //내신성적 테이블 생성
+		public int createTable(CreateTable createaTable) {
+			SqlSession sqlsession = getSqlSessionFactory().openSession();
+			int re = 0;
+			try {
+				re = sqlsession.getMapper(Mapper.class).createTable(createaTable);
+				if (re > 0) {
+					sqlsession.commit();
+				} else {
+					sqlsession.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlsession.close();
+			}
+			return re;
+		}
+
+		public List<CreateTable> createTableList() {
+			SqlSession sqlsession = getSqlSessionFactory().openSession();
+			List<CreateTable> list = null;
+			try {
+				list = sqlsession.getMapper(Mapper.class).createTableList();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlsession.close();
+			}
+			return list;
+		}
+		//전체과목별 내신점수리스트
+		public List<AllSubjectScoreList> allSubjectScoreList(int semester) {
+			SqlSession sqlsession = getSqlSessionFactory().openSession();
+			List<AllSubjectScoreList> list = null;
+			try {
+				list = sqlsession.getMapper(Mapper.class).allSubjectScoreList(semester);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlsession.close();
+			}
+			return list;
+		}
+		//전체 과목별 등수
+		public List<AllRankingScoreList> allRankingScoreList(int semester) {
+			SqlSession sqlsession = getSqlSessionFactory().openSession();
+			List<AllRankingScoreList> list = null;
+			try {
+				list = sqlsession.getMapper(Mapper.class).allRankingScoreList(semester);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlsession.close();
+			}
+			return list;
+		}
+		//전체 과목별 전체명수
+		public List<AllStudentNum> allStudentNum(int semester) {
+			SqlSession sqlsession = getSqlSessionFactory().openSession();
+			List<AllStudentNum> list = null;
+			try {
+				list = sqlsession.getMapper(Mapper.class).allStudentNum(semester);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlsession.close();
+			}
+			return list;
+		}
 }
