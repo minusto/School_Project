@@ -50,8 +50,8 @@
 								<div id="entranceUniversityInfo">
 									<ul class="list-unstyled list-inline">
 										<li class="entranceInfoUniversityName">서울대</li>
-										<li class="entranceInfoUniversityMajor">국어국문학과</li>
-										<li id="entrancInfoDetail"><a href="#">홈페이지</a></li>
+										<li class="entranceInfoUniversityMajor">국어교육과</li>
+										<li id="entrancInfoDetail"><a href="#http://www.snu.ac.kr/">홈페이지</a></li>
 									</ul>
 								</div>
 							</div>
@@ -64,10 +64,10 @@
 											</div>
 											<div class="panel-body">
 												<ul id="mockTestUl" class="list-unstyled">
-													<li>정시 모집 인원<span id="mockTestRecruitNum">15</span></li>
-													<li>정시 커트라인<span id="mockTestRecruitNum">1.6</span></li>
+													<li>정시 모집 인원<span id="mockTestRecruitNum">12</span></li>
+													<li>정시 커트라인<span id="mockTestRecruitNum">526.8</span></li>
 													<li>현재 이 대학 목표자<span id="mockTestNowHopeThis">214</span></li>
-													<li>작년 정시 목표율<span id="lastMockTestRate">13/231</span></li>
+													<li>작년 정시 목표율<span id="lastMockTestRate">15/231</span></li>
 												</ul>
 											</div>
 										</div>
@@ -84,8 +84,8 @@
 											</div>
 											<div class="panel-body">
 												<ul id="totalExamUl" class="list-unstyled">
-													<li>수시 모집 인원<span id="totalExamRecruitNum">10</span></li>
-													<li>수시 커트라인<span id="totalExamRecruitNum">3.9</span></li>
+													<li>수시 모집 인원<span id="totalExamRecruitNum">15</span></li>
+													<li>수시 커트라인<span id="totalExamRecruitNum">1.6</span></li>
 													<li>현재 이 대학 목표자<span id="totalExamNowHopeThis">283</span></li>
 													<li>작년 수시 목표율<span id="lastTotalExamRate">17/295</span></li>
 												</ul>
@@ -109,8 +109,8 @@
 												<!-- 데이터 들어갈 곳 -->
 												<tr>
 													<td id="entranceChangeName">모집인원</td>
-													<td>13</td>
 													<td>15</td>
+													<td>12</td>
 												</tr>
 												<!--  -->
 											</table>
@@ -129,7 +129,7 @@
 												<tr>
 													<td id="entranceChangeName">모집인원</td>
 													<td>17</td>
-													<td>10</td>
+													<td>15</td>
 												</tr>
 												<!--  -->
 											</table>
