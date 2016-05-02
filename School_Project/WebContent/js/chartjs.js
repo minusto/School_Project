@@ -20,6 +20,19 @@ $(function() {
 		mockName[i] = ($("#mockName"+i).html()).substr(7,7);
 		}
 	}
+	var studentName=$("#studentName").val();
+	var result=0;
+	for(var i = 0 ; i < mockName.length; i++){
+		if(mockName[i] !== '미응시'){
+			if(Number(myKorScore[i])<Number(mockKorAvg[i])){
+				result=Number(mockKorAvg[i])-Number(myKorScore[i]);
+				$("#mockScore"+i).append(mockName[i]+'언어평균점수 :'+mockKorAvg[i]+"점   "+studentName+'학생의 언어점수:'+myKorScore[i]+'점  '+'평균보다'+result+'점 낮습니다');			
+			}else if(Number(mockKorAvg[i])<Number(myKorScore[i])){
+				result=Number(myKorScore[i])-Number(mockKorAvg[i]);
+				$("#mockScore"+i).append(mockName[i]+'언어평균점수 :'+mockKorAvg[i]+"점   "+studentName+'학생의 언어점수:'+myKorScore[i]+'점  '+'평균보다'+result+'점 높습니다');			
+			}
+		}
+	}
 
 
 	
@@ -72,6 +85,46 @@ $(function() {
 });
 
 $(function() {
+	
+	
+	
+	
+	var myKorScore = new Array("0","0","0","0","0","0","0","0","0","0");
+	for(var i in myKorScore){	
+		if(typeof $("#myKorScore"+i).val() !== 'undefined'){
+			myKorScore[i] = $("#myKorScore"+i).val();
+		}
+	}
+	
+	var mockKorAvg=new Array("0","0","0","0","0","0","0","0","0","0");
+	for(var i in mockKorAvg){
+		if(typeof $("#mockKorAvg"+i).val() !== 'undefined'){
+			mockKorAvg[i] = $("#mockKorAvg"+i).val();
+		}		
+	}
+	
+	var mockName=new Array("미응시","미응시","미응시","미응시","미응시","미응시","미응시","미응시","미응시");
+	for(var i = 0 ; i < mockName.length; i++){
+		if(typeof $("#mockName"+i).html() !== 'undefined'){
+		mockName[i] = ($("#mockName"+i).html()).substr(7,7);
+		}
+	}
+	var studentName=$("#studentName").val();
+	var result=0;
+	for(var i = 0 ; i < mockName.length; i++){
+		if(mockName[i] !== '미응시'){
+			if(Number(myKorScore[i])<Number(mockKorAvg[i])){
+				result=Number(mockKorAvg[i])-Number(myKorScore[i]);
+				$("#mockScore1"+i).append(mockName[i]+'언어평균점수 :'+mockKorAvg[i]+"점   "+studentName+'학생의 언어점수:'+myKorScore[i]+'점  '+'평균보다'+result+'점 낮습니다');			
+			}else if(Number(mockKorAvg[i])<Number(myKorScore[i])){
+				result=Number(myKorScore[i])-Number(mockKorAvg[i]);
+				$("#mockScore1"+i).append(mockName[i]+'언어평균점수 :'+mockKorAvg[i]+"점   "+studentName+'학생의 언어점수:'+myKorScore[i]+'점  '+'평균보다'+result+'점 높습니다');			
+			}
+		}
+	}
+	
+	
+	
   var ctx, data, myBarChart, option_bars;
   Chart.defaults.global.responsive = true;
   ctx = $('#bar-chart').get(0).getContext('2d');
@@ -89,7 +142,7 @@ $(function() {
     legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
   };
   data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    labels: [mockName[0],mockName[1],mockName[2],mockName[3],mockName[4],mockName[5],mockName[6],mockName[7],mockName[8]],
     datasets: [
       {
         label: "My First dataset",
@@ -99,7 +152,7 @@ $(function() {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "#1ABC9C",
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [Number(myKorScore[0]), Number(myKorScore[1]), Number(myKorScore[2]) ,Number(myKorScore[3]),Number(myKorScore[4]),Number(myKorScore[5]),Number(myKorScore[6]),Number(myKorScore[7]),Number(myKorScore[8])]
       }, {
         label: "My Second dataset",
         fillColor: "rgba(34, 167, 240,0.6)",
@@ -108,7 +161,7 @@ $(function() {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "#22A7F0",
-        data: [28, 48, 40, 19, 86, 27, 90]
+        data: [Number(mockKorAvg[0]),Number(mockKorAvg[1]),Number(mockKorAvg[2]),Number(mockKorAvg[3]),Number(mockKorAvg[4]),Number(mockKorAvg[5]),Number(mockKorAvg[6]),Number(mockKorAvg[7]),Number(mockKorAvg[8])]
       }
     ]
   };

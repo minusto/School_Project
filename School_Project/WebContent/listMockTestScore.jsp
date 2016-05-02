@@ -21,7 +21,7 @@
 	
 	StudentDetail studentDetail=service.selectStudentDetailService(studentId);
 	List<MockType> mockList=service.studentMockTestListService(studentId);
-
+	
 	request.setAttribute("studentDetail",studentDetail);
 	request.setAttribute("mockList", mockList);
 	request.setAttribute("studentId", studentId);
@@ -47,11 +47,14 @@
 	request.setAttribute("mockScoreDetailList", mockScoreDetailList);
 	request.setAttribute("koreaHistroyScoreList", koreaHistroyScoreList);
 	}
+	String studentName=studentDetail.getMemberName();
+	request.setAttribute("studentName", studentName);
 
-	
 	int i = 0;
 	int j = 0;
 	int k = 0;
+	int a = 0;
+	int b = 0;
 %>
 <!DOCTYPE html>
 <html>
@@ -89,6 +92,7 @@
 </head>
 
 <body class="flat-blue">
+<input type="hidden" id="studentName" value="${studentName }">
 					<div class="row">
 					<input type="hidden" name="studentId" id="studentId" value="${studentId }">
 					<c:forEach items="${ selectMyKorScoreList}" var="list">
@@ -514,11 +518,9 @@
                                     </div>
                                 </div>
                                 <div class="card-body no-padding">
-                                	<p>국어 평균점수 60점대비 <b>+15점</b>인 75점입니다</p>
-                                	<p>영어 평균점수 70점대비 <b>+10점</b>인 80점입니다</p>
-                                	<p>수학 평균점수 40점대비 <b>+32점</b>인 72점입니다</p>
-                                	<p>사회 평균점수 40점대비 <b>+53점</b>인 93점입니다</p>
-                                	<p>과학 평균점수 70점대비 <b>-20점</b>인 50점입니다</p>
+                                	<c:forEach var="list" items="${mockList }">
+                                		<p id="mockScore<%=a++ %>"></p>
+                                	</c:forEach>
                                 </div>
                             </div>
                             </div>
@@ -541,11 +543,9 @@
                                     </div>
                                 </div>
                                 <div class="card-body no-padding">
-                                	<p>국어 평균점수 60점대비 <b>+15점</b>인 75점입니다</p>
-                                	<p>영어 평균점수 70점대비 <b>+10점</b>인 80점입니다</p>
-                                	<p>수학 평균점수 40점대비 <b>+32점</b>인 72점입니다</p>
-                                	<p>사회 평균점수 40점대비 <b>+53점</b>인 93점입니다</p>
-                                	<p>과학 평균점수 70점대비 <b>-20점</b>인 50점입니다</p>
+                                	<c:forEach var="list" items="${mockList }">
+                                		<p id="mockScore1<%=b++ %>"></p>
+                                	</c:forEach>
                                 </div>
                             </div>
                             <div>
