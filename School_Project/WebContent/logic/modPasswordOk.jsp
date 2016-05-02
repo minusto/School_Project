@@ -26,12 +26,12 @@
 			member=service.memberDetailService(id);
 			member.setMemberPassword(modPassword);
 			int re=service.userModPassowrdService(member);
-			response.sendRedirect("../studentMain.jsp");
+			response.sendRedirect("../parentMain.jsp");
 		}else if(grade.equals("학부모")){
 			parent=service.parentInfoDetailService(id);
 			parent.setParentPassword(modPassword);
 			int re=service.parentModPasswordService(parent);
-			response.sendRedirect("../studentMain.jsp");
+			response.sendRedirect("../parentMain.jsp");
 		}else if(grade.equals("학교관리자")){
 			sa=service.schoolAdminInfoDetailService(id);
 			sa.setSchoolAdminPassword(modPassword);

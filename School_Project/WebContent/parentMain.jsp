@@ -2,6 +2,10 @@
 <%@include file="logic/parentSessionCheck.jsp" %>
 <%
 	request.setAttribute("path", "Main");
+	if(session.getAttribute("grade").equals("학부모")){
+	Parent parent=service.parentInfoDetailService(id);
+	request.setAttribute("id", parent.getMemberId());
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -76,7 +80,7 @@
 																			</a>
 																		</div>
 																		<div class="col-sm-6 col-xs-12" style="text-align:center;">
-																			<a href="studentListMockTestScore.jsp">
+																			<a href="studentListMockTestScore.jsp?studentId=${id }">
 																			<h3>모의고사 성적 조회</h3>
 																			</a>
 																		</div>
