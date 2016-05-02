@@ -663,7 +663,7 @@ where b.memberId = #{memberId} and mockId = (select max(mockId) from mockTest wh
 	   ON m.majorId = e.majorId
 	   JOIN university u 
 	   ON u.universityId = e.universityId
-	   where mockTestcutline <![CDATA[ > ]]>=#{total}-100  AND mockTestcutline <![CDATA[ < ]]>=#{total}+100
+	   where mockTestcutline <![CDATA[ > ]]>=#{total}-30  AND mockTestcutline <![CDATA[ < ]]>=#{total}+30
 	   </select>
 	   
 	<!-- 과목 선택 (내신성적입력) -->
