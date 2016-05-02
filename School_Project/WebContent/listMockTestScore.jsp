@@ -211,7 +211,7 @@
 												<td>${list.mathOriginalScore }</td>
 												<td>200</td>
 												<td>${list.mathStandardScore }</td>
-												<td>3</td>
+												<td>2</td>
 												<td>3</td>
 												<td>${list.mathpercentile }</td>
 												<td>
@@ -257,8 +257,8 @@
 												<td>${list.englishOriginalScore }</td>
 												<td>200</td>
 												<td>${list.englishStandardScore }</td>
-												<td>32</td>
 												<td>10</td>
+												<td>80</td>
 												<td>${list.englishpercentile }</td>
 												<td>
 												<c:choose>
@@ -303,8 +303,8 @@
 												<td>${list.researchSubjectOriginalScore }</td>
 												<td>200</td>
 												<td>${list.researchSubjectStandardScore }</td>
-												<td>32</td>
-												<td>10</td>
+												<td>19</td>
+												<td>70</td>
 												<td>${list.researchSubjectPercentile }</td>
 												<td>
 												<c:choose>
@@ -356,8 +356,8 @@
 												<td>${list.researchSubjectOriginalScore1 }</td>
 												<td>200</td>
 												<td>${list.researchSubjectStandardScore1 }</td>
-												<td>32</td>
-												<td>10</td>
+												<td>16</td>
+												<td>70</td>
 												<td>${list.researchSubjectPercentile1 }</td>
 												<td>
 												<c:choose>
@@ -406,8 +406,8 @@
 												<td>${list.researchSubjectOriginalScore2 }</td>
 												<td>200</td>
 												<td>${list.researchSubjectStandardScore2 }</td>
-												<td>320</td>
-												<td>100</td>
+												<td>15</td>
+												<td>65</td>
 												<td>${list.researchSubjectPercentile2 }</td>
 												<td>
 												<c:choose>
@@ -454,8 +454,8 @@
 													<td>${list.secondLanguageOriginalScore }</td>
 													<td>200</td>
 													<td>${list.secondLanguageStandardScore }</td>
-													<td>32</td>
-													<td>10</td>
+													<td>12</td>
+													<td>70</td>
 													<td>${list.secondLanguagePercentile }</td>
 													<td>
 													<c:choose>
